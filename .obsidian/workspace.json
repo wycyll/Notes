@@ -185,7 +185,7 @@
               "state": {
                 "file": "Course/250/Lecture Notes.md",
                 "followCursor": false,
-                "showSearch": true,
+                "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
