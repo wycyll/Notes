@@ -1,0 +1,263 @@
+{
+  "main": {
+    "id": "ad77e453ef2fdea8",
+    "type": "split",
+    "children": [
+      {
+        "id": "efac9a29482358ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1c6263256644c55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/270/Lecture Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture Notes"
+            }
+          },
+          {
+            "id": "2c714ad3fd9377f8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/270/Slides/T7 Verilog HDL.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "T7 Verilog HDL"
+            }
+          },
+          {
+            "id": "82c133c94bd68262",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/215/Exercise.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Exercise"
+            }
+          },
+          {
+            "id": "960da37828087b1c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/270/Lecture Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture Notes"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c1e5bd986d964100",
+    "type": "split",
+    "children": [
+      {
+        "id": "e16432f20d58e5e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51c893d4376aee05",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "755c129d3fc1b594",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#XNOR",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "793108bc2a437fb7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 221
+  },
+  "right": {
+    "id": "7501d37a013ef9fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d778e3e3d5dc0cb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a46cc693e7756a03",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Course/215/Lecture Notes.md",
+                "collapseAll": true,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": true,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Lecture Notes 的反向链接列表"
+            }
+          },
+          {
+            "id": "b5cc562f9dcb808e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Course/215/Lecture Notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Lecture Notes 的出链列表"
+            }
+          },
+          {
+            "id": "8b9c27a14aeec057",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "d539d89ccc07b209",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Course/270/Lecture Notes.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Lecture Notes 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 242
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": true,
+      "markdown-table-editor:Open Markdown Table Editor": false,
+      "markdown-importer:打开 Markdown 格式转换器": false
+    }
+  },
+  "active": "960da37828087b1c",
+  "lastOpenFiles": [
+    "Cheating sheat.md",
+    "Course/250/Lecture Notes.md",
+    "Course/250/Exercise.md",
+    "Course/270/Lecture Notes.md",
+    "Course/270/Slides/T7 Verilog HDL.pdf",
+    "Course/270/Slides/T6 Latch & FF.pdf",
+    "Course/215/Lecture Notes.md",
+    "Course/215/Exercise.md",
+    "Course/270/Slides/T5 Combinational Circuit.pdf",
+    "Course/215/Slides/ECE2150J_C05.pdf",
+    "Course/215/Slides/ECE2150J_C04.pdf",
+    "Daily/Excel.md",
+    "Course/270/Topic 2.md",
+    "Basic Logic Gates 1.md",
+    "Course/270/Lecture Notes^.md",
+    "Course/270/Slides/T5Combinational.md",
+    "Course/270/Slides/T5.md",
+    "Course/270/Slides/T.md",
+    "Course/270/Slides/T1 Logic Design and Numbers.pdf",
+    "未命名.base",
+    "Course/250/Slides/~$2_Lecture_Outline-2023.ppt",
+    "Course/250/Slides/~$3_Lecture_Outline_2024.ppt",
+    "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
+    "Course/256/Notes.md",
+    "Course/215/Slides/ECE2150J_C03..md",
+    "Course/215/Slides/ECE.md",
+    "ECE2150J_C03..md",
+    "ECE2150J_C03.md",
+    "().md",
+    "image.png",
+    "image-1.png",
+    "All/README.md",
+    "image2.png",
+    "image1.png",
+    "设置.png",
+    "下拉.png",
+    "全部刷新.png",
+    "未命名.canvas",
+    "Pasted image 20250913193702.png",
+    "150/Lecture1.md",
+    "Home Dashboard.md",
+    "📅 待办.md",
+    "60073cb86eb75a5e2c18ff8a7b34434b.jpg",
+    "📅 Daily Note Template.md",
+    "2025-09-17.md"
+  ]
+}
