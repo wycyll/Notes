@@ -53,7 +53,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/250/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
@@ -183,7 +183,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
@@ -215,9 +215,9 @@
   },
   "active": "960da37828087b1c",
   "lastOpenFiles": [
-    "All/README.md",
-    "Course/270/Lecture Notes.md",
     "Cheating sheat.md",
+    "Course/270/Lecture Notes.md",
+    "All/README.md",
     "Course/250/Lecture Notes.md",
     "Course/250/Exercise.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
