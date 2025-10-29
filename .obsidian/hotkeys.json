@@ -6,5 +6,23 @@
       ],
       "key": "X"
     }
+  ],
+  "graph:open": [],
+  "obsidian-git:commit-smart": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ],
+  "obsidian-git:push2": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "P"
+    }
   ]
 }
