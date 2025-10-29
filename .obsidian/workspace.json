@@ -209,15 +209,17 @@
       "command-palette:打开命令面板": false,
       "bases:创建新数据库": true,
       "markdown-table-editor:Open Markdown Table Editor": false,
-      "markdown-importer:打开 Markdown 格式转换器": false
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "960da37828087b1c",
   "lastOpenFiles": [
+    "All/README.md",
+    "Course/270/Lecture Notes.md",
     "Cheating sheat.md",
     "Course/250/Lecture Notes.md",
     "Course/250/Exercise.md",
-    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/270/Slides/T6 Latch & FF.pdf",
     "Course/215/Lecture Notes.md",
@@ -245,7 +247,6 @@
     "().md",
     "image.png",
     "image-1.png",
-    "All/README.md",
     "image2.png",
     "image1.png",
     "设置.png",
