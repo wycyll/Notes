@@ -870,6 +870,7 @@ endmodule
 
 ## Testbench
 Tester 输入到 UUT (Unit Under Test)里，形成 Testbench，testbench 既没有输入也没有输出
+注意变量类型！
 ```verilog
 module Test_Bench;
   parameter half_period = 50;
