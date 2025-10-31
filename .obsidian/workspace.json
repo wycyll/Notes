@@ -8,7 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b1c6263256644c55",
+            "id": "2c714ad3fd9377f8",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/270/Slides/T8 Counter.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "T8 Counter"
+            }
+          },
+          {
+            "id": "960da37828087b1c",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,49 +32,9 @@
               "icon": "lucide-file",
               "title": "Lecture Notes"
             }
-          },
-          {
-            "id": "2c714ad3fd9377f8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/270/Slides/T7 Verilog HDL.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "T7 Verilog HDL"
-            }
-          },
-          {
-            "id": "82c133c94bd68262",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Course/215/Exercise.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Exercise"
-            }
-          },
-          {
-            "id": "960da37828087b1c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Course/250/Lecture Notes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture Notes"
-            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -183,9 +155,9 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": false,
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
@@ -197,7 +169,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 242
+    "width": 255
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,6 +187,12 @@
   },
   "active": "960da37828087b1c",
   "lastOpenFiles": [
+    "Course/270/Slides/T8 Counter.pdf",
+    "Course/215/Exercise.md",
+    "Course/270/Lecture Notes.md",
+    "Course/270/Slides/T7 Verilog HDL.pdf",
+    "Course/270/Slides/T9 Register & Shifter.pdf",
+    "Course/250/Lecture Notes.md",
     "Course/250/Slides/7_Lecture_Outline2024.ppt",
     "Course/250/Slides/5_Lecture_Outline2024.ppt",
     "Course/250/Slides/4_Lecture_Outline2024.ppt",
@@ -222,17 +200,10 @@
     "Course/250/Slides/24_Lecture_Outline2024.ppt",
     "Course/250/Slides/27_Lecture_Outline2024.ppt",
     "Course/250/Exercise.md",
-    "Course/250/Lecture Notes.md",
     "Cheating sheat.md",
-    "Course/270/Lecture Notes.md",
     "All/README.md",
-    "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/270/Slides/T6 Latch & FF.pdf",
     "Course/215/Lecture Notes.md",
-    "Course/215/Exercise.md",
-    "Course/270/Slides/T5 Combinational Circuit.pdf",
-    "Course/215/Slides/ECE2150J_C05.pdf",
-    "Course/215/Slides/ECE2150J_C04.pdf",
     "Daily/Excel.md",
     "Course/270/Topic 2.md",
     "Basic Logic Gates 1.md",

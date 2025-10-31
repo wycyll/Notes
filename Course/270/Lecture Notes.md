@@ -863,6 +863,7 @@ Param_Examp G1 (y1_out, b1, c1);
 Param_Examp #(4, 5) G2 (y2_out, b2, c2);
 endmodule
 ```
+#### Parameter Annotation
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251023185927122.png)
 
 - 优势：同一模块可适配不同需求（如 8 位 / 4 位数据处理），减少代码冗余
@@ -893,7 +894,34 @@ endmodule
 ```
 
 - 核心：
-    - `initial` 块：用于生成一次性激励（如复位、输入数据变化），仅执行一次；
-    - `always` 块：用于生成周期性信号（如时钟），循环执行；
-    - `#time`：表示延迟（单位由仿真工具设定，如 ns）；
-    - `$stop`：仿真结束命令。
+    - `initial` 块：用于生成一次性激励（如复位、输入数据变化），仅执行一次
+    - `always` 块：用于生成周期性信号（如时钟），循环执行
+    - `#time`：表示延迟（单位由仿真工具设定，如 ns）
+    - `$stop`：仿真结束命令
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251031191230428.png)
+## Procedural Assignments
+左侧必须要是 `reg` 类型
+### Blocking Assignment
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251031185108805.png)
+后面的 statement 会被前面的 block 住，有顺序
+### Nonblocking Assignment
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251031185206700.png)
+前面的语句不会block 后面的，同时进行
+
+## Unwanted Latch
+当 always 块中的条件分支（如 case、if-else）不完整时，Synthesis会生成Latch，导致逻辑错误
+- 错误示例：case 无 default，未覆盖所有输入组合
+- 解决方法：添加 default 分支，或在 always块开头初始化变量（如 y_out = 0），确保所有情况下变量都有赋值
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251031190609137.png)
+如果不加 y=0; 写成
+```Verilog
+if ({a2,a1} == 2'b11) y=1; else
+if ({a2,a1} == 2'b01) y=0; else
+if ({a2,a1} == 2'b10) y=0; else
+if ({a2,a1} == 2'b00) y=0;
+```
+这样还是会有 unwanted latch
+variable 有 4 种取值：'0' = 0 ; '1' = 1; 'x' = unknown; 'z' = high impedence;
+再加上 else y=0; 才不会有 unwanted latch
+
+# Counter
