@@ -33,8 +33,7 @@
               "title": "Lecture Notes"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,13 +154,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/270/Slides/T8 Counter.pdf",
                 "followCursor": false,
                 "showSearch": true,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "T8 Counter 的大纲"
             }
           }
         ],
@@ -185,11 +184,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "960da37828087b1c",
+  "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T8 Counter.pdf",
     "Course/215/Exercise.md",
-    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/250/Lecture Notes.md",
