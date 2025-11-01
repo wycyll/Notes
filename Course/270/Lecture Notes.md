@@ -926,3 +926,4 @@ variable 有 4 种取值：'0' = 0 ; '1' = 1; 'x' = unknown; 'z' = high impedenc
 再加上 else y=0; 才不会有 unwanted latch
 
 # Counter
+## Synchrnous Counter
