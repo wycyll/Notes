@@ -163,9 +163,19 @@
               "icon": "lucide-list",
               "title": "Lecture Notes 的大纲"
             }
+          },
+          {
+            "id": "fd37576787281f3c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -185,7 +195,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d539d89ccc07b209",
+  "active": "960da37828087b1c",
   "lastOpenFiles": [
     "Course/270/Slides/T8 Counter.pdf",
     "Course/270/Lecture Notes.md",

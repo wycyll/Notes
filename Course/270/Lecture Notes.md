@@ -926,4 +926,30 @@ variable 有 4 种取值：'0' = 0 ; '1' = 1; 'x' = unknown; 'z' = high impedenc
 再加上 else y=0; 才不会有 unwanted latch
 
 # Counter
+1. 计数格式多样性
+	计数器是一种数字电路，可以不同格式对数值进行计数
+	- binary
+	- decimal（通常为 BCD 编码）：将十进制数用二进制数编码（如9编码为 `1001`），适用于数码管显示等 “人类直观读数” 的场景
+	- signed：通过补码等方式表示正负（如 8 位有符号数范围 `-128~127`），用于需要正负计数的场景（如温度传感器的正负温度计数）
+	- unsigned：仅表示非负数（范围 `0~2ⁿ-1`），是最常见的默认格式
+2. 硬件构成：n 位计数器由 n 个触发器组成
+3. 计数范围：最多计$2^n - 1$个整数
+4. 计数方向：Up或Down
+5. 分类：异步计数器 vs 同步计数器
+
+| 类别                                  | 时钟同步方式                  | 优点                      | 缺点                                   | 典型场景                             |
+| ----------------------------------- | ----------------------- | ----------------------- | ------------------------------------ | -------------------------------- |
+| Asynchrnous Counter(Ripple Counter) | 前级 FF的输出（Q）驱动后级 FF的 clk | 结构简单，无需复杂组合逻辑           | 存在 “纹波延迟”，触发器状态更新不同步，计数频率受限（高速场景易出错） | 低速、简单计数（如 LED 流水灯的节拍控制）          |
+| Synchronous Counter                 | 所有 FF共享全局 clk，同一时钟沿同步更新 | 无纹波 delay，时序稳定，可工作在高频场景 | 组合逻辑稍复杂（需推导每个触发器的 “下一状态” 逻辑）         | 绝大多数数字系统（如 CPU 的程序计数器、FPGA 的定时器） |
+
 ## Synchrnous Counter
+ - All FFs are triggered by the same clock
+ - May be implemented by different types of flip-flops (D, T or JK, D 比较常用)
+## Binary Counter
+用 characteristic table 来设计 combinational circuit 的部分
+Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 input
+用 Kmap 等方式设计电路
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183302656.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183315962.png) |
+| :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+  
