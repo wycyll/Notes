@@ -985,31 +985,58 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183302656.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183315962.png) |
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+### Alternative
+- High level (Register Transfer Language-*RTL*) design w/ cpmbinational and sequential building blocks
+- 需要 N-input AND gate to detect terminal count (*TC*) TC=1 when terminal number is reached
+- 如果是 down counter, TC 就用 NOR 来实现（全是 0 输出 1）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102210749159.png)
+加上 control signal
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102210801858.png)
+> CE 或者 ld 为 1 的时候允许 register load
+> 如果 ld 为 0 说明要+1，此时也要 load
+> 如果 ld 为 1 但是 CE 为 0，load 完的结果也是保持原状
 ### Customize Counting Sequence
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102200820641.png)
 想要 count 6 个数，0-5，通过 AND 实现
 ### Clock Devider
 1. 基本功能
 	时钟分频器的核心作用是降低时钟信号的频率，让 “快时钟” 变成 “慢时钟”
-	- **频率降低，周期变大**：时钟的 “频率（Frequency）” 和 “周期（Clock Cycle）” 成反比（周期 = 1 / 频率）。分频器通过延长周期来降低频率，比如输入时钟周期是 10ns（频率 100MHz），2 分频后周期变为 20ns（频率 50MHz）。
-    
-	- **支持奇数 / 偶数倍分频**：既可以实现 2、4、6 等**偶数倍分频**，也能实现 3、5、7 等**奇数倍分频**，灵活适配不同场景的速度需求。
-    
-- **应用场景**：为低速设备（如 LCD 显示、按键检测）提供匹配的时钟，同时**降低功耗**（高频时钟会增加电路功耗，低速场景无需高频）。
-    
+	- 频率降低，周期变大：时钟的Frequency 和 Clock Cycle 成反比（周期 = 1 / 频率）。分频器通过延长周期来降低频率
+	- 支持奇数 / 偶数倍分频
+	- 应用场景：为低速设备（如 LCD 显示、按键检测）提供匹配的时钟，同时*降低功耗*（高频时钟会增加电路功耗，低速场景无需高频）
+2. 设计规则
+	- n 是计数器的位宽（即触发器的数量）
+	    - 若 $N=5$，需满足 $2^{2} < 5 \le 2^3$，因此 $n=3$
+	- 计数器需在 0 到 $N-1$** 之间循环计数。例如 $N=5$ 时，计数序列是 $0 \to 1 \to 2 \to 3 \to 4 \to 0$，一个循环包含N个输入时钟周期，从而实现N倍分频
+> Duty cycle 会改变 
 
-### 二、N 倍分频器的通用设计规则（第二张幻灯片）
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102204619413.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102204524477.png)<br> |
+| :-------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------ |
+### Special Counters
+#### Ring Counter
+- 核心特征：
+	- 始终只有 1 个 FF为 1（如 4 位：1000→0100→0010→0001→1000）；
+	- 状态数 = FF数（4 位有 4 个有效状态，利用率低）
+	- D 输入表达式（4 位）：$D₃=Q₀，D₂=Q₃，D₁=Q₂，D₀=Q₁$（循环移位）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102205223126.png)
+##### Alternitive
+这种计数器是 one-hot，可以用 decoder 来实现
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102205402465.png)
+#### Johnson Counter
+one bit by one bit 地输入 1111，再输入 0000
+- 状态转换时仅 1 位变化（低功耗、低干扰）
+- 状态数 = 2× 触发器数（4 位有 8 个有效状态）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102205557523.png)
+#### BCD Counter
+- 仅计 “0~9”（十进制），跳过 1010~1111（6 个无效状态）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102205627699.png)
 
-要实现 “N 倍分频”，需结合 ** 计数器（Counter）** 设计，核心规则如下：
+> 2-bit
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102205728428.png)
 
-#### 1. 计数器位宽选择：\(2^{n-1} < N \le 2^n\)
-
-- n 是计数器的**位宽**（即触发器的数量）。例如：
-    - 若 \(N=5\)，需满足 \(2^{2} < 5 \le 2^3\)，因此 \(n=3\)（3 位计数器，可表示 0~7 共 8 个状态）。
-
-#### 2. 计数范围：\(0 \to 1 \to \dots \to N-1 \to 0\)
-
-计数器需在 **0 到\(N-1\)** 之间循环计数。例如 \(N=5\) 时，计数序列是 \(0 \to 1 \to 2 \to 3 \to 4 \to 0\)，一个循环包含N个输入时钟周期，从而实现N倍分频。
+$BCD_{0}$ 是个位， $BCD_{1}$ 是十位
+当个位变成 9，CE 被 triger，十位加一
+highlight 的 AND 是保证 89->90 的时候不会被清零
 ## Asynchronous Binary Counter
 - 又叫 Ripple Counter
 - 不是被 global clock 控制
@@ -1020,4 +1047,215 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102195034999.png)
 > Timing issue
 
+# Register & Shifter
+- Subsystem
+	内含 combinational & sequential circuit
+	一个完整的数字系统（如 CPU、数字信号处理器）可拆解为两个相互协作的子系统
+	- Datapath: 负责processes、store、route数据 (如 register)
+	- Controller: generate signals to control datapath components based on environment event and state of a circut
+## Example
+- 需求：显示 4 个 8 位数据（温度 T、平均油耗 A、瞬时油耗 I、剩余里程 M）
+- MUX方案：用 4 个 register，需要用 32 wires 来用于输出
+	对于 CPU 来说 pin 和算力都有限
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102213510001.png)
+- Above-Mirror Display 方案：输出 8 bit 的数据，2 bit 的选择信号，1 bit enable，只需要 11 wires 来用于输出
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102214253480.png)
+### Problem
+但是如果需要储存 16 组 32 bit 的数据，MUX 会变得很大
+同时导致 too much fanout，线可能相互接触，造成 signal connect，noise，error
+以及如果 drive too much devices，signal 可能会下降，不够 strong
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102215258923.png)
 
+## Register File
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102221805942.png)
+把多个 register 打包
+- 基本参数：`M×N` 寄存器堆表示M 个 N bit register（如 4×32 表示 4 个 32 位寄存器）
+- 端口组成：
+	- Write: load sth into memory（像 parallel load）
+	    - W_data: 要写入的数据
+	    - W_addr: 要写入的地址
+	    - W_en: 是否允许写入
+	- Read: 不被 clock 控制
+	    - R_data: 读出来的数据
+	    - R_addr: 要读的地址
+	    - R_en: 是否允许读
+以 array 形式存在，类似 memory
+- Write 和 Read 可以在同一个 clock cycle 里发生（作用于同一个 register）
+- Read 的时候如果 Write 了新的数据，读到的东西会变
+
+|       | 31  | 30  | ... | 1   | 0   |
+| :---- | :-- | :-- | :-- | :-- | --- |
+| reg 0 |     |     |     |     |     |
+| reg 1 |     |     |     |     |     |
+| reg 2 |     |     |     |     |     |
+| reg 3 |     |     |     |     |     |
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102222833299.png)
+
+## Shift Register
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102223048361.png)
+- n bit 需要 n clock cycle to update the data
+- $Q_{0}$ 之后就 lost 了
+- 可以 shift left or right
+- 普通 register n bit 共存于一个 rising edge
+### 1. 核心特性与分类
+
+#### （1）基本移位寄存器（右移示例）
+
+- **硬件结构**：n 个 D 触发器串接 —— 前级触发器的`Q`端接后级的`D`端，最高位触发器的`D`端接串行输入（`Din`），最低位的`Q`端接串行输出（`Dout`）；
+- **工作原理**：每个时钟上升沿，数据整体右移 1 位（如 4 位：`Q3Q2Q1Q0`→`Din Q3Q2Q1`）；
+- **Verilog 建模（4 位右移）**：
+    
+    verilog
+    
+    ```verilog
+    module Shift_Reg (Q, Dout, Din, clock);
+        output [3:0] Q;    // 4位并行输出
+        input  Din, clock; // 串行输入、时钟
+        output Dout;       // 串行输出（最低位）
+        reg [3:0] Q;       // 存储移位后的数据
+    
+        always @(posedge clock) begin
+            Q[2:0] <= Q[3:1];  // 右移1位：Q3→Q2，Q2→Q1，Q1→Q0
+            Q[3] <= Din;       // 最高位加载新的串行输入
+        end
+        assign Dout = Q[0];    // 串行输出取最低位
+    endmodule
+    ```
+    
+- **移位过程示例**（初始`Q=0110`，`Din=0`→1→0）：
+    
+    |时钟上升沿|Din|Q（3:0）|Dout|
+    |---|---|---|---|
+    |初始|0|0110|0|
+    |1 次|0|0011|1|
+    |2 次|0|0001|1|
+    |3 次|0|0000|1|
+    |4 次|1|1000|0|
+    |5 次|0|0100|0|
+    
+
+#### （2）旋转寄存器（Rotate Register）—— 循环移位
+
+与普通移位的区别：**最低位的`Q`端反馈到最高位的`D`端**，数据循环移位（无新数据输入）：
+
+- **Verilog 建模（4 位循环右移）**：
+    
+    verilog
+    
+    ```verilog
+    module Barral_Shift_Reg (Q, clock);
+        input  clock;
+        output [3:0] Q;
+        reg [3:0] Q;
+    
+        always @(posedge clock) begin
+            Q[2:0] <= Q[3:1];  // 右移1位
+            Q[3] <= Q[0];      // 最低位Q0反馈到最高位Q3
+        end
+    endmodule
+    ```
+    
+- **移位过程**（初始`Q=0110`）：`0110`→`0011`→`1001`→`1100`→`0110`（循环）。
+
+#### （3）通用移位寄存器（Universal Shift Register）—— 多功能集成
+
+工程中常用 “通用移位寄存器”，支持**并行加载、左移、右移、保持**4 种功能，通过控制信号（`load`、`shift_ctrl`）选择模式：
+
+- **控制逻辑**：每个触发器的`D`端前加 4 选 1 MUX，根据控制信号选择输入（并行数据 / 左移前级 / 右移前级 / 自身）；
+- **核心功能表**：
+    
+    |load|shift_ctrl|功能|
+    |---|---|---|
+    |1|X|并行加载（Q=Din）|
+    |0|00|保持（Q 不变）|
+    |0|01|左移（Q=Q<<1）|
+    |0|10|右移（Q=Q>>1）|
+    
+
+## 四、进阶扩展 2：移位器（Shifter）—— 组合逻辑移位部件
+
+注意：**移位器（Shifter）≠移位寄存器**—— 移位器是**组合逻辑部件**（无存储功能，即时移位），移位寄存器是**时序逻辑部件**（有存储，时钟触发）。
+
+### 1. 核心特性与分类
+
+- **基本功能**：对输入数据进行 “左移 / 右移 n 位”，移位后的数据即时输出（无时钟依赖）；
+- **关键应用**：
+    - 左移 1 位 = 乘以 2（如`0011`→`0110`，3→6）；
+    - 右移 1 位 = 除以 2（如`0110`→`0011`，6→3）；
+- **分类**：
+    - 固定移位（如仅左移 1 位）；
+    - 可变移位（如可左移 0~7 位，通过级联实现）。
+
+### 2. Verilog 建模（4 位可变移位器）
+
+以 “4 位左移 0/1 位” 为例，`sh=1`左移 1 位（补 0），`sh=0`保持：
+
+verilog
+
+```verilog
+module Shifter_0_or_1 (Q, I, in, sh);
+    parameter size = 4;  // 4位
+    input  [size-1:0] I;  // 输入数据
+    input  in;            // 移位补值（如左移补0）
+    input  sh;            // 移位控制（1=移位，0=保持）
+    output reg [size-1:0] Q;  // 输出数据
+
+    // 组合逻辑：输入变化立即输出
+    always @(sh, in, I) begin
+        if (sh) begin
+            Q[size-1:1] = I[size-2:0];  // 左移1位：I[2]→Q[3], I[1]→Q[2], I[0]→Q[1]
+            Q[0] = in;                  // 最低位补in（如0）
+        end else begin
+            Q = I;  // 保持
+        end
+    end
+endmodule
+```
+
+### 3. 工程应用：温度转换与平均计算
+
+文档举了两个经典应用，体现移位器的高效性：
+
+#### （1）摄氏度→华氏度近似转换
+
+- 精确公式：`F = C×9/5 + 32`（乘法 / 除法复杂）；
+- 近似公式：`F = C×2 + 32`（左移 1 位实现 ×2，组合逻辑简单）；
+- 硬件实现：8 位左移器（C 左移 1 位）+ 8 位加法器（加 32），大幅简化电路。
+
+#### （2）温度平均值计算
+
+- 需求：4 个温度值（T1~T4）求平均；
+- 步骤：T1+T2+T3+T4 → 除以 4（右移 2 位）；
+- 优势：右移 2 位替代除法器，硬件资源更少、速度更快。
+
+## 五、关键区别与工程设计规范
+
+### 1. 易混淆部件对比
+
+|部件|逻辑类型|核心功能|时钟依赖|典型应用|
+|---|---|---|---|---|
+|寄存器（Register）|时序|存储多 bit 数据|是|数据缓存|
+|寄存器堆（RF）|时序|多寄存器地址化管理|是|CPU 通用寄存器组|
+|移位寄存器|时序|存储 + 移位|是|串并转换（UART）|
+|移位器（Shifter）|组合|即时移位（无存储）|否|乘除法近似|
+
+### 2. Verilog 建模规范
+
+- **时序逻辑（寄存器 / 移位寄存器 / RF）**：
+    - 敏感列表必须包含时钟（`posedge clk`），异步控制（如复位）需加入敏感列表；
+    - 赋值用 **非阻塞赋值（<=）**，避免竞争冒险；
+    - 用`parameter`实现参数化（位宽、寄存器数量），提高复用性。
+- **组合逻辑（移位器）**：
+    - 敏感列表包含所有输入（或用`always @(*)`）；
+    - 赋值用 **阻塞赋值（=）**，确保即时更新；
+    - 避免 “latch 隐患”（所有输入组合必须覆盖，无悬空赋值）。
+
+## 六、总结
+
+寄存器与移位器是数字系统数据通路的 “基石”：
+
+- **寄存器**：解决 “数据存储” 问题，寄存器堆进一步优化多寄存器管理；
+- **移位寄存器**：解决 “存储 + 移位” 问题，用于串并转换等时序场景；
+- **移位器**：解决 “即时移位” 问题，用于高效实现乘除法等运算；
+
+它们的设计直接影响数字系统的**性能（速度）、功耗、资源占用**，工程中需根据需求选择合适部件（如低速场景用移位寄存器，高速场景用移位器 + 寄存器组合），并通过参数化 Verilog 建模提高设计复用性。

@@ -114,3 +114,61 @@ module Test_Bench;
     end
 endmodule
 ```
+
+# Register & Shifter
+## Register
+
+```verilog
+   module Reg_N_bits (Q, Din, clock);
+   parameter size = 4;  // 默认4位，可修改
+   input  [size-1:0] Din;  // n位并行数据输入
+   input  clock;            // 时钟（上升沿触发）
+   output reg [size-1:0] Q; // n位输出（reg类型存储状态） 
+  // 时序逻辑：时钟上升沿更新状态
+   always @(posedge clock) begin
+   Q <= Din;  // 非阻塞赋值（时序逻辑必用）
+   end
+  endmodule
+   ```
+
+### Load
+```verilog
+module Reg_N_bits (Q, Din, clock, load);
+parameter size = 4;
+input  [size-1:0] Din;
+input  clock, load;
+output reg [size-1:0] Q;
+always @(posedge clock) begin
+if (load) Q <= Din;  
+// else Q <= Q;  
+end
+endmodule
+```
+> 本来需要写 else 防止 unwanted latchm，但是此时没关系，因为其他情况都需保持 Q
+
+### Testbench
+
+```verilog
+module Test_Bench;
+parameter half_period = 50;  
+parameter reg_size = 3;      
+wire [reg_size-1:0] Q;       
+reg [reg_size-1:0] Din;     
+reg clock, load;             
+
+Reg_N_bits #(reg_size) UUT (Q, Din, clock, load);
+
+always #half_period clock = ~clock;
+
+initial begin
+#0  clock = 0; Din = 0; load = 0;  // 初始状态
+#200 Din = 5; load = 1;            // 200单位后：加载5（101）
+        #100 load = 0;                     // 300单位后：取消加载（保持）
+        #200 Din = 3;                      // 500单位后：Din变3，但load=0，Q不变
+        #200 load = 1;                     // 700单位后：重新加载3（011）
+        #1000 $stop;                       // 1000单位后停止仿真
+    end
+endmodule
+```
+
+- **仿真结果**：`Q`仅在`load=1`且时钟上升沿时，跟随`Din`变化（如 200 单位后`Q=5`，700 单位后`Q=3`），`load=0`时保持不变。
