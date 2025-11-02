@@ -189,7 +189,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -209,7 +209,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "960da37828087b1c",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
