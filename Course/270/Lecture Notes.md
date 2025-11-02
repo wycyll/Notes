@@ -947,6 +947,37 @@ Verilog: [[Verilog#Counter]]
 ## Synchronous Counter
  - All FFs are triggered by the same clock
  - May be implemented by different types of flip-flops (D, T or JK, D 比较常用)
+### Control Signal
+#### Load
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102195130143.png)
+- 功能：
+	通过 `load` 信号(Synchronous)，将外部数据 `Dat` 直接加载到计数器，定制计数起始值（如从 8 开始计数，而非 0）
+- 实现原理：
+	在 D 触发器的 D 输入前加**2 选 1 MUX**：
+	- 当 `load=1` 时，MUX 选择 `Dat`，把 Dat 作为计数起点
+	- 当 `load=0` 时，MUX 选择 “Q+1”（正常计数）
+#### CE
+> Count Enable
+- 功能：
+	通过 `CE` 信号控制 “是否计数”
+	- `CE=1`：时钟边沿计数（Q=Q+1）
+	- `CE=0`：保持当前值（Q=Q）
+- 典型用途：
+	- 等待外部应答信号（如其他模块准备好后再计数）Wait certain acknowledge signal coming from other device
+	- 多计数器级联（用前级的 `CEO` 控制后级的 `CE`）Concatenate small counters into bigger ones
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102195543998.png)
+#### Priority
+
+| reset | load | CE    | Action on the rising clock edge |
+| :---- | :--- | :---- | :------------------------------ |
+| 1     | X    | X<br> | Clear (Qn&lt;=0)                |
+| 0     | 1    | X     | Load(Qn<=Dn)                    |
+| 0     | 0    | 1     | Count                           |
+| 0     | 0    | 0     | Hold                            |
+### CEO
+加一个 *output*
+如果 CEO 为 1，说明 count 到了最大的数，还在 count
+$CEO=CE\cdot Q_{n-1}\cdot Q_{n-1}\dots Q_{0}$
 ### Binary Counter
 用 characteristic table 来设计 combinational circuit 的部分
 Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 input
@@ -954,10 +985,39 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183302656.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183315962.png) |
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+### Customize Counting Sequence
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102200820641.png)
+想要 count 6 个数，0-5，通过 AND 实现
+### Clock Devider
+1. 基本功能
+	时钟分频器的核心作用是降低时钟信号的频率，让 “快时钟” 变成 “慢时钟”
+	- **频率降低，周期变大**：时钟的 “频率（Frequency）” 和 “周期（Clock Cycle）” 成反比（周期 = 1 / 频率）。分频器通过延长周期来降低频率，比如输入时钟周期是 10ns（频率 100MHz），2 分频后周期变为 20ns（频率 50MHz）。
+    
+	- **支持奇数 / 偶数倍分频**：既可以实现 2、4、6 等**偶数倍分频**，也能实现 3、5、7 等**奇数倍分频**，灵活适配不同场景的速度需求。
+    
+- **应用场景**：为低速设备（如 LCD 显示、按键检测）提供匹配的时钟，同时**降低功耗**（高频时钟会增加电路功耗，低速场景无需高频）。
+    
+
+### 二、N 倍分频器的通用设计规则（第二张幻灯片）
+
+要实现 “N 倍分频”，需结合 ** 计数器（Counter）** 设计，核心规则如下：
+
+#### 1. 计数器位宽选择：\(2^{n-1} < N \le 2^n\)
+
+- n 是计数器的**位宽**（即触发器的数量）。例如：
+    - 若 \(N=5\)，需满足 \(2^{2} < 5 \le 2^3\)，因此 \(n=3\)（3 位计数器，可表示 0~7 共 8 个状态）。
+
+#### 2. 计数范围：\(0 \to 1 \to \dots \to N-1 \to 0\)
+
+计数器需在 **0 到\(N-1\)** 之间循环计数。例如 \(N=5\) 时，计数序列是 \(0 \to 1 \to 2 \to 3 \to 4 \to 0\)，一个循环包含N个输入时钟周期，从而实现N倍分频。
 ## Asynchronous Binary Counter
 - 又叫 Ripple Counter
 - 不是被 global clock 控制
 
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102191203703.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102191242156.png) |
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+### Problem
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102195034999.png)
+> Timing issue
+
 
