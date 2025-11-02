@@ -819,6 +819,7 @@ always @(posedge clk or posedge rst) begin
 end
 endmodule
 ```
+> 💜注意：Asynchrnous reset 需要用 posedge 来触发 (active high)
 ### Register
 ```verilog
 module D_reg4 (Data_in, clock, reset, Data_out);
@@ -942,14 +943,16 @@ variable 有 4 种取值：'0' = 0 ; '1' = 1; 'x' = unknown; 'z' = high impedenc
 | Asynchrnous Counter(Ripple Counter) | 前级 FF的输出（Q）驱动后级 FF的 clk | 结构简单，无需复杂组合逻辑           | 存在 “纹波延迟”，触发器状态更新不同步，计数频率受限（高速场景易出错） | 低速、简单计数（如 LED 流水灯的节拍控制）          |
 | Synchronous Counter                 | 所有 FF共享全局 clk，同一时钟沿同步更新 | 无纹波 delay，时序稳定，可工作在高频场景 | 组合逻辑稍复杂（需推导每个触发器的 “下一状态” 逻辑）         | 绝大多数数字系统（如 CPU 的程序计数器、FPGA 的定时器） |
 
-## Synchrnous Counter
+## Synchronous Counter
  - All FFs are triggered by the same clock
  - May be implemented by different types of flip-flops (D, T or JK, D 比较常用)
-## Binary Counter
+### Binary Counter
 用 characteristic table 来设计 combinational circuit 的部分
 Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 input
 用 Kmap 等方式设计电路
 
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183302656.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183315962.png) |
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-  
+## Asynchronous Binary Counter
+- 又叫 Ripple Counter
+

@@ -175,7 +175,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -195,7 +195,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "960da37828087b1c",
+  "active": "d539d89ccc07b209",
   "lastOpenFiles": [
     "Course/270/Slides/T8 Counter.pdf",
     "Course/270/Lecture Notes.md",
