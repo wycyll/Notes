@@ -130,7 +130,6 @@ endmodule
    end
   endmodule
    ```
-
 ### Load
 ```verilog
 module Reg_N_bits (Q, Din, clock, load);
@@ -145,9 +144,7 @@ end
 endmodule
 ```
 > 本来需要写 else 防止 unwanted latchm，但是此时没关系，因为其他情况都需保持 Q
-
 ### Testbench
-
 ```verilog
 module Test_Bench;
 parameter half_period = 50;  
@@ -161,14 +158,103 @@ Reg_N_bits #(reg_size) UUT (Q, Din, clock, load);
 always #half_period clock = ~clock;
 
 initial begin
-#0  clock = 0; Din = 0; load = 0;  // 初始状态
-#200 Din = 5; load = 1;            // 200单位后：加载5（101）
-        #100 load = 0;                     // 300单位后：取消加载（保持）
-        #200 Din = 3;                      // 500单位后：Din变3，但load=0，Q不变
-        #200 load = 1;                     // 700单位后：重新加载3（011）
-        #1000 $stop;                       // 1000单位后停止仿真
-    end
+#0  clock = 0; Din = 0; load = 0;  
+#200 Din = 5; load = 1;         
+#100 load = 0;                 
+#200 Din = 3;                     
+#200 load = 1;                  
+#1000 $stop;                       
+end
 endmodule
 ```
 
-- **仿真结果**：`Q`仅在`load=1`且时钟上升沿时，跟随`Din`变化（如 200 单位后`Q=5`，700 单位后`Q=3`），`load=0`时保持不变。
+## Register Files
+```verilog
+module memory (R_data, W_data, W_addr, R_addr, W_en, R_en, clock);
+    parameter width = 32;       // register位宽（32位）
+    parameter addr_width = 2;   // address有几个bit（2位→4个寄存器）
+    parameter number = 2**addr_width;  // register数量（4）
+
+    output reg [width-1:0] R_data;  // 读数据输出
+    input  [width-1:0] W_data;      // 写数据输入
+    input  [addr_width-1:0] W_addr, R_addr;  // 写/读地址
+    input  W_en, R_en, clock;
+
+    reg [width-1:0] memory [number-1:0]; //🐾columns rows
+
+    always @(R_en, R_addr, memory) begin
+        R_data = 'bz;  // 读使能无效时，输出高阻（避免总线冲突）
+        if (R_en) R_data = memory[R_addr];  // 读使能有效，输出目标寄存器值
+    end
+
+    // 写操作（时序逻辑：仅时钟上升沿生效）
+    always @(posedge clock) begin
+        if (W_en) memory[W_addr] = W_data; 
+    end
+endmodule
+```
+### Testbench
+```verilog
+module test_RF;
+parameter width = 32, addr_width = 2, number = 2**addr_width;
+parameter duty_c = 20, period = 100;
+reg  [width-1:0]        W_data;
+reg  [addr_width-1:0]   W_addr, R_addr;
+reg                     W_en, R_en, clock;
+wire [width-1:0]        R_data;
+
+memory UUT (R_data, W_data, W_addr, R_addr, W_en, R_en, clock);
+
+initial begin
+#0    clock=0; W_data=0; W_addr=0; R_addr=0; W_en=0; R_en=0;
+#100 W_data=9; W_addr=3; W_en=1;    #100 W_data=22; W_addr=1; W_en=1;
+#100 W_en=0; R_en=1; R_addr=3;      #100 R_en = 0;
+#100 W_data=177; W_addr=2; W_en=1;  #50  R_addr=1; R_en=1;
+#50  W_data=555; W_addr=3;          #50  R_addr=3;
+end
+
+always begin #(period-duty_c) clock=~clock; #duty_c clock=~clock; end
+
+initial #1000 $stop;
+endmodule
+```
+## Shift Register
+```verilog
+module Shift_Reg(Q,Dout,Din,clock);
+input clock,Din;
+output Dout;
+output reg [3:0] Q;
+always @ (posedge clock) begin
+Q[2:0] < = Q[3:1];
+Q[3] < = Din;
+end
+assign Dout = Q[0];
+endmodule
+```
+### Testbench
+```verilog
+module Test_Bench;
+  parameter half_period = 50;
+  wire [3:0] Q;  wire Dout;  reg  Din, clock;
+
+  Shift_Reg UUT (Q, Dout, Din, clock);
+
+  initial begin
+    $display("**********************************************************");
+    $display("The textual simulation results:");
+$display("**********************************************************");
+    $monitor($time,,"clock = %d  Din = %b  Q = %b  Dout = %d",
+             clock, Din, Q, Dout);
+  end
+
+  initial begin
+    #0    clock = 0; Din = 0;
+    #300 Din = 1;
+    #400 Din = 0;
+  end
+
+  always #half_period clock = ~clock;
+
+  initial #1000 $stop;
+endmodule
+```

@@ -64,8 +64,10 @@ repeat sign bit w/o changing the value
 ### 计算
 有**overflow** 需要加上carry，否则不加
 检查方法：
-![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250920230942319.png)
-
+1. ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250920230942319.png)
+2. 如果正+正出现负，或者负+负出现正，就有 overflow
+> 16 进制里以 7/8 为界 <=7 是正的反之为负
+> 8 进制里以 3/4 为界 <=3 是正的反之为负
 # Basic Logic Gates
 ## 晶体管 (Transistor)
 本质：电子开关 Electronic switch
