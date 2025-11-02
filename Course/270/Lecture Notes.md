@@ -927,6 +927,7 @@ variable 有 4 种取值：'0' = 0 ; '1' = 1; 'x' = unknown; 'z' = high impedenc
 再加上 else y=0; 才不会有 unwanted latch
 
 # Counter
+Verilog: [[Verilog#Counter]]
 1. 计数格式多样性
 	计数器是一种数字电路，可以不同格式对数值进行计数
 	- binary
@@ -955,4 +956,8 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 ## Asynchronous Binary Counter
 - 又叫 Ripple Counter
+- 不是被 global clock 控制
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102191203703.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102191242156.png) |
+| :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 
