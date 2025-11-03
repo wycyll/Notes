@@ -299,3 +299,6 @@ $$
 C = \frac{q}{V}  
 = 4\pi\varepsilon_0 \frac{bc}{c-b}.  
 $$
+
+# 同位素
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251103203722928.png)
