@@ -11,12 +11,14 @@
             "id": "2c714ad3fd9377f8",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Course/270/Slides/T9 Register & Shifter.pdf"
+                "file": "Course/270/Lecture Notes.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "T9 Register & Shifter"
+              "icon": "lucide-file",
+              "title": "Lecture Notes"
             }
           },
           {
@@ -47,8 +49,7 @@
               "title": "Exercise"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -169,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Exercise.md",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Exercise 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -209,15 +210,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "69cf03af9e3486d9",
+  "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/270/Slides/T8 Counter.pdf",
+    "Course/270/Slides/T9 Register & Shifter.pdf",
+    "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
     "Course/250/Slides/~$7_Lecture_Outline2024.ppt",
-    "Course/250/Exercise.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Verilog.md",
-    "Course/270/Slides/T9 Register & Shifter.pdf",
-    "Course/270/Slides/T8 Counter.pdf",
     "Course/215/Exercise.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/250/Slides/7_Lecture_Outline2024.ppt",

@@ -545,16 +545,27 @@ $\Phi_B = \int \vec{B} \cdot d\vec{A} = \int B\cos\phi dA$
 - 弯曲导线
 对任意弯曲导线，需将其分解为无数电流元$I d\vec{l}$，每个电流元受力$d\vec{F} = I d\vec{l} \times \vec{B}$，总力为矢量积分：$\vec{F} = \int I d\vec{l} \times \vec{B}$
 ## Magnetic Dipole Moment & Torque
-#### 磁矩
+### 磁矩
 电流环的 “磁偶极矩”$\vec{\mu}$（类比电偶极矩）：$\mu = IA$
-- A：电流环的面积（方向由右手螺旋定则：四指沿电流方向，拇指指向$\vec{\mu}$）；
-- 多匝线圈：$\mu = NIA$（N为匝数）。
-#### 力矩
+- A：电流环的面积（方向由右手螺旋定则：四指沿电流方向，拇指指向$\vec{\mu}$）
+- 多匝线圈：$\mu = NIA$（N为匝数）
+### 力矩
 均匀磁场中，电流环受的力矩：$\tau = \mu B\sin\phi$
 推导: $F=IaB$ , $\tau=2F\left( \frac{b}{2}\right)\sin \phi=IBa(b\sin \phi)$
 $\tau=IBA\sin \phi$, $\mu=IA$
 - $\phi$：$\vec{\mu}$与$\vec{B}$的夹角
 - 矢量形式：$\vec{\tau} = \vec{\mu} \times \vec{B}$
+电动机：$U=-\vec{\mu}\cdot \vec{B}$
+### Bohr Magneton
+1. 电流与周期
+	- 运动周期T：电子绕圆一周的时间，$T = \frac{2\pi r}{v}$；
+	- 等效电流I：单位时间内通过的电荷量，$I = \frac{e}{T} = \frac{ev}{2\pi r}$。
+2. 电流环的面积与磁矩
+	电流环的面积 $A = \pi r^2$，代入磁矩公式：$\mu = I A = \frac{ev}{2\pi r} \cdot \pi r^2 = \frac{evr}{2}$
+3. 与角动量的关联
+	电子的轨道角动量 $L = mvr$（m为电子质量），因此 $vr = \frac{L}{m}$。将其代入磁矩公式：$\mu = \frac{e}{2m} L$
+4. 量子化
+	玻尔模型中，电子角动量**量子化**，最小角动量为 $L = \frac{h}{2\pi}$（h为普朗克常量）代入上式得：$\mu = \frac{e}{2m} \cdot \frac{h}{2\pi} = \frac{eh}{4\pi m}$ 这就是玻尔磁子（记为 $\mu_B$），是电子轨道磁矩的基本单位，数值约为 $9.27 \times 10^{-24}\ \text{A·m}^2$，用于描述原子、分子的磁矩大小
 ## Magnetic Materials
 ### Magnetic Domains
 - 定义：磁性材料内部的 “小磁体”（由原子磁矩因 “交换作用” 自发对齐形成），每个磁畴尺寸约$10^{-6} \sim 10^{-3}\ \text{m}$；
