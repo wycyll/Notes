@@ -476,5 +476,95 @@ $\oint \vec{D} \cdot d\vec{A} = Q_{\text{encl-free}}$ 或等价地（代入 $\ve
 
 结合电流密度$J_x = nqv_d$和平衡条件$E_z = v_dB_y$，联立得：$nq = \frac{-J_xB_y}{E_z}$
 - 物理意义：通过测量 $J_x$、$B_y$、$E_z$，可计算载流子的 “浓度n× 电荷量q”，进而判断载流子类型（q的正负）和浓度n
-
+- 原理
+	导体通电流 I 并置于垂直磁场 B 中，载流子受洛伦兹力偏转，导体两侧积累电荷，产生 “霍尔电压” $V_H$
 # Magnetic
+## Magnetic Field
+### Earth
+
+| Geographic Pole       | 地磁极（Geomagnetic Pole） | 核心作用                 |
+| --------------------- | --------------------- | -------------------- |
+| North Geographic Pole | Magnetic South Pole   | 吸引指南针 N 极，使指南针指向地理北极 |
+| South Geographic Pole | Magnetic North Pole   | 吸引指南针 S 极            |
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251103215827838.png)
+
+### Moving Charge 电荷
+- 磁场大小公式：$B = \frac{\mu_0}{4\pi} \cdot \frac{|q|v\sin\phi}{r^2}$
+    其中：
+    - $\mu_0 = 4\pi \times 10^{-7}\ \text{T·m/A}$（真空磁导率，电磁学基本常量）
+    - $\phi$：电荷运动方向（$\vec{v}$）与位置矢量（$\vec{r}$，从电荷指向场点）的夹角
+
+#### Law of Biot and Savart 电流元
+1. 电流元的定义
+	电流元是 “宏观电流的微元”，表示为 $I d\vec{l}$：
+	- I：电流大小；
+	- $d\vec{l}$：导线微元长度矢量，方向与电流方向一致。
+
+2. 毕奥 - 萨伐尔定律公式
+	电流元在距离r处产生的磁场微元：$dB = \frac{\mu_0}{4\pi} \cdot \frac{I dl \sin\phi}{r^2}$
+	- 矢量形式：$d\vec{B} = \frac{\mu_0}{4\pi} \cdot \frac{I d\vec{l} \times \hat{r}}{r^2}$（$\hat{r}$ 是从电流元指向场点的单位矢量，叉乘决定 $d\vec{B}$ 方向）；
+	- 右手定则：拇指指向 $I d\vec{l}$ 方向，四指弯曲方向为 $d\vec{B}$ 的环绕方向（PPT 图 a）；
+	- 总磁场：任意电流的磁场是所有电流元磁场的矢量积分（$\vec{B} = \int d\vec{B}$）。
+
+3. 面电流与体电流
+	对于 “电流分布在表面”（如金属薄板）或 “电流分布在体积内”（如导体内部）的情况，定律可推广为：
+	- 面电流（面电流密度 $\vec{K}$）：$\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \frac{\vec{K}(\vec{r}') \times \hat{r}}{r^2} da'$；
+	- 体电流（电流密度 $\vec{J}$）：$\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \frac{\vec{J}(\vec{r}') \times \hat{r}}{r^2} d\tau'$。
+
+## Magnetic Field Lines
+1. 闭合曲线：磁场线无起点、无终点，形成闭合回路 has no end, form a closed loop
+2. 切线方向：任意点磁场线的切线方向 = 该点磁感应强度 $\vec{B}$ 的方向（是磁场不是力）
+3. 密度反映强度：磁场线越密集，B越大（如磁铁两极磁场线密集，中心稀疏）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251103221809717.png)
+## Magnetic Flux
+$\Phi_B = \int \vec{B} \cdot d\vec{A} = \int B\cos\phi dA$
+- $\phi$：$\vec{B}$与面积元$d\vec{A}$（法线方向）的夹角；
+- 单位：Wb
+### 高斯定律
+由于磁场线闭合，穿过任意闭合面的总磁通量为零：$\oint \vec{B} \cdot d\vec{A} = 0$
+- 物理意义：不存在 “磁单极子”（单独的 N 极或 S 极）—— 电场线始于正电荷、止于负电荷，闭合面电通量可不为零；但磁场线无起止，穿进闭合面的通量与穿出的通量完全抵消
+## Lorentz Force
+- 大小：运动电荷q在磁场$\vec{B}$中受的磁力：$F = |q|vB\sin\phi$
+    - 特殊情况：$\phi=0^\circ$或$180^\circ$（$\vec{v} \parallel \vec{B}$），$F=0$（无作用力）；$\phi=90^\circ$（$\vec{v} \perp \vec{B}$），$F_{\text{max}} = |q|vB$
+- 方向：矢量叉乘$\vec{F} = q\vec{v} \times \vec{B}$，用右手定则判断
+- 关键特性：洛伦兹力不做功
+因$\vec{F} \perp \vec{v}$，力的方向始终垂直于速度方向，做功$W = Fv\cos90^\circ = 0$——电荷速率不变，仅方向改变（动能不变，动量变化），这是带电粒子在磁场中运动的核心特点。
+### 运动轨迹
+1. 圆周
+	- 向心力来源：洛伦兹力提供向心力，$|q|vB = \frac{mv^2}{R}$；
+	- 轨道半径：$R = \frac{mv}{|q|B}$（与速率v成正比，与磁场强度B成反比）；
+	- 回旋周期：$T = \frac{2\pi R}{v} = \frac{2\pi m}{|q|B}$（与速率无关，仅由粒子质量m、电荷量q和B决定）；
+	- 应用：回旋加速器（利用周期与速率无关的特性，持续加速粒子）
+2. Helical Motion
+	若 $\vec{v}$ 有平行于 $\vec{B}$ 的分量 $v_\parallel$ 和垂直分量 $v_\perp$：
+	- $v_\parallel$：不受洛伦兹力，匀速直线运动；
+	- $v_\perp$：受洛伦兹力，做匀速圆周运动；
+## Ampère Force
+- 微观：单个载流子受力$f = qv_dB\sin\phi$，导线中载流子数$N = nAL$（n为载流子浓度，A为横截面积，L为导线长度）；
+- 宏观：总安培力$F = Nf = nAL \cdot qv_dB\sin\phi$，结合电流微观表达式$I = nqAv_d$，得：$F = ILB\sin\phi$
+- 弯曲导线
+对任意弯曲导线，需将其分解为无数电流元$I d\vec{l}$，每个电流元受力$d\vec{F} = I d\vec{l} \times \vec{B}$，总力为矢量积分：$\vec{F} = \int I d\vec{l} \times \vec{B}$
+## Magnetic Dipole Moment & Torque
+#### 磁矩
+电流环的 “磁偶极矩”$\vec{\mu}$（类比电偶极矩）：$\mu = IA$
+- A：电流环的面积（方向由右手螺旋定则：四指沿电流方向，拇指指向$\vec{\mu}$）；
+- 多匝线圈：$\mu = NIA$（N为匝数）。
+#### 力矩
+均匀磁场中，电流环受的力矩：$\tau = \mu B\sin\phi$
+推导: $F=IaB$ , $\tau=2F\left( \frac{b}{2}\right)\sin \phi=IBa(b\sin \phi)$
+$\tau=IBA\sin \phi$, $\mu=IA$
+- $\phi$：$\vec{\mu}$与$\vec{B}$的夹角
+- 矢量形式：$\vec{\tau} = \vec{\mu} \times \vec{B}$
+## Magnetic Materials
+### Magnetic Domains
+- 定义：磁性材料内部的 “小磁体”（由原子磁矩因 “交换作用” 自发对齐形成），每个磁畴尺寸约$10^{-6} \sim 10^{-3}\ \text{m}$；
+- 未磁化状态：磁畴方向随机，宏观磁性抵消
+- 磁化状态：外磁场作用下，磁畴沿磁场方向定向排列，宏观表现出强磁性—— 如铁被磁铁吸引后，内部磁畴对齐，成为 “临时磁体”
+### 分类
+
+| Type             | Magnetization Characteristic | Microscopic Mechanism  | Example         |
+| ---------------- | ---------------------------- | ---------------------- | --------------- |
+| 顺磁质（Paramagnet）  | 微弱磁化，外磁场消失后磁性消失              | 原子固有磁矩沿外磁场轻微对齐，热运动干扰显著 | 铝（Al）、氧气（O₂）    |
+| 抗磁质（Diamagnet）   | 微弱反磁化，外磁场消失后磁性消失             | 原子无固有磁矩，外磁场诱导反向磁矩      | 铜（Cu）、水（H₂O）、青蛙 |
+| 铁磁质（Ferromagnet） | 强磁化，外磁场消失后保留剩磁               | 磁畴结构，外磁场使磁畴大量对齐        | 铁（Fe）、钴（Co）、永磁体 |
+

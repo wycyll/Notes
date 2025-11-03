@@ -302,3 +302,29 @@ $$
 
 # 同位素
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251103203722928.png)
+1. 离子化与加速
+
+铀原子核（带电量 $q = +Ze$，$Z=92$）通过 “离子源” 电离为正离子，进入 “加速电场”（电压 U）：由动能定理：$qU = \frac{1}{2}mv^2 \implies v = \sqrt{\frac{2qU}{m}}$（m 为离子质量，v 为加速后速度）。
+
+2. 速度选择器（选速）
+
+速度选择器由 “垂直的电场 E 和磁场 $B_1$” 组成：
+
+- 电场力：$F_E = qE$（沿 E 方向）；
+- 洛伦兹力：$F_B = qvB_1$（与 E 方向相反）；
+- 仅当 $F_E = F_B$ 时，离子直线通过选择器：$qE = qvB_1 \implies v = \frac{E}{B_1}$（与质量无关，所有离子获得相同速度 v）。
+
+3. 偏转磁场分离
+
+离子进入 “垂直于速度的均匀磁场 $B_2$”，做匀速圆周运动：
+
+- 洛伦兹力提供向心力：$qvB_2 = \frac{mv^2}{R} \implies R = \frac{mv}{qB_2}$；
+- 因 $v = \frac{E}{B_1}$ 相同，$R \propto m$：$m_{238} > m_{235} \implies R_{238} > R_{235}$；
+
+4. 探测与分离
+
+不同半径的圆周运动使铀 - 235 和铀 - 238 的离子打在探测器的不同位置，实现分离。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251103220616535.png)
+
+# 安培力
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251103224227949.png)

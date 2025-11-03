@@ -26,7 +26,7 @@
               "type": "markdown",
               "state": {
                 "file": "Course/250/Lecture Notes.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -212,8 +212,8 @@
   "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
     "Course/250/Lecture Notes.md",
-    "Course/250/Exercise.md",
     "Course/250/Slides/~$7_Lecture_Outline2024.ppt",
+    "Course/250/Exercise.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
