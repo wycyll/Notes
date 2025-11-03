@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/250/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
@@ -155,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -197,10 +197,10 @@
   },
   "active": "960da37828087b1c",
   "lastOpenFiles": [
-    "Course/270/Verilog.md",
-    "Course/270/Lecture Notes.md",
-    "Course/250/Lecture Notes.md",
     "Course/250/Slides/~$7_Lecture_Outline2024.ppt",
+    "Course/270/Lecture Notes.md",
+    "Course/270/Verilog.md",
+    "Course/250/Lecture Notes.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/270/Slides/T8 Counter.pdf",
     "Course/215/Exercise.md",
