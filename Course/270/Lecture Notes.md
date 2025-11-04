@@ -543,16 +543,12 @@ control signal 是 boss，控制变化
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251018152003456.png)
 
 1. Master（主锁存器）：
-    
     1. 当时钟CLK=0时，Master透明（G1=1），跟随输入D的值（P = D）。
-        
     2. 当时钟CLK从0→1（上升沿），Master锁存（G1=0），保存上升沿瞬间的D值。
-        
 2. Slave（从锁存器）：
-    
-    1. 当时钟CLK=0时，Slave锁存（G2=0），保持之前状态（Q = Q2）。
-        
-    2. 当时钟CLK=1时，Slave透明（G2=1），将Master锁存的值（P）传递到输出Q（Q = P）。
+	1. 当时钟CLK=0时，Slave锁存（G2=0），保持之前状态（Q = Q2）。
+	2. 当时钟CLK=1时，Slave透明（G2=1），将Master锁存的值（P）传递到输出Q（Q = P）
+
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251018151950510.png)
 
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251018152211228.png)
@@ -869,7 +865,7 @@ endmodule
 
 ## Testbench
 Tester 输入到 UUT (Unit Under Test)里，形成 Testbench，testbench 既没有输入也没有输出
-注意变量类型！
+注意变量类型！🐾
 ```verilog
 module Test_Bench;
   parameter half_period = 50;
@@ -984,7 +980,7 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183302656.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102183315962.png) |
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 ### Alternative
-- High level (Register Transfer Language-*RTL*) design w/ cpmbinational and sequential building blocks
+- High level (Register Transfer Language-*RTL*) design w/ combinational and sequential building blocks
 - 需要 N-input AND gate to detect terminal count (*TC*) TC=1 when terminal number is reached
 - 如果是 down counter, TC 就用 NOR 来实现（全是 0 输出 1）
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102210749159.png)
@@ -992,7 +988,7 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102210801858.png)
 > CE 或者 ld 为 1 的时候允许 register load
 > 如果 ld 为 0 说明要+1，此时也要 load
-> 如果 ld 为 1 但是 CE 为 0，load 完的结果也是保持原状
+> 如果 ld 为 1 但是 CE 为 0，load 优先级大于 CE
 ### Customize Counting Sequence
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102200820641.png)
 想要 count 6 个数，0-5，通过 AND 实现
