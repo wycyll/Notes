@@ -378,7 +378,7 @@ We don’t always need the speed of two level logic. Multiple levels may yield f
 - 核心功能：实现「3 个 1 位二进制数的加法」
 - 化简：$\text{Sum} = \text{A'B'C} + \text{A'BC'} + \text{AB'C'} + \text{ABC}= \text{A'}(\text{B'C} + \text{BC'}) + \text{A}(\text{B'C'} + \text{BC})$ 
 	令 $\text{D} = \text{B} \oplus \text{C}$，则式子变为：$\text{Sum} = \text{A'D} + \text{AD'}$
-	而 $\text{A'D} + \text{AD'}$ 也是**异或运算**（$\text{A} \oplus \text{D}$）。
+	而 $\text{A'D} + \text{AD'}$ 也是**异或运算**（$\text{A} \oplus \text{D}$）
     将 $\text{D} = \text{B} \oplus \text{C}$ 代回，最终得：$\text{Sum} = \text{A} \oplus \text{B} \oplus \text{C}$
     $\text{Carry} = \text{A'BC} + \text{AB'C} + \text{ABC'} + \text{ABC}= (\text{A} \oplus \text{B})\text{C} + \text{AB}$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251017125705444.png)
@@ -753,7 +753,7 @@ module compare_2_logic (A_lt_B, A_gt_B, A_eq_B, A1, A0, B1, B0);
 input  A1, A0, B1, B0;
 output A_lt_B, A_gt_B, A_eq_B;
 
-// {A1,A0}：将A1（高位）和A0（低位）拼接成2位总线
+// {A1,A0}：将A1（高位）和A0（低位）拼接成2位总线🐾
 assign A_lt_B = ({A1, A0} < {B1, B0});
 assign A_gt_B = ({A1, A0} > {B1, B0});
 assign A_eq_B = ({A1, A0} == {B1, B0});

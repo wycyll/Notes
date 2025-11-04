@@ -48,8 +48,21 @@
               "icon": "lucide-file",
               "title": "Exercise"
             }
+          },
+          {
+            "id": "db417f622dd73f92",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/270/Slides/T8 Counter.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "T8 Counter"
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -170,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/270/Slides/T8 Counter.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "T8 Counter 的大纲"
             }
           },
           {
@@ -210,14 +223,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2c714ad3fd9377f8",
+  "active": "db417f622dd73f92",
   "lastOpenFiles": [
-    "Course/270/Slides/T8 Counter.pdf",
-    "Course/270/Slides/T9 Register & Shifter.pdf",
+    "Course/270/Lecture Notes.md",
     "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
+    "Course/270/Slides/T8 Counter.pdf",
+    "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/250/Slides/~$7_Lecture_Outline2024.ppt",
-    "Course/270/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/215/Exercise.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
