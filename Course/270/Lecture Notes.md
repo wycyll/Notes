@@ -11,6 +11,7 @@ Finite possible values
 易于恢复，某个范围识别为 0，某个范围识别为 1 即可
 ### A/D Conversion
 #### A2D
+> Digitization
 - 核心步骤：
     1. 采样（Sampling）：按固定时间间隔（采样率）采集模拟信号的幅值，将连续时间信号转换为离散时间信号
     2. 量化（Quantization）：将采样得到的幅值映射到有限的数字取值（如用 “00” 表示 0V、“01” 表示 1V 等）
@@ -65,7 +66,7 @@ repeat sign bit w/o changing the value
 有**overflow** 需要加上carry，否则不加
 检查方法：
 1. ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250920230942319.png)
-2. 如果正+正出现负，或者负+负出现正，就有 overflow
+2. 如果正+正出现负，或者负+负出现正，就有 overflow。两个符号相反的一定不overflow
 > 16 进制里以 7/8 为界 <=7 是正的反之为负
 > 8 进制里以 3/4 为界 <=3 是正的反之为负
 # Basic Logic Gates
@@ -108,7 +109,7 @@ F = a AND NOT ( b OR NOT (c) )
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250921004101172.png) 
 
 =  a·( b + c' )'
-**非运算（NOT） > 与运算（AND） > 或运算（OR）**
+非运算（NOT） > 与运算（AND） > 或运算（OR）
 
 ## Other Gates
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250923011925557.png)
@@ -116,7 +117,7 @@ F = a AND NOT ( b OR NOT (c) )
 ==XOR 在两个输入时可用来对比是否相等==
 - 在 CMOS 工艺中，与门（AND）是通过 “与非门（NAND）加非门（NOT）” 实现的
 - 或门（OR）是通过 “或非门（NOR）加非门（NOT）” 实现的
-- 因此，与非门（NAND）和或非门（NOR）在 CMOS 电路中更常被直接制造
+- 因此，NAND和NOR在 CMOS 电路中更常被直接制造
 
 # Boolean Algebra & Optimization
 ## Terminology
@@ -160,9 +161,9 @@ Product of sum 可简写为 POS
 #proof 对右边 $(x + y)(x + z)$ 进行**展开**，利用逻辑运算的基本定律（如分配律、幂等律、吸收律）简化，看是否能得到左边 $x + yz$。
 1. 展开右边： $(x + y)(x + z) = x·x + x·z + y·x + y·z$
     
-2. 利用**幂等律**（$x·x = x$）简化： $= x + xz + xy + yz$
+2. 利用$x·x = x$简化： $= x + xz + xy + yz$
     
-3. 利用**吸收律**（$x + xz = x(1 + z) = x·1 = x$，因为 $1 + z = 1$），同理 $x + xy = x$： $= x + yz$
+3. 利用$x + xz = x(1 + z) = x·1 = x$，因为 $1 + z = 1$，同理 $x + xy = x$： $= x + yz$
 
  9.Absorption
 - (a) $x + xy = x$ 
