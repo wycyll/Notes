@@ -207,7 +207,6 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 ## Gradient
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251014172014504.png)
 
-
 ### 例题
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251014163440567.png)
 - 电势相等的条件（导线连接的导体等势）

@@ -188,10 +188,9 @@ Product of sum 可简写为 POS
 - (b) $(xy)'=x'+y'$
 > **Exercise**
 > ![5ef65baa07f3c6b311ea2e16e0a9bd2b.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/5ef65baa07f3c6b311ea2e16e0a9bd2b.jpg)
-
 ### XOR Properties
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250923153409435.png)
-XOR 可视为比较两个数，相同取 0，不同取 1
+XOR 可视为比较两个数，相同取 0，不同取 1🐾
 > $x\oplus y=x'y+xy'$
 
 $x\odot y=x'y'+xy=(x\oplus y)'$ #XNOR
@@ -222,16 +221,15 @@ $x\odot y=x'y'+xy=(x\oplus y)'$ #XNOR
 > if all the terms are indexed by 0-7,
 > F= $\sum m(1.2.4.7)=\prod M(0.3.5.6)$
 
-
 # Logic Optimization
 ## Criteria
 How to define a "better" circuit?
 
-| 指标                | 定义                         | 估算规则                                                                       |
-| ----------------- | -------------------------- | -------------------------------------------------------------------------- |
-| **延迟（Delay）**     | 输入信号变化到输出稳定的时间，决定电路 “运行速度” | 每个 gate 延迟 = 1 gate-delay（忽略 inverters）寻找 ==critical path（经过 gate 数量最大的）== |
-| **尺寸（Size/Area）** | 电路占用的物理资源，对应实现成本           | 每个门==输入==需 2 个晶体管                                                          |
-| **功耗（Power）**     | CMOS 电路，与开关频率、电压相关         | 动态功耗公式：$P = k \cdot C V^2 f$（k 为常数，C 为电容，V 为电压，f 为频率）                      |
+| 指标        | 定义                         | 估算规则                                                                       |
+| --------- | -------------------------- | -------------------------------------------------------------------------- |
+| Delay     | 输入信号变化到输出稳定的时间，决定电路 “运行速度” | 每个 gate 延迟 = 1 gate-delay（忽略 inverters）寻找 ==critical path（经过 gate 数量最大的）== |
+| Size/Area | 电路占用的物理资源，对应实现成本           | 每个门==输入==需 2 个晶体管                                                          |
+| Power     | CMOS 电路，与开关频率、电压相关         | 动态功耗公式：$P = k \cdot C V^2 f$（k 为常数，C 为电容，V 为电压，f 为频率）                      |
 
 ## Boolean algebraic optimization
 - （algebraic methods）
@@ -247,7 +245,7 @@ How to define a "better" circuit?
 > ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250930133716632.png)
 
 #效果 
-- 主要优化目标：**Size**（减少输入数/晶体管数量）
+- 主要优化目标：Size（减少输入数/晶体管数量）
 - 如果表达式恰好化简成更少的层次，也可能顺带减小 Delay
 ## Two-level size optimization
 - 形式：Sum of Products (AND-OR 或者 OR-AND) → 总是 **两级电路**
@@ -306,11 +304,8 @@ We don’t always need the speed of two level logic. Multiple levels may yield f
 ## Critical Path
 - 定义：电路里从输入到输出的最长延时路径
 - 优化思路：
-    
     - 如果目标是速度（减少 Delay），要缩短 critical path
-        
     - 对非关键路径，可以multi-level，降低 Size
-        
 #效果 综合考虑 delay 与 size/power trade-off 的概念(==both==)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251001210134889.png)
 
@@ -327,7 +322,7 @@ We don’t always need the speed of two level logic. Multiple levels may yield f
 - f：切换频率（单位时间内切换次数越多，总功耗越高）。
 
 方法
- 1. 降低电压：但会导致芯片运行变慢，且电压存在 “下限”（过低则芯片无法正常工作）。
+ 1. 降低电压：但会导致芯片运行变慢，且电压存在 “下限”（过低则芯片无法正常工作）
 2. Use low-power gates
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251001222958316.png)
 

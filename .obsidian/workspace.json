@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/250/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
@@ -61,8 +61,7 @@
               "title": "T8 Counter"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -183,8 +182,8 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
-                "followCursor": false,
+                "file": "Course/250/Lecture Notes.md",
+                "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -223,8 +222,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "960da37828087b1c",
+  "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/270/Lecture Notes.md",
     "Course/250/Lecture Notes.md",
     "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
     "Course/250/Slides/~$2_Lecture_Outline-2023.ppt",
@@ -233,7 +233,6 @@
     "Course/250/Slides/~$4_Lecture_Outline2024.ppt",
     "Course/250/Slides/~$5_Lecture_Outline2024.ppt",
     "Course/270/Slides/T8 Counter.pdf",
-    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/250/Slides/~$7_Lecture_Outline2024.ppt",
     "Course/270/Verilog.md",
