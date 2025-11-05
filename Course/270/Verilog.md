@@ -82,7 +82,7 @@ else if (CE==1'b1) Q< =Q + 1 //🐾always里用< =
 else Q< = Q;
 end
 
-assign CEO= CE & (&Q) //🐾
+assign CEO= CE & (&Q); //🐾
 endmodule
 ```
 ### Test Bench

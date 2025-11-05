@@ -1001,7 +1001,7 @@ Current Value 是 FF 的输出 Q, Next Value 作为下一个要输入 FF 的 inp
 2. 设计规则
 	- n 是计数器的位宽（即触发器的数量）
 	    - 若 $N=5$，需满足 $2^{2} < 5 \le 2^3$，因此 $n=3$
-	- 计数器需在 0 到 $N-1$** 之间循环计数。例如 $N=5$ 时，计数序列是 $0 \to 1 \to 2 \to 3 \to 4 \to 0$，一个循环包含N个输入时钟周期，从而实现N倍分频
+	- 计数器需在 0 到 $N-1$ 之间循环计数。例如 $N=5$ 时，计数序列是 $0 \to 1 \to 2 \to 3 \to 4 \to 0$，一个循环包含N个输入时钟周期，从而实现N倍分频
 > Duty cycle 会改变 
 
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102204619413.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102204524477.png)<br> |
