@@ -163,7 +163,7 @@ $$
 
 $$  
 E_3 = +\frac{\sigma_1 + \sigma_2 + \sigma_3 + \sigma_4}{2\varepsilon_0}  
-= +\frac{2Q}{\varepsilon_0 A}.  
+= +\frac{2Q}{\varepsilon_0 A}.   
 $$
 **物理解读：**  
 内侧两面形成一对等量异号电荷，产生均匀场  
@@ -188,14 +188,14 @@ $$E_1 = E_3 = \frac{2Q}{\varepsilon_0 A}.$$
 
 #### 2. 区域 2：球壳内部（$r < r' < R$）
 
-- 电荷体密度：$\rho = \frac{Q}{\frac{4}{3}\pi(R^3 - r^3)} = \frac{3Q}{4\pi(8r^3 - r^3)} = \frac{3Q}{28\pi r^3}$（因$R=2r$）；
+- 电荷体密度：$\rho = \frac{Q}{\frac{4}{3}\pi(R^3 - r^3)} = \frac{3Q}{4\pi(8r^3 - r^3)} = \frac{3Q}{28\pi r^3}$（因$R=2r$）
 - 高斯面内电荷：$Q_{\text{内}} = \rho \cdot \frac{4}{3}\pi(r'^3 - r^3) = Q \cdot \frac{r'^3 - r^3}{R^3 - r^3}$；
-- 高斯定理：$E_2 \cdot 4\pi r'^2 = \frac{Q_{\text{内}}}{\varepsilon_0} \implies E_2 = \frac{Q(r'^3 - r^3)}{4\pi\varepsilon_0 r'^2 (R^3 - r^3)}$（径向向外）。
+- 高斯定理：$E_2 \cdot 4\pi r'^2 = \frac{Q_{\text{内}}}{\varepsilon_0} \implies E_2 = \frac{Q(r'^3 - r^3)}{4\pi\varepsilon_0 r'^2 (R^3 - r^3)}$（径向向外）
 
 #### 3. 区域 3：球壳外部（$r' > R$）
 
 - 高斯面内电荷$Q_{\text{内}} = Q$；
-- 高斯定理：$E_3 \cdot 4\pi r'^2 = \frac{Q}{\varepsilon_0} \implies E_3 = \frac{Q}{4\pi\varepsilon_0 r'^2}$（与点电荷电场一致）。
+- 高斯定理：$E_3 \cdot 4\pi r'^2 = \frac{Q}{\varepsilon_0} \implies E_3 = \frac{Q}{4\pi\varepsilon_0 r'^2}$（与点电荷电场一致）
 
 ##### 第二步：积分求各区域电势V
 
@@ -205,7 +205,7 @@ $V_3 = \int_{r'}^{\infty} E_3 dr' = \int_{r'}^{\infty} \frac{Q}{4\pi\varepsilon_
 
 #### 2. 区域 2：球壳内部（$r < r' < R$）
 
-需分两段积分（$r' \to R$用$E_2$，$R \to \infty$用$V_3(R)$）：$V_2 = \int_{r'}^{R} E_2 dr' + V_3(R)$代入$E_2$和$V_3(R) = \frac{Q}{4\pi\varepsilon_0 R}$，积分得：$V_2 = \frac{Q}{8\pi\varepsilon_0 (R^3 - r^3)} \left( 3R^2 - r'^2 - \frac{2r^3}{r'} \right)$（代入$R=2r$可简化为具体表达式）。
+需分两段积分（$r' \to R$用$E_2$，$R \to \infty$用$V_3(R)$）：$V_2 = \int_{r'}^{R} E_2 dr' + V_3(R)$代入$E_2$和$V_3(R) = \frac{Q}{4\pi\varepsilon_0 R}$，积分得：$V_2 = \frac{Q}{8\pi\varepsilon_0 (R^3 - r^3)} \left( 3R^2 - r'^2 - \frac{2r^3}{r'} \right)$（代入$R=2r$可简化为具体表达式）
 
 #### 3. 区域 1：空腔内部（$r' < r$）
 

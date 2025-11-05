@@ -75,7 +75,8 @@
               "title": "T7 Verilog HDL"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -196,13 +197,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/250/Exercise.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "Exercise 的大纲"
             }
           },
           {
@@ -236,8 +237,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2c714ad3fd9377f8",
+  "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
+    "Course/270/Lecture Notes.md",
+    "Course/250/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
     "Course/270/Slides/T7 Verilog HDL.pdf",
@@ -249,9 +252,7 @@
     "Course/270/Slides/T1 Logic Design and Numbers.pdf",
     "Course/270/Slides/T8 Counter.pdf",
     "Course/270/Slides/T9 Register & Shifter.pdf",
-    "Course/270/Lecture Notes.md",
     "Course/250/Exercise.md",
-    "Course/250/Lecture Notes.md",
     "Course/215/Exercise.md",
     "Cheating sheat.md",
     "All/README.md",
