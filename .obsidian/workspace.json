@@ -69,10 +69,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/270/Slides/T8 Counter.pdf"
+                "file": "Course/270/Slides/T9 Register & Shifter.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "T8 Counter"
+              "title": "T9 Register & Shifter"
             }
           }
         ],
@@ -197,13 +197,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Slides/T8 Counter.pdf",
+                "file": "Course/270/Slides/T9 Register & Shifter.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "T8 Counter 的大纲"
+              "title": "T9 Register & Shifter 的大纲"
             }
           },
           {
@@ -241,11 +241,11 @@
   "lastOpenFiles": [
     "Course/270/Lecture Notes.md",
     "Course/270/Slides/T8 Counter.pdf",
+    "Course/250/Exercise.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/270/Slides/T6 Latch & FF.pdf",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/250/Lecture Notes.md",
-    "Course/250/Exercise.md",
     "Course/270/Verilog.md",
     "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
     "Course/250/Slides/~$2_Lecture_Outline-2023.ppt",
