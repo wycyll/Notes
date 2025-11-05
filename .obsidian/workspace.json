@@ -75,8 +75,7 @@
               "title": "T7 Verilog HDL"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -197,13 +196,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Verilog.md",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Verilog 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -237,8 +236,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "db417f622dd73f92",
+  "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/270/Verilog.md",
+    "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
     "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/270/Slides/T6 Latch & FF.pdf",
     "Course/270/Slides/T5 Combinational Circuit.pdf",
@@ -247,13 +248,10 @@
     "Course/270/Slides/T2 Basic Logic Gates.pdf",
     "Course/270/Slides/T1 Logic Design and Numbers.pdf",
     "Course/270/Slides/T8 Counter.pdf",
-    "Course/270/Verilog.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/270/Lecture Notes.md",
     "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
-    "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
-    "Course/250/Slides/~$2_Lecture_Outline-2023.ppt",
     "Course/215/Exercise.md",
     "Cheating sheat.md",
     "All/README.md",
