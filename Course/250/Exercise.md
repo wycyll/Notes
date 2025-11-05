@@ -170,8 +170,72 @@ $$
 $$E_2 = \frac{Q}{\varepsilon_0 A}$$  
 外侧两面各自带多余正电荷，产生向外的电场  
 $$E_1 = E_3 = \frac{2Q}{\varepsilon_0 A}.$$
+# 带电球体
 
+### 子题 A：空心绝缘球（总电荷Q，内半径r，外半径$R=2r$）
 
+#### 子题 B：实心绝缘球（总电荷Q，半径R）
+
+问题：Find the electric potential V everywhere (inside/outside)，$V(\infty)=0$.
+#### 解题步骤（以空心球为例，实心球类似）
+
+##### 第一步：用高斯定理求各区域电场E
+
+#### 1. 区域 1：空腔内部（$r' < r$）
+
+- 高斯面：半径$r' < r$的球面，内部电荷$Q_{\text{内}} = 0$；
+- 高斯定理：$E_1 \cdot 4\pi r'^2 = \frac{0}{\varepsilon_0} \implies E_1 = 0$。
+
+#### 2. 区域 2：球壳内部（$r < r' < R$）
+
+- 电荷体密度：$\rho = \frac{Q}{\frac{4}{3}\pi(R^3 - r^3)} = \frac{3Q}{4\pi(8r^3 - r^3)} = \frac{3Q}{28\pi r^3}$（因$R=2r$）；
+- 高斯面内电荷：$Q_{\text{内}} = \rho \cdot \frac{4}{3}\pi(r'^3 - r^3) = Q \cdot \frac{r'^3 - r^3}{R^3 - r^3}$；
+- 高斯定理：$E_2 \cdot 4\pi r'^2 = \frac{Q_{\text{内}}}{\varepsilon_0} \implies E_2 = \frac{Q(r'^3 - r^3)}{4\pi\varepsilon_0 r'^2 (R^3 - r^3)}$（径向向外）。
+
+#### 3. 区域 3：球壳外部（$r' > R$）
+
+- 高斯面内电荷$Q_{\text{内}} = Q$；
+- 高斯定理：$E_3 \cdot 4\pi r'^2 = \frac{Q}{\varepsilon_0} \implies E_3 = \frac{Q}{4\pi\varepsilon_0 r'^2}$（与点电荷电场一致）。
+
+##### 第二步：积分求各区域电势V
+
+#### 1. 区域 3：外部（$r' > R$）
+
+$V_3 = \int_{r'}^{\infty} E_3 dr' = \int_{r'}^{\infty} \frac{Q}{4\pi\varepsilon_0 r'^2} dr' = \frac{Q}{4\pi\varepsilon_0 r'}$
+
+#### 2. 区域 2：球壳内部（$r < r' < R$）
+
+需分两段积分（$r' \to R$用$E_2$，$R \to \infty$用$V_3(R)$）：$V_2 = \int_{r'}^{R} E_2 dr' + V_3(R)$代入$E_2$和$V_3(R) = \frac{Q}{4\pi\varepsilon_0 R}$，积分得：$V_2 = \frac{Q}{8\pi\varepsilon_0 (R^3 - r^3)} \left( 3R^2 - r'^2 - \frac{2r^3}{r'} \right)$（代入$R=2r$可简化为具体表达式）。
+
+#### 3. 区域 1：空腔内部（$r' < r$）
+
+$V_1 = \int_{r'}^{r} E_1 dr' + V_2(r) = 0 + V_2(r) = \frac{Q}{8\pi\varepsilon_0 (R^3 - r^3)} \left( 3R^2 - 3r^2 \right) = \frac{3Q(R^2 - r^2)}{8\pi\varepsilon_0 (R^3 - r^3)}$
+
+#### 实心球电势（简化）
+
+- 外部（$r' > R$）：$V_3 = \frac{Q}{4\pi\varepsilon_0 r'}$；
+- 内部（$r' < R$）：$E_2 = \frac{Q r'}{4\pi\varepsilon_0 R^3}$，积分得$V_2 = \frac{Q}{8\pi\varepsilon_0 R} \left( 3 - \frac{r'^2}{R^2} \right)$。
+
+#### 答案总结（空心球，$R=2r$）
+
+- 空腔内部（$r' < r$）：$V_1 = \frac{3Q(4r^2 - r^2)}{8\pi\varepsilon_0 (8r^3 - r^3)} = \frac{9Q}{56\pi\varepsilon_0 r}$；
+- 球壳内部（$r < r' < 2r$）：$V_2 = \frac{Q}{8\pi\varepsilon_0 \cdot 7r^3} \left( 12r^2 - r'^2 - \frac{2r^3}{r'} \right)$；
+- 外部（$r' > 2r$）：$V_3 = \frac{Q}{4\pi\varepsilon_0 r'}$
+
+# Nonuniform
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251105105935220.png)
+1. 选取电荷元dQ
+    - 取y处的微元dy，$dQ = |y| dy$（因$y \in [-a, +a]$，$|y|$对称，可计算$y>0$部分再乘 2）；
+    - dQ到P点的距离：$r = \sqrt{x^2 + y^2}$。
+2. 计算dQ在P点的电场$d\vec{E}$
+    - 大小：$dE = \frac{1}{4\pi\varepsilon_0} \cdot \frac{dQ}{r^2} = \frac{|y| dy}{4\pi\varepsilon_0 (x^2 + y^2)}$；
+    - 方向：沿r向外（正电荷），与 x 轴夹角$\theta$，故 x 分量$dE_x = dE \cos\theta = dE \cdot \frac{x}{r}$，y 分量$dE_y = dE \sin\theta$（对称抵消）。
+3. 积分求总电场（x 方向，$y>0$部分乘 2）$E = 2 \int_{y=0}^{a} dE_x = 2 \cdot \frac{x}{4\pi\varepsilon_0} \int_{0}^{a} \frac{y dy}{(x^2 + y^2)^{3/2}}$
+    
+4. 计算积分（换元法）令$u = x^2 + y^2$，$du = 2y dy \implies y dy = \frac{du}{2}$，积分限$u \in [x^2, x^2 + a^2]$：$\int_{0}^{a} \frac{y dy}{(x^2 + y^2)^{3/2}} = \frac{1}{2} \int_{x^2}^{x^2 + a^2} u^{-3/2} du = \frac{1}{2} \left( \frac{2}{\sqrt{x^2}} - \frac{2}{\sqrt{x^2 + a^2}} \right) = \frac{1}{x} - \frac{1}{\sqrt{x^2 + a^2}}$
+    
+5. **总电场**$E = \frac{x}{2\pi\varepsilon_0} \left( \frac{1}{x} - \frac{1}{\sqrt{x^2 + a^2}} \right) = \frac{1}{2\pi\varepsilon_0} \left( 1 - \frac{x}{\sqrt{x^2 + a^2}} \right)$
+P点电场大小为$\boxed{E = \frac{1}{2\pi\varepsilon_0} \left( 1 - \frac{x}{\sqrt{x^2 + a^2}} \right)}$，方向沿 x 轴正方向（若$x>0$）
 # 静电平衡
 ### 已知条件
 - 内球壳导体：内半径 a，外半径 b，总电荷 +q
