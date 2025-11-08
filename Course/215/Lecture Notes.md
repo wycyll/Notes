@@ -3,6 +3,8 @@
 ![image.png|497x219](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250916111251930.png)
 P: 进入正极的电流乘电压
 ==各个电子元件功率之和为 0==
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251109001210423.png)
+
 > ![44450ae37cece6fe69c1d5b7e0505396.jpg|402x301](https://raw.githubusercontent.com/wycyll/obsidian-images/master/44450ae37cece6fe69c1d5b7e0505396.jpg)
 ## Circuit Elements
 ###  Passive Elements: 
@@ -442,4 +444,22 @@ DAC 的作用是将数字信号（二进制 0/1）转换为模拟电压。例如
     - 输入`0001`：$-V_o = 0.125\,\text{V}$ →$V_o = -0.125\,\text{V}$
     - 输入`1111`：$-V_o = 1+0.5+0.25+0.125 = 1.875\,\text{V}$ →$V_o = -1.875\,\text{V}$
 - 分辨率定义：DAC 能分辨的最小模拟输出电压（即 LSB 对应的电压）。公式为：$\text{Resolution} = \frac{V_{\text{OFS}}}{2^n - 1}$其中$V_{\text{OFS}}$ 是满量程输出电压（所有位为 1 时的输出），n 是 DAC 的位数
-    - 上例中$n=4$，$V_{\text{OFS}}=1.875\,\text{V}$，则分辨率$= \frac{1.875}{15} = 0.125\,\text{V}$，与 LSB 的权重一致
+    - 上例中 $n=4$，$V_{\text{OFS}}=1.875\,\text{V}$，则分辨率 $= \frac{1.875}{15} = 0.125\,\text{V}$，与 LSB 的权重一致
+
+# Capacitors and Inductors
+- Store Elements, Passive Elements
+## Cpacitor
+### Charging Capacitor
+The amount of charge stored $Q=Cv$
+- 如果 C 与 v 无关，电容 *linear*
+- A voltage source deposits a positive charge $q$ on the plate and a negative charge $–q$ on the other. The capacitor is said to store the electric charge.
+- 物理决定式：$C = \varepsilon_r \varepsilon_0 \frac{A}{d}$
+### IV Relationship
+电容的电流与电压变化率成正比，而非电压本身
+- 微分形式（电流→电压）：由$q=Cv$对时间求导，结合电流定义$i=\frac{dq}{dt}$，得：$i = C \frac{dv}{dt}$
+    - 物理意义：只有电压随时间变化（$\frac{dv}{dt}≠0$）时，才有电流流过电容；电压不变（如直流稳态）时，$\frac{dv}{dt}=0$，电流$i=0$，此时电容相当于**Open Circuit**
+    - 例：直流电源给电容充电，充电结束后，电路中无电流，电容相当于断开
+- 积分形式（电压→电流）：对微分式积分，可得电压与电流 “历史累积” 的关系：$v(t) = \frac{1}{C}\int_{t_0}^t i(\tau)d\tau + v(t_0)$
+    - $v(t_0)$：$t_0$ 时刻的初始电压
+
+### Power
