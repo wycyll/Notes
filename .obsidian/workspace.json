@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C07.pdf"
+                "file": "Course/215/Slides/ECE2150J_C05.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C07"
+              "title": "ECE2150J_C05"
             }
           }
         ],
@@ -155,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C07.pdf",
+                "file": "Course/215/Slides/ECE2150J_C05.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C07 的大纲"
+              "title": "ECE2150J_C05 的大纲"
             }
           },
           {
@@ -197,10 +197,10 @@
   },
   "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
-    "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C07.pdf",
-    "Course/215/Slides/ECE2150J_C06.pdf",
+    "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C08.pdf",
+    "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2105J_C02.pdf",
     "Course/215/Slides/ECE2150J_C01.pdf",
     "Course/250/Exercise.md",
