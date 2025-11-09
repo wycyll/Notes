@@ -463,3 +463,7 @@ The amount of charge stored $Q=Cv$
     - $v(t_0)$：$t_0$ 时刻的初始电压
 
 ### Power
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251109013523182.png)
+- instantaneous: $p=vi=v\left(C \frac{dv}{dt} \right)$
+- 总储能：对功率从$-\infty$到t积分（初始时刻$v(-\infty)=0$，无初始能量）$w_C = \int_{-\infty}^t p d\tau = \frac{1}{2}Cv^2$
+- 能量仅与当前电压有关，与电压变化方向无关
