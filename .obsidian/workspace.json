@@ -27,13 +27,14 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C06.pdf"
+                "file": "Course/215/Slides/ECE2150J_C07.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C06"
+              "title": "ECE2150J_C07"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -154,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Lecture Notes.md",
+                "file": "Course/215/Slides/ECE2150J_C07.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "ECE2150J_C07 的大纲"
             }
           },
           {
@@ -194,15 +195,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2c714ad3fd9377f8",
+  "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
-    "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Slides/ECE2150J_C06.pdf",
+    "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Slides/ECE2105J_C02.pdf",
     "Course/215/Slides/ECE2150J_C01.pdf",
     "Course/250/Exercise.md",
-    "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/250/Lecture Notes.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
