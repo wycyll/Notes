@@ -56,9 +56,23 @@
               "icon": "lucide-file-text",
               "title": "ECE2150J_C08"
             }
+          },
+          {
+            "id": "f15306aa9f928803",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/250/Lecture Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture Notes"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -179,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C06.pdf",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C06 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -219,11 +233,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "f15306aa9f928803",
   "lastOpenFiles": [
-    "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C06.pdf",
+    "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Slides/ECE2150J_C05.pdf",
     "Course/215/Slides/ECE2105J_C02.pdf",
