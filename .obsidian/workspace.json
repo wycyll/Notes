@@ -57,8 +57,7 @@
               "title": "ECE2150J_C08"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -179,13 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C08.pdf",
+                "file": "Course/215/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C08 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -219,10 +218,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21ede175d1ebdbc7",
+  "active": "d539d89ccc07b209",
   "lastOpenFiles": [
-    "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C08.pdf",
+    "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C05.pdf",
@@ -246,7 +245,7 @@
     "Course/270/Slides/T5Combinational.md",
     "Course/270/Slides/T5.md",
     "Course/270/Slides/T.md",
-    "Course/256/Notes.md",
+    "Course/270/Slides/Notes.md",
     "Course/215/Slides/ECE2150J_C03..md",
     "Course/215/Slides/ECE.md",
     "ECE2150J_C03..md",
