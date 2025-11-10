@@ -267,7 +267,7 @@ Dependent Source需保留，不能关闭
 因此，端口电压的表达式$v = A_0 i + B_0$可改写为：$v = R_{\text{Th}} i + V_{\text{Th}}$
 
 ## 求解
--$R_{Th}$的两种求解方法
+- $R_{Th}$ 的两种求解方法
 	1. 情况 1：都是 independent source
 		直接计算独立源关断后的输入电阻（电阻串并联组合）。
 	2. 情况 2：有 dependent source
@@ -275,10 +275,10 @@ Dependent Source需保留，不能关闭
 		- 端口 a-b 加测试电压$v_o$，测量流入端口的电流$i_o$，则$R_{Th} = \frac{v_o}{i_o}$；
 		- 或加测试电流$i_o$，测量端口电压$v_o$，则$R_{Th} = \frac{v_o}{i_o}$。 
 
--$V_{th}$求解
+- $V_{th}$ 求解
 	直接通过电压分析计算 (如 nodal analysis, mesh analysis)
 	terminal 的两端（a 和 b）视作电压相同（接地）
-
+🐾注意电压正负！
 习题：[[Course/215/Exercise#Thevenin's Theorem|Exercise]]
 > - 特殊情况：负电阻负电阻$R_{Th}$
 > 	当电路含受控源时，$R_{Th}$可能为负
@@ -286,9 +286,9 @@ Dependent Source需保留，不能关闭
 
 ## Norton's Law
 $R_{N}$的寻找方法同$R_{th}$
--$I_{N}$求解
-1. 短路端口：将原电路的端子 a 和 b 用导线直接短接；
-2. 计算短路电流：电路分析，计算此时短路导线中从 a 到 b 的电流，该电流即为$i_{SC}$；
+- $I_{N}$ 求解
+1. 短路端口：将原电路的端子 a 和 b 用导线直接短接
+2. 计算短路电流：电路分析，计算此时短路导线中从 a 到 b 的电流，该电流即为$i_{SC}$
 3. 等效关系：根据诺顿定理的等效性，$I_N = i_{SC}$
 4. 方向：和$I_{SC}$完全一样
 > 或等效$I_{N}=\frac{V_{th}}{R_{th}}$
@@ -297,7 +297,7 @@ $R_{N}$的寻找方法同$R_{th}$
 
 ## Max Power Transfer
 ## Efficiency
-- 应用场景：电力系统（发电、输电、配电）。这类系统需传输大量电能，核心诉求是 “减少传输损耗”，让更多电能被负载有效利用。
+- 应用场景：电力系统（发电、输电、配电）。这类系统需传输大量电能，核心诉求是 “减少传输损耗”，让更多电能被负载有效利用
 - 核心定义：效率是 “负载获得的有用功率” 与 “电源提供的总功率” 的比值，公式为：$\text{Efficiency} = \frac{\text{Useful Power Output（负载功率）}}{\text{Total Power Input（电源总功率）}}$
 ## Power
 - 应用场景：通信、电子系统（如射频电路、信号放大）。这类场景不优先考虑损耗，核心诉求是 “让负载获得的功率绝对值最大”（如最大化信号强度）
@@ -353,7 +353,8 @@ KCL:$i_o = i_1 + i_2 + i_+ + i_-$
 	- 不代表$i_{0}=0$还有$i_{+},i_{-}$
 2.$v_{d}=v_{2}-v_{1}=0$
 	$v_{0}=Av_{d}<\infty$, A is infinite->$v_{d}$=0
-	- 不代表$v_{2}=v_{1}=0$
+	- 不代表 $v_{2}=v_{1}=0$
+🐾不要对 output 使用 KCL！
 ## Inverting Amplifier (Inverter)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251022125257352.png)
 - 结构：输入信号$v_i$接反相端（-）；$R_f$连接输出与反相端；同相端（+）接地

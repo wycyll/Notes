@@ -71,8 +71,7 @@
               "title": "Lecture Notes"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,7 +192,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/215/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -233,8 +232,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f15306aa9f928803",
+  "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/250/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C08.pdf",
@@ -243,7 +243,6 @@
     "Course/215/Slides/ECE2105J_C02.pdf",
     "Course/215/Slides/ECE2150J_C01.pdf",
     "Course/250/Exercise.md",
-    "Course/250/Lecture Notes.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Slides/T7 Verilog HDL.pdf",
     "Course/270/Verilog.md",
