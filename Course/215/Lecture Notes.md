@@ -217,7 +217,7 @@ e.g. [Slides](ECE2150J_C03.pdf#page=91)
 ## Superposition
 - 基于线性电路的Additivity：若电路有多个独立源，the *total* response is the *sum* of the *individual responses*
 ### 应用步骤
-1. 独立源 “单独作用” 的处理
+1. Independent Source “单独作用” 的处理
 每次只让一个独立源工作，其余独立源需关闭
 - 电压源关闭：用*短路*代替（输出 0V，等效为导线）
 - 电流源关闭：用*开路*代替（输出 0A，等效为断开）
