@@ -235,11 +235,8 @@ Dependent Source需保留，不能关闭
 ## Source Transformation
 - 等效条件
 	- 电压源→电流源：$V_s$串联电阻R → 电流源$I_s = \frac{V_s}{R}$并联电阻R
-    
 	- 电流源→电压源：$I_s$并联电阻R → 电压源$V_s = I_s R$串联电阻R
-    
 	- 方向规则：电流源的方向从电压源的 “负极指向正极”（保证端口电流方向一致，避免等效错误）
-    
 	- **证明**：对比两种电路的 i-v 关系（端口电压v与电流i的关系）
     
 	    - 电压源串联R：$v = i R + V_s$；
@@ -369,7 +366,7 @@ KCL:$i_o = i_1 + i_2 + i_+ + i_-$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251022130603757.png)
 
 ### Voltage follower circuit
-- 在 Noninverting Amplifier 的基础上，$R_{f}=0$or$R_{1}=\infty$ot both. A=1
+- 在 Noninverting Amplifier 的基础上，$R_{f}=0$ or $R_{1}=\infty$ or both. A=1
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251022150450284.png)
 - 优势：在信号源内阻较高时，输出可提供大电流，同时从输入几乎不汲取电流
 - 功能：输出电压与输入电压相等（电压增益为 1），但功率增益显著更大，可实现电压跟随的同时增强带载能力
