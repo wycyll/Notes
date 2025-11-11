@@ -1,9 +1,9 @@
 # Basic concept
 电流方向（1 D）- 正：顺时针负：逆时针
+#passive_sign_convention
 ![image.png|497x219](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20250916111251930.png)
 P: 进入正极的电流乘电压
 ==各个电子元件功率之和为 0==
-![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251109001210423.png)
 
 > ![44450ae37cece6fe69c1d5b7e0505396.jpg|402x301](https://raw.githubusercontent.com/wycyll/obsidian-images/master/44450ae37cece6fe69c1d5b7e0505396.jpg)
 ## Circuit Elements
