@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/270/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
@@ -180,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -222,6 +222,7 @@
   },
   "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/250/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
     "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C06.pdf",
@@ -230,7 +231,6 @@
     "Daily/Excel.md",
     "Course/270/Lecture Notes.md",
     "Course/215/Exercise.md",
-    "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C05.pdf",
     "Course/215/Slides/ECE2150J_C04.pdf",
     "Course/215/Slides/ECE2105J_C02.pdf",
