@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C07.pdf"
+                "file": "Course/215/Slides/ECE2150J_C08.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C07"
+              "title": "ECE2150J_C08"
             }
           },
           {
@@ -60,7 +60,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cheating sheat.md",
+                "file": "Course/215/Slides/ECE2150J_C08.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Cheating sheat 的大纲"
+              "title": "ECE2150J_C08 的大纲"
             }
           },
           {
@@ -221,17 +221,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21ede175d1ebdbc7",
+  "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
+    "Course/215/Slides/ECE2150J_C07.pdf",
+    "Course/215/Slides/ECE2150J_C06.pdf",
+    "Cheating sheat.md",
     "Daily/Excel.md",
     "Course/270/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Exercise.md",
     "Course/215/Lecture Notes.md",
     "Course/250/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Slides/ECE2150J_C05.pdf",
-    "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C04.pdf",
     "Course/215/Slides/ECE2105J_C02.pdf",
     "Course/215/Slides/ECE2150J_C01.pdf",
@@ -240,7 +241,6 @@
     "Course/270/Verilog.md",
     "Course/250/Slides/~$1_Lecture_Outline_2024.ppt",
     "Course/270/Slides/T6 Latch & FF.pdf",
-    "Cheating sheat.md",
     "All/README.md",
     "Course/270/Topic 2.md",
     "Basic Logic Gates 1.md",
