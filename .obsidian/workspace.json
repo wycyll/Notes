@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Cheating sheat.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture Notes"
+              "title": "Cheating sheat"
             }
           },
           {
@@ -180,13 +180,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Cheating sheat.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "Cheating sheat 的大纲"
             }
           },
           {
@@ -222,6 +222,7 @@
   },
   "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Course/270/Lecture Notes.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
     "Cheating sheat.md",
@@ -229,7 +230,6 @@
     "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Slides/ECE2150J_C07.pdf",
     "Daily/Excel.md",
-    "Course/270/Lecture Notes.md",
     "Course/215/Exercise.md",
     "Course/215/Slides/ECE2150J_C05.pdf",
     "Course/215/Slides/ECE2150J_C04.pdf",
