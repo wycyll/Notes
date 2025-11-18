@@ -11,14 +11,12 @@
             "id": "2c714ad3fd9377f8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Cheating sheat.md",
-                "mode": "source",
-                "source": false
+                "file": "Course/270/Slides/T10 FSM & Controller (1).pdf"
               },
-              "icon": "lucide-file",
-              "title": "Cheating sheat"
+              "icon": "lucide-file-text",
+              "title": "T10 FSM & Controller (1)"
             }
           },
           {
@@ -180,13 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cheating sheat.md",
+                "file": "Course/270/Slides/T10 FSM & Controller (1).pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Cheating sheat 的大纲"
+              "title": "T10 FSM & Controller (1) 的大纲"
             }
           },
           {
@@ -222,9 +220,9 @@
   },
   "active": "2c714ad3fd9377f8",
   "lastOpenFiles": [
+    "Cheating sheat.md",
     "Course/270/Slides/T10 FSM & Controller (1).pdf",
     "Course/270/Slides/T11 FSM Optimizations.pdf",
-    "Cheating sheat.md",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Lecture Notes.md",
     "Course/250/Lecture Notes.md",
