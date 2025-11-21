@@ -8,27 +8,31 @@
         "type": "tabs",
         "children": [
           {
-            "id": "2c714ad3fd9377f8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/270/Slides/T10 FSM & Controller (1).pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "T10 FSM & Controller (1)"
-            }
-          },
-          {
             "id": "69cf03af9e3486d9",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C08.pdf"
+                "file": "Course/270/Lecture Notes.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "ECE2150J_C08"
+              "icon": "lucide-file",
+              "title": "Lecture Notes"
+            }
+          },
+          {
+            "id": "acccd2c08cec7b3d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/270/Verilog.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Verilog"
             }
           },
           {
@@ -37,10 +41,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C06.pdf"
+                "file": "Course/270/Slides/T9 Register & Shifter.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C06"
+              "title": "T9 Register & Shifter"
             }
           },
           {
@@ -178,13 +182,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Slides/T10 FSM & Controller (1).pdf",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "T10 FSM & Controller (1) 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -218,26 +222,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2c714ad3fd9377f8",
+  "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
-    "Cheating sheat.md",
-    "Course/270/Slides/T10 FSM & Controller (1).pdf",
-    "Course/270/Slides/T11 FSM Optimizations.pdf",
-    "Course/270/Slides/T12 RTL Design.pdf",
+    "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/270/Lecture Notes.md",
-    "Course/250/Lecture Notes.md",
-    "Course/215/Lecture Notes.md",
+    "Course/270/Verilog.md",
+    "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C08.pdf",
+    "Course/270/Slides/T10 FSM & Controller (1).pdf",
+    "Course/270/Slides/T10 FSM & Controller.pdf",
+    "Course/270/Slides/T11 FSM Optimizations.pdf",
+    "Course/270/Slides/T12 RTL Design.pdf",
+    "Course/250/Lecture Notes.md",
+    "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C07.pdf",
     "Daily/Excel.md",
     "Course/215/Exercise.md",
     "Course/215/Slides/ECE2150J_C05.pdf",
     "Course/215/Slides/ECE2150J_C04.pdf",
-    "Course/215/Slides/ECE2105J_C02.pdf",
-    "Course/215/Slides/ECE2150J_C01.pdf",
     "Course/250/Exercise.md",
-    "Course/270/Verilog.md",
     "All/README.md",
     "Course/270/Topic 2.md",
     "Basic Logic Gates 1.md",

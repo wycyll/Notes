@@ -1060,7 +1060,8 @@ highlight 的 AND 是保证 89->90 的时候不会被清零
 以及如果 drive too much devices，signal 可能会下降，不够 strong
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102215258923.png)
 
-## Register File
+## Register
+### Register File
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102221805942.png)
 把多个 register 打包
 - 基本参数：`M×N` 寄存器堆表示M 个 N bit register（如 4×32 表示 4 个 32 位寄存器）
@@ -1085,90 +1086,38 @@ highlight 的 AND 是保证 89->90 的时候不会被清零
 | reg 3 |     |     |     |     |     |
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102222833299.png)
 
-## Shift Register
+### Shift Register
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251102223048361.png)
 - n bit 需要 n clock cycle to update the data
 - $Q_{0}$ 之后就 lost 了
 - 可以 shift left or right
-- 普通 register n bit 共存于一个 rising edge
-### 1. 核心特性与分类
+- 普通 register n-bit 共存于一个 rising edge
+- 可以在 DFF 上加上 control input (e.g. Parallel load control input)
 
-#### （1）基本移位寄存器（右移示例）
+### Rotate Register
+与普通 shift的区别：最低位的 `Q` 反馈到最高位的 `D` ，数据循环移位（无新数据输入）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251120225857973.png)
 
-- **硬件结构**：n 个 D 触发器串接 —— 前级触发器的`Q`端接后级的`D`端，最高位触发器的`D`端接串行输入（`Din`），最低位的`Q`端接串行输出（`Dout`）；
-- **工作原理**：每个时钟上升沿，数据整体右移 1 位（如 4 位：`Q3Q2Q1Q0`→`Din Q3Q2Q1`）；
-- **Verilog 建模（4 位右移）**：
-    
-    verilog
-    
-    ```verilog
-    module Shift_Reg (Q, Dout, Din, clock);
-        output [3:0] Q;    // 4位并行输出
-        input  Din, clock; // 串行输入、时钟
-        output Dout;       // 串行输出（最低位）
-        reg [3:0] Q;       // 存储移位后的数据
-    
-        always @(posedge clock) begin
-            Q[2:0] <= Q[3:1];  // 右移1位：Q3→Q2，Q2→Q1，Q1→Q0
-            Q[3] <= Din;       // 最高位加载新的串行输入
-        end
-        assign Dout = Q[0];    // 串行输出取最低位
-    endmodule
-    ```
-    
-- **移位过程示例**（初始`Q=0110`，`Din=0`→1→0）：
-    
-    |时钟上升沿|Din|Q（3:0）|Dout|
-    |---|---|---|---|
-    |初始|0|0110|0|
-    |1 次|0|0011|1|
-    |2 次|0|0001|1|
-    |3 次|0|0000|1|
-    |4 次|1|1000|0|
-    |5 次|0|0100|0|
-    
+### Universal Shift Register
+- Muti-functional, DFF 前加一个 MUX
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251120231037650.png)
+#### Funtions
+| Sh(Shift) | L(Load) | Action      |
+| :-------- | :------ | :---------- |
+| 0         | 0       | no change   |
+| 0         | 1       | load        |
+| 1         | X       | shift right |
+- Shift 有更高的优先级
+- 还有一种 input 组合，可以增加其他功能
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251120231341422.png)
 
-#### （2）旋转寄存器（Rotate Register）—— 循环移位
-
-与普通移位的区别：**最低位的`Q`端反馈到最高位的`D`端**，数据循环移位（无新数据输入）：
-
-- **Verilog 建模（4 位循环右移）**：
-    
-    verilog
-    
-    ```verilog
-    module Barral_Shift_Reg (Q, clock);
-        input  clock;
-        output [3:0] Q;
-        reg [3:0] Q;
-    
-        always @(posedge clock) begin
-            Q[2:0] <= Q[3:1];  // 右移1位
-            Q[3] <= Q[0];      // 最低位Q0反馈到最高位Q3
-        end
-    endmodule
-    ```
-    
-- **移位过程**（初始`Q=0110`）：`0110`→`0011`→`1001`→`1100`→`0110`（循环）。
-
-#### （3）通用移位寄存器（Universal Shift Register）—— 多功能集成
-
-工程中常用 “通用移位寄存器”，支持**并行加载、左移、右移、保持**4 种功能，通过控制信号（`load`、`shift_ctrl`）选择模式：
-
-- **控制逻辑**：每个触发器的`D`端前加 4 选 1 MUX，根据控制信号选择输入（并行数据 / 左移前级 / 右移前级 / 自身）；
-- **核心功能表**：
-    
-    |load|shift_ctrl|功能|
-    |---|---|---|
-    |1|X|并行加载（Q=Din）|
-    |0|00|保持（Q 不变）|
-    |0|01|左移（Q=Q<<1）|
-    |0|10|右移（Q=Q>>1）|
-    
-
-## 四、进阶扩展 2：移位器（Shifter）—— 组合逻辑移位部件
-
-注意：**移位器（Shifter）≠移位寄存器**—— 移位器是**组合逻辑部件**（无存储功能，即时移位），移位寄存器是**时序逻辑部件**（有存储，时钟触发）。
+## Example (Revisit)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251120231549221.png)
+- 现在输出不需要 8 个 bit 了，只需要 1 个 bit
+- 虽然 longer time 但是影响不大
+## Shifter
+- 注意：Shifter≠Shift Register
+- Shifter是 Combinational Datapath component(无存储功能，即时移位), Shift Register是时序逻辑部件(有存储, clock触发)
 
 ### 1. 核心特性与分类
 

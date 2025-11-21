@@ -222,8 +222,8 @@ endmodule
 ```verilog
 module Shift_Reg(Q,Dout,Din,clock);
 input clock,Din;
-output Dout;
-output reg [3:0] Q;
+output Dout; //serial out
+output reg [3:0] Q; //parallel out
 always @ (posedge clock) begin
 Q[2:0] < = Q[3:1];
 Q[3] < = Din;
@@ -258,3 +258,19 @@ $display("**********************************************************");
   initial #1000 $stop;
 endmodule
 ```
+
+## Rotate Register
+```verilog
+  module Barral_Shift_Reg (Q, clock);
+  input  clock;
+  output [3:0] Q;      
+  reg [3:0] Q;      
+  always @(posedge clock) begin
+  Q[2:0] <= Q[3:1];  // 右移1位
+  Q[3] <= Q[0];      // 最低位Q0反馈到最高位Q3
+  end
+  endmodule
+```
+
+### Modified Rotate Register
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251120230036806.png)
