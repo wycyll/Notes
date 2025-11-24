@@ -62,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -183,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Verilog.md",
+                "file": "Cheating sheat.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Verilog 的大纲"
+              "title": "Cheating sheat 的大纲"
             }
           },
           {
@@ -223,10 +223,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "acccd2c08cec7b3d",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
-    "Course/270/Lecture Notes.md",
     "Course/270/Verilog.md",
+    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T10 FSM & Controller.pdf",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Cheating sheat.md",
