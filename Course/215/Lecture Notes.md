@@ -465,3 +465,7 @@ The amount of charge stored $Q=Cv$
 - instantaneous: $p=vi=v\left(C \frac{dv}{dt} \right)$
 - 总储能：对功率从$-\infty$到t积分（初始时刻$v(-\infty)=0$，无初始能量）$w_C = \int_{-\infty}^t p d\tau = \frac{1}{2}Cv^2$
 - 能量仅与当前电压有关，与电压变化方向无关
+
+# Sinusoids and Phasors
+- 加减法：必须用直角坐标 $(x + jy)$
+- 乘除法：最好用极坐标 $(r\angle\theta)$
