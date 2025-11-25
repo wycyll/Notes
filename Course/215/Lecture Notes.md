@@ -469,3 +469,65 @@ The amount of charge stored $Q=Cv$
 # Sinusoids and Phasors
 - 加减法：必须用直角坐标 $(x + jy)$
 - 乘除法：最好用极坐标 $(r\angle\theta)$
+
+这是一个非常深刻且关键的问题，涉及到**相量分析（Phasor Analysis）**的核心数学约定。
+
+简而言之：**我们只考虑 $\cos$ 部分，是因为电气工程领域约定俗成地将物理信号定义为旋转相量在复平面上的“实部（Real Part）”投影。**
+
+### 1. 相量分析的数学约定
+
+回忆你第一张图的定义：一个时间函数 $v(t)$ 是由一个旋转相量（Sinor）的**实部**得出的。
+
+$$v(t) = \mathrm{Re} \left( \tilde{V}e^{j\omega t} \right)$$
+
+根据欧拉公式（Euler's Formula）：$e^{j\theta} = \cos\theta + j\sin\theta$。
+
+如果我们的相量是 $\tilde{V} = V_m e^{j\phi} = V_m \angle \phi$，那么：
+
+$$\begin{align*} v(t) &= \mathrm{Re} \left( (V_m e^{j\phi}) \cdot e^{j\omega t} \right) \\ &= \mathrm{Re} \left( V_m e^{j(\omega t + \phi)} \right) \\ &= \mathrm{Re} \left( V_m [\cos(\omega t + \phi) + j\sin(\omega t + \phi)] \right) \\ &= V_m \cos(\omega t + \phi) \end{align*}$$
+
+### 2. $\cos$ 是实部，$j\sin$ 是虚部
+
+从上面的推导可以看出：
+
+- **实部 (Real Part)：** 对应于 $\cos(\omega t + \phi)$。
+    
+- **虚部 (Imaginary Part)：** 对应于 $j \sin(\omega t + \phi)$。
+    
+
+由于我们约定用实部来表示真实的、可测量的电压或电流信号，所以：
+
+$$V_m \cos(\omega t + \phi) \quad \text{对应相量} \quad \mathbf{V} = V_m \angle \phi$$
+
+在这个题目中，电源是 $20 \cos(10t + 100^\circ)$，它与标准形式 $V_m \cos(\omega t + \phi)$ 完全吻合。
+
+- $V_m = 20$
+    
+- $\phi = 100^\circ$
+    
+- $\omega = 10$ rad/s (用于 $v_o(t)$ 的还原，但计算过程中被忽略)
+    
+
+所以，它的相量表示直接就是 $\mathbf{V}_s = \mathbf{20\angle 100^\circ}$。
+
+### 3. 如果遇到 $\sin$ 怎么办？
+
+如果题目给的源是 $\mathbf{20 \sin(10t + 100^\circ)}$，我们**不能**直接写成 $20\angle 100^\circ$。
+
+我们必须先利用三角恒等式将 $\sin$ 函数转换成 $\cos$ 函数，以符合相量的标准约定：
+
+$$\sin(\theta) = \cos(\theta - 90^\circ)$$
+
+那么，
+
+$$20 \sin(10t + 100^\circ) = 20 \cos(10t + 100^\circ - 90^\circ) = 20 \cos(10t + 10^\circ)$$
+
+此时，相量才应该是 $20\angle 10^\circ$。
+
+---
+
+### 总结
+
+因为整个相量计算体系都是建立在“物理信号 = 旋转向量的实部”这个约定上的，所以我们**只考虑** $\cos$ 部分的角度。$\sin$ 部分（虚部）只是一个数学工具，用来帮助我们在复平面上表示旋转。
+
+因此，你的题目是 $\cos$ 函数，直接提取振幅 $20$ 和相位 $100^\circ$ 是完全正确的。

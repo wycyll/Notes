@@ -39,10 +39,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C09.pdf"
+                "file": "Course/215/Slides/ECE2150J_C10.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C09"
+              "title": "ECE2150J_C10"
             }
           },
           {
@@ -58,8 +58,21 @@
               "icon": "lucide-file",
               "title": "Lecture Notes"
             }
+          },
+          {
+            "id": "4f683db026afc81b",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/215/Slides/ECE2150J_C09.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ECE2150J_C09"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -180,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Slides/T12 RTL Design.pdf",
+                "file": "Course/215/Slides/ECE2150J_C10.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "T12 RTL Design 的大纲"
+              "title": "ECE2150J_C10 的大纲"
             }
           },
           {
@@ -220,18 +233,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "69cf03af9e3486d9",
+  "active": "50bba8bbdcb51705",
   "lastOpenFiles": [
+    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/215/Slides/ECE2150J_C10.pdf",
+    "Course/215/Lecture Notes.md",
+    "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T11 FSM Optimizations.pdf",
     "Course/270/Lecture Notes.md",
     "Course/270/Verilog.md",
-    "Course/215/Slides/ECE2150J_C09.pdf",
-    "Course/215/Lecture Notes.md",
     "Course/270/Slides/T10 FSM & Controller.pdf",
     "Cheating sheat.md",
-    "Course/215/Slides/ECE2150J_C10.pdf",
     "形策.md",
-    "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C08.pdf",
