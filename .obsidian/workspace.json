@@ -72,7 +72,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -193,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/215/Slides/ECE2150J_C09.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "ECE2150J_C09 的大纲"
             }
           },
           {
@@ -233,24 +233,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "acccd2c08cec7b3d",
+  "active": "4f683db026afc81b",
   "lastOpenFiles": [
+    "Course/250/Slides/29_Lecture_Outline.ppt",
+    "Course/250/Slides/28_Lecture_Outline_2023 (1).ppt",
+    "Course/250/Slides/29_Lecture_Outline——2023.ppt",
+    "Course/250/Slides/33_Lecture_Outline_2022.pptx",
+    "Course/250/Slides/32_Lecture_Outline -2022.ppt",
+    "Course/250/Slides/35_Lecture_Outline_2022.pptx",
+    "Course/250/Slides/36_Lecture_Outline_2022.pptx",
+    "Course/270/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T11 FSM Optimizations.pdf",
-    "Course/270/Lecture Notes.md",
-    "Course/270/Slides/T10 FSM & Controller.pdf",
     "Cheating sheat.md",
     "形策.md",
-    "Course/270/Slides/T9 Register & Shifter.pdf",
-    "Course/215/Slides/ECE2150J_C06.pdf",
-    "Course/215/Slides/ECE2150J_C08.pdf",
-    "Course/270/Slides/T10 FSM & Controller (1).pdf",
     "Course/250/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C07.pdf",
     "Daily/Excel.md",
     "Course/215/Exercise.md",
     "Course/250/Exercise.md",
