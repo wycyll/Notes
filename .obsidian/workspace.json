@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/270/Verilog.md",
+                "file": "Course/270/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Verilog"
+              "title": "Lecture Notes"
             }
           },
           {
@@ -72,7 +72,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -193,13 +193,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C10.pdf",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C10 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -233,15 +233,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "acccd2c08cec7b3d",
   "lastOpenFiles": [
-    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/270/Verilog.md",
     "Course/215/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T11 FSM Optimizations.pdf",
     "Course/270/Lecture Notes.md",
-    "Course/270/Verilog.md",
     "Course/270/Slides/T10 FSM & Controller.pdf",
     "Cheating sheat.md",
     "形策.md",
