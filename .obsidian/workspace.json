@@ -63,12 +63,14 @@
             "id": "4f683db026afc81b",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C09.pdf"
+                "file": "Cheating sheat.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "ECE2150J_C09"
+              "icon": "lucide-file",
+              "title": "Cheating sheat"
             }
           }
         ],
@@ -193,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C09.pdf",
+                "file": "Cheating sheat.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C09 的大纲"
+              "title": "Cheating sheat 的大纲"
             }
           },
           {
@@ -235,8 +237,8 @@
   },
   "active": "4f683db026afc81b",
   "lastOpenFiles": [
-    "Course/250/Exercise.md",
     "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/250/Exercise.md",
     "Course/250/Slides/36_Lecture_Outline.pptx",
     "Course/250/Slides/35_Lecture_Outline.pptx",
     "Course/250/Slides/33_Lecture_Outline.pptx",
