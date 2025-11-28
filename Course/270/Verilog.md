@@ -274,3 +274,26 @@ endmodule
 
 ### Modified Rotate Register
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251120230036806.png)
+
+# Shifter
+
+```verilog
+module Shifter_0_or_1 (Q, I, in, sh);
+    parameter size = 4;  // 4位
+    input  [size-1:0] I;  // 输入数据
+    input  in;            // 移位补值（如左移补0）
+    input  sh;            // 移位控制（1=移位，0=保持）
+    output reg [size-1:0] Q;  // 输出数据
+
+    // 组合逻辑：输入变化立即输出
+    always @(sh, in, I) begin
+        if (sh) begin
+            Q[size-1:1] = I[size-2:0];  // 左移1位
+            Q[0] = in;                  // 最低位补in
+        end 
+    	else begin
+            Q = I; 
+        end
+    end
+endmodule
+```
