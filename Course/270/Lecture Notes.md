@@ -1177,10 +1177,32 @@ subsystem 既包含 sequential circuit 又包含 combination circuit
 
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129000330708.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129000341070.png) |
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-  
+  ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129160405762.png)
+
 ## Example
 ### Output Special Pattern
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251128235001609.png)
 > 外面一个大箭头指进来是 initial state
 
 ### FSM with Input
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129155707767.png)
+
+### Secure Car Key
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129163732449.png)
+汽车钥匙需向车载电脑传输特定 ID（如 1101），仅当 ID 正确时允许启动发动机
+ID holder in the car 是 shift register, shift in parallel out
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129164506537.png)
+问题：如果 a 摁的比较久，会重复发送
+
+### Digital Clock
+#### Attempt 1
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129164748529.png)
+> 问题 1: 同时按三个按钮可以解锁
+
+#### Attempt 2
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129164908706.png)
+> 问题 2: arbg=1111，会有两种条件为 true
+
+#### Attempt 3
+
+
