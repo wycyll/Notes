@@ -1179,6 +1179,10 @@ subsystem 既包含 sequential circuit 又包含 combination circuit
 | :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
   ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129160405762.png)
 
+### Common State Transition Property
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129175810066.png)
+ 1. 互斥性：同一状态的所有转换条件，任意时刻最多只有 1 个为真
+2. 完备性：所有可能的输入组合，都有对应的转换路径（无 “无定义输入”）
 ## Example
 ### Output Special Pattern
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251128235001609.png)
@@ -1192,7 +1196,7 @@ subsystem 既包含 sequential circuit 又包含 combination circuit
 汽车钥匙需向车载电脑传输特定 ID（如 1101），仅当 ID 正确时允许启动发动机
 ID holder in the car 是 shift register, shift in parallel out
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129164506537.png)
-问题：如果 a 摁的比较久，会重复发送
+问题：如果 a 摁的比较久，会重复发送，repeat for several round
 
 ### Digital Clock
 #### Attempt 1
@@ -1204,5 +1208,7 @@ ID holder in the car 是 shift register, shift in parallel out
 > 问题 2: arbg=1111，会有两种条件为 true
 
 #### Attempt 3
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129180054533.png)
+> a 分为 aD'; a'; aD （r'+b+g 是 D）
 
-
+### Synchronous Binary Counter
