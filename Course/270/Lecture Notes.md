@@ -1421,21 +1421,45 @@ level of abstract, 侧重于设计 system
 ## Component
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130214206540.png)
 - Controllers: check the status of data path, need feedback and instruction from outside
-- 在 Controller 和 Datapath 两个 subsystem 中间的是 FSM output
+- Controller 给 Datapath control signal, Datapath 给回去 feedback
+- 两个都可能从 external environment get some feedback
+- active edge of clock signal 是 state transition how fast 的决定因素 speed/pace
+- 在下一个 rising edge 来之前，所有 components 要 settle down
 
+## Steps
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130220858807.png)
+> signal 不是 power，只能 carry information
 - Step 1：捕获 HLSM（Capture High-Level State Machine）
 	- 目标：用 HLSM 描述系统的 “输入、输出、状态动作与流转”，不涉及硬件细节
-	- 关键输出：HLSM 状态图（State Diagram），明确 “状态→动作→流转条件”
+	- 关键输出：HLSM State Diagram，明确 “状态→动作→流转条件”
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130220928235.png)
+> Data type 不只是 bits
+> Statement 可以写一些计算
 
 - Step 2：创建数据通路（Create Datapath）
 	- 目标：将 HLSM 中的 “数据存储、运算” 映射为实际硬件组件，生成数据通路
 	- 关键输出：Datapath 硬件图，包含组件、数据流向、控制信号接口
-
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130221030819.png)
+> register 的 reset 一般是 aychronous 的，所以这里叫 clear (synchronous)
 - Step 3：连接控制器与数据通路（Connect Controller to Datapath）
-	- 目标：明确 Controller 与 Datapath 的交互接口 ——Controller 的输入来自 Datapath 的状态反馈，输出为 Datapath 的控制信号。
-	- 关键输出：系统顶层接口图，明确 “外部输入→Controller→Datapath→外部输出” 的信号流向。
+	- 目标：明确 Controller 与 Datapath 的交互接口 ——Controller 的输入来自 Datapath 的状态反馈，输出为 Datapath 的控制信号
+	- 关键输出：系统顶层接口图，明确 “外部输入→Controller→Datapath→外部输出” 的信号流向
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130221414466.png)
 
--  Step 4：推导控制器的 FSM（Derive Controller’s FSM）
+| 方向            | 信号名称       | 来源 / 去向            | 功能说明             |
+| ------------- | ---------- | ------------------ | ---------------- |
+| Controller 输入 | `c`        | 外部（硬币传感器）          | 检测是否有硬币投入        |
+| Controller 输入 | `tot_lt_s` | Datapath（比较器）      | 反馈 “累计金额是否不足”    |
+| Controller 输出 | `d`        | 外部（出货机构）           | 控制是否出货           |
+| Controller 输出 | `tot_clr`  | Datapath（`tot`寄存器） | 控制`tot`寄存器清零     |
+| Controller 输出 | `tot_ld`   | Datapath（`tot`寄存器） | 控制`tot`寄存器加载加法结果 |
+-  Step 4: Derive Controller's FSM
 	- 目标：将 HLSM 的 “高层状态与动作” 转化为 Controller 的bit 级 FSM—— 用 FSM 处理 “控制信号”，替代 HLSM 中的 “数据操作”
 	- 关键输出：Controller 的 FSM 状态图与状态表（State Table），明确 “当前状态 + 输入→下一状态 + 控制信号”
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130221544729.png)
+> 需要是 signal bit
+
 ## Example
+### Laser-Based Distance Measurer
+- 功能：发射激光→检测反射→计算距离（`D = T × 3e8 m/s / 2`，`T`为激光往返时间）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130224534495.png)
