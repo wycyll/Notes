@@ -1270,6 +1270,34 @@ ID holder in the car 是 shift register, shift in parallel out
 > 按钮是 input, Q 是 present state，D 是 next state
 
 # FSM Optimizations
+## Mealy & Moore
+
+| 维度    | Moore FSM              | Mealy FSM               |
+| ----- | ---------------------- | ----------------------- |
+| 输出依赖  | 仅依赖当前状态                | 依赖当前状态 + 当前输入           |
+| 架构图   | 输出逻辑仅接 “当前状态”          | 输出逻辑接 “当前状态 + 输入”       |
+| 状态图表示 | 输出标注在状态节点内（如 “S0/y=0”） | 输出标注在转换箭头上（如 “x=1/y=1”） |
+| 输出稳定性 | 稳定（状态不变则输出不变，无毛刺）      | 可能有毛刺（输入变→输出变，无需等时钟）    |
+| 状态数   | 通常更多（需为不同输出分配单独状态）     | 通常更少（同一状态可因输入输出不同值）     |
+Mealy 和 Moore 区分的是 output
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130194335715.png)
+### Moore
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130194529578.png) 之前看见的都是 Moore | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130194549387.png) |
+| :---------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+### Mealy
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130195107578.png)<br>在 behaviour 中 In 有点类似于 asynchronous | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130195142634.png)<br> |
+| :----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+### Example
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130195329056.png)
+#### Mealy
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130195353903.png)
+> A0 是 1st bit; A1 是 2nd bit; A2 是 3rd bit
+> A3 回到 second bit
+
+经过优化：
+
+
 ## State Reduction
 状态化简是 FSM 优化的第一步，核心是合并等价状态，减少状态数以降低寄存器数量
 	核心概念：Equivalent States
@@ -1291,9 +1319,48 @@ ID holder in the car 是 shift register, shift in parallel out
 	    例：Moore FSM 中，S0 输出 y=0，S1 输出 y=1→（S0,S1）标记 X
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130175653914.png)
 
-3. 迭代标记 “次态不等价” 的状态对
+3. Next State的状态对
+- 列出*所有输入对应*的 next state i.e.输入是 0 列一行，输入是 1 列一行
+- 若某状态对的次态对中存在 “已标记 X 的不等价状态对”，则该状态对也标记 X
+- 重复此步骤至无新标记，剩余未标记的状态对即为等价状态
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130180109755.png)
 
-- 对未标记的状态对，列出其所有输入对应的 “次态对”；
-- 若某状态对的次态对中存在 “已标记 X 的不等价状态对”，则该状态对也标记 X；
-- 重复此步骤至无新标记，剩余未标记的状态对即为等价状态。
+4. 没有被打叉的格子 state 就相同合并
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130180238016.png)
 
+#### Example 1
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130180849909.png)
+
+#### Example 2
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130180928351.png)
+
+#### Example 3: Mealy FSM
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130181331961.png)
+> 需要分更多行讨论
+
+### Complex FSM
+- Automation needed
+	- Table for large FSM too big for humans to work with
+	- State reduction typically automated
+## State Encoding
+不同的 encoding 方式会带来 size 和 speed 的 trade off
+### Gray Code
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130182924050.png)
+像 Kmap 一样，每次只改变一位
+### One-Hot Coding
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130183416991.png)<br> | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130183445407.png)<br> |
+| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------ |
+- 优点: Combinational Logic Simpler, Delay 小
+- 缺点: Bigger State Register
+- 可以提高 frequency，因为 clk 的 frequency 切换需要 combination circuit 完成处理
+
+| 编码类型           | 原理                             | 优点                     | 缺点                | 适用场景                   |
+| -------------- | ------------------------------ | ---------------------- | ----------------- | ---------------------- |
+| 二进制编码          | n 个状态用 $log_{2}n$ 位二进制码        | 寄存器最少（如 5 个状态→3 位）     | 组合逻辑复杂（次态方程门输入多）  | 状态数多、资源紧张的低速场景         |
+| Gray Code      | 相邻状态仅 1 位不同（如 00→01→11→10）     | 减少状态切换时的信号跳变，降低功耗      | 寄存器数量同二进制，组合逻辑略简单 | 对功耗敏感的场景（如低功耗传感器）      |
+| One hot coding | n 个状态用 n 位，仅 1 位为 1（如 S0=0001） | 组合逻辑极简单（次态方程仅需选通门），速度快 | 寄存器最多（n 个状态→n 位）  | 高频场景（如 CPU 控制器、高速序列检测） |
+## Unused State
+
+
+## FSM Reverse Engineering
