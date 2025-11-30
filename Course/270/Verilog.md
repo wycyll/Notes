@@ -297,3 +297,48 @@ module Shifter_0_or_1 (Q, I, in, sh);
     end
 endmodule
 ```
+# FSM
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130172516645.png)
+```verilog
+module example_FSM (clock, reset, in_bit, out_bit); 
+    input  clock, reset, in_bit;  
+    output out_bit;           
+
+    // 1. 定义状态（参数化，增强可读性）
+    reg [2:0] curr_state, next_state;  
+    
+    //State encoding
+    parameter init   = 3'b000;
+    parameter zero_1 = 3'b001;
+    parameter one_1  = 3'b010;
+    parameter zero_2 = 3'b011;
+    parameter one_2  = 3'b100;
+
+    // 2. state register
+    always @(posedge clock or posedge reset) begin 
+        if (reset == 1) begin
+            curr_state <= init;  
+        end else begin
+            curr_state <= next_state;  //state transition Q < = Data_in
+        end
+    end
+
+    // 3. next state (current state和input都影响)
+    always @(curr_state or in_bit) begin 
+        case (curr_state)
+            init: begin  
+                if (in_bit == 0) next_state <= zero_1;
+                else next_state <= one_1;
+            end
+            zero_1: begin  
+                if (in_bit == 0) next_state <= zero_2;
+                else next_state <= one_1;
+            end
+            default: next_state <= init; 
+        endcase
+    end
+
+    // 4. 输出逻辑（组合逻辑：当前状态→输出）
+    assign out_bit = ((curr_state == zero_2) || (curr_state == one_2)) ? 1 : 0;
+endmodule
+```

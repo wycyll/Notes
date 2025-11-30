@@ -1183,11 +1183,40 @@ subsystem 既包含 sequential circuit 又包含 combination circuit
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129175810066.png)
  1. 互斥性：同一状态的所有转换条件，任意时刻最多只有 1 个为真
 2. 完备性：所有可能的输入组合，都有对应的转换路径（无 “无定义输入”）
+
+### Standard Architecture
+-  State register -- to store the present state 
+- Combinational logic -- to compute outputs and next state 
+- Known as controller
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130162014227.png)
+
+### Step
+1. 步骤 1：捕获 FSM 行为（画状态图）
+	明确需求→定义状态→标注转换条件与输出，形成可视化的 state diagram
+2. 步骤 2：确定架构参数 Capture the architecture
+	- 计算状态寄存器位数：若有 `m` 个状态，需 `n=⌈log₂m⌉` 位寄存器（如 4 个状态需 2 位：`s1s0`）
+	- 明确输入 / 输出信号：输入 `b`（1 位），输出 `x`（1 位），时钟 `clk`，复位 `reset`
+3. 步骤 3：Encode the states
+	将抽象状态映射为具体的二进制值
+	- 二进制编码（文档示例）：Off=00，On1=01，On2=10，On3=11（2 位实现 4 个状态，节省寄存器资源）
+	- One-hot码（工程常用）：Off=0001，On1=0010，On2=0100，On3=1000（用更多寄存器换更简单的组合逻辑，适合高频场景）
+4. 步骤 4：创建 state table（current state→next state + output）
+示例：
+
+| 现态（状态名） | s1s0 | 输入 b | 次态 n1n0 | 输出 x |
+| ------- | ---- | ---- | ------- | ---- |
+| Off     | 00   | 0    | 00      | 0    |
+| Off     | 00   | 1    | 01      | 0    |
+| On1     | 01   | 0/1  | 10      | 1    |
+| On2     | 10   | 0/1  | 11      | 1    |
+| On3     | 11   | 0/1  | 00      | 1    |
+
+5. 步骤 5：实现组合逻辑（推导布尔方程 + 硬件）
+	从状态表提取 next state 和 output的 equation
 ## Example
-### Output Special Pattern
+### Output Special Patter
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251128235001609.png)
 > 外面一个大箭头指进来是 initial state
-
 ### FSM with Input
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129155707767.png)
 
@@ -1197,6 +1226,9 @@ subsystem 既包含 sequential circuit 又包含 combination circuit
 ID holder in the car 是 shift register, shift in parallel out
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251129164506537.png)
 问题：如果 a 摁的比较久，会重复发送，repeat for several round
+
+#### 完整版
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130171831526.png)
 
 ### Digital Clock
 #### Attempt 1
@@ -1212,3 +1244,42 @@ ID holder in the car 是 shift register, shift in parallel out
 > a 分为 aD'; a'; aD （r'+b+g 是 D）
 
 ### Synchronous Binary Counter
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130161136255.png)
+- DFF 相当于一个 state register，输出的是 current state，进去的是 next state
+
+### Push Button
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130163538744.png)     | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130163604121.png)     |
+| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------ |
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130163901508.png)<br> | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130164108767.png)<br> |
+- x 只依赖 present state
+### Button Press Synchronizer
+无论按下按钮多久，只输出一个 clk cycle 的信号，且 rising edge 同步
+- 比较：把 button 连在 counter 的 clk 还是 CE？
+- A: 放在 CE，因为实际情况按钮会有震荡
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130165429129.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130165446807.png)
+> C 状态是为了 check whether the button is released
+> 2 bits 会有 more than enough 的 state
+
+### Sequence Generator
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130171753559.png)
+
+### Flight-Attendant Call Button Circuit
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130171917533.png)
+> 按钮是 input, Q 是 present state，D 是 next state
+
+# FSM Optimizations
+## State Reduction
+状态化简是 FSM 优化的第一步，核心是合并等价状态，减少状态数以降低寄存器数量
+	核心概念：Equivalent States
+		定义：若两个状态满足 “所有输入序列下，输出完全相同且次态完全对应”，则为等价状态 (Functionally same)
+	Goal: Reduce number of states in FSM without changing behavior
+		Fewer states potentially reduce *size* of state register
+> e.g.![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130174329323.png)
+
+### Method 1
+把 state table 写成如下图，对比 next state 和 outputs
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130174848102.png)
+
+### Method 2: Implication Tables
