@@ -1283,3 +1283,17 @@ ID holder in the car 是 shift register, shift in parallel out
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130174848102.png)
 
 ### Method 2: Implication Tables
+1. Construct a table of state pairs
+	- 横向 / 纵向列出所有状态（排除对角线，因状态与自身必等价）
+
+2. 标记 “输出不同” 的状态对（直接不等价）
+	- 若两个状态对任意输入的输出不同，直接标记 “X”（非等价）；
+	    例：Moore FSM 中，S0 输出 y=0，S1 输出 y=1→（S0,S1）标记 X
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130175653914.png)
+
+3. 迭代标记 “次态不等价” 的状态对
+
+- 对未标记的状态对，列出其所有输入对应的 “次态对”；
+- 若某状态对的次态对中存在 “已标记 X 的不等价状态对”，则该状态对也标记 X；
+- 重复此步骤至无新标记，剩余未标记的状态对即为等价状态。
+
