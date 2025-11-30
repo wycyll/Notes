@@ -1297,7 +1297,39 @@ Mealy 和 Moore 区分的是 output
 
 经过优化：
 
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130200308207.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130200332632.png) |
+| :-------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130200357731.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130200412409.png) |
+#### Moore
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130200743106.png)
+> 等到 state transition 才会输出 1, slower response
+> Mealy: 一收到第三个 input 就会 output 1
 
+经过优化：
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130201349095.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130201404238.png) |
+| :-------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130201416211.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130201504011.png) |
+### Summary
+1. Output
+	- Mealy: depends on both inputs and presents
+	- Moore: doesn't depend on inputs 
+2. State Diagram
+	-  Mealy: less states -> potentially less number of flip-flops
+	- Moore: more states than Mealy -> possibly bigger circuit 
+3. Speed of output response to the inputs
+	- Mealy: quick, as soon as input changes
+	- Moore: as long as one clock cycle delay 
+4. TIMING ISSUE
+	- Mealy: asynchronous, may cause serious problem
+	- Moore: synchronous, more stable 
+#### Standard Architecture
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130210632203.png)
+
+#### Combination
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130210709599.png)
+- Next state logic 没有区别
+- 只是 output 有区别
 ## State Reduction
 状态化简是 FSM 优化的第一步，核心是合并等价状态，减少状态数以降低寄存器数量
 	核心概念：Equivalent States
@@ -1361,6 +1393,49 @@ Mealy 和 Moore 区分的是 output
 | Gray Code      | 相邻状态仅 1 位不同（如 00→01→11→10）     | 减少状态切换时的信号跳变，降低功耗      | 寄存器数量同二进制，组合逻辑略简单 | 对功耗敏感的场景（如低功耗传感器）      |
 | One hot coding | n 个状态用 n 位，仅 1 位为 1（如 S0=0001） | 组合逻辑极简单（次态方程仅需选通门），速度快 | 寄存器最多（n 个状态→n 位）  | 高频场景（如 CPU 控制器、高速序列检测） |
 ## Unused State
+FSM 状态编码后，若二进制码位数为 k，则存在 $2^k$ 个可能状态，其中部分是 unused state（如 5 个状态用 3 位编码，有 3 个无效状态：001,100,111）
+必须处理未使用状态，否则上电后 FSM 可能进入无效状态，导致功能紊乱。
+- 在 Kmap 中，x 被用来 make group bigger, term smaller
+- 一旦确定了 PI, x 就被确定了是 0 还是 1
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130211215825.png)
+图中 p2p1p0=100 的时候 n2=0 以此类推就能确定 unused state 的 next state
+变成下图
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130211347578.png)
+111 这个 unused state 需要 2 个 clk cycle 才能回到 normal operation
+如果想要 111 更快回去可以人为指定 X
+绝对不能有永远不能回去的 unused state，比如 001 的 next state 必须 avoid 001
 
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130211525277.png)<br> | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130211606541.png)<br> |
+| :------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
 
 ## FSM Reverse Engineering
+当电路是 register 和 combinational circuit interconnect => FSM
+1. 判断 FSM 类型：看输出逻辑的输入 —— 仅接状态→Moore；接状态 + 输入→Mealy
+2. 确定状态数：状态寄存器位数 k→最大状态数$2^k$
+3. 推导 next state：分析组合逻辑的输入（状态 + 输入）与输出（次态）的逻辑关系 写出 equation
+4. 构建状态表：枚举所有 “输入 + 当前状态”，填入次态和输出
+5. 绘制状态图：根据状态表，标注状态转换和输出，还原 FSM 行为
+
+# RTL Design
+level of abstract, 侧重于设计 system
+## Component
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130214206540.png)
+- Controllers: check the status of data path, need feedback and instruction from outside
+- 在 Controller 和 Datapath 两个 subsystem 中间的是 FSM output
+
+- Step 1：捕获 HLSM（Capture High-Level State Machine）
+	- 目标：用 HLSM 描述系统的 “输入、输出、状态动作与流转”，不涉及硬件细节
+	- 关键输出：HLSM 状态图（State Diagram），明确 “状态→动作→流转条件”
+
+- Step 2：创建数据通路（Create Datapath）
+	- 目标：将 HLSM 中的 “数据存储、运算” 映射为实际硬件组件，生成数据通路
+	- 关键输出：Datapath 硬件图，包含组件、数据流向、控制信号接口
+
+- Step 3：连接控制器与数据通路（Connect Controller to Datapath）
+	- 目标：明确 Controller 与 Datapath 的交互接口 ——Controller 的输入来自 Datapath 的状态反馈，输出为 Datapath 的控制信号。
+	- 关键输出：系统顶层接口图，明确 “外部输入→Controller→Datapath→外部输出” 的信号流向。
+
+-  Step 4：推导控制器的 FSM（Derive Controller’s FSM）
+	- 目标：将 HLSM 的 “高层状态与动作” 转化为 Controller 的bit 级 FSM—— 用 FSM 处理 “控制信号”，替代 HLSM 中的 “数据操作”
+	- 关键输出：Controller 的 FSM 状态图与状态表（State Table），明确 “当前状态 + 输入→下一状态 + 控制信号”
+## Example

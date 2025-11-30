@@ -13,10 +13,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/270/Slides/T11 FSM Optimizations.pdf"
+                "file": "Course/270/Slides/T12 RTL Design.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "T11 FSM Optimizations"
+              "title": "T12 RTL Design"
             }
           },
           {
@@ -87,8 +87,7 @@
               "title": "Cheating sheat"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -209,13 +208,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/270/Slides/T12 RTL Design.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "T12 RTL Design 的大纲"
             }
           },
           {
@@ -249,17 +248,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "acccd2c08cec7b3d",
+  "active": "69cf03af9e3486d9",
   "lastOpenFiles": [
-    "Course/270/Slides/T11 FSM Optimizations.pdf",
     "Course/270/Lecture Notes.md",
+    "Course/270/Slides/T12 RTL Design.pdf",
+    "Course/270/Slides/T11 FSM Optimizations.pdf",
+    "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/270/Slides/T10 FSM & Controller.pdf",
     "Course/270/Verilog.md",
-    "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/270/Slides/Notes.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
-    "Course/270/Slides/T12 RTL Design.pdf",
     "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/250/Exercise.md",
