@@ -1511,6 +1511,7 @@ Step3&4:
 - 工程设计优化（避免资源浪费）
 	- 早期方案缺陷：同时计算所有运算（加法、与、或等），再用 MUX 选择结果 —— 导致布线冗余、功耗浪费（多数运算结果无用）
 	- 优化方向：通过控制信号直接触发目标运算，仅激活对应运算逻辑，关闭其他闲置模块，减少布线和功耗
+- *Register* 很重要，需要等算完了再令 e=1，防止 LED 乱闪, take time to calculate correct results
 
 ## Adder
 ### Carry-Ripple Adder
@@ -1528,4 +1529,46 @@ Step3&4:
 2. Attempt 2 - 把 Carry 提前算好
 	- 介于 Carry-ripple Adder 和 Attempt 1 之间的一种
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201212416355.png)
-3. Attempt 3 - 
+3. Attempt 3 - Using SPG block
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201213445499.png)
+某一位产生进位 $c_{i+1}$ 只有两种可能，且这两种情况相互独立：
+- 情况 1：本地生成进位：当前位 $A_i=1 且 B_i=1（G_i=1）$，无论低位是否有进位，$c_{i+1}$ 必然为 1=> G: Generate
+- 情况 2：传播低位进位：当前位 $A_i≠B_i（P_i=1）$，且低位有进位 $（c_i=1）$，则 $c_{i+1}=1$（将 $c_i$ 传播上来）=> P: Propagate
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201214314949.png)
+- 最上方一排是 direct input
+- 计算 P&G : 1 delay
+- 计算 Carry : 2 delay 在 PG 基础上，所以总共 3 delay
+- 计算 Sum : $s_{0}=P_{0}\oplus cin$, $s_{1}=P_{1}\oplus c_{1}$, $s_{2}=P_{2}\oplus c_{2}$, $s_{3}=P_{3}\oplus c_{3}$, 在 Carry 上再加 1 delay，总计 4 delay
+	- 注意 $s_{0}$ 很特殊，2delay，不是 critical path
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201220527776.png)
+
+### Cascading Adders
+1. Attempt 1:
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201220904670.png)
+	12 delay for cout
+
+2. Adding two more outputs: P, G (group Propagate and group Generate)
+![1545253bc340d84070d3a646c52a3a50.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/1545253bc340d84070d3a646c52a3a50.jpg)
+- P 会比 G 快一些，G 需要 3
+- PG 到算出 c3, c2, c1 需要 2
+- 上方的 adder 需要等到 cin 才能开始，内部运算 carry 又需要 2
+- s15-s13 再加一，8，s12 只要 6，等到 c3 算好就行
+### CLA Adders
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201222211826.png)
+- 最右侧的两个 c 应该是 provided directly
+## Multiplier
+都是 unsigned
+### Array Style
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201222313604.png)
+- 轮流将 multiplier 的每个 bit 与 multiplicant 做 AND，产生 partial product
+- 优点：并行运算，速度快（仅需加法器阵列的延迟）
+- 缺点：面积大（需大量加法器和与门），位数越多，硬件资源消耗越显著
+### Sequential Style
+- Don't compute all partial products simultaneously. Rather, compute one at a time (similar to by hand), maintain a running sum
+- 优势：仅需 1 个加法器，硬件资源少（面积小）
+- 缺点：串行执行，速度慢（需 N 个时钟周期完成 N 位乘法）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201223241839.png)
+注意 shift 的行为
+
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201223414660.png)<br> | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201223425020.png)<br> |
+| :------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
