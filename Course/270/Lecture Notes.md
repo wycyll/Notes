@@ -1463,3 +1463,69 @@ level of abstract, 侧重于设计 system
 ### Laser-Based Distance Measurer
 - 功能：发射激光→检测反射→计算距离（`D = T × 3e8 m/s / 2`，`T`为激光往返时间）
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251130224534495.png)
+
+Step 1: Capture High-Level State Machine
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201200449650.png)
+- 令 $f=3*10^8$，every clk cycle light travels 1m, number of clk cycle= distance (m)
+- S3 可以加上 S'&(time is out) 到一个新状态，可能输出 error message，防止过了太久一直收不到反射回来的信号
+- D 需要是整数，但若提高 clk frequency，可以变得更精确
+
+Step2: Create a Datapath
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201201106922.png)
+
+Step3: Connecting the Datapath to a Controller
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201201310932.png)
+
+Step4: Deriving the Controller's FSM
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201201344317.png)
+建议把所有 output bit 的状态都考虑上
+
+关于 S0 和 S1 是否可以合并：
+1. 合并后 D 很快被清零，显示的时间太短
+2. 合并后 S0 combine 了很多 function，导致 circuit 变复杂，clock 必须要变慢
+
+### Bus Interface
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201202713511.png)
+- Peripheral
+	1. 数据存储载体：每个 Peripheral 内置 1 个 32-bit 寄存器（Register），用于存储自身的专属数据（如传感器采集的数值、设备配置参数等）
+	2. Faddr：每个 Peripheral 分配唯一的 4-bit 地址，用来 name peripheral，主处理器通过地址精准选择要访问的外设（如 Per0 地址 0000、Per1 地址 0001，直至 Per15 地址 1111）。所有 peripheral 都会收到 A (Adress)，但是对比之后是自己才会发送信号
+	3. 总线通信节点：所有 Peripheral 共享Bus，通过Bus Interface与主处理器交互，避免主处理器与每个外设单独布线，简化硬件连接
+	4. 可有不同 peripheral 控制不同 interaction
+
+Step1: ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201203651095.png)
+Step2:
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201203743546.png)
+🐾发现 A 只是通过 controller 到了 datapath，应该作为 datapath 的 input
+Step3&4:
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201203853172.png)
+
+## Hierarchical Design
+- Hierarchical design structure at different levels of abstraction
+- Levels of abstraction: hiding the details in lower levels
+- Hide details
+- Reuse subsystems 
+
+# Arithmetic Components
+## ALU
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201204835022.png)
+- 工程设计优化（避免资源浪费）
+	- 早期方案缺陷：同时计算所有运算（加法、与、或等），再用 MUX 选择结果 —— 导致布线冗余、功耗浪费（多数运算结果无用）
+	- 优化方向：通过控制信号直接触发目标运算，仅激活对应运算逻辑，关闭其他闲置模块，减少布线和功耗
+
+## Adder
+### Carry-Ripple Adder
+![f5e2a6b0efa140ee1ae6be8aab8ca4f9.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/f5e2a6b0efa140ee1ae6be8aab8ca4f9.jpg)
+- Crtical Path: 从最右侧的 input 到最左侧的 co 是 critical path。s 可以有 1/2 gate delay，如果选择的是 2-level，那么右侧输入到 s3 也是 critical path。
+- 4 个 calculate in paraller, carry 还没被算出来的时候是 0
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201205025713.png)
+- 进位延迟
+- 例：4 位加法器 0111+0001（结果 01000），需等待进位从第 0 位（LSB）传递到第 3 位（MSB），4 个 FA 延迟后才输出正确结果
+- 缺陷：位数越多，延迟越长（N 位加法器需 N 个 FA 延迟），无法满足高频系统需求
+### Carry-Lookahead Adder
+1. Attempt 1(不是 CLA)- 把所有输出都用 combination circuit, 无需等待 c 算好
+	- Pros: Fast, 2 gate-level delays
+	- Con: Large
+2. Attempt 2 - 把 Carry 提前算好
+	- 介于 Carry-ripple Adder 和 Attempt 1 之间的一种
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201212416355.png)
+3. Attempt 3 - 
