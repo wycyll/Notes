@@ -466,9 +466,150 @@ The amount of charge stored $Q=Cv$
 - 总储能：对功率从$-\infty$到t积分（初始时刻$v(-\infty)=0$，无初始能量）$w_C = \int_{-\infty}^t p d\tau = \frac{1}{2}Cv^2$
 - 能量仅与当前电压有关，与电压变化方向无关
 
+## Inductor
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204002741350.png)
+
+## First Order
+![59ca37621251a8d3767c3c6decb097a8.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/59ca37621251a8d3767c3c6decb097a8.jpg)
+
+
+![afb46cb5103d1896f50cd1b33831aa75.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/afb46cb5103d1896f50cd1b33831aa75.jpg)
+
+## Second Order
+![d0ddfc27040a1d9568b75565bdac5422.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/d0ddfc27040a1d9568b75565bdac5422.jpg)
+
+![82cff37cddd6c33ed698f673801d7656.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/82cff37cddd6c33ed698f673801d7656.jpg)
+
 # Sinusoids and Phasors
 - 加减法：必须用直角坐标 $(x + jy)$
 - 乘除法：最好用极坐标 $(r\angle\theta)$
+
+## Concept
+- AC is more efficient and economical to transmit over long distances.
+- Circuits driven by sinusoidal current or voltage sources are called ac circuits.
+- A sinusoidal forcing function produces both a transient response and a steady-state response, like the step function in Chapters 7 and 8. we say that the circuit is operating at sinusoidal *steady state*.
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204002001555.png)
+
+## Basic Property
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204002917818.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204003019565.png)
+As time increases, the sinor rotates on a circle of radius $V_{m}$ at an angular velocity ω in the counter clockwise direction. 
+We may regard v(t) as the *projection* of the sinor on the real axis.
+
+$\tan^{-1}=\frac{y}{x}$ 🐾注意象限可能有问题人工核对
+### Phasor
+相量 (Phasor) 是在稳态交流 (AC) 电路分析中最常用的工具。
+- 定义
+	相量是一个复数，用于表示一个时间正弦函数（如电压 $v(t)$ 或电流 $i(t)$）的幅值和相位角。$e^{j\omega t}$ implicitly present
+- 数学表示
+	对于一个时间函数 $v(t) = V_m \cos(\omega t + \theta_v)$：
+	它的最大值相量 $\tilde{V}$ 定义为：
+	$$\tilde{V} = V_m e^{j\theta_v} = V_m \angle \theta_v$$
+### Sinor
+正弦量 (Sinor) 是对相量概念的一种扩展，它保留了时间项。
+- 定义
+	正弦量是一个复函数，用于在时域中表示正弦波，并且包含了振荡项 $e^{j\omega t}$。
+- 数学表示
+	对于一个时间函数 $v(t) = V_m \cos(\omega t + \theta_v)$：
+	它的正弦量 $V(t)$ 定义为：
+
+$$V(t) = \tilde{V}e^{j\omega t} = (V_m e^{j\theta_v})e^{j\omega t} = V_m e^{j(\omega t + \theta_v)}$$
+	连接时域与相量域: 它的实部就是原始的物理量（如果我们在定义相量时使用的是 $\cos$ 函数）：$$v(t) = \text{Re}\{V(t)\} = \text{Re}\{V_m e^{j(\omega t + \theta_v)}\} = V_m \cos(\omega t + \theta_v)$$
+> 分别在 phasor  (frequency) domain & time domain
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204004139114.png)
+
+## Phasor Relationship
+### Resistor
+只是拉伸，没有旋转
+### Inductor
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204005918686.png)
+
+### Capacitor
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204005931648.png)
+乘一个 $j$ 相当于逆时针转 90°
+### Summary
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204010026288.png)
+
+## Impedance
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204010822792.png)
+### Extreme
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204010840753.png)
+
+As a complex quantity, the impedance may be expressed in rectangular form or polar form
+$Z = R + jX = |Z| \angle \theta \quad |Z| = \sqrt{R^2 + X^2},\ \theta = \tan^{-1}\frac{X}{R}$
+- $R: \text{resistance} \quad R = |Z| \cos\theta$
+- $X: \text{reactance} \quad X = |Z| \sin\theta$
+
+1. $X>0$ 
+the impedance is *inductive or lagging*, i.e. current lags voltage.
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204011441356.png)
+
+2. $X<0$
+the impedance is *capacitive or leading*, i.e. current leads voltage
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204011513607.png)
+
+### Admittance
+用于简化并联电路分析：$Y = \frac{\tilde{I}}{\tilde{V}} = \frac{1}{Z}$
+$Y = G + jB$ 单位 simens (S)
+- G：conductance（实部），$G = \frac{R}{R^2 + X^2}$；
+- B：susceptance（虚部），$B = -\frac{X}{R^2 + X^2}$（L 贡献负电纳，C 贡献正电纳）。
+
+##  KVL
+
+沿任意闭合回路，相量电压的代数和为 0：$\tilde{V}_1 + \tilde{V}_2 + \dots + \tilde{V}_n = 0$
+## KCL
+在任意节点，相量电流的代数和为 0（流入 = 流出）：$\tilde{I}_1 + \tilde{I}_2 + \dots + \tilde{I}_n = 0$
+## 等效阻抗
+### 阻抗串联（电流相同）
+
+等效阻抗为各阻抗之和：$Z_{\text{eq}} = Z_1 + Z_2 + \dots + Z_N$
+与电阻的 Y-Δ 变换公式一致，仅将电阻替换为阻抗：
+
+- Y→Δ 变换：$Z_a = \frac{Z_1 Z_2 + Z_2 Z_3 + Z_3 Z_1}{Z_3}$，$Z_b = \frac{Z_1 Z_2 + Z_2 Z_3 + Z_3 Z_1}{Z_2}$，$Z_c = \frac{Z_1 Z_2 + Z_2 Z_3 + Z_3 Z_1}{Z_1}$；
+- Δ→Y 变换：$Z_1 = \frac{Z_a Z_b}{Z_a + Z_b + Z_c}$，$Z_2 = \frac{Z_b Z_c}{Z_a + Z_b + Z_c}$，$Z_3 = \frac{Z_c Z_a}{Z_a + Z_b + Z_c}$。
+
+## Phase-Shifters
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012446813.png)
+
+1. 输出超前输入（取电阻 R 为输出）
+	- 电路：输入 $\tilde{V}_i$ 加在 R-C 串联支路，输出 $\tilde{V}_o$ 取自 R 两端；
+	- 阻抗分析：总阻抗 $Z = R + \frac{1}{j\omega C} = R - jX_C$；
+	- 相位关系：电流 $\tilde{I} = \frac{\tilde{V}_i}{Z}$，输出 $\tilde{V}_o = \tilde{I} \cdot R$；由于 Z 的角为负（容性），电流超前输入电压，而电阻电压与电流同相，因此 $\tilde{V}_o$ 超前 $\tilde{V}_i$（0°< 相位差 < 90°）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012505748.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012523587.png)
+
+2. 输出滞后输入（取电容 C 为输出）
+	- 电路：输入 $\tilde{V}_i$ 加在 R-C 串联支路，输出 $\tilde{V}_o$ 取自 C 两端；
+	- 相位关系：电容电压滞后电流 90°，因此 $\tilde{V}_o$ 滞后 $\tilde{V}_i$（0°< 相位差 < 90°）。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012540094.png)
+
+### 多级解决方案
+- 单级最大移相角 < 90°：若相位差接近 90°，需 $X_C \to \infty$（$\omega RC \to 0$），此时输出电压 $\tilde{V}_o \to 0$（无实际输出）；
+- 多级移相：需 90° 移相时，用两级串联（每级 45°），如文档 Practice Problem 9.13：选 $R_1 = R_2 = 20\,\Omega$，两级 R-C 电路各移相 45°，总移相 90°。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012556597.png)
+
+# Sinusoidal Steady-State Analysis
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012802557.png)
+注意：$\omega$ 不一样 Z 也不一样！
+$v=-1+2.50cos (2t-30.78°)+2.33cos (5t-77.91°)(V)$ 写单位!!!
+
+## Thevenin and Norton Equivalent Circuits
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012953408.png)
+> 待办：找一道题
+
+#  AC Power Analysis
+## Instantaneous power 
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204013659779.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204013713287.png)
+## Average Power
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204013748501.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204013802515.png)
+
+- 仅电阻贡献平均功率：电感（L）、电容（C）的平均功率为 0（能量交换无净消耗），只有电阻（R）将电能转化为热能 / 机械能等 “不可逆形式”，因此 $P = I_{\text{rms}}^2 R$（$I_{\text{rms}} = \frac{I_m}{\sqrt{2}}$ 为电流有效值）；
+- 相位差的影响：$\cos(\theta_v - \theta_i)$ 是 “功率因数” 的核心（见 11.5 节），当电压与电流同相（$\theta_v = \theta_i$，纯电阻负载）时，$\cos\theta = 1$，平均功率最大；当相位差 90°（纯感性 / 容性负载）时，$\cos\theta = 0$，平均功率为 0（无能量消耗）。
+
+
+
 
 这是一个非常深刻且关键的问题，涉及到**相量分析（Phasor Analysis）**的核心数学约定。
 

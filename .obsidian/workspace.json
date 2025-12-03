@@ -8,58 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "69cf03af9e3486d9",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/270/Slides/T9 Register & Shifter.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "T9 Register & Shifter"
-            }
-          },
-          {
-            "id": "acccd2c08cec7b3d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Course/270/Lecture Notes.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture Notes"
-            }
-          },
-          {
-            "id": "f6b6b5b97c26e315",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Course/270/Verilog.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Verilog"
-            }
-          },
-          {
-            "id": "50bba8bbdcb51705",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/215/Slides/ECE2150J_C09.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "ECE2150J_C09"
-            }
-          },
-          {
             "id": "21ede175d1ebdbc7",
             "type": "leaf",
             "state": {
@@ -71,6 +19,18 @@
               },
               "icon": "lucide-file",
               "title": "Lecture Notes"
+            }
+          },
+          {
+            "id": "50bba8bbdcb51705",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/215/Slides/ECE2150J_C11.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ECE2150J_C11"
             }
           },
           {
@@ -88,7 +48,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -209,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C09.pdf",
+                "file": "Course/215/Slides/ECE2150J_C11.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C09 的大纲"
+              "title": "ECE2150J_C11 的大纲"
             }
           },
           {
@@ -229,7 +189,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -249,23 +209,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
     "Course/215/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C11.pdf",
+    "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C10.pdf",
+    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/270/Verilog.md",
+    "Course/270/Lecture Notes.md",
+    "Course/270/Slides/T9 Register & Shifter.pdf",
+    "Course/215/Slides/ECE2150J_C06.pdf",
+    "Course/215/Slides/ECE2150J_C07.pdf",
+    "Course/215/Slides/ECE2150J_C08.pdf",
     "Course/215/Slides/ECE2150J_C14.pdf",
     "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
-    "Course/270/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C07.pdf",
-    "Course/270/Slides/T9 Register & Shifter.pdf",
-    "Course/270/Slides/T12 RTL Design.pdf",
-    "Course/270/Slides/T11 FSM Optimizations.pdf",
-    "Course/270/Verilog.md",
     "Course/270/Slides/Notes.md",
-    "Cheating sheat.md",
     "Course/250/Exercise.md",
     "形策.md",
     "Course/250/Lecture Notes.md",
