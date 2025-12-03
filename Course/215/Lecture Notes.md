@@ -554,7 +554,7 @@ $Y = G + jB$ 单位 simens (S)
 - G：conductance（实部），$G = \frac{R}{R^2 + X^2}$；
 - B：susceptance（虚部），$B = -\frac{X}{R^2 + X^2}$（L 贡献负电纳，C 贡献正电纳）。
 
-##  KVL
+## KVL
 
 沿任意闭合回路，相量电压的代数和为 0：$\tilde{V}_1 + \tilde{V}_2 + \dots + \tilde{V}_n = 0$
 ## KCL
@@ -606,7 +606,38 @@ $v=-1+2.50cos (2t-30.78°)+2.33cos (5t-77.91°)(V)$ 写单位!!!
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204013802515.png)
 
 - 仅电阻贡献平均功率：电感（L）、电容（C）的平均功率为 0（能量交换无净消耗），只有电阻（R）将电能转化为热能 / 机械能等 “不可逆形式”，因此 $P = I_{\text{rms}}^2 R$（$I_{\text{rms}} = \frac{I_m}{\sqrt{2}}$ 为电流有效值）；
-- 相位差的影响：$\cos(\theta_v - \theta_i)$ 是 “功率因数” 的核心（见 11.5 节），当电压与电流同相（$\theta_v = \theta_i$，纯电阻负载）时，$\cos\theta = 1$，平均功率最大；当相位差 90°（纯感性 / 容性负载）时，$\cos\theta = 0$，平均功率为 0（无能量消耗）。
+- 相位差的影响：$\cos(\theta_v - \theta_i)$ 是 “功率因数” 的核心
+- 当电压与电流同相（$\theta_v = \theta_i$，纯电阻负载）时，$\cos\theta = 1$，平均功率最大
+- 当相位差 90°（纯感性 / 容性负载）时，$\cos\theta = 0$，平均功率为 0（无能量消耗）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204015054170.png)
+Generally, the average power absorbed by an impedance $\mathbf{Z} = \mathbf{R} + \mathbf{jX}$ is given by
+$\begin{align*} P &= \frac{1}{2} \text{Re}\left(\widetilde{V} \widetilde{I}^*\right) = \frac{1}{2} \text{Re}\left(\widetilde{I} (R + jX) \widetilde{I}^*\right) \\ &= \frac{1}{2} \text{Re}\left(I^2 R + jI^2 X\right) \\ &= \frac{1}{2} I^2 R \end{align*}$
+*Only R contributes to the average power.*
+where $I^2 = \mathbf{I} \times \mathbf{I}^*$, or $I^2 = |\mathbf{I}|^2$,the square of amplitude of phasor $\mathbf{I}$
+最后如果是极坐标形式直接把前面的数平方不管角度就行
+
+1. 公式 1：$\boxed{P = \frac{1}{2} V_m I_m \cos(\theta_v - \theta_i)}$
+	- 适用场景：已知电压振幅 $V_m$、电流振幅 $I_m$、电压与电流的相位差 $\theta_v - \theta_i$；
+	- 物理意义：$\cos(\theta_v - \theta_i)$ 是 “功率因数”，决定了电压 / 电流的 “有效功率占比”（相位差越大，有效功率占比越低）
+	- 注：$\frac{1}{2} V_m I_m$ 是 “振幅形式”，乘以功率因数后得到实际消耗的平均功率
+2. 公式 2：$\boxed{P = \frac{1}{2} \text{Re}(\tilde{V} \tilde{I}^*)}$
+	- 适用场景：已知电压相量 $\tilde{V}$、电流相量 $\tilde{I}$（从电源端计算功率）
+	- 关键细节：$\tilde{I}^*$ 是电流相量的共轭复数（作用是将 “相量乘法” 转化为 “功率因数的计算”）；$\text{Re}(\cdot)$ 表示取复数的 “实部”（因为平均功率是实数）
+	- 标注 “source”：说明这是从电源端计算功率的常用公式
+3. 公式 3：$\boxed{P = \frac{1}{2} I_m^2 R}$
+	- 适用场景：已知电流振幅 $I_m$、电阻 R（从电阻负载端计算功率）
+	- 物理意义：只有电阻会将电能转化为热能 / 机械能（消耗能量），因此平均功率仅由电阻决定
+	- 标注 “resistive load”：说明这是从电阻负载端计算功率的公式
+
+
+
+
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014850486.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014903694.png)
+
+
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014921736.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014941257.png)
 
 
 

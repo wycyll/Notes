@@ -189,7 +189,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -209,12 +209,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fd37576787281f3c",
+  "active": "50bba8bbdcb51705",
   "lastOpenFiles": [
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C11.pdf",
-    "Cheating sheat.md",
+    "Course/215/Slides/ECE2150J_C14.pdf",
+    "Course/215/Exercise.md",
     "Course/215/Slides/ECE2150J_C10.pdf",
+    "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
@@ -222,7 +224,6 @@
     "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Slides/ECE2150J_C08.pdf",
-    "Course/215/Slides/ECE2150J_C14.pdf",
     "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/270/Slides/Notes.md",
@@ -230,7 +231,6 @@
     "形策.md",
     "Course/250/Lecture Notes.md",
     "Daily/Excel.md",
-    "Course/215/Exercise.md",
     "All/README.md",
     "Course/270/Topic 2.md",
     "Basic Logic Gates 1.md",

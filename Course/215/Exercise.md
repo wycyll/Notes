@@ -39,3 +39,11 @@
 # Cascaded Op Amp
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251022173318037.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251022173330269.png)
+
+
+# Practice
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014626403.png)
+![15664da8f3c5b98f639dd63aa99aea67.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/15664da8f3c5b98f639dd63aa99aea67.png)
+求等效电阻电压
+
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014755468.png)
