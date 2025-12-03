@@ -1545,7 +1545,7 @@ Step3&4:
 ### Cascading Adders
 1. Attempt 1:
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201220904670.png)
-	12 delay for cout
+	3 delay for first cout, 其他 PG 在计算第一个 cout 的时候已经好了，之后 cout 只需要加 2 个 delay。总共是 9 个 delay。
 
 2. Adding two more outputs: P, G (group Propagate and group Generate)
 ![1545253bc340d84070d3a646c52a3a50.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/1545253bc340d84070d3a646c52a3a50.jpg)
