@@ -53,10 +53,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C10.pdf"
+                "file": "Course/215/Slides/ECE2150J_C09.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C10"
+              "title": "ECE2150J_C09"
             }
           },
           {
@@ -88,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/215/Slides/ECE2150J_C09.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "ECE2150J_C09 的大纲"
             }
           },
           {
@@ -249,24 +249,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "acccd2c08cec7b3d",
+  "active": "50bba8bbdcb51705",
   "lastOpenFiles": [
-    "Course/215/Slides/ECE2150J_C07.pdf",
+    "Course/215/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/215/Slides/ECE2150J_C11.pdf",
+    "Course/215/Slides/ECE2150J_C10.pdf",
+    "Course/215/Slides/ECE2150J_C14.pdf",
+    "Course/215/Slides/ECE2150J_C12.pdf",
+    "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/270/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T11 FSM Optimizations.pdf",
-    "Course/270/Slides/T13 Arithmetic Components.pdf",
-    "Course/270/Slides/T14 Timing Issues.pdf",
     "Course/270/Verilog.md",
-    "Course/270/Slides/T10 FSM & Controller.pdf",
-    "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/270/Slides/Notes.md",
     "Cheating sheat.md",
-    "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/250/Exercise.md",
-    "Course/250/Slides/36_Lecture_Outline.pptx",
-    "Course/215/Lecture Notes.md",
     "形策.md",
     "Course/250/Lecture Notes.md",
     "Daily/Excel.md",
