@@ -684,9 +684,25 @@ For a purely resistive load, $θv – θi = 0$, $pf = 1$, implying that $P = |S|
 For a purely reactive load, $θv – θi = 0, pf = 0$, implying that $P = 0$.
 
 ## Complex Power
-$\tilde{S} = \frac{1}{2}\tilde{V}\tilde{I}^*=\tilde{V}_{\text{rms}} \cdot \tilde{I}_{\text{rms}}^*=$
-其中$\tilde{V}_{\text{rms}} = V_{\text{rms}} \angle \theta_v$、$\tilde{I}_{\text{rms}} = I_{\text{rms}} \angle \theta_i$
-
+$\tilde{S} = \frac{1}{2}\tilde{V}\tilde{I}^*=\tilde{V}_{\text{rms}} \cdot \tilde{I}_{\text{rms}}^*=I_{\text{rms}}^2 R + jI_{\text{rms}}^2 X=\frac{V_{\text{rms}}^2}{Z^*}$, 后两个不需要考虑相位
+其中 $\tilde{V}_{\text{rms}} = V_{\text{rms}} \angle \theta_v$、$\tilde{I}_{\text{rms}} = I_{\text{rms}} \angle \theta_i$
+$S = P + jQ$，$Z=R+jX$
+1. 有功功率 P（实部，$P = \text{Re}(S)$）
+	- $I_{\text{rms}}^2 R$
+	- 物理意义：实际消耗的功率（仅由电阻转化为热 / 机械能等）
+	- 单位：瓦特（W）
+	- 公式：
+	    $P = V_{\text{rms}} I_{\text{rms}} \cos(\theta_v - \theta_i) = I_{\text{rms}}^2 R = |S| \cos(\theta_v - \theta_i)$
+	    （$\cos(\theta_v - \theta_i)$ 是功率因数）
+2. 无功功率 Q（虚部，$Q = \text{Im}(S)$）
+	- $I_{\text{rms}}^2 X$
+	- 物理意义：储能元件（L/C）与电源的能量交换速率（不消耗能量，仅往返交换）
+	- 单位：VAR，Volt-Ampere Reactive
+		- 公式：
+		    $Q = V_{\text{rms}} I_{\text{rms}} \sin(\theta_v - \theta_i) = I_{\text{rms}}^2 X = |S| \sin(\theta_v - \theta_i)$
+		    （X 是电抗：感性负载 $X>0$，容性负载 $X<0$）
+🐾注意：$P \neq \frac{V_{\text{rms}}^2}{R}$、$Q \neq \frac{V_{\text{rms}}^2}{X}$，电压不是全在 R/X 上
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204231239508.png)
 
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014850486.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014903694.png)
