@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C11.pdf"
+                "file": "Course/215/Slides/ECE2150J_C09.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C11"
+              "title": "ECE2150J_C09"
             }
           },
           {
@@ -47,7 +47,8 @@
               "title": "Cheating sheat"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Lecture Notes.md",
+                "file": "Course/215/Slides/ECE2150J_C09.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "ECE2150J_C09 的大纲"
             }
           },
           {
@@ -208,14 +209,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21ede175d1ebdbc7",
+  "active": "50bba8bbdcb51705",
   "lastOpenFiles": [
+    "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Slides/ECE2150J_C11.pdf",
     "Course/215/Lecture Notes.md",
     "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C14.pdf",
     "Course/215/Exercise.md",
-    "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
