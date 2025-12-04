@@ -673,16 +673,19 @@ $I_{\text{eff}} = \sqrt{\frac{1}{T} \int_0^T i^2(t) dt}$
 阻抗的定义是 “相量电压 ÷ 相量电流”（$Z = \frac{\tilde{V}}{\tilde{I}}$），而有效值相量的计算结果和振幅相量完全相同：$Z = \frac{\tilde{V}}{\tilde{I}} = \frac{\tilde{V}_{rms}}{\tilde{I}_{rms}}$
 
 ## Apparent Power and Power Factor
--  $|S| = V_{\text{rms}} I_{\text{rms}}$，单位是 VA（和实际功率的 W 区分开）
+-  $|S| = V_{\text{rms}} I_{\text{rms}}=\frac{1}{2}V_{m}I_{m}$，单位是 VA（和实际功率的 W 区分开）
 能转化为有用功（平均功率）的部分，需要乘以功率因数：P=∣S∣×pf
 -  $\text{pf} = \cos\theta = \frac{P}{|S|}$
 	- $\theta = \theta_v - \theta_i$：电压与电流的相位差（$\theta_v$ 是电压相位，$\theta_i$ 是电流相位）
 	角 $(\theta_v - \theta_i)$：是负载阻抗的相位角（即 $\theta_L = \arctan\frac{X_L}{R_L}$，同时也是负载电压与电流的相位差）
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204193405158.png)
+The value of pf ranges between zero and unity. 
+For a purely resistive load, $θv – θi = 0$, $pf = 1$, implying that $P = |S|$. 
+For a purely reactive load, $θv – θi = 0, pf = 0$, implying that $P = 0$.
 
-
-
-
+## Complex Power
+$\tilde{S} = \frac{1}{2}\tilde{V}\tilde{I}^*=\tilde{V}_{\text{rms}} \cdot \tilde{I}_{\text{rms}}^*=$
+其中$\tilde{V}_{\text{rms}} = V_{\text{rms}} \angle \theta_v$、$\tilde{I}_{\text{rms}} = I_{\text{rms}} \angle \theta_i$
 
 
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014850486.png)

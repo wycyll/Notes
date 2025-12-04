@@ -46,6 +46,18 @@
               "icon": "lucide-file",
               "title": "Cheating sheat"
             }
+          },
+          {
+            "id": "dcc4a06418f5bac7",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/215/Slides/ECE2150J_C09.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "ECE2150J_C09"
+            }
           }
         ],
         "currentTab": 1
@@ -211,13 +223,13 @@
   },
   "active": "50bba8bbdcb51705",
   "lastOpenFiles": [
-    "Course/215/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C11.pdf",
-    "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/215/Slides/ECE2150J_C11.pdf",
+    "Course/215/Lecture Notes.md",
+    "Course/215/Exercise.md",
+    "Course/215/Slides/ECE2150J_C10.pdf",
     "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C14.pdf",
-    "Course/215/Exercise.md",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
