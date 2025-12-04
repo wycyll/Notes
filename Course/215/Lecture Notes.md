@@ -628,6 +628,10 @@ where $I^2 = \mathbf{I} \times \mathbf{I}^*$, or $I^2 = |\mathbf{I}|^2$,the sq
 	- 适用场景：已知电流振幅 $I_m$、电阻 R（从电阻负载端计算功率）
 	- 物理意义：只有电阻会将电能转化为热能 / 机械能（消耗能量），因此平均功率仅由电阻决定
 	- 标注 “resistive load”：说明这是从电阻负载端计算功率的公式
+	- 等价为 $\boxed{P = I_{\text{rms}}^2 R}$：因为 $I_{\text{rms}} = \frac{I_m}{\sqrt{2}}$，所以 $I_{\text{rms}}^2 R = \frac{I_m^2}{2} R$，和前者一致。
+4. $\boxed{P = V_{\text{rms}} I_{\text{rms}} \cos(\theta_v - \theta_i)}$
+	- 只适用于正弦形式
+5. $\boxed{P = |S|\times pf, 0<pf<1}$,where $|S|=V_{rms}I_{rms}$
 ## Maximum Average Power Transfer
 
 设线性电路的戴维南等效阻抗为 $Z_{\text{TH}} = R_{\text{TH}} + jX_{\text{TH}}$，负载阻抗为 $Z_L = R_L + jX_L$，则：
@@ -640,6 +644,44 @@ where $I^2 = \mathbf{I} \times \mathbf{I}^*$, or $I^2 = |\mathbf{I}|^2$,the sq
 
 ## RMS Value
 Effective Value: 与交流信号在电阻上产生相同平均功率的直流数值
+$I_{\text{eff}} = \sqrt{\frac{1}{T} \int_0^T i^2(t) dt}$
+有效值也叫 “均方根值（Root-Mean-Square, RMS）”，两者是同一个概念（$I_{\text{eff}} = I_{\text{rms}}$，$V_{\text{eff}} = V_{\text{rms}}$）
+- 一般周期信号的 RMS 公式
+	对任意周期为 T 的信号 $x(t)$（电压、电流或其他周期量），其 RMS 值的通用公式是：$X_{\text{rms}} = \sqrt{\frac{1}{T} \int_0^T x^2(t) dt}$
+- 特殊情况：直流信号的 RMS
+	若 $x(t) = A$（常数，即直流信号），代入公式得：$X_{\text{rms}} = \sqrt{\frac{1}{T} \int_0^T A^2 dt} = \sqrt{A^2} = A$ 即直流信号的 RMS 就是它本身（符合 “等效直流” 的定义）。
+- 正弦信号的 RMS（工程中最常用的情况）
+	交流电路中最常见的是正弦信号（如市电、正弦激励），其表达式为 $i(t) = I_m \cos\omega t$（$I_m$ 是振幅），对应的 RMS 值推导如下：
+	1. 代入 RMS 公式：
+	    $I_{\text{rms}} = \sqrt{\frac{1}{T} \int_0^T I_m^2 \cos^2\omega t dt}$
+	2. 用三角恒等式化简 $\cos^2\omega t = \frac{1 + \cos2\omega t}{2}$：
+	    $I_{\text{rms}} = \sqrt{\frac{I_m^2}{T} \int_0^T \frac{1 + \cos2\omega t}{2} dt}$
+	3. 积分计算：
+	    - $\int_0^T 1 dt = T$；
+	    - $\cos2\omega t$ 是周期为 $\frac{T}{2}$ 的正弦信号，一个周期内积分值为 0；
+	4. 化简后得到：
+	    $I_{\text{rms}} = \sqrt{\frac{I_m^2}{2}} = \frac{I_m}{\sqrt{2}} \approx 0.707I_m$
+
+生活中说的 “市电 220V”，指的是电压的 RMS 值，其振幅 $V_m = 220 \times \sqrt{2} \approx 311V$；设备铭牌上的 “10A 额定电流”，也是指电流的 RMS 值—— 因为功率计算用 RMS 值时，公式和直流完全一致（$P = V_{\text{rms}}I_{\text{rms}}\cos\theta = I_{\text{rms}}^2 R$），便于工程设计与计量。
+
+### 相量形式
+
+- 有效值相量的符号：$\tilde{V}_{rms}$（电压有效值相量）、$\tilde{I}_{rms}$（电流有效值相量）；
+- 有效值相量的模：等于有效值（$V_{rms}=V_m/\sqrt{2}$，$I_{rms}=I_m/\sqrt{2}$）；
+- 有效值相量的相位：和振幅相量的相位完全一致
+- 与振幅相量的关系：$\boxed{\tilde{V}_{rms} = \frac{\tilde{V}}{\sqrt{2}}}$，$\boxed{\tilde{I}_{rms} = \frac{\tilde{I}}{\sqrt{2}}}$（仅模缩小$\sqrt{2}$倍，相位不变）
+阻抗的定义是 “相量电压 ÷ 相量电流”（$Z = \frac{\tilde{V}}{\tilde{I}}$），而有效值相量的计算结果和振幅相量完全相同：$Z = \frac{\tilde{V}}{\tilde{I}} = \frac{\tilde{V}_{rms}}{\tilde{I}_{rms}}$
+
+## Apparent Power and Power Factor
+-  $|S| = V_{\text{rms}} I_{\text{rms}}$，单位是 VA（和实际功率的 W 区分开）
+能转化为有用功（平均功率）的部分，需要乘以功率因数：P=∣S∣×pf
+-  $\text{pf} = \cos\theta = \frac{P}{|S|}$
+	- $\theta = \theta_v - \theta_i$：电压与电流的相位差（$\theta_v$ 是电压相位，$\theta_i$ 是电流相位）
+	角 $(\theta_v - \theta_i)$：是负载阻抗的相位角（即 $\theta_L = \arctan\frac{X_L}{R_L}$，同时也是负载电压与电流的相位差）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204193405158.png)
+
+
+
 
 
 
