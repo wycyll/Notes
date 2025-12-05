@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C11.pdf"
+                "file": "Course/215/Slides/ECE2150J_C12.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C11"
+              "title": "ECE2150J_C12"
             }
           },
           {
@@ -59,8 +59,7 @@
               "title": "ECE2150J_C09"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -181,13 +180,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C11.pdf",
+                "file": "Course/215/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C11 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -201,7 +200,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -221,10 +220,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
-    "Course/215/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/215/Slides/ECE2150J_C11.pdf",
+    "Course/215/Lecture Notes.md",
     "Cheating sheat.md",
     "Course/215/Exercise.md",
     "Course/215/Slides/ECE2150J_C09.pdf",
@@ -236,7 +236,6 @@
     "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C07.pdf",
     "Course/215/Slides/ECE2150J_C08.pdf",
-    "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/270/Slides/Notes.md",
     "Course/250/Exercise.md",

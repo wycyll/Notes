@@ -707,6 +707,20 @@ $S = P + jQ$，$Z=R+jX$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204231239508.png)
 S, P, Q 分别守恒
 
+## Power Factor Correction
+大多数家用 / 工业负载（比如电机、空调、变压器）都是 inductive, 且 power factor 小
+
+低功率因数的问题：电网需要提供更大的视在功率（S=P/pf）（比如要输送 100kW 有功，pf=0.6 时需要 S=166.7kVA；pf=0.9 时仅需 S=111.1kVA），会浪费电网容量、增加线路损耗，因此需要 “提高功率因数”
+
+- 方法：在不改变原负载的电压、电流（不影响负载正常工作）的前提下，提高其功率因数的。addition of a reactive element (usually a capacitor) in parallel with the load in order to make the power factor closer to unity.
+- 好处：电流变小
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251205225213162.png)
+- 计算：P 不变
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251205225303475.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251205225319550.png)
+
+
+
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014850486.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014903694.png)
 
