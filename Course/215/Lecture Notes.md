@@ -682,6 +682,8 @@ $I_{\text{eff}} = \sqrt{\frac{1}{T} \int_0^T i^2(t) dt}$
 The value of pf ranges between zero and unity. 
 For a purely resistive load, $θv – θi = 0$, $pf = 1$, implying that $P = |S|$. 
 For a purely reactive load, $θv – θi = 0, pf = 0$, implying that $P = 0$.
+🐾注意要写是 lagging 还是 leading
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251205182502016.png)
 
 ## Complex Power
 $\tilde{S} = \frac{1}{2}\tilde{V}\tilde{I}^*=\tilde{V}_{\text{rms}} \cdot \tilde{I}_{\text{rms}}^*=I_{\text{rms}}^2 R + jI_{\text{rms}}^2 X=\frac{V_{\text{rms}}^2}{Z^*}$, 后两个不需要考虑相位
@@ -703,6 +705,7 @@ $S = P + jQ$，$Z=R+jX$
 		    （X 是电抗：感性负载 $X>0$，容性负载 $X<0$）
 🐾注意：$P \neq \frac{V_{\text{rms}}^2}{R}$、$Q \neq \frac{V_{\text{rms}}^2}{X}$，电压不是全在 R/X 上
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204231239508.png)
+S, P, Q 分别守恒
 
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014850486.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204014903694.png)
