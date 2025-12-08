@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Cheating sheat.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture Notes"
+              "title": "Cheating sheat"
             }
           },
           {
@@ -180,13 +180,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Cheating sheat.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "Cheating sheat 的大纲"
             }
           },
           {
@@ -220,8 +220,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d539d89ccc07b209",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
+    "Course/270/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C11.pdf",
     "Course/215/Slides/ECE2150J_C12.pdf",
@@ -231,7 +232,6 @@
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Slides/ECE2150J_C14.pdf",
     "Course/270/Verilog.md",
-    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T9 Register & Shifter.pdf",
     "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/215/Slides/ECE2150J_C07.pdf",
