@@ -579,61 +579,77 @@ $\tau=IBA\sin \phi$, $\mu=IA$
 | 铁磁质（Ferromagnet） | 强磁化，外磁场消失后保留剩磁               | 磁畴结构，外磁场使磁畴大量对齐        | 铁（Fe）、钴（Co）、永磁体 |
 
 # 33
-Wave-front continuity（波前连续性）  
-Electric field wave-fronts must be continuous at a boundary.
+## Wave-front continuity（波前连续性）
+Electric field wave-fronts must be continuous at a boundary.$\theta_i = \theta_r$
+## Snell's Law（斯涅尔折射定律）
+Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
+---
+## Electromagnetic Wave Geometry（电磁波方向关系）
+- Wavefront is perpendicular to wavevector: $\text{Wavefront} \perp \vec{k}$
+- Orthogonality of fields:
+    
+    $\vec{E} \perp \vec{k},\qquad \vec{B} \perp \vec{k},\qquad \vec{k}=\vec{E}\times\vec{B}$
+---
+## Polarization（偏振）
+- S-polarization (⊥ polarization)：Electric field **perpendicular** to plane of incidence.
+- P-polarization (∥ polarization)：Electric field **parallel** to plane of incidence.
+---
 
-$$  
-\theta_i = \theta_r  
-$$
+## Fresnel Equations（菲涅耳公式） — S Polarization (⊥)
+### Boundary Conditions for S-polarization
+(E-field ⟂ plane of incidence ⇒ E 全是切向分量)
+- Tangential Electric Field Continuity（电场切向分量连续）: $E_{0i} + E_{0r} = E_{0t}$
+- Tangential Magnetic Field Continuity（磁场切向分量连续）: $n_i \cos\theta_i (E_{0i} - E_{0r}) = n_t \cos\theta_t E_{0t}$
+### Coefficients & Intensity
+- Reflection amplitude coefficient:
+    $r_{\perp}=\frac{n_i\cos\theta_i - n_t\cos\theta_t}{n_i\cos\theta_i + n_t\cos\theta_t}$
+- Transmission amplitude coefficient:
+    $t_{\perp}=\frac{2n_i\cos\theta_i}{n_i\cos\theta_i + n_t\cos\theta_t}$
+- Intensity reflection coefficient: $R_{\perp} = |r_{\perp}|^2$
+---
+## Fresnel Equations — P Polarization (∥)
 
-Snell's Law（斯涅尔折射定律）  
-Phase continuity + speed difference:
+### Boundary Conditions for P-polarization
 
-$$  
-n_i \sin\theta_i = n_t \sin\theta_t  
-$$
+(E-field ∥ plane ⇒ 切向电场需乘上 ( $\cos\theta$ ))
 
-Boundary Conditions（边界条件） for S-polarization  
-Electric field is perpendicular to plane of incidence.
-
-Tangential Electric Field Continuity（电场切向分量连续）:
-
-$$  
-E_{0i} + E_{0r} = E_{0t}  
-$$
-
-Tangential Magnetic Field Continuity（磁场切向分量连续）:
-
-$$  
-n_i \cos\theta_i (E_{0i} - E_{0r}) = n_t \cos\theta_t E_{0t}  
-$$
-
-Fresnel Equations（菲涅耳公式） for S-polarization
-
-Reflection amplitude coefficient:
-
-$$  
-r_{\perp} =  
-\frac{n_i \cos\theta_i - n_t \cos\theta_t}  
-{n_i \cos\theta_i + n_t \cos\theta_t}  
-$$
-
-Transmission amplitude coefficient:
-
-$$  
-t_{\perp} =  
-\frac{2 n_i \cos\theta_i}  
-{n_i \cos\theta_i + n_t \cos\theta_t}  
-$$
-
-Intensity reflection coefficient:
-
-$$  
-R_{\perp} = |r_{\perp}|^2  
-$$
+- Tangential Electric Field Continuity:
+    $E_{0i}\cos\theta_i + E_{0r}\cos\theta_r E_{0t}\cos\theta_t$
+- Tangential Magnetic Field Continuity: $n_i(E_{0i}-E_{0r}) = n_t E_{0t}$
+### Coefficients & Intensity
+- Reflection amplitude coefficient:
+    $r_{\parallel}=\frac{n_t\cos\theta_i - n_i\cos\theta_t}{n_t\cos\theta_i + n_i\cos\theta_t}$
+- Transmission amplitude coefficient:
+    $t_{\parallel}=\frac{2n_i\cos\theta_i}{n_t\cos\theta_i + n_i\cos\theta_t}$
+- Intensity reflection coefficient: $R_{\parallel} = |r_{\parallel}|^2$
+---
+## Brewster Angle（布儒斯特角）
+- For P-polarization: $r_{\parallel} = 0$
+- Geometric condition: $\theta_i + \theta_t = 90^\circ$
+- Final result: $\tan\theta_B = \frac{n_t}{n_i}$
+### Physical meaning
+- P 偏振 完全不反射
+- 反射光 becomes 100% S-polarized
+- 可利用偏振片去除水面 / 玻璃反光
+---
+## Total Internal Reflection（全反射）
+- Occurs only when: $n_i > n_t$
+- And when: $\theta_i > \theta_{\text{crit}}$
+- Critical angle: $\theta_{\text{crit}} \arcsin\left(\frac{n_t}{n_i}\right)$
+- At critical angle: $\theta_t = 90^\circ$
+- For ( $\theta_i > \theta_{\text{crit}}$ )：Snell’s law gives ( $\sin\theta_t > 1$) → no real solution → refracted wave becomes evanescent → all energy reflected.
+---
+## Photography Polarizer（摄影偏振片原理）
+- 在接近 Brewster 角时，水面 / 玻璃反射光 几乎全为 S 偏振
+- 偏振片（polarizer）能选择性阻挡 S 分量
+- 因此可有效消除眩光，让水面更清晰、玻璃更透明
+- 透射光中 P 偏振增强，故颜色更饱和
+---
+## Core Logic Summary（核心逻辑总结）
 
 - 波前连续 ⇒ 反射定律
-    
 - 波前连续 + 速度不同 ⇒ Snell 定律
-    
-- 电场切向连续、磁场切向连续 ⇒ 菲涅耳公式
+- 电场切向连续、磁场切向连续 ⇒ Fresnel 方程
+- P 偏振在 Brewster 角不反射
+- S 偏振在 Brewster 角仍反射
+- 全反射与 Brewster 无关，折射消失是关键
