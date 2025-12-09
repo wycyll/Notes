@@ -653,3 +653,4 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
 - P 偏振在 Brewster 角不反射
 - S 偏振在 Brewster 角仍反射
 - 全反射与 Brewster 无关，折射消失是关键
+
