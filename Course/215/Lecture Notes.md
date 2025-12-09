@@ -719,9 +719,20 @@ S, P, Q 分别守恒
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251205225303475.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251205225319550.png)
 
+# Three-Phase Circuits
+## Phase Sequence
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230721333.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230746583.png)
 
+## Y-Y
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230806884.png)
 
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230602514.png)
 
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209231427664.png)
+
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209231444355.png)
+注意两者的不同
 
 
 

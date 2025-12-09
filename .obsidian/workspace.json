@@ -58,7 +58,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -179,13 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C12.pdf",
+                "file": "Course/215/Slides/ECE2150J_C11.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C12 的大纲"
+              "title": "ECE2150J_C11 的大纲"
             }
           },
           {
@@ -219,13 +219,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4f683db026afc81b",
+  "active": "50bba8bbdcb51705",
   "lastOpenFiles": [
     "Course/215/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C09.pdf",
-    "Course/215/Slides/ECE2150J_C11.pdf",
-    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/215/Slides/ECE2150J_C12.pdf",
+    "Course/215/Slides/ECE2150J_C11.pdf",
+    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C14.pdf",
     "Cheating sheat.md",
