@@ -61,8 +61,7 @@
               "title": "Lecture Notes"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -183,13 +182,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cheating sheat.md",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Cheating sheat 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -223,25 +222,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4f683db026afc81b",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
+    "Course/215/Lecture Notes.md",
+    "Cheating sheat.md",
+    "Course/250/Slides/~$32_Lecture_Outline.ppt",
+    "Course/250/Slides/~$28_Lecture_Outline.ppt",
+    "Course/250/Slides/~$36_Lecture_Outline.pptx",
     "Course/250/Slides/~$35_Lecture_Outline.pptx",
     "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/250/Lecture Notes.md",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
-    "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C11.pdf",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C14.pdf",
-    "Cheating sheat.md",
-    "Course/250/Slides/~$33_Lecture_Outline.pptx",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
     "Course/215/Exercise.md",
-    "Course/215/Slides/ECE2150J_C10.pdf",
-    "Course/270/Slides/T9 Register & Shifter.pdf",
-    "Course/215/Slides/ECE2150J_C06.pdf",
     "Course/270/Slides/Notes.md",
     "Course/250/Exercise.md",
     "形策.md",

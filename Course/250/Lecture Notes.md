@@ -578,6 +578,117 @@ $\tau=IBA\sin \phi$, $\mu=IA$
 | 抗磁质（Diamagnet）   | 微弱反磁化，外磁场消失后磁性消失             | 原子无固有磁矩，外磁场诱导反向磁矩      | 铜（Cu）、水（H₂O）、青蛙 |
 | 铁磁质（Ferromagnet） | 强磁化，外磁场消失后保留剩磁               | 磁畴结构，外磁场使磁畴大量对齐        | 铁（Fe）、钴（Co）、永磁体 |
 
+# 28
+## 一、运动电荷与 Biot–Savart 定律
+
+### 运动点电荷的磁场
+任何带电且在运动的粒子都会产生磁场。  
+非相对论近似下，点电荷 $q$，速度 $\vec v$，在场点与电荷连线方向为 $\hat r$、距离 $r$ 处的磁场：
+$\vec B = \dfrac{\mu_0}{4\pi},\dfrac{q,\vec v\times \hat r}{r^2}$
+方向用右手定则：$\vec v\times \hat r$ 的方向就是 $\vec B$ 的方向。
+### Law of Biot and Savart 电流元
+1. 电流元的定义
+	电流元是 “宏观电流的微元”，表示为 $I d\vec{l}$：
+	- I：电流大小；
+	- $d\vec{l}$：导线微元长度矢量，方向与电流方向一致
+
+2. 毕奥 - 萨伐尔定律公式
+	电流元在距离 r 处产生的磁场微元：$dB = \frac{\mu_0}{4\pi} \cdot \frac{I dl \sin\phi}{r^2}$
+	- 矢量形式：$d\vec{B} = \frac{\mu_0}{4\pi} \cdot \frac{I d\vec{l} \times \hat{r}}{r^2}$（$\hat{r}$ 是从电流元指向场点的单位矢量，叉乘决定 $d\vec{B}$ 方向）；
+	- 右手定则：拇指指向 $I d\vec{l}$ 方向，四指弯曲方向为 $d\vec{B}$ 的环绕方向（PPT 图 a）
+	- 总磁场：任意电流的磁场是所有电流元磁场的矢量积分（$\vec{B} = \int d\vec{B}$）
+
+3. 面电流与体电流
+	对于 “电流分布在表面”（如金属薄板）或 “电流分布在体积内”（如导体内部）的情况，定律可推广为：
+	- 面电流（面电流密度 $\vec{K}$）：$\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \frac{\vec{K}(\vec{r}') \times \hat{r}}{r^2} da'$；
+	- 体电流（电流密度 $\vec{J}$）：$\vec{B}(\vec{r}) = \frac{\mu_0}{4\pi} \int \frac{\vec{J}(\vec{r}') \times \hat{r}}{r^2} d\tau'$。
+
+## Straight current-carrying conductor
+距离无限长直导线轴心 $x$ 处的磁场大小：$B = \dfrac{\mu_0 I}{2\pi x}$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211032443388.png)
+方向：右手握住导线，大拇指指电流方向，其余手指弯曲方向就是 $\vec B$ 的环绕方向。
+### Force between parallel conductors
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211032508998.png)
+
+两条相距 $r$ 的平行长导线，电流 $I_1,I_2$，单位长度上的力：$\dfrac{F}{L} = \dfrac{\mu_0}{2\pi},\dfrac{I_1 I_2}{r}$
+同向电流相吸，反向电流相斥。  
+国际单位制中，安培的定义就是基于这两个平行导线之间的力来的
+## Circular current loop
+半径 $R$ 的单匝圆环，中心处磁场$B = \dfrac{\mu_0 I}{2R}$
+若有 $N$ 匝、同样电流 $I$：$B = \dfrac{\mu_0 N I}{2R}$
+圆环轴线方向用右手定则：  
+右手四指沿电流方向，大拇指指向的方向就是环轴上的 $\vec B$ 方向。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211032722999.png)
+
+## Coil
+## 四、安培环路定律与长导线/螺线管/环形线圈
+
+## Ampere's law 
+
+$\displaystyle \oint \vec B\cdot d\vec \ell = \mu_0 I_{\text{enc}}$
+任意闭合回路上，对 $\vec B$ 做线积分，等于穿过该回路的包围电流（净电流）乘以 $\mu_0$。
+### 长直导线
+选以导线为中心、半径为 $x$ 的圆形安培回路：
+$B(2\pi x) = \mu_0 I ;\Rightarrow; B = \dfrac{\mu_0 I}{2\pi x}$
+这和用 Biot–Savart 积分得到的结果一致。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211032954324.png)
+
+### 3. 理想长螺线管（solenoid）
+
+长度 $L$，总匝数 $N$，电流 $I$，匝密度 $n = N/L$。  
+理想情况下，内部磁场几乎均匀、外部接近 0：
+
+$B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
+
+方向由右手螺旋定则：右手四指沿线圈中的电流方向弯曲，大拇指指向就是内部 $\vec B$ 的方向。
+
+### 4. 环形螺线管（toroid）
+
+像甜甜圈的线圈，半径 $r$ 处（环形内部）的磁场：
+
+$B = \dfrac{\mu_0 N I}{2\pi r}$
+
+在环外和环内孔中，理想情况下 $B\approx 0$。  
+本质上可以看成是一条“弯成圆”的长直螺线管。
+
+---
+
+## 五、物质的磁性：微观起源 + 几种类型
+
+这里 PPT 是提纲，你只需要有定性认识即可。
+
+### 1. Bohr 磁子（Bohr magneton）
+
+单个电子轨道磁矩的基本单位：
+
+$\mu_B = \dfrac{e\hbar}{2m_e}$
+
+原子、离子的磁矩可以用若干个 $\mu_B$ 的矢量和来表示。
+
+### 2. 三大类磁性材料（定性）
+
+1）抗磁（diamagnetism）：  
+外磁场导致感生磁矩与外场相反，磁化很弱。完全抗磁的极限情况是体磁化率 $\chi_v = -1$（理想超导）。
+
+2）顺磁（paramagnetism）：  
+存在未成对电子，外场使磁矩略微沿场方向排列，产生弱正磁化（$\chi_v>0$，但很小）。
+
+3）铁磁（ferromagnetism）：  
+存在磁畴（domains），在外磁场下磁畴转向同一方向，表现出强磁性（铁、钴、镍等）。有自发磁化、自发畴结构。
+
+### 3. 磁滞回线（hysteresis）
+
+铁磁材料的 $B$–$H$ 曲线不是一条线，而是一条回线：
+
+- 随 $H$ 增加，$B$ 先上升，达到饱和；
+    
+- 把 $H$ 降到 0，$B$ 不会回到 0，而是留下剩磁（remanence）；
+    
+- 反向加大 $H$，需要一定反向场才能把 $B$ 拉回 0，这个叫矫顽力（coercive field）。
+    
+
+磁滞回线反映了材料的“磁历史记忆”，和磁存储、永久磁铁应用相关。
+
 # 33
 ## Wave-front continuity（波前连续性）
 Electric field wave-fronts must be continuous at a boundary.$\theta_i = \theta_r$
