@@ -627,6 +627,8 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
 - For P-polarization: $r_{\parallel} = 0$
 - Geometric condition: $\theta_i + \theta_t = 90^\circ$
 - Final result: $\tan\theta_B = \frac{n_t}{n_i}$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251210144343571.png)
+
 ### Physical meaning
 - P 偏振 完全不反射
 - 反射光 becomes 100% S-polarized

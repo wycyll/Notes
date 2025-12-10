@@ -11,12 +11,14 @@
             "id": "21ede175d1ebdbc7",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf"
+                "file": "Course/250/Lecture Notes.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "T15 Memory and Programmable Logic Device"
+              "icon": "lucide-file",
+              "title": "Lecture Notes"
             }
           },
           {
@@ -221,15 +223,15 @@
   },
   "active": "4f683db026afc81b",
   "lastOpenFiles": [
-    "Course/215/Lecture Notes.md",
-    "Course/215/Slides/ECE2150J_C11.pdf",
-    "Course/215/Slides/ECE2150J_C12.pdf",
-    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/250/Lecture Notes.md",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
+    "Course/215/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C12.pdf",
+    "Course/215/Slides/ECE2150J_C11.pdf",
+    "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C14.pdf",
     "Cheating sheat.md",
-    "Course/250/Lecture Notes.md",
     "Course/250/Slides/~$33_Lecture_Outline.pptx",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
