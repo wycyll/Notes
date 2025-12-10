@@ -621,10 +621,10 @@ $\vec B = \dfrac{\mu_0}{4\pi},\dfrac{q,\vec v\times \hat r}{r^2}$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211032722999.png)
 
 ## Coil
-## 四、安培环路定律与长导线/螺线管/环形线圈
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033202579.png)
+
 
 ## Ampere's law 
-
 $\displaystyle \oint \vec B\cdot d\vec \ell = \mu_0 I_{\text{enc}}$
 任意闭合回路上，对 $\vec B$ 做线积分，等于穿过该回路的包围电流（净电流）乘以 $\mu_0$。
 ### 长直导线
@@ -632,68 +632,54 @@ $\displaystyle \oint \vec B\cdot d\vec \ell = \mu_0 I_{\text{enc}}$
 $B(2\pi x) = \mu_0 I ;\Rightarrow; B = \dfrac{\mu_0 I}{2\pi x}$
 这和用 Biot–Savart 积分得到的结果一致。
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211032954324.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033342199.png)
 
-### 3. 理想长螺线管（solenoid）
+### General
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033049165.png)
 
+## Solenoid
 长度 $L$，总匝数 $N$，电流 $I$，匝密度 $n = N/L$。  
 理想情况下，内部磁场几乎均匀、外部接近 0：
-
 $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
-
-方向由右手螺旋定则：右手四指沿线圈中的电流方向弯曲，大拇指指向就是内部 $\vec B$ 的方向。
-
-### 4. 环形螺线管（toroid）
-
-像甜甜圈的线圈，半径 $r$ 处（环形内部）的磁场：
-
-$B = \dfrac{\mu_0 N I}{2\pi r}$
-
-在环外和环内孔中，理想情况下 $B\approx 0$。  
-本质上可以看成是一条“弯成圆”的长直螺线管。
-
----
-
-## 五、物质的磁性：微观起源 + 几种类型
-
-这里 PPT 是提纲，你只需要有定性认识即可。
-
-### 1. Bohr 磁子（Bohr magneton）
-
-单个电子轨道磁矩的基本单位：
-
-$\mu_B = \dfrac{e\hbar}{2m_e}$
-
-原子、离子的磁矩可以用若干个 $\mu_B$ 的矢量和来表示。
-
-### 2. 三大类磁性材料（定性）
-
+方向由右手螺旋定则：右手四指沿线圈中的电流方向弯曲，大拇指指向就是内部 $\vec B$ 的方向
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033437339.png)
+## 环形螺线管（toroid）
+像甜甜圈的线圈，半径 $r$ 处（环形内部）的磁场：$B = \dfrac{\mu_0 N I}{2\pi r}$
+在环外和环内孔中，理想情况下 $B\approx 0$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033633099.png)
+## Bohr Magneton
+1. 电流与周期
+	- 运动周期 T：电子绕圆一周的时间，$T = \frac{2\pi r}{v}$；
+	- 等效电流 I：单位时间内通过的电荷量，$I = \frac{e}{T} = \frac{ev}{2\pi r}$。
+2. 电流环的面积与磁矩
+	电流环的面积 $A = \pi r^2$，代入磁矩公式：$\mu = I A = \frac{ev}{2\pi r} \cdot \pi r^2 = \frac{evr}{2}$
+3. 与角动量的关联
+	电子的轨道角动量 $L = mvr$（m 为电子质量），因此 $vr = \frac{L}{m}$。将其代入磁矩公式：$\mu = \frac{e}{2m} L$
+4. 量子化
+	玻尔模型中，电子角动量**量子化**，最小角动量为 $L = \frac{h}{2\pi}$（h 为普朗克常量）代入上式得：$\mu = \frac{e}{2m} \cdot \frac{h}{2\pi} = \frac{eh}{4\pi m}$ 这就是玻尔磁子（记为 $\mu_B$），是电子轨道磁矩的基本单位，数值约为 $9.27 \times 10^{-24}\ \text{A·m}^2$，用于描述原子、分子的磁矩大小
+## 三大类磁性材料（定性）
 1）抗磁（diamagnetism）：  
 外磁场导致感生磁矩与外场相反，磁化很弱。完全抗磁的极限情况是体磁化率 $\chi_v = -1$（理想超导）。
-
 2）顺磁（paramagnetism）：  
 存在未成对电子，外场使磁矩略微沿场方向排列，产生弱正磁化（$\chi_v>0$，但很小）。
-
 3）铁磁（ferromagnetism）：  
 存在磁畴（domains），在外磁场下磁畴转向同一方向，表现出强磁性（铁、钴、镍等）。有自发磁化、自发畴结构。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033732271.png)
 
-### 3. 磁滞回线（hysteresis）
-
-铁磁材料的 $B$–$H$ 曲线不是一条线，而是一条回线：
-
-- 随 $H$ 增加，$B$ 先上升，达到饱和；
-    
-- 把 $H$ 降到 0，$B$ 不会回到 0，而是留下剩磁（remanence）；
-    
-- 反向加大 $H$，需要一定反向场才能把 $B$ 拉回 0，这个叫矫顽力（coercive field）。
-    
-
-磁滞回线反映了材料的“磁历史记忆”，和磁存储、永久磁铁应用相关。
+## 磁滞回线（hysteresis）
+铁磁材料的 $B$–$H$ 曲线不是一条线，而是一条回线
+- 随 $H$ 增加，$B$ 先上升，达到饱和
+- 把 $H$ 降到 0，$B$ 不会回到 0，而是留下剩磁（remanence）
+- 反向加大 $H$，需要一定反向场才能把 $B$ 拉回 0，这个叫矫顽力（coercive field）
+磁滞回线反映了材料的“磁历史记忆”，和磁存储、永久磁铁应用相关
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033705707.png)
 
 # 33
 ## Wave-front continuity（波前连续性）
 Electric field wave-fronts must be continuous at a boundary.$\theta_i = \theta_r$
 ## Snell's Law（斯涅尔折射定律）
 Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
+
 ---
 ## Electromagnetic Wave Geometry（电磁波方向关系）
 - Wavefront is perpendicular to wavevector: $\text{Wavefront} \perp \vec{k}$
