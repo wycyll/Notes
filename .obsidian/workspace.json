@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C11.pdf"
+                "file": "Course/215/Slides/ECE2150J_C09.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C11"
+              "title": "ECE2150J_C09"
             }
           },
           {
@@ -61,7 +61,8 @@
               "title": "Lecture Notes"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -182,7 +183,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/215/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -202,7 +203,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -222,19 +223,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fd37576787281f3c",
+  "active": "d539d89ccc07b209",
   "lastOpenFiles": [
+    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/215/Slides/ECE2150J_C11.pdf",
     "Course/215/Lecture Notes.md",
+    "Course/250/Lecture Notes.md",
     "Cheating sheat.md",
     "Course/250/Slides/~$32_Lecture_Outline.ppt",
     "Course/250/Slides/~$28_Lecture_Outline.ppt",
     "Course/250/Slides/~$36_Lecture_Outline.pptx",
     "Course/250/Slides/~$35_Lecture_Outline.pptx",
     "Course/215/Slides/ECE2150J_C12.pdf",
-    "Course/250/Lecture Notes.md",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
-    "Course/215/Slides/ECE2150J_C11.pdf",
-    "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C14.pdf",
     "Course/270/Verilog.md",
