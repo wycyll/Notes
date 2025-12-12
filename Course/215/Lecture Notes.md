@@ -611,7 +611,7 @@ $v=-1+2.50cos (2t-30.78°)+2.33cos (5t-77.91°)(V)$ 写单位!!!
 - 当相位差 90°（纯感性 / 容性负载）时，$\cos\theta = 0$，平均功率为 0（无能量消耗）
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204015054170.png)
 Generally, the average power absorbed by an impedance $\mathbf{Z} = \mathbf{R} + \mathbf{jX}$ is given by
-$\begin{align*} P &= \frac{1}{2} \text{Re}\left(\widetilde{V} \widetilde{I}^*\right) = \frac{1}{2} \text{Re}\left(\widetilde{I} (R + jX) \widetilde{I}^*\right) \\ &= \frac{1}{2} \text{Re}\left(I^2 R + jI^2 X\right) \\ &= \frac{1}{2} I^2 R \end{align*}$
+$\begin{align*} P &= \frac{1}{2} \text{Re}\left(\widetilde{V} \widetilde{I}^*\right) = \frac{1}{2} \text{Re}\left(\widetilde{I} (R + jX) \widetilde{I}^*\right) \\ &= \frac{1}{2} \text{Re}\left(I^2 R + jI^2 X\right) \\ &= \frac{1}{2} |I|^2 R \end{align*}$
 *Only R contributes to the average power.*
 where $I^2 = \mathbf{I} \times \mathbf{I}^*$, or $I^2 = |\mathbf{I}|^2$,the square of amplitude of phasor $\mathbf{I}$
 最后如果是极坐标形式直接把前面的数平方不管角度就行
@@ -723,12 +723,24 @@ S, P, Q 分别守恒
 ## Phase Sequence
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230721333.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230746583.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014501372.png)
 
 ## Y-Y
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230806884.png)
 
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209230602514.png)
 
+### 推导
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014610685.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014626407.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014634816.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014644692.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014653273.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014701878.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014723078.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213014733061.png)
+
+### 注意
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209231427664.png)
 
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209231444355.png)
@@ -739,8 +751,59 @@ S, P, Q 分别守恒
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004847528.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004858201.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004909929.png)
+## △-△
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213011637939.png)
 
+## △-Y
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213015636231.png)
 
+## Advantage1: Power
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213020438073.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213020447176.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213020458662.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213020514170.png)
+平衡三相系统中，Y 形连接和Δ 形连接的 “线电压（Vₗ）、线电流（Iₗ）” 与 “相电压（Vₚ）、相电流（Iₚ）” 存在固定换算关系：
+- Y 形连接：
+    线电流 = 相电流（$I_L = I_p$）；线电压 = √3× 相电压（$V_L = \sqrt{3}V_p$）
+- Δ 形连接：
+    线电压 = 相电压（$V_L = V_p$）；线电流 = √3× 相电流（$I_L = \sqrt{3}I_p$）
+将上述关系代入 “总平均功率（$P=3V_p I_p \cos\theta$）”，可推导出线参数形式的总功率：以 Y 形为例：$3V_p I_p \cos\theta = 3 \times \frac{V_L}{\sqrt{3}} \times I_L \times \cos\theta = \sqrt{3}V_L I_L \cos\theta$；以 Δ 形为例：$3V_p I_p \cos\theta = 3 \times V_L \times \frac{I_L}{\sqrt{3}} \times \cos\theta = \sqrt{3}V_L I_L \cos\theta$
+最终结论：平衡三相系统的总平均功率，用线参数表示为 $P = \sqrt{3}V_L I_L \cos\theta$，与连接方式无关
+
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213020742636.png)
+无论平衡三相系统采用何种连接方式（Y-Y、Δ-Δ、Y-Δ、Δ-Y），总功率的线参数公式 $P = \sqrt{3}V_L I_L \cos\theta$ 均适用
+
+## Advantage2: Economical
+- 单相系统：采用 “单相两线制”（2 根 transmission lines，传输导线）向负载供电；
+- 三相系统：采用 “三相三线制”（3 根 transmission lines）向 balanced load（平衡负载）供电；
+- 对比前提：保持相同的 $V_L$ 和 $P_L$
+### 单相
+首先回顾 average power（平均功率） 的 rms 形式公式：$P = V_{\text{rms}} I_{\text{rms}} \cos(\theta_v - \theta_i)$
+对于单相两线制系统（负载为纯电阻）：
+- 负载吸收的功率：$P_L = V_L I_L$（$I_L$ 是单相系统的 line current，线电流）；
+- 传输导线的power loss（功率损耗）：因系统含 2 根导线（每根电阻为 R），故损耗为：
+    $P_{\text{loss}} = 2I_L^2 R = 2\left( \frac{P_L}{V_L} \right)^2 R$
+## 三相
+对于三相平衡系统：
+- 负载吸收的功率：$P_L = \sqrt{3} V_L I_L'$（$I_L'$ 是 line current，且 $|I_a| = |I_b| = |I_c| = I_L'$）
+- 线电流：$I_L' = \frac{P_L}{\sqrt{3} V_L}$
+- 传输导线的 power loss：因系统含 3 根导线（每根电阻为 $R'$），故损耗为
+    $P_{\text{loss}}' = 3I_L'^2 R' = 3\left( \frac{P_L}{\sqrt{3} V_L} \right)^2 R' = \left( \frac{P_L}{V_L} \right)^2 R'$
+
+传输导线的 wire resistance 公式为：$R = \frac{\rho L}{A}$其中：
+- $\rho$：resistivity（电阻率），
+- L：导线长度，
+- A：cross-sectional area（横截面积，$A = \pi r^2$，r 为导线半径）
+将电阻公式代入 ：$\frac{P_{\text{loss}}}{P_{\text{loss}}'} = \frac{2R}{R'} = \frac{2 \cdot \frac{\rho L}{\pi r^2}}{\frac{\rho L}{\pi r'^2}} = \frac{2r'^2}{r^2}$（$r'$ 为三相导线的半径）
+假设$P_{\text{loss}} = P_{\text{loss}}'$，则：$\frac{2r'^2}{r^2} = 1 \implies r^2 = 2r'^2$
+导线的material volume（与导线体积成正比）计算如下：
+- 单相系统体积（2 根导线）：$V_{\text{single}} = 2 \cdot \pi r^2 L$
+- 三相系统体积（3 根导线）：$V_{\text{three}} = 3 \cdot \pi r'^2 L$
+代入 $r^2 = 2r'^2$，得体积比：$\frac{V_{\text{single}}}{V_{\text{three}}} = \frac{2 \cdot \pi \cdot 2r'^2 \cdot L}{3 \cdot \pi r'^2 \cdot L} = \frac{4}{3}$
+这说明：传输相同功率且损耗相同时，单相系统的导线材料用量是三相系统的 $\frac{4}{3}$ 倍，三相系统更经济
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213024306787.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213024315514.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213024335365.png)
 
 
 

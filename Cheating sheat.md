@@ -6,3 +6,4 @@ XC7A35TCPG236-1
 [FPGA reference](https://digilent.com/reference/programmable-logic/basys-3/reference-manual)
 
 All condition covered
+![bb90da303a040569ae938abcb84634c4.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/bb90da303a040569ae938abcb84634c4.png)
