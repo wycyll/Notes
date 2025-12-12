@@ -215,7 +215,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -235,7 +235,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
