@@ -734,6 +734,12 @@ S, P, Q 分别守恒
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251209231444355.png)
 注意两者的不同
 
+## Y-Δ
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004833100.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004847528.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004858201.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251213004909929.png)
+
 
 
 
