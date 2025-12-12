@@ -73,8 +73,7 @@
               "title": "256-fa251210"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -195,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C13.pdf",
+                "file": "Course/215/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C13 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -235,10 +234,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fd37576787281f3c",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
-    "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
+    "Course/215/Lecture Notes.md",
     "Cheating sheat.md",
     "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/256/slides/256-fa251210.pdf",
