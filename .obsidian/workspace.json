@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C13.pdf"
+                "file": "Course/215/Slides/ECE2150J_C09.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "ECE2150J_C13"
+              "title": "ECE2150J_C09"
             }
           },
           {
@@ -93,7 +93,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -236,6 +236,8 @@
   },
   "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
+    "Course/215/Slides/ECE2150J_C09.pdf",
+    "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Lecture Notes.md",
     "Course/215/Exercise.md",
@@ -248,7 +250,6 @@
     "Course/256/押题.md",
     "Course/256/slides/256-fa251120.pdf",
     "Course/256/slides/256-fa251118.pdf",
-    "Course/215/Slides/ECE2150J_C10.pdf",
     "Cheating sheat.md",
     "Course/256/slides/256-fa251210.pdf",
     "Course/250/Lecture Notes.md",
