@@ -674,6 +674,49 @@ $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
 磁滞回线反映了材料的“磁历史记忆”，和磁存储、永久磁铁应用相关
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033705707.png)
 
+# 29
+## Faraday’s law
+法拉第通过实验总结：闭合回路的感应电动势（$\varepsilon$），等于穿过回路的磁通量对时间变化率的负值，公式为：$\varepsilon = -\frac{d\Phi_B}{dt}$
+- 负号意义：由楞次定律决定，表征感应电动势的方向 “阻碍磁通量变化”（非电动势本身为负，仅表方向关系）
+- 多匝线圈修正：若回路有N匝（如变压器），总磁通量为 “磁通链” $N\Phi_B$，公式变为：$\varepsilon = -N\frac{d\Phi_B}{dt}$
+
+*加上 emf 的图*
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214024535968.png)
+已知条件：
+- 回路面积 $A = 120\ \text{cm}^2 = 0.012\ \text{m}^2$（单位换算关键）；
+- 磁场变化率 $\frac{dB}{dt} = 0.020\ \text{T/s}$（磁场均匀变化，A、$\theta$不变）；
+- 回路总电阻 $R = 5.0\ \Omega$。
+推导步骤：
+1. 计算磁通量变化率：因$\theta = 0^\circ$（磁场垂直回路），$\Phi_B = BA$，故：$\frac{d\Phi_B}{dt} = A \cdot \frac{dB}{dt} = 0.012 \times 0.020 = 2.4 \times 10^{-4}\ \text{Wb/s}$
+2. 计算感应电动势（忽略负号，先求大小）：$\varepsilon = \left| \frac{d\Phi_B}{dt} \right| = 2.4 \times 10^{-4}\ \text{V}$
+3. 计算感应电流（欧姆定律）：$I = \frac{\varepsilon}{R} = \frac{2.4 \times 10^{-4}}{5.0} = 4.8 \times 10^{-5}\ \text{A} = 48\ \mu\text{A}$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030130521.png)
+
+## Alternator
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030616877.png)
+
+## DC generator 
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030707737.png)
+commutator 和 brush 配合形成 DC
+
+## Lenz’s law
+1. 定律内容
+> The direction of any magnetic induction effect is such as to oppose the cause of the effect.
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030837330.png)
+
+#### （2）方向判断三步法（结合文档图 29.6）
+
+以 “磁铁 N 极靠近线圈” 为例：
+
+1. 定原磁场方向：磁铁 N 极向外→穿过线圈的原磁场方向**向外**；
+2. 判磁通量变化：磁铁靠近→磁通量**增大**；
+3. 定感应电流方向：
+    - 感应磁场需 “阻碍增大”→方向**向里**；
+    - 右手螺旋定则：四指弯曲为电流方向，拇指指向感应磁场（向里）→线圈电流为**顺时针**（俯视）。
+
+#### （3）本质：能量守恒的体现
+
+阻碍过程需外力做功（如滑杆发电机中，外力克服安培力做功），机械能转化为回路的焦耳热，符合能量守恒。
 # 33
 ## Wave-front continuity（波前连续性）
 Electric field wave-fronts must be continuous at a boundary.$\theta_i = \theta_r$

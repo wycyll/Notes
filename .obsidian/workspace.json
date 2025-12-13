@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/256/大纲.md",
+                "file": "Course/250/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "大纲"
+              "title": "Lecture Notes"
             }
           },
           {
@@ -67,14 +67,14 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/270/Slides/T12 RTL Design.pdf"
+                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "T12 RTL Design"
+              "title": "T15 Memory and Programmable Logic Device"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C13.pdf",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C13 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -235,28 +235,28 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "4f683db026afc81b",
   "lastOpenFiles": [
+    "Course/250/Exercise.md",
+    "Course/256/大纲.md",
+    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
+    "Course/270/Slides/T12 RTL Design.pdf",
+    "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C11.pdf",
     "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C12.pdf",
-    "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Exercise.md",
-    "Course/270/Slides/T12 RTL Design.pdf",
-    "Course/256/大纲.md",
     "Course/270/Slides/T13 Arithmetic Components.pdf",
     "Course/256/slides/256-fa251125.pdf",
     "Course/256/slides/256-fa251212.pdf",
-    "Course/256/slides/256-fa251211.pdf",
     "Course/256/押题.md",
     "Cheating sheat.md",
     "Course/250/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Slides/Notes.md",
-    "Course/250/Exercise.md",
     "形策.md",
     "Daily/Excel.md",
     "All/README.md",
