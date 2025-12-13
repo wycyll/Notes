@@ -595,7 +595,6 @@ $v=-1+2.50cos (2t-30.78°)+2.33cos (5t-77.91°)(V)$ 写单位!!!
 
 ## Thevenin and Norton Equivalent Circuits
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251204012953408.png)
-> 待办：找一道题
 
 #  AC Power Analysis
 ## Instantaneous power 

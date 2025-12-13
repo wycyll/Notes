@@ -67,13 +67,14 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/256/slides/256-fa251210.pdf"
+                "file": "Course/256/slides/256-fa251125.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "256-fa251210"
+              "title": "256-fa251125"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -194,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Lecture Notes.md",
+                "file": "Course/256/大纲.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "大纲 的大纲"
             }
           },
           {
@@ -214,7 +215,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -234,23 +235,23 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21ede175d1ebdbc7",
+  "active": "4f683db026afc81b",
   "lastOpenFiles": [
-    "Course/215/Slides/ECE2150J_C13.pdf",
-    "Course/215/Lecture Notes.md",
-    "Cheating sheat.md",
-    "Course/215/Slides/ECE2150J_C12.pdf",
-    "Course/256/slides/256-fa251210.pdf",
-    "Course/256/大纲.md",
     "Course/256/押题.md",
+    "Course/256/slides/256-fa251125.pdf",
+    "Course/256/slides/256-fa251120.pdf",
+    "Course/256/slides/256-fa251118.pdf",
+    "Course/215/Slides/ECE2150J_C10.pdf",
+    "Cheating sheat.md",
+    "Course/215/Slides/ECE2150J_C13.pdf",
+    "Course/256/slides/256-fa251210.pdf",
+    "Course/215/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C12.pdf",
+    "Course/256/大纲.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C11.pdf",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/256/slides/256-fa251204.pdf",
-    "Course/256/slides/256-fa251202.pdf",
-    "Course/256/slides/256-fa251128.pdf",
-    "Course/256/slides/256-fa251118.pdf",
-    "Course/256/slides/256-fa251114.pdf",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
     "Course/215/Exercise.md",
