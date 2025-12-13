@@ -73,8 +73,7 @@
               "title": "T12 RTL Design"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -195,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/215/Slides/ECE2150J_C13.pdf",
+                "file": "Course/215/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ECE2150J_C13 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -235,27 +234,26 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "50bba8bbdcb51705",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
-    "Course/270/Slides/T12 RTL Design.pdf",
-    "Course/270/Slides/T13 Arithmetic Components.pdf",
-    "Course/256/slides/256-fa251125.pdf",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Lecture Notes.md",
+    "Course/215/Exercise.md",
+    "Course/270/Slides/T12 RTL Design.pdf",
+    "Course/256/大纲.md",
+    "Course/270/Slides/T13 Arithmetic Components.pdf",
+    "Course/256/slides/256-fa251125.pdf",
     "Course/256/slides/256-fa251212.pdf",
     "Course/256/slides/256-fa251211.pdf",
     "Course/256/押题.md",
-    "Course/256/大纲.md",
     "Course/256/slides/256-fa251120.pdf",
     "Course/256/slides/256-fa251118.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Cheating sheat.md",
     "Course/256/slides/256-fa251210.pdf",
-    "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/250/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
-    "Course/215/Exercise.md",
     "Course/270/Slides/Notes.md",
     "Course/250/Exercise.md",
     "形策.md",
