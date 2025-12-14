@@ -359,6 +359,7 @@ We don’t always need the speed of two level logic. Multiple levels may yield f
 - 还可有 Bus 代替 input（几个 bit 合成一个 bus） #bus
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251017124316374.png)
 
+#adder
 ### Half Adder
 - 核心功能：实现「2 个 1 位二进制数的加法」
 - 输入 / 输出：
@@ -366,9 +367,8 @@ We don’t always need the speed of two level logic. Multiple levels may yield f
     - 输出：本位和 Sum（A⊕B）、向高位进位 Carry（AB）；
 - 电路：1 个异或门（算 Sum）+1 个与门（算 Carry）
 
-|                                                                                                     |                                                                                                     |
-| :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251017124916901.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251017124850458.png) |
+| :-------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 
 ### Full Adder
 - 核心功能：实现「3 个 1 位二进制数的加法」
@@ -1513,6 +1513,7 @@ Step3&4:
 	- 优化方向：通过控制信号直接触发目标运算，仅激活对应运算逻辑，关闭其他闲置模块，减少布线和功耗
 - *Register* 很重要，需要等算完了再令 e=1，防止 LED 乱闪, take time to calculate correct results
 
+#adder
 ## Adder
 ### Carry-Ripple Adder
 ![f5e2a6b0efa140ee1ae6be8aab8ca4f9.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/f5e2a6b0efa140ee1ae6be8aab8ca4f9.jpg)

@@ -105,7 +105,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#XNOR",
+                "query": "tag:#adder",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -126,7 +126,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -195,7 +196,7 @@
               "type": "outline",
               "state": {
                 "file": "Course/270/Lecture Notes.md",
-                "followCursor": true,
+                "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
@@ -214,7 +215,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -234,9 +235,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21ede175d1ebdbc7",
+  "active": "755c129d3fc1b594",
   "lastOpenFiles": [
     "Course/215/Lecture Notes.md",
+    "Course/270/Lecture Notes.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/256/押题.md",
@@ -254,7 +256,6 @@
     "Course/256/slides/256-fa251212.pdf",
     "Cheating sheat.md",
     "Course/270/Verilog.md",
-    "Course/270/Lecture Notes.md",
     "Course/270/Slides/Notes.md",
     "形策.md",
     "Daily/Excel.md",
