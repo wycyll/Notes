@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf"
+                "file": "Course/270/Slides/T13 Arithmetic Components.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "T15 Memory and Programmable Logic Device"
+              "title": "T13 Arithmetic Components"
             }
           },
           {
@@ -73,7 +73,8 @@
               "title": "押题"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +94,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -126,8 +127,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -195,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/270/Slides/T13 Arithmetic Components.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "T13 Arithmetic Components 的大纲"
             }
           },
           {
@@ -235,12 +235,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d539d89ccc07b209",
+  "active": "bcf823c87d8c1385",
   "lastOpenFiles": [
+    "Course/270/Slides/T11 FSM Optimizations.pdf",
+    "Course/270/Lecture Notes.md",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
-    "Course/270/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
     "Course/256/押题.md",
     "Course/250/Exercise.md",
@@ -253,7 +254,6 @@
     "Course/215/Exercise.md",
     "Course/270/Slides/T13 Arithmetic Components.pdf",
     "Course/256/slides/256-fa251125.pdf",
-    "Course/256/slides/256-fa251212.pdf",
     "Cheating sheat.md",
     "Course/270/Verilog.md",
     "Course/270/Slides/Notes.md",
