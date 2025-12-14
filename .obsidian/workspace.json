@@ -73,7 +73,8 @@
               "title": "T15 Memory and Programmable Logic Device"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -195,13 +196,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Lecture Notes.md",
+                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Lecture Notes 的大纲"
+              "title": "T15 Memory and Programmable Logic Device 的大纲"
             }
           },
           {
@@ -235,12 +236,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "755c129d3fc1b594",
+  "active": "bcf823c87d8c1385",
   "lastOpenFiles": [
-    "Course/215/Lecture Notes.md",
-    "Course/270/Lecture Notes.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
+    "Course/270/Lecture Notes.md",
+    "Course/215/Lecture Notes.md",
     "Course/256/押题.md",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/250/Exercise.md",
