@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "bcf823c87d8c1385",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "T15 Memory and Programmable Logic Device"
+            }
+          },
+          {
             "id": "50bba8bbdcb51705",
             "type": "leaf",
             "state": {
@@ -60,21 +72,8 @@
               "icon": "lucide-file",
               "title": "押题"
             }
-          },
-          {
-            "id": "bcf823c87d8c1385",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "T15 Memory and Programmable Logic Device"
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -196,13 +195,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "T15 Memory and Programmable Logic Device 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -216,7 +215,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -236,14 +235,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bcf823c87d8c1385",
+  "active": "d539d89ccc07b209",
   "lastOpenFiles": [
+    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/270/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
     "Course/256/押题.md",
-    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/250/Exercise.md",
     "Course/256/大纲.md",
     "Course/270/Slides/T12 RTL Design.pdf",
