@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/215/Lecture Notes.md",
+                "file": "Course/270/Lecture Notes.md",
                 "mode": "source",
                 "source": false
               },
@@ -73,8 +73,7 @@
               "title": "T15 Memory and Programmable Logic Device"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -195,7 +194,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Lecture Notes.md",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -235,15 +234,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4f683db026afc81b",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
+    "Course/215/Lecture Notes.md",
+    "Course/250/Lecture Notes.md",
+    "Course/215/Slides/ECE2150J_C13.pdf",
+    "Course/256/押题.md",
+    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/250/Exercise.md",
     "Course/256/大纲.md",
-    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/270/Slides/T12 RTL Design.pdf",
-    "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Slides/ECE2150J_C11.pdf",
-    "Course/215/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C12.pdf",
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
@@ -251,9 +252,7 @@
     "Course/270/Slides/T13 Arithmetic Components.pdf",
     "Course/256/slides/256-fa251125.pdf",
     "Course/256/slides/256-fa251212.pdf",
-    "Course/256/押题.md",
     "Cheating sheat.md",
-    "Course/250/Lecture Notes.md",
     "Course/270/Verilog.md",
     "Course/270/Lecture Notes.md",
     "Course/270/Slides/Notes.md",
