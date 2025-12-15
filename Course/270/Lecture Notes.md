@@ -1530,7 +1530,7 @@ Step3&4:
 2. Attempt 2 - 把 Carry 提前算好
 	- 介于 Carry-ripple Adder 和 Attempt 1 之间的一种
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201212416355.png)
-3. Attempt 3 - Using SPG block
+3. Attempt 3 - Using SPG block![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201212416355.png)
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201213445499.png)
 某一位产生进位 $c_{i+1}$ 只有两种可能，且这两种情况相互独立：
 - 情况 1：本地生成进位：当前位 $A_i=1 且 B_i=1（G_i=1）$，无论低位是否有进位，$c_{i+1}$ 必然为 1=> G: Generate
@@ -1563,7 +1563,7 @@ Step3&4:
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251201222313604.png)
 - 轮流将 multiplier 的每个 bit 与 multiplicant 做 AND，产生 partial product
 - 优点：并行运算，速度快（仅需加法器阵列的延迟）
-- 缺点：面积大（需大量加法器和与门），位数越多，硬件资源消耗越显著
+- 缺点：面积大（需大量加法器和与门），位数越多，硬件 8资源消耗越显著
 ### Sequential Style
 - Don't compute all partial products simultaneously. Rather, compute one at a time (similar to by hand), maintain a running sum
 - 优势：仅需 1 个加法器，硬件资源少（面积小）
