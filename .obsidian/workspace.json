@@ -27,10 +27,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/270/Slides/T13 Arithmetic Components.pdf"
+                "file": "Course/270/Slides/T14 Timing Issues.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "T13 Arithmetic Components"
+              "title": "T14 Timing Issues"
             }
           },
           {
@@ -73,8 +73,7 @@
               "title": "押题"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -195,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Slides/T13 Arithmetic Components.pdf",
+                "file": "Course/270/Lecture Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "T13 Arithmetic Components 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -235,11 +234,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "bcf823c87d8c1385",
+  "active": "21ede175d1ebdbc7",
   "lastOpenFiles": [
-    "Course/270/Slides/T11 FSM Optimizations.pdf",
-    "Course/270/Lecture Notes.md",
+    "Course/270/Slides/T14 Timing Issues.pdf",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
+    "Course/270/Lecture Notes.md",
+    "Course/270/Slides/T13 Arithmetic Components.pdf",
+    "Course/270/Slides/T11 FSM Optimizations.pdf",
     "Course/250/Lecture Notes.md",
     "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Lecture Notes.md",
@@ -252,8 +253,6 @@
     "Course/215/Slides/ECE2150J_C09.pdf",
     "Course/215/Slides/ECE2150J_C10.pdf",
     "Course/215/Exercise.md",
-    "Course/270/Slides/T13 Arithmetic Components.pdf",
-    "Course/256/slides/256-fa251125.pdf",
     "Cheating sheat.md",
     "Course/270/Verilog.md",
     "Course/270/Slides/Notes.md",
