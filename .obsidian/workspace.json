@@ -35,8 +35,7 @@
               "title": "Exercise"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/250/Exercise.md",
+                "file": "Course/250/Lecture Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Exercise 的大纲"
+              "title": "Lecture Notes 的大纲"
             }
           },
           {
@@ -197,11 +196,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dcc4a06418f5bac7",
+  "active": "4f683db026afc81b",
   "lastOpenFiles": [
+    "Course/250/Exercise.md",
     "Course/256/押题.md",
     "Course/250/Lecture Notes.md",
-    "Course/250/Exercise.md",
     "Course/250/Slides/~$32_Lecture_Outline.ppt",
     "Course/250/Slides/pptA134.tmp",
     "Course/250/Slides/~$35_Lecture_Outline.pptx",
