@@ -865,8 +865,7 @@ $$ \oint \vec{B} \cdot d\vec{l} = \mu_0 (I_{conduction} + I_{displacement}) = \m
 
 2.  正弦波函数：
     *   电磁波可以用正弦函数描述：
-        $$ \vec{E}(x,t) = E_{max} \cos(kx - \omega t) \hat{j} $$
-        $$ \vec{B}(x,t) = B_{max} \cos(kx - \omega t) \hat{k} $$
+        $$ \vec{E}(x,t) = E_{max} \cos(kx - \omega t) \hat{j} $$$$ \vec{B}(x,t) = B_{max} \cos(kx - \omega t) \hat{k} $$
     *   注意：$E$ 和 $B$ 是同相位的 (In phase)。当 $E$ 达到最大值时，$B$ 也同时达到最大值。
     *   重要参数关系：
         *   角频率 $\omega = 2\pi f$
@@ -878,8 +877,7 @@ $$ \oint \vec{B} \cdot d\vec{l} = \mu_0 (I_{conduction} + I_{displacement}) = \m
     电场和磁场都储存能量。在电磁波中，电场能量密度等于磁场能量密度 ($u_E = u_B$)。
     总能量密度：
     $$ u = \epsilon_0 E^2 $$
-
-2.  坡印廷矢量 (Poynting Vector, Slide 51)：
+2.  坡印廷矢量 (Poynting Vector)：
     描述能量流动的方向和快慢（功率密度，单位 $W/m^2$）。
     $$ \vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B} $$
     *   $\vec{S}$ 的方向就是波传播的方向。
@@ -1067,6 +1065,8 @@ Phase continuity + speed difference:  $n_i \sin\theta_i = n_t \sin\theta_t$
     *   可以推导出反射定律和折射定律。
     *   可以解释衍射现象。
     *   解释海市蜃楼 (Mirage) (Slide 137)：这是由于空气密度不均匀导致折射率连续变化，光线发生弯曲，惠更斯原理可以很好地描绘波前的偏转
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216192451503.png)
+
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183512535.png)
 
 1.  记公式：
@@ -1107,33 +1107,45 @@ Phase continuity + speed difference:  $n_i \sin\theta_i = n_t \sin\theta_t$
         *   条纹间距：$\Delta y = \frac{R\lambda}{d}$
 4.  光强分布 (Intensity)
     *   光强公式：$I = I_0 \cos^2(\frac{\phi}{2})$
-    *   其中相位差：$\phi = \frac{2\pi}{\lambda} d \sin \theta$
+    *   其中相位差：$\phi = \frac{2\pi}{\lambda} d \sin \theta=\frac{2\pi}{\lambda}(r_{2}-r_{1})$
+> 推导
+	
+	两个相干波的表达式
+考虑两个振幅相同、角频率相同的相干波（如双缝干涉的两个子波）：
+- 波 1：$E_1(t) = E\cos(\omega t + \phi)$（相位比波 2 超前$\phi$）
+- 波 2：$E_2(t) = E\cos\omega t$
+    （E为单个波的振幅，$\omega$为角频率，$\phi$为两波的相位差）
+	用相量法求合振幅 $E_P$
+
+相干波的叠加可等效为旋转相量的矢量叠加（相量：长度 = 振幅，角速度 = 角频率$\omega$，方向代表相位）
+
+- 波 2 的相量：时刻t沿 x 轴，长度为E
+- 波 1 的相量：时刻t与 x 轴夹角为$\omega t + \phi$，长度为E
+- 两相量的相对夹角恒为$\phi$（因角速度相同，相对相位不变）
+
+合振幅$E_P$是两个相量的矢量和的长度，由余弦定理：$E_P^2 = E^2 + E^2 - 2E^2\cos(\pi - \phi)$（注：公式中用$\pi - \phi$是因为相量构成的三角形中，夹角为$\pi - \phi$；利用$\cos(\pi - \phi) = -\cos\phi$，化简得）：$E_P^2 = 2E^2(1 + \cos\phi)$
+
+利用三角恒等式 $1 + \cos\phi = 2\cos^2\frac{\phi}{2}$，代入得：$E_P^2 = 2E^2 \cdot 2\cos^2\frac{\phi}{2} = 4E^2\cos^2\frac{\phi}{2}$因此，合振幅为：$E_P = 2E\left|\cos\frac{\phi}{2}\right|$（绝对值保证振幅为正，$\cos\frac{\phi}{2}$的正负对应相位差的不同情况）
+
+光强I是电磁波的平均能流密度，对电磁波，光强公式为：$I = \frac{1}{2}\varepsilon_0 c E_P^2$（$\varepsilon_0$为真空介电常数，c为光速，$\frac{1}{2}$是简谐振动的时间平均值）
+
+将$E_P^2 = 4E^2\cos^2\frac{\phi}{2}$代入光强公式：$I = \frac{1}{2}\varepsilon_0 c \cdot 4E^2\cos^2\frac{\phi}{2} = 2\varepsilon_0 c E^2\cos^2\frac{\phi}{2}$
+
+当$\cos^2\frac{\phi}{2} = 1$（相位差$\phi = 2k\pi$，k为整数）时，光强最大，记为：$I_0 = 2\varepsilon_0 c E^2$
+因此，双源干涉的光强可表示为：$I = I_0\cos^2\frac{\phi}{2}$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216190139878.png)
-
----
-
-### 第三模块：介质中的光与菲涅尔方程 (Light in Media & Fresnel Equations)
-(涉及 Slide 36-37, 59-63, 14-21)
-
-这一部分解释了光在界面反射和折射时的微观行为，是理解薄膜干涉的前提。
-
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216193857575.png)
+### 介质中的光与菲涅尔方程 (Light in Media & Fresnel Equations)
 1.  介质中的波长：
     *   光进入介质（折射率 $n$），频率 $f$ 不变，速度 $v = c/n$，波长变短。
     *   关键公式：$\lambda_n = \frac{\lambda_{vacuum}}{n}$
 2.  反射时的相位突变 (Phase Shift on Reflection) (重要考点！)
-    *   “硬”反射（半波损失）：光从光疏介质（低 $n$）射向光密介质（高 $n$）并反射时（如空气射向玻璃），反射波发生 $\pi$ (180 度) 的相位突变，相当于多走了 $\lambda/2$ 的路程。
+    *   “硬”反射（半波损失）：光从低 $n$射向光密介质（高 $n$）并反射时（如空气射向玻璃），反射波发生 $\pi$ (180 度) 的相位突变，相当于多走了 $\lambda/2$ 的路程
     *   “软”反射：光从光密射向光疏（如玻璃射向空气），无相位突变。
-3.  菲涅尔方程与布儒斯特角 (Slide 40, 59-63)：
-    *   描述反射率和透射率与偏振的关系。
-    *   布儒斯特角 (Brewster's Angle, $\theta_B$)：当入射角满足 $\tan \theta_B = n_2/n_1$ 时，平行于入射面偏振的光（TM 模）反射率为 0。利用这一点可以制造偏振光。
 
 ---
 
 ### 第四模块：薄膜干涉 (Thin Film Interference)
-(涉及 Slide 50-57, 64-68)
-
-这是本章最灵活、最容易出错的考点。
-
 1.  物理模型：光照射到厚度为 $t$、折射率为 $n$ 的薄膜上。干涉发生在“上表面反射光”和“下表面反射光”之间。
 2.  路程差：光在膜内多走了 $2t$ 的距离。但要注意，在膜内波长是 $\lambda_n = \lambda/n$。
 3.  解题步骤（必背）：
@@ -1147,25 +1159,45 @@ Phase continuity + speed difference:  $n_i \sin\theta_i = n_t \sin\theta_t$
         *   情况 B：有 0 次或 2 次相位突变（例如镜头增透膜，n 递增）：
             *   相长干涉（亮）：$2t = m \frac{\lambda}{n}$
             *   相消干涉（暗）：$2t = (m + \frac{1}{2}) \frac{\lambda}{n}$
-    *   *注意：增透膜 (Nonreflective coating, Slide 53) 的目的是相消干涉，通常求最小厚度，即取对应公式中 $m$ 的最小值。*
+    *   *注意：增透膜 (Nonreflective coating) 的目的是相消干涉，通常求最小厚度，即取对应公式中 $m$ 的最小值。*
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216194657290.png)
 
 4.  变种模型：
     *   劈尖干涉 (Air Wedge) (Slide 64)：空气厚度 $t$ 随位置线性变化，导致等间距直条纹。
-    *   牛顿环 (Newton's Rings) (Slide 65-66)：平凸透镜放在平面玻璃上，空气厚度随半径非线性变化，形成疏密不均的同心圆环。中心通常是暗斑（因为接触点 $t \approx 0$，且有一次半波损失，发生相消干涉）。
-
+    *   牛顿环 (Newton's Rings) (Slide 65-66)：平凸透镜放在平面玻璃上，空气厚度随半径非线性变化，形成疏密不均的同心圆环。中心通常是暗斑（因为接触点 $t \approx 0$，且有一次半波损失，发生相消干涉）
 ---
-
 ### 第五模块：迈克尔逊干涉仪 (Michelson Interferometer)
-(涉及 Slide 75-83)
+抱歉漏掉了这一页！这是 第 32 章 (Slide 41) 的内容，非常重要。
 
-一种高精度的测量仪器。
+这一页主要从电磁学微观本质的角度，推导了为什么光在介质（如玻璃、水）中传播速度会变慢，以及折射率 $n$ 到底是由什么决定的。
 
+以下是这一页的详细解析：
+
+### 1. 核心结论
+光在介质中的传播速度 $v$ 取决于介质的电磁性质。折射率 $n$ 的定义是：
+$$ n = \frac{c}{v} $$
+其中 $c$ 是真空光速，$v$ 是介质中的光速。
+
+### 2. 推导过程 (从麦克斯韦方程到光学)
+我们知道真空光速公式是 $c = \frac{1}{\sqrt{\epsilon_0 \mu_0}}$。
+    在介质中，波速 $v$ 变为：
+    $$ v = \frac{1}{\sqrt{\epsilon \mu}} = \frac{1}{\sqrt{(K\epsilon_0)(K_m\mu_0)}} $$
+    将上式变形，把 $\epsilon_0 \mu_0$ 分离出来变成 $c$：
+    $$ v = \frac{1}{\sqrt{K K_m}} \cdot \frac{1}{\sqrt{\epsilon_0 \mu_0}} = \frac{c}{\sqrt{K K_m}} $$
+
+既然折射率定义为 $n = c/v$，将上面的 $v$ 代入，我们得到：
+$$ n = \sqrt{K K_m}  K_m \cong 1, \quad \frac{c}{v} = n = \sqrt{K K_m} \cong \sqrt{K} $$
+*   含义： 对于绝大多数透明介质（玻璃、水、塑料），它们都是非磁性的，所以相对磁导率 $K_m$ 非常接近 1
+*   结论： 材料的折射率大约等于其介电常数的平方根 ($n \approx \sqrt{K}$)
+    *   这就是为什么电介质（绝缘体）通常也是透明的光学材料。
 1.  结构：利用分光镜将光分为两束，分别经反射镜 $M_1$ 和 $M_2$ 反射后汇聚。
 2.  原理：通过改变一个臂的长度 ($L_2$)，改变两束光的路程差 $\Delta r = 2(L_2 - L_1)$。
 3.  应用公式：
     *   如果移动镜子距离 $\Delta d$，路程差改变 $2\Delta d$。
     *   移过 $N$ 条条纹对应的关系：$2\Delta d = N\lambda$。
 4.  LIGO (Slide 81-83)：本质上是一个巨大的迈克尔逊干涉仪，利用引力波导致的空间拉伸/压缩（改变臂长 $L$），从而通过干涉条纹的变化探测引力波。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216194751015.png)
+
 
 ---
 
@@ -1181,12 +1213,9 @@ Phase continuity + speed difference:  $n_i \sin\theta_i = n_t \sin\theta_t$
     *   日落时阳光穿过大气路程长，蓝光散尽，剩下红光 $\rightarrow$ 夕阳是红的。
 2.  米氏散射 (Mie Scattering) (Slide 125)：
     *   发生条件：粒子尺寸接近或大于波长，如云中的水滴。
-    *   规律：对所有波长散射强度差不多。
-    *   结论：白光被整体散射 $\rightarrow$ 云是白色的。
-
+    *   规律：对所有波长散射强度差不多
+    *   结论：白光被整体散射 $\rightarrow$ 云是白色的
 ---
-
-### 总结：你的复习清单
 
 1.  公式记忆：
     *   双缝干涉极值位置公式（$d \sin\theta$）。
@@ -1201,4 +1230,90 @@ Phase continuity + speed difference:  $n_i \sin\theta_i = n_t \sin\theta_t$
     *   为什么镜头镀膜看起来是紫色的？（反射光在黄绿光波段相消干涉）。
     *   为什么天蓝云白？（散射机制不同）。
 
-掌握以上六个模块，这份 PDF 里的所有考点你就都覆盖到了。
+# 36
+### 第一模块：衍射的基本概念与惠更斯原理 (Basic Concepts & Huygens' Principle)
+1.  什么是衍射？
+    *   光（波）遇到障碍物或通过狭缝时，会偏离直线传播，绕到障碍物后面的阴影区域，这种现象叫衍射。
+    *   发生条件：当障碍物或狭缝的尺寸与波长相当（$\lambda \approx a$）时，衍射现象最明显
+        *   如果狭缝很大 ($a \gg \lambda$)，光主要沿直线传播（几何光学）。
+        *   如果狭缝很小 ($a \sim \lambda$)，光会向四周扩散（波动光学）。
+
+3.  菲涅尔 vs 夫琅禾费衍射 (Slide 18)：
+    *   Fresnel Diffraction：近场衍射。光源、屏幕离障碍物较近，光线不是平行的。计算复杂（菲涅尔积分）。
+    *   Fraunhofer Diffraction：远场衍射。光源、屏幕离障碍物很远（或通过透镜聚焦），光线近似为平行光（平面波）
+
+---
+
+### 第二模块：单缝衍射 (Single-Slit Diffraction)
+
+1.  物理图像：一束平行光通过宽度为 $a$ 的狭缝。
+2.  暗纹条件 (Dark Fringes Condition) (必背公式!)：$$a \sin \theta = m\lambda \quad (m = \pm 1, \pm 2, \pm 3, \dots)$$
+    *   *注意：这里 $m$ 不能取 0。$m=0$ 对应中央亮纹中心。*
+    *   物理意义：将狭缝分为两半，上半部分的一点和下半部分对应点光程差为 $\lambda/2$，发生相消干涉。
+3.  光强分布 (Intensity) ：
+    *   公式：$$I = I_0 \left[ \frac{\sin(\beta/2)}{\beta/2} \right]^2$$
+    *   其中相位差参数：$$\beta = \frac{2\pi}{\lambda} a \sin \theta$$
+    *   特征：中央亮纹最宽（宽度是其他亮纹的两倍）、最亮。两侧亮纹（次极大）亮度迅速衰减。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216200750033.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216201047225.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216201313463.png)
+
+---
+
+### 第三模块：分辨率与圆孔衍射 (Resolution & Circular Aperture)
+1.  圆孔衍射：
+    *   光通过直径为 $D$ 的圆孔，形成一个明亮的中心圆斑（艾里斑，Airy disk）和周围明暗相间的圆环。
+    *   第一暗环角半径：$\sin \theta_1 \approx \theta_1 = 1.22 \frac{\lambda}{D}$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216201526012.png)
+
+2.  瑞利判据 (Rayleigh Criterion)：
+    *   用于判断两个靠得很近的点光源能否被分辨。
+    *   判据：当一个点光源衍射图样的中央亮斑中心，刚好落在另一个点光源衍射图样的第一暗环上时，认为恰好能分辨。
+    *   最小分辨角 (Minimum Angle of Resolution)：$$\theta_{min} = 1.22 \frac{\lambda}{D}$$
+    * 结论：孔径 $D$ 越大（望远镜口径越大），$\theta_{min}$ 越小，分辨率越高。波长 $\lambda$ 越短（如蓝光显微镜），分辨率越高。
+
+---
+
+### 第四模块：多缝衍射与光栅 (Multiple Slits & Diffraction Grating)
+1.  双缝干涉 + 单缝衍射：
+    *   实际的双缝干涉图样，受单缝衍射的调制（包络）。条纹强度不再是一样亮，而是被限制在单缝衍射的轮廓内
+
+2.  衍射光栅 (Diffraction Grating)：
+    *   由大量等间距（间距为 $d$）的狭缝组成。
+    *   主极大条件 (Principal Maxima) (必背公式!)：$d \sin \theta = m\lambda \quad (m = 0, \pm 1, \pm 2 \dots)$
+    *   特征：与双缝干涉相比，光栅的亮纹更窄、更亮、更锐利。缝数 $N$ 越多，亮纹越细
+    *   应用：光谱仪。不同波长 $\lambda$ 的光在不同角度 $\theta$ 处形成亮纹，从而将复色光分开。
+
+3.  分辨本领 (Resolving Power) (Slide 75)：
+    *   光栅分辨两个靠得很近的波长 $\lambda$ 和 $\lambda + \Delta \lambda$ 的能力。
+    *   公式：$$R = \frac{\lambda}{\Delta \lambda} = Nm$$
+    *   $N$ 是光栅总缝数，$m$ 是光谱级数。要想分辨得清楚，需要更多的缝或更高的级数
+
+---
+
+### 第五模块：X 射线衍射与全息术 (X-Ray Diffraction & Holography)
+
+1.  X 射线衍射 (Bragg's Law)：
+    *   晶体中的原子排列规则，相当于三维光栅。X 射线波长与原子间距相当，会发生衍射。
+    *   布拉格方程 (Bragg's Law) (必背公式!)：
+        $$2d \sin \theta = m\lambda$$
+    *   *注意：这里的 $\theta$ 通常指掠射角（光线与晶面的夹角），而非与法线的夹角。* $d$ 是晶面间距。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216201542136.png)
+
+2.  全息术 (Holography)：
+    *   原理：普通照相只记录光的强度（振幅），全息术利用干涉原理，同时记录光的强度和相位信息。
+    *   过程：
+        *   记录：物光（从物体反射的光）与参考光（直接来自激光器）发生干涉，底片记录干涉条纹。
+        *   再现：用参考光照射全息图，衍射光波重现物体的立体波前。
+
+---
+1.  区分公式：
+    *   单缝衍射暗纹：$a \sin \theta = m\lambda$ （注意是 $a$，且 $m \neq 0$）。
+    *   光栅/双缝亮纹：$d \sin \theta = m\lambda$ （注意是 $d$）。
+    *   圆孔分辨率：$\theta = 1.22 \lambda / D$。
+    *   布拉格衍射：$2d \sin \theta = m\lambda$ （$\theta$ 是掠射角）。
+
+2.  理解物理图像：
+    *   单缝衍射图样长什么样？（中间宽亮，两边窄暗）。
+    *   光栅图样长什么样？（尖锐的亮点）。
+    *   孔径大小如何影响分辨率？（孔越大，斑越小，看得越清）。
