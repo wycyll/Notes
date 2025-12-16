@@ -579,13 +579,12 @@ $\tau=IBA\sin \phi$, $\mu=IA$
 | 铁磁质（Ferromagnet） | 强磁化，外磁场消失后保留剩磁               | 磁畴结构，外磁场使磁畴大量对齐        | 铁（Fe）、钴（Co）、永磁体 |
 
 # 28
-## 一、运动电荷与 Biot–Savart 定律
 
 ### 运动点电荷的磁场
 任何带电且在运动的粒子都会产生磁场。  
 非相对论近似下，点电荷 $q$，速度 $\vec v$，在场点与电荷连线方向为 $\hat r$、距离 $r$ 处的磁场：
 $\vec B = \dfrac{\mu_0}{4\pi},\dfrac{q,\vec v\times \hat r}{r^2}$
-方向用右手定则：$\vec v\times \hat r$ 的方向就是 $\vec B$ 的方向。
+方向用右手定则：$\vec v\times \hat r$ 的方向就是 $\vec B$ 的方向
 ### Law of Biot and Savart 电流元
 1. 电流元的定义
 	电流元是 “宏观电流的微元”，表示为 $I d\vec{l}$：
@@ -623,7 +622,10 @@ $\vec B = \dfrac{\mu_0}{4\pi},\dfrac{q,\vec v\times \hat r}{r^2}$
 ## Coil
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033202579.png)
 
-
+多匝圆线圈轴线上的磁场
+若线圈有N匝（多匝紧密排列），则总磁场为单匝磁场的N倍（每匝的磁场叠加），即：$\boxed{B_x = \frac{\mu_0 N I a^2}{2(x^2 + a^2)^{3/2}}}$
+多匝线圈中心处的磁场（$x=0$）
+当$x=0$（线圈中心位置），代入轴线上的磁场公式：$B_x = \frac{\mu_0 N I a^2}{2(0 + a^2)^{3/2}} = \frac{\mu_0 N I a^2}{2a^3} = \boxed{\frac{\mu_0 N I}{2a}}$
 ## Ampere's law 
 $\displaystyle \oint \vec B\cdot d\vec \ell = \mu_0 I_{\text{enc}}$
 任意闭合回路上，对 $\vec B$ 做线积分，等于穿过该回路的包围电流（净电流）乘以 $\mu_0$。
@@ -636,7 +638,6 @@ $B(2\pi x) = \mu_0 I ;\Rightarrow; B = \dfrac{\mu_0 I}{2\pi x}$
 
 ### General
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033049165.png)
-
 ## Solenoid
 长度 $L$，总匝数 $N$，电流 $I$，匝密度 $n = N/L$。  
 理想情况下，内部磁场几乎均匀、外部接近 0：
@@ -663,7 +664,7 @@ $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
 2）顺磁（paramagnetism）：  
 存在未成对电子，外场使磁矩略微沿场方向排列，产生弱正磁化（$\chi_v>0$，但很小）。
 3）铁磁（ferromagnetism）：  
-存在磁畴（domains），在外磁场下磁畴转向同一方向，表现出强磁性（铁、钴、镍等）。有自发磁化、自发畴结构。
+存在磁畴（domains），在外磁场下磁畴转向同一方向，表现出强磁性（铁、钴、镍等）。有自发磁化、自发畴结构
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033732271.png)
 
 ## 磁滞回线（hysteresis）
@@ -833,19 +834,16 @@ $$ \oint \vec{B} \cdot d\vec{l} = \mu_0 (I_{conduction} + I_{displacement}) = \m
 
 # 32
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216171747722.png)
-x
     *   $\oint \vec{E} \cdot d\vec{A} = Q/\epsilon_0$ (高斯电场定律)：电荷产生电场。
     *   $\oint \vec{B} \cdot d\vec{A} = 0$ (高斯磁场定律)：没有磁单极子，磁感线闭合。
     *   $\oint \vec{B} \cdot d\vec{l} = \mu_0(i_c + \epsilon_0 d\Phi_E/dt)$ (安培-麦克斯韦定律)：电流和变化的电场产生磁场。
     *   $\oint \vec{E} \cdot d\vec{l} = -d\Phi_B/dt$ (法拉第定律)：变化的磁场产生电场。
 
 ---
-
-### 第二模块：电磁波谱与应用 (Slides 12-22)
+### Electromagnetic Spectrum
 
 核心概念：
 光只是电磁波的一小部分。所有电磁波在真空中速度相同，区别在于频率（$f$ 或 $\nu$）和波长（$\lambda$）。
-
 *   基本公式： $c = f \lambda$ (光速 = 频率 $\times$ 波长)
 *   波谱顺序 (从长波长/低频 到 短波长/高频)：
     1.  无线电波 (Radio)：波长最长。应用：广播、通信。天线原理是LC振荡电路 (Slide 14)。
@@ -855,29 +853,17 @@ x
     5.  紫外线 (UV)：能量较高，能杀菌，也能导致皮肤晒伤。
     6.  X射线 (X-ray)：波长接近原子大小。应用：晶体衍射分析（看原子排列）、医学成像 (Slide 21)。
     7.  伽马射线 (Gamma Ray)：波长最短，能量最高。来自核衰变或天文现象 (Slide 22)。
-
 ---
-
-### 第三模块：平面电磁波的性质与数学描述 (Slides 23-40)
-
-核心概念：
-如果离波源足够远，波面可以看作是平面的（平面波）。这是考试计算的重点。
-
-1.  核心性质 (Slide 28 - 必须背诵)：
+### 电磁波
+1.  核心性质 
     *   横波 (Transverse)： 电场 $\vec{E}$ 和 磁场 $\vec{B}$ 都垂直于传播方向。
     *   相互垂直： $\vec{E}$ 垂直于 $\vec{B}$。
     *   传播方向： 由右手定则决定，方向沿着 $\vec{E} \times \vec{B}$ 的方向（大拇指指传播方向）。
-    *   数值关系： 在真空中，电场和磁场的大小比值是光速：
-        $$E = cB$$
+    *   数值关系： 在真空中，电场和磁场的大小比值是光速：$$E = cB$$
     *   真空光速： 由常数决定：
         $$c = \frac{1}{\sqrt{\epsilon_0 \mu_0}} \approx 3.00 \times 10^8 \, m/s$$
 
-2.  数学推导 (Slides 29-32)：
-    *   PPT展示了如何利用法拉第定律和安培定律对一个虚构的矩形框积分，推导出波动方程：
-        $$\frac{\partial^2 E}{\partial x^2} = \epsilon_0 \mu_0 \frac{\partial^2 E}{\partial t^2}$$
-    *   这个方程的形式直接暗示了波速 $v = 1/\sqrt{\epsilon_0 \mu_0}$。
-
-3.  正弦波函数 (Slides 34-39)：
+2.  正弦波函数：
     *   电磁波可以用正弦函数描述：
         $$ \vec{E}(x,t) = E_{max} \cos(kx - \omega t) \hat{j} $$
         $$ \vec{B}(x,t) = B_{max} \cos(kx - \omega t) \hat{k} $$
@@ -888,34 +874,7 @@ x
         *   波速 $v = \omega / k = \lambda f$
 
 ---
-
-### 第四模块：介质中的电磁波 (Slides 41-46)
-
-核心概念：
-光在玻璃或水中为什么变慢？
-
-1.  折射率 (Index of Refraction)：
-    $$ n = \frac{c}{v} $$
-    其中 $v$ 是介质中的光速。
-2.  介质中的速度公式 (Slide 41)：
-    $$ v = \frac{1}{\sqrt{\epsilon \mu}} = \frac{c}{\sqrt{K K_m}} $$
-    这里 $K$ 是介电常数，$K_m$ 是相对磁导率（绝大多数透明介质 $K_m \approx 1$），所以 $n \approx \sqrt{K}$。
-3.  全反射 (Total Internal Reflection, Slide 44)：
-    当光从光密介质（$n$ 大）射向光疏介质（$n$ 小），且入射角大于临界角时，光全部反射回原介质。
-4.  负折射率 (Negative Index, Slides 45-46)：
-    *   这是一个前沿话题（超材料 Metamaterials）。
-    *   如果材料的 $\epsilon$ 和 $\mu$ 同时为负，折射率 $n$ 为负。
-    *   后果： 光线折射方向反常。
-    *   应用： 隐身衣 (Invisibility Cloak)、超级透镜。
-
----
-
-### 第五模块：能量与动量 (Slides 47-62)
-
-核心概念：
-电磁波不仅携带能量，还携带动量（光是有压力的！）。
-
-1.  能量密度 (Energy Density, Slide 47)：
+1.  能量密度 (Energy Density)：
     电场和磁场都储存能量。在电磁波中，电场能量密度等于磁场能量密度 ($u_E = u_B$)。
     总能量密度：
     $$ u = \epsilon_0 E^2 $$
@@ -925,49 +884,31 @@ x
     $$ \vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B} $$
     *   $\vec{S}$ 的方向就是波传播的方向。
     *   $\vec{S}$ 的大小随时间快速震荡。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216175913502.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216180123173.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216180140778.png)
 
 3.  光强 (Intensity, Slide 52)：
     我们通常测量的是 $\vec{S}$ 的平均值。
     $$ I = S_{av} = \frac{1}{2c\mu_0} E_{max}^2 = \frac{1}{2} \epsilon_0 c E_{max}^2 $$
-
-4.  辐射压 (Radiation Pressure, Slide 54)：
+4.  辐射压 (Radiation Pressure)：
     光照在物体上会产生推力。
     *   被完全吸收（黑色物体）： $P_{rad} = I / c$
     *   被完全反射（镜子）： $P_{rad} = 2I / c$ （动量变化加倍，推力加倍）
-
-5.  应用 (Slides 56-62)：
-    *   太阳帆 (Solar Sail)： 利用光压推动飞船，不需要燃料。
-    *   彗星尾巴： 尘埃尾背离太阳方向，部分原因是光压。
-    *   激光冷却与光镊 (Laser Cooling & Optical Trapping)： 2018年诺贝尔奖。利用激光的动量来捕获和移动微小的粒子（如细菌、细胞）。
-        *   Rayleigh散射 ($a \ll \lambda$) vs Mie散射 ($a \gg \lambda$) (Slide 59-60)：描述不同尺寸粒子的受力机制。
-
----
-
-### 第六模块：驻波 (Standing Waves, Slides 63-67)
-
-核心概念：
-如果不让光跑掉，而是用镜子把它困住（比如微波炉里，或激光器谐振腔），会发生什么？
-
-1.  形成原理： 两个频率相同、方向相反的波叠加。
-2.  节点 (Nodes)： 场强永远为0的点。
-3.  边界条件 (Slide 63)：
-    *   在完美导体（如金属板）表面，电场 $\vec{E}$ 必须为 0（因为导体表面电势均等，切向电场为0）。
-    *   因此，导体表面一定是电场节点 (Nodal plane of E)。
-    *   反之，导体表面是磁场波腹 (Antinodal plane of B)。
-4.  应用： 微波炉里的加热点分布不均（所以需要转盘）、激光器的谐振腔。
-
 ---
 1.  光速与介质： $c = \frac{1}{\sqrt{\epsilon_0 \mu_0}}$, $v = \frac{c}{n}$
 2.  波的关系： $c = f \lambda$, $\omega = 2\pi f$, $k = \frac{2\pi}{\lambda}$
 3.  场强关系： $E = cB$ (真空中), $\vec{E} \perp \vec{B} \perp \vec{k}$
 4.  光强 (Intensity)： $I = \frac{1}{2} \epsilon_0 c E_{max}^2$
 5.  光压 (Pressure)： $P = I/c$ (吸收), $P = 2I/c$ (反射)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216174219954.png)
+
 
 # 33
 ## Wave-front continuity（波前连续性）
 Electric field wave-fronts must be continuous at a boundary.$\theta_i = \theta_r$
 ## Snell's Law（斯涅尔折射定律）
-Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
+Phase continuity + speed difference:  $n_i \sin\theta_i = n_t \sin\theta_t$
 
 ---
 ## Electromagnetic Wave Geometry（电磁波方向关系）
@@ -979,7 +920,7 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
 ## Polarization（偏振）
 - S-polarization (⊥ polarization)：Electric field perpendicular to plane of incidence.
 - P-polarization (∥ polarization)：Electric field parallel to plane of incidence.
----
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183207905.png)
 
 ## Fresnel Equations（菲涅耳公式） — S Polarization (⊥)
 ### Boundary Conditions for S-polarization
@@ -1012,7 +953,7 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
 ## Brewster Angle（布儒斯特角）
 - For P-polarization: $r_{\parallel} = 0$
 - Geometric condition: $\theta_i + \theta_t = 90^\circ$
-- Final result: $\tan\theta_B = \frac{n_t}{n_i}$
+- Final result:  $\tan\theta_B = \frac{n_t}{n_i}$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251210144343571.png)
 
 ### Physical meaning
@@ -1020,6 +961,42 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
 - 反射光 becomes 100% S-polarized
 - 可利用偏振片去除水面 / 玻璃反光
 ---
+
+### 第一模块：光的本质与传播 (The Nature of Light)
+1.  光的波粒二象性：光既是电磁波（波动性），也是光子流（粒子性）。
+    *   波动性：解释干涉、衍射、偏振。
+    *   粒子性：解释光电效应，以及光压（Radiation Pressure）。
+2.  光速与折射率：
+    *   真空光速：$c = 3.00 \times 10^8 \text{ m/s}$。
+    *   折射率 (Index of Refraction, $n$)：光在介质中速度变慢。$$n = \frac{c}{v}$$
+        *   因为 $v < c$，所以 $n > 1$（真空为 1，空气约 1.0003，水 1.33，玻璃 1.5）。
+3.  光压与动量
+    *   光不仅携带能量，还携带动量。当光照射物体被吸收或反射时，会产生压强。
+    *   应用：太阳帆 (Solar Sail)，利用光压推动飞船。
+
+---
+
+### 第二模块：反射与折射定律 (Reflection and Refraction)
+1.  折射定律 (Snell's Law)：
+    *   光从一种介质进入另一种介质，速度改变导致方向改变。$n_1 \sin\theta_1 = n_2 \sin\theta_2$
+    *   定性判断：
+        *   从稀介质进入密介质（$n_1 < n_2$）：光线偏向法线（$\theta_2 < \theta_1$）。
+        *   从密介质进入稀介质（$n_1 > n_2$）：光线偏离法线（$\theta_2 > \theta_1$）。
+2.  视深 (Apparent Depth) 
+    *   由于折射，水中的物体看起来比实际浅。例如吸管在水面处“折断”。
+
+---
+### 第三模块：全反射与光纤 (Total Internal Reflection & Fiber Optics)
+1.  发生条件：
+    *   光必须从光密介质射向光疏介质（即 $n_1 > n_2$，例如从水射向空气，或从玻璃射向空气）。
+2.  临界角 (Critical Angle, $\theta_c$)：
+    *   当折射角 $\theta_2 = 90^\circ$ 时，对应的入射角就是临界角。
+    *   公式：$$\sin\theta_c = \frac{n_2}{n_1}$$
+    *   如果入射角 $\theta > \theta_c$，光线全部反射回原介质，不再折射出去。
+3.  应用：
+    *   光纤 (Optical Fiber)：光在纤芯（Core，高折射率）和包层（Cladding，低折射率）界面发生全反射，从而远距离传输信号。
+    *   钻石：高折射率导致临界角很小，光线容易在内部发生多次全反射，显得璀璨。
+    *   双筒望远镜（普罗棱镜）：利用全反射改变光路。
 ## Total Internal Reflection（全反射）
 - Occurs only when: $n_i > n_t$
 - And when: $\theta_i > \theta_{\text{crit}}$
@@ -1028,17 +1005,200 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
 - For ( $\theta_i > \theta_{\text{crit}}$ )：Snell’s law gives ( $\sin\theta_t > 1$) → no real solution → refracted wave becomes evanescent → all energy reflected.
 ---
 ## Photography Polarizer（摄影偏振片原理）
-- 在接近 Brewster 角时，水面 / 玻璃反射光 几乎全为 S 偏振
+- 在接近 Brewster 角时，水面 / 玻璃反射光几乎全为 S 偏振
 - 偏振片（polarizer）能选择性阻挡 S 分量
 - 因此可有效消除眩光，让水面更清晰、玻璃更透明
 - 透射光中 P 偏振增强，故颜色更饱和
+### 第四模块：色散与彩虹 (Dispersion & Rainbows)
+1.  色散 (Dispersion)：
+    *   折射率 $n$ 其实不是常数，它随光的波长（颜色）变化。
+    *   规律：波长越短（蓝紫光），折射率 $n$ 越大，弯折得越厉害。
+2.  棱镜：白光通过棱镜被分解成彩虹光谱。
+3.  彩虹的形成：
+    *   阳光射入雨滴 $\rightarrow$ 折射（色散） $\rightarrow$ 雨滴内部反射 $\rightarrow$ 再次折射射出。
+    *   主虹 (Primary Rainbow)：一次内反射。紫色在内，红色在外。
+    *   霓 (Secondary Rainbow)：两次内反射。颜色顺序相反，比主虹暗。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183256095.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183302384.png)
+
+
 ---
-## Core Logic Summary（核心逻辑总结）
 
-- 波前连续 ⇒ 反射定律
-- 波前连续 + 速度不同 ⇒ Snell 定律
-- 电场切向连续、磁场切向连续 ⇒ Fresnel 方程
-- P 偏振在 Brewster 角不反射
-- S 偏振在 Brewster 角仍反射
-- 全反射与 Brewster 无关，折射消失是关键
+### 光的偏振 (Polarization)
+这部分比较抽象，是物理光学的重点。
+1.  什么是偏振？
+    *   光是横波，电场矢量 $\vec{E}$ 的振动方向称为偏振方向。
+    *   线偏振：电场只在一个特定平面内振动。
+    *   自然光（非偏振光）：包含各个方向振动的光（如太阳光、灯泡）。
+2.  马吕斯定律 (Malus's Law) (Slide 80)：
+    *   当线偏振光通过偏振片时，透射光强 $I$ 与入射光强 $I_{max}$ 的关系：$$I = I_{max} \cos^2\phi$$
+    *   $\phi$ 是光振动方向与偏振片透光轴的夹角。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183338154.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183356245.png)
 
+3.  反射偏振与布儒斯特角 (Brewster's Angle) (Slide 40, 96)：
+    *   当自然光反射时，反射光会变成部分偏振光。
+    *   布儒斯特角 ($\theta_p$)：当入射角达到特定值时，反射光完全变成线偏振光（且偏振方向平行于界面）。此时反射光线与折射光线垂直。
+    *   公式：$$\tan\theta_p = \frac{n_2}{n_1}$$
+    *   应用：偏振太阳镜可以滤除路面或水面的反射眩光（因为这些眩光通常是水平偏振的）。
+4.  双折射 (Birefringence)
+    *   某些晶体（如方解石 Calcite）对不同偏振方向的光有不同的折射率（$n_o$ 和 $n_e$）。
+    *   光通过这种晶体会分成两束（寻常光 o-ray 和非寻常光 e-ray）。
+5.  圆偏振与椭圆偏振
+    *   如果有两个振动方向互相垂直、且有相位差的光叠加，电场矢量会旋转，形成圆偏振或椭圆偏振。
+
+---
+
+### 散射 (Scattering)
+解释为什么天是蓝的，云是白的。
+1.  瑞利散射 (Rayleigh Scattering)：
+    *   对象：微小粒子（如空气分子），尺寸 $d \ll \lambda$（波长）。
+    *   规律：散射强度 $I \propto \frac{1}{\lambda^4}$。
+    *   现象：蓝光波长短，散射最强 $\rightarrow$ 天空是蓝色的。
+    *   日落：阳光穿过厚大气层，蓝光被散得差不多了，只剩下红光 $\rightarrow$ 太阳是红的。
+2.  米氏散射 (Mie Scattering)：
+    *   对象：较大粒子（如水滴、气溶胶），尺寸 $d \approx \lambda$
+    *   规律：对所有波长的散射强度差不多
+    *   现象：所有颜色的光都被散射 $\rightarrow$ 混合成白光 $\rightarrow$ 云是白色的
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183428364.png)
+### Huygens's Principle
+*   原理：波前的每一点都可以看作是一个新的次级波源，发出子波；下一时刻的波前就是这些子波的包络面。
+*   用途：
+    *   可以推导出反射定律和折射定律。
+    *   可以解释衍射现象。
+    *   解释海市蜃楼 (Mirage) (Slide 137)：这是由于空气密度不均匀导致折射率连续变化，光线发生弯曲，惠更斯原理可以很好地描绘波前的偏转
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216183512535.png)
+
+1.  记公式：
+    *   折射率定义 $n=c/v$
+    *   斯涅尔定律 $n_1 \sin\theta_1 = n_2 \sin\theta_2$
+    *   全反射临界角 $\sin\theta_c = n_2/n_1$
+    *   布儒斯特角 $\tan\theta_p = n_2/n_1$
+    *   马吕斯定律 $I = I_0 \cos^2\phi$
+2.  懂图像：
+    *   会画光路图（反射、折射、全反射）。
+    *   理解偏振片是如何“过滤”光的。
+3.  联系生活：
+    *   为什么水里的东西看起来浅？（折射）
+    *   为什么光纤能传导光？（全反射）
+    *   为什么天蓝云白？（瑞利散射 vs 米氏散射）
+    *   为什么偏振镜能去反光？（布儒斯特角反射偏振）
+
+# 35 Interference
+### 第一模块：波的叠加与干涉基础 (Fundamentals)
+1.  相长与相消 (Constructive & Destructive Interference)：
+    决定干涉结果的是两列波到达某点时的相位差 ($\phi$) 或 路程差 ($\Delta r = r_2 - r_1$)。
+    *   相长干涉 (亮条纹/最大值)：波峰遇波峰。
+        *   路程差：$\Delta r = m\lambda$ ($m = 0, \pm 1, \pm 2...$)
+        *   相位差：$\phi = 2m\pi$
+    *   相消干涉 (暗条纹/最小值)：波峰遇波谷。
+        *   路程差：$\Delta r = (m + \frac{1}{2})\lambda$
+        *   相位差：$\phi = (2m+1)\pi$
+---
+### Young's Double Slit
+1.  物理场景：单色光通过两个间距为 $d$ 的狭缝，射向距离为 $R$（或 $L$）的屏幕。
+2.  几何关系：
+    *   路程差近似：$\Delta r = d \sin \theta$ （假设 $R \gg d$）。
+3.  位置公式：
+    *   亮条纹位置：$d \sin \theta = m\lambda$
+    *   暗条纹位置：$d \sin \theta = (m + \frac{1}{2})\lambda$
+    *   小角度近似：当 $\theta$ 很小时，$\sin \theta \approx \tan \theta = \frac{y}{R}$。
+        *   屏幕上亮条纹坐标：$y_m = R \frac{m\lambda}{d}$
+        *   条纹间距：$\Delta y = \frac{R\lambda}{d}$
+4.  光强分布 (Intensity)
+    *   光强公式：$I = I_0 \cos^2(\frac{\phi}{2})$
+    *   其中相位差：$\phi = \frac{2\pi}{\lambda} d \sin \theta$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216190139878.png)
+
+---
+
+### 第三模块：介质中的光与菲涅尔方程 (Light in Media & Fresnel Equations)
+(涉及 Slide 36-37, 59-63, 14-21)
+
+这一部分解释了光在界面反射和折射时的微观行为，是理解薄膜干涉的前提。
+
+1.  介质中的波长：
+    *   光进入介质（折射率 $n$），频率 $f$ 不变，速度 $v = c/n$，波长变短。
+    *   关键公式：$\lambda_n = \frac{\lambda_{vacuum}}{n}$
+2.  反射时的相位突变 (Phase Shift on Reflection) (重要考点！)
+    *   “硬”反射（半波损失）：光从光疏介质（低 $n$）射向光密介质（高 $n$）并反射时（如空气射向玻璃），反射波发生 $\pi$ (180 度) 的相位突变，相当于多走了 $\lambda/2$ 的路程。
+    *   “软”反射：光从光密射向光疏（如玻璃射向空气），无相位突变。
+3.  菲涅尔方程与布儒斯特角 (Slide 40, 59-63)：
+    *   描述反射率和透射率与偏振的关系。
+    *   布儒斯特角 (Brewster's Angle, $\theta_B$)：当入射角满足 $\tan \theta_B = n_2/n_1$ 时，平行于入射面偏振的光（TM 模）反射率为 0。利用这一点可以制造偏振光。
+
+---
+
+### 第四模块：薄膜干涉 (Thin Film Interference)
+(涉及 Slide 50-57, 64-68)
+
+这是本章最灵活、最容易出错的考点。
+
+1.  物理模型：光照射到厚度为 $t$、折射率为 $n$ 的薄膜上。干涉发生在“上表面反射光”和“下表面反射光”之间。
+2.  路程差：光在膜内多走了 $2t$ 的距离。但要注意，在膜内波长是 $\lambda_n = \lambda/n$。
+3.  解题步骤（必背）：
+    *   第一步：判断上下两个表面反射时是否有“半波损失”（相位突变）。
+        *   空气 $\to$ 膜 $\to$ 空气：上表面突变，下表面不变（共 1 次突变）。
+        *   空气 $\to$ 膜 $\to$ 玻璃（$n$ 递增）：上表面突变，下表面也突变（共 2 次突变）。
+    *   第二步：列方程。
+        *   情况 A：只有一次相位突变（例如肥皂泡）：
+            *   相长干涉（亮）：$2t = (m + \frac{1}{2}) \frac{\lambda}{n}$
+            *   相消干涉（暗）：$2t = m \frac{\lambda}{n}$
+        *   情况 B：有 0 次或 2 次相位突变（例如镜头增透膜，n 递增）：
+            *   相长干涉（亮）：$2t = m \frac{\lambda}{n}$
+            *   相消干涉（暗）：$2t = (m + \frac{1}{2}) \frac{\lambda}{n}$
+    *   *注意：增透膜 (Nonreflective coating, Slide 53) 的目的是相消干涉，通常求最小厚度，即取对应公式中 $m$ 的最小值。*
+
+4.  变种模型：
+    *   劈尖干涉 (Air Wedge) (Slide 64)：空气厚度 $t$ 随位置线性变化，导致等间距直条纹。
+    *   牛顿环 (Newton's Rings) (Slide 65-66)：平凸透镜放在平面玻璃上，空气厚度随半径非线性变化，形成疏密不均的同心圆环。中心通常是暗斑（因为接触点 $t \approx 0$，且有一次半波损失，发生相消干涉）。
+
+---
+
+### 第五模块：迈克尔逊干涉仪 (Michelson Interferometer)
+(涉及 Slide 75-83)
+
+一种高精度的测量仪器。
+
+1.  结构：利用分光镜将光分为两束，分别经反射镜 $M_1$ 和 $M_2$ 反射后汇聚。
+2.  原理：通过改变一个臂的长度 ($L_2$)，改变两束光的路程差 $\Delta r = 2(L_2 - L_1)$。
+3.  应用公式：
+    *   如果移动镜子距离 $\Delta d$，路程差改变 $2\Delta d$。
+    *   移过 $N$ 条条纹对应的关系：$2\Delta d = N\lambda$。
+4.  LIGO (Slide 81-83)：本质上是一个巨大的迈克尔逊干涉仪，利用引力波导致的空间拉伸/压缩（改变臂长 $L$），从而通过干涉条纹的变化探测引力波。
+
+---
+
+### 第六模块：散射 (Scattering)
+(涉及 Slide 110-126)
+
+这部分属于定性理解，解释自然现象。
+
+1.  瑞利散射 (Rayleigh Scattering) (Slide 120)：
+    *   发生条件：粒子尺寸远小于波长 ($d \ll \lambda$)，如空气分子。
+    *   规律：散射强度 $I \propto \frac{1}{\lambda^4}$。
+    *   结论：短波长（蓝紫光）散射最强。$\rightarrow$ 天空是蓝色的。
+    *   日落时阳光穿过大气路程长，蓝光散尽，剩下红光 $\rightarrow$ 夕阳是红的。
+2.  米氏散射 (Mie Scattering) (Slide 125)：
+    *   发生条件：粒子尺寸接近或大于波长，如云中的水滴。
+    *   规律：对所有波长散射强度差不多。
+    *   结论：白光被整体散射 $\rightarrow$ 云是白色的。
+
+---
+
+### 总结：你的复习清单
+
+1.  公式记忆：
+    *   双缝干涉极值位置公式（$d \sin\theta$）。
+    *   薄膜干涉公式（$2nt$ 等于波长整数倍还是半整数倍，切记先判断半波损失）。
+    *   迈克尔逊干涉仪公式 ($2\Delta d = N\lambda$)。
+2.  概念理解：
+    *   相干条件。
+    *   光程与几何路程的区别（光程 = $n \times$ 几何路程）。
+    *   相位突变发生的条件（光疏射向光密，反射）。
+3.  现象解释：
+    *   为什么肥皂泡是彩色的？（薄膜干涉，不同厚度强化不同波长）。
+    *   为什么镜头镀膜看起来是紫色的？（反射光在黄绿光波段相消干涉）。
+    *   为什么天蓝云白？（散射机制不同）。
+
+掌握以上六个模块，这份 PDF 里的所有考点你就都覆盖到了。
