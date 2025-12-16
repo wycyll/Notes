@@ -68,7 +68,7 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 2. 步骤 2：将 “带电圆盘” 分解为 “无数细圆环（微元环）”
 把圆盘看成由无数个内半径r、外半径 $r+dr$ 的细圆环叠加而成。
 - 微元环的电荷dQ
-	设圆盘的**电荷面密度**为 $\sigma= \frac{Q}{\pi R^2}$。
+	设圆盘的电荷面密度为 $\sigma= \frac{Q}{\pi R^2}$。
 	微元环的面积dA近似为 $2\pi r \cdot dr$ 
 	微元环的电荷：$dQ = \sigma \cdot dA = \sigma \cdot 2\pi r \, dr$
 
@@ -116,8 +116,8 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 2. Torque
 	- 大小： $\tau = \tau_+ + \tau_- = (qE) \cdot d\sin\phi=pE\sin\phi \quad$
 	- 矢量式：$\vec{\tau} = \vec{p}×\vec{E}$
-		- 当 $\phi = 0^\circ$（$\vec{p}$ 与 $\vec{E}$ 平行），$\tau = 0$，电偶极子处于**稳定平衡**；
-		- 当 $\phi = 180^\circ$（$\vec{p}$ 与 $\vec{E}$ 反平行），$\tau = 0$，但为**不稳定平衡**（微小扰动会使电偶极子转向平行方向）。
+		- 当 $\phi = 0^\circ$（$\vec{p}$ 与 $\vec{E}$ 平行），$\tau = 0$，电偶极子处于稳定平衡；
+		- 当 $\phi = 180^\circ$（$\vec{p}$ 与 $\vec{E}$ 反平行），$\tau = 0$，但为不稳定平衡（微小扰动会使电偶极子转向平行方向）。
 3. 电偶极子远场电场（轴线上）
 	- 公式 $E = \frac{p}{2\pi\varepsilon_0 y^3}$（y为场点到偶极子中心的距离，方向与 $\vec{p}$ 一致）
 	- 特点：电场与 $y^3$ 成反比（衰减比点电荷快）
@@ -131,8 +131,8 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 	3. 不求 E 的地方 $E\cdot S=0$
 ## Electirc Flux
 - 正负判断：闭合面默认取 “外法向”（垂直表面向外）：
-    - 电场线**穿出**闭合面（如正电荷外部）：通量为**正**
-    - 电场线**穿入**闭合面（如负电荷外部）：通量为**负**
+    - 电场线穿出闭合面（如正电荷外部）：通量为正
+    - 电场线穿入闭合面（如负电荷外部）：通量为负
     - 无电荷 / 净电荷为零：穿入与穿出的电场线数量相等，总通量为零
 - 关键结论：电通量与外部电荷无关（仅内部电荷影响总通量）
 
@@ -148,8 +148,8 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
     若表面电场有切向分量，自由电子会沿表面移动，破坏平衡；==电场大小==为 $E_{\text{表面}}=\frac{\sigma}{\varepsilon_0}$（$\sigma$ 为表面电荷密度）
 
 ### 电荷分布
-- **空腔内无电荷**：空腔内表面无电荷，所有多余电荷分布在导体外表面（内部电场为 0，外部电场不影响内部）；
-- **空腔内有电荷 + q**：在导体内部取高斯面（包围空腔），因 $E_{\text{内}}=0$，高斯面内净电荷必须为 0，故空腔内表面感应出 - q，外表面电荷为 “总电荷 $Q_{\text{总}} + q$”（内部电荷不影响外部）。
+- 空腔内无电荷：空腔内表面无电荷，所有多余电荷分布在导体外表面（内部电场为 0，外部电场不影响内部）；
+- 空腔内有电荷 + q：在导体内部取高斯面（包围空腔），因 $E_{\text{内}}=0$，高斯面内净电荷必须为 0，故空腔内表面感应出 - q，外表面电荷为 “总电荷 $Q_{\text{总}} + q$”（内部电荷不影响外部）。
 
 # Electric Potential
 
@@ -177,7 +177,7 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 
 圆柱形电容器由内半径$r_a$、外半径$r_b$、长度L的同轴圆柱面组成，内圆柱带正电（线密度$+\lambda$），外圆柱带负电（线密度$-\lambda$）
 
-两圆柱面间的电势差 $V_{ab} = V_a - V_b$（a为内圆柱，b为外圆柱），通过电场的线积分计算：$V_a - V_b = \int_{r_a}^{r_b} \vec{E} \cdot d\vec{l}$ 由于电场沿径向，积分路径与电场同方向，点积简化为 $E \, dr$。代入**无限长带电线段**电场公式 $E = \frac{\lambda}{2\pi\epsilon_0 r}$，得：$V_a - V_b = \int_{r_a}^{r_b} \frac{\lambda}{2\pi\epsilon_0 r} dr= \frac{\lambda}{2\pi\epsilon_0} \ln \frac{r_b}{r_a}$
+两圆柱面间的电势差 $V_{ab} = V_a - V_b$（a为内圆柱，b为外圆柱），通过电场的线积分计算：$V_a - V_b = \int_{r_a}^{r_b} \vec{E} \cdot d\vec{l}$ 由于电场沿径向，积分路径与电场同方向，点积简化为 $E \, dr$。代入无限长带电线段电场公式 $E = \frac{\lambda}{2\pi\epsilon_0 r}$，得：$V_a - V_b = \int_{r_a}^{r_b} \frac{\lambda}{2\pi\epsilon_0 r} dr= \frac{\lambda}{2\pi\epsilon_0} \ln \frac{r_b}{r_a}$
 
 - 圆柱形电容器的电容
 电容的定义为$C = \frac{Q}{V_{ab}}$，其中：
@@ -210,7 +210,7 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 ### 例题
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251014163440567.png)
 - 电势相等的条件（导线连接的导体等势）
-	导线是导体，最终两球会达到静电平衡—— 此时两球的**电势必须相等**（否则电荷会在导线中移动，直到电势相同）。
+	导线是导体，最终两球会达到静电平衡—— 此时两球的电势必须相等（否则电荷会在导线中移动，直到电势相同）。
 
 	对于孤立导体球，表面电势等效于 “球心点电荷的电势”，因此：
 
@@ -221,7 +221,7 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 
 - 电荷分布的推导（结合总电荷守恒）
 
-	联立 “$\frac{q_a}{a} = \frac{q_b}{b}$” 与 “$q_a + q_b = q$”，解得：$q_a = q \cdot \frac{a}{a + b}, \quad q_b = q \cdot \frac{b}{a + b}$即：**电荷与球的半径成正比**（半径大的球，分配的电荷更多）。
+	联立 “$\frac{q_a}{a} = \frac{q_b}{b}$” 与 “$q_a + q_b = q$”，解得：$q_a = q \cdot \frac{a}{a + b}, \quad q_b = q \cdot \frac{b}{a + b}$即：电荷与球的半径成正比（半径大的球，分配的电荷更多）。
 
 - 表面电场的计算（导体球表面的电场）
 
@@ -233,7 +233,7 @@ $E_x = k\lambda \int_{-L/2}^{L/2} \frac{r d\theta \cos\theta}{r^2} = \frac{k\lam
 
 - 关键结论：电场与半径的关系
 
-	对比 $E_a$ 和 $E_b$ 的表达式，若 $b \gg a$（球 B 远大于球 A），则：$E_a \gg E_b$ 即：**半径越小的导体球，表面电场越强**（因为电场与半径成反比）。
+	对比 $E_a$ 和 $E_b$ 的表达式，若 $b \gg a$（球 B 远大于球 A），则：$E_a \gg E_b$ 即：半径越小的导体球，表面电场越强（因为电场与半径成反比）。
 
 # Capacitance and Dielectrics
 ## Capacitor
@@ -564,7 +564,7 @@ $\tau=IBA\sin \phi$, $\mu=IA$
 3. 与角动量的关联
 	电子的轨道角动量 $L = mvr$（m为电子质量），因此 $vr = \frac{L}{m}$。将其代入磁矩公式：$\mu = \frac{e}{2m} L$
 4. 量子化
-	玻尔模型中，电子角动量**量子化**，最小角动量为 $L = \frac{h}{2\pi}$（h为普朗克常量）代入上式得：$\mu = \frac{e}{2m} \cdot \frac{h}{2\pi} = \frac{eh}{4\pi m}$ 这就是玻尔磁子（记为 $\mu_B$），是电子轨道磁矩的基本单位，数值约为 $9.27 \times 10^{-24}\ \text{A·m}^2$，用于描述原子、分子的磁矩大小
+	玻尔模型中，电子角动量量子化，最小角动量为 $L = \frac{h}{2\pi}$（h为普朗克常量）代入上式得：$\mu = \frac{e}{2m} \cdot \frac{h}{2\pi} = \frac{eh}{4\pi m}$ 这就是玻尔磁子（记为 $\mu_B$），是电子轨道磁矩的基本单位，数值约为 $9.27 \times 10^{-24}\ \text{A·m}^2$，用于描述原子、分子的磁矩大小
 ## Magnetic Materials
 ### Magnetic Domains
 - 定义：磁性材料内部的 “小磁体”（由原子磁矩因 “交换作用” 自发对齐形成），每个磁畴尺寸约$10^{-6} \sim 10^{-3}\ \text{m}$；
@@ -656,7 +656,7 @@ $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
 3. 与角动量的关联
 	电子的轨道角动量 $L = mvr$（m 为电子质量），因此 $vr = \frac{L}{m}$。将其代入磁矩公式：$\mu = \frac{e}{2m} L$
 4. 量子化
-	玻尔模型中，电子角动量**量子化**，最小角动量为 $L = \frac{h}{2\pi}$（h 为普朗克常量）代入上式得：$\mu = \frac{e}{2m} \cdot \frac{h}{2\pi} = \frac{eh}{4\pi m}$ 这就是玻尔磁子（记为 $\mu_B$），是电子轨道磁矩的基本单位，数值约为 $9.27 \times 10^{-24}\ \text{A·m}^2$，用于描述原子、分子的磁矩大小
+	玻尔模型中，电子角动量量子化，最小角动量为 $L = \frac{h}{2\pi}$（h 为普朗克常量）代入上式得：$\mu = \frac{e}{2m} \cdot \frac{h}{2\pi} = \frac{eh}{4\pi m}$ 这就是玻尔磁子（记为 $\mu_B$），是电子轨道磁矩的基本单位，数值约为 $9.27 \times 10^{-24}\ \text{A·m}^2$，用于描述原子、分子的磁矩大小
 ## 三大类磁性材料（定性）
 1）抗磁（diamagnetism）：  
 外磁场导致感生磁矩与外场相反，磁化很弱。完全抗磁的极限情况是体磁化率 $\chi_v = -1$（理想超导）。
@@ -675,43 +675,88 @@ $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033705707.png)
 
 # 29
+磁通量 (Magnetic Flux) $\Phi_B = \int \vec{B} \cdot d\vec{A} = BA \cos \phi$
 ## Faraday's law
 法拉第通过实验总结：闭合回路的感应电动势（$\varepsilon$），等于穿过回路的磁通量对时间变化率的负值，公式为：$\varepsilon = -\frac{d\Phi_B}{dt}$
 - 负号意义：由楞次定律决定，表征感应电动势的方向 “阻碍磁通量变化”（非电动势本身为负，仅表方向关系）
 - 多匝线圈修正：若回路有N匝（如变压器），总磁通量为 “磁通链” $N\Phi_B$，公式变为：$\varepsilon = -N\frac{d\Phi_B}{dt}$
+ 求导的三种情况：
+    1.  $B$ 变：$\mathcal{E} = -NA \cos\phi \frac{dB}{dt}$
+    2.  $A$ 变：$\mathcal{E} = -NB \cos\phi \frac{dA}{dt}$ (动生电动势)
+    3.  $\phi$ 变：$\mathcal{E} = -NBA \frac{d(\cos\phi)}{dt}$ (发电机)
 
-*加上 emf 的图*
+### Motional EMF
+1. 平动切割 (Sliding Bar)
+*   场景： 导体棒在 U 型导轨上以速度 $v$ 切割磁场 $B$。
+*   公式清单：
+    *   电动势： $\mathcal{E} = vBL$
+    *   感应电流： $I = \frac{vBL}{R}$
+    *   安培力 (阻力)： $F_B = ILB = \frac{B^2 L^2 v}{R}$ （方向总是反抗运动）
+    *   外力做功功率： $P_{ext} = F \cdot v = \frac{B^2 L^2 v^2}{R}$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214024535968.png)
 已知条件：
 - 回路面积 $A = 120\ \text{cm}^2 = 0.012\ \text{m}^2$（单位换算关键）；
-- 磁场变化率 $\frac{dB}{dt} = 0.020\ \text{T/s}$（磁场均匀变化，A、$\theta$不变）；
+- 磁场变化率 $\frac{dB}{dt} = 0.020\ \text{T/s}$（磁场均匀变化，A、$\theta$ 不变）；
 - 回路总电阻 $R = 5.0\ \Omega$。
-推导步骤：
-1. 计算磁通量变化率：因$\theta = 0^\circ$（磁场垂直回路），$\Phi_B = BA$，故：$\frac{d\Phi_B}{dt} = A \cdot \frac{dB}{dt} = 0.012 \times 0.020 = 2.4 \times 10^{-4}\ \text{Wb/s}$
-2. 计算感应电动势（忽略负号，先求大小）：$\varepsilon = \left| \frac{d\Phi_B}{dt} \right| = 2.4 \times 10^{-4}\ \text{V}$
-3. 计算感应电流（欧姆定律）：$I = \frac{\varepsilon}{R} = \frac{2.4 \times 10^{-4}}{5.0} = 4.8 \times 10^{-5}\ \text{A} = 48\ \mu\text{A}$
+	推导步骤：
+	1. 计算磁通量变化率：因 $\theta = 0^\circ$（磁场垂直回路），$\Phi_B = BA$，故：$\frac{d\Phi_B}{dt} = A \cdot \frac{dB}{dt} = 0.012 \times 0.020 = 2.4 \times 10^{-4}\ \text{Wb/s}$
+	2. 计算感应电动势（忽略负号，先求大小）：$\varepsilon = \left| \frac{d\Phi_B}{dt} \right| = 2.4 \times 10^{-4}\ \text{V}$
+	3. 计算感应电流（欧姆定律）：$I = \frac{\varepsilon}{R} = \frac{2.4 \times 10^{-4}}{5.0} = 4.8 \times 10^{-5}\ \text{A} = 48\ \mu\text{A}$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030130521.png)
 
-## Alternator
-![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030616877.png)
+2. 转动切割 (Rotating Rod / Faraday Disk)
+*   场景： 导体棒绕一端旋转，或者圆盘在磁场中旋转
+*   公式：$\mathcal{E} = \frac{1}{2} B \omega L^2$
+    *   $L$ 是棒长或圆盘半径。
+    *   $\omega$ 是角速度 (rad/s)。
+*   原理： 因为棒上各点速度不同 ($v=\omega r$)，需要积分 $\int_0^L B(\omega r)dr$ 得到。
+#### Faraday disk dynamo
+slidewire generator 的延伸应用
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216142327098.png)
+动生电动势的核心是 “导体切割磁感线”，对于圆盘上的径向小线段：
+- 小线段的线速度：圆盘转动时，半径 r 处的线速度为 $v = \omega r$（线速度 = 角速度 × 半径）
+- 微元的动生电动势：动生电动势公式为 $d\varepsilon = vBdr$（v、B、dr 两两垂直，直接相乘），代入 $v = \omega r$ 得：$d\varepsilon = \omega B r \cdot dr$
+圆盘可视为 “无数根径向小线段的并联”，总电动势为所有微元电动势的积分（从圆盘中心 $r=0$ 到边缘 $r=R$）：$\varepsilon = \int_{0}^{R} d\varepsilon = \int_{0}^{R} \omega B r \, dr$ 积分结果为：$\varepsilon = \frac{1}{2} \omega B R^2$
 
-## DC generator 
+3. 交流发电机 (Alternator)
+*   场景： 线圈在磁场中匀速转动
+*   公式：
+    $$ \Phi_B = BA \cos(\omega t) $$
+    $$ \mathcal{E} = \omega N B A \sin(\omega t) $$
+*   有用点： 最大电动势 $\mathcal{E}_{max} = \omega N B A$。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030616877.png)
+DC Generator
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030707737.png)
 commutator 和 brush 配合形成 DC
 
+### Induced Electric Fields
+
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216151839787.png)
+$B=\mu_{0}nI$
+积分形式公式 $\oint \vec{E} \cdot d\vec{l} = -\frac{d\Phi_B}{dt}$
+*   有用点： 说明变化的磁场产生涡旋电场
+#### 圆柱对称磁场中的电场
+假设磁场 $B$ 被限制在半径为 $R$ 的圆柱区域内，且均匀变化 $dB/dt$。求距离中心 $r$ 处的感应电场 $E$：
+1. 第一步：统一处理等式左边（电场环流）
+- 电场环流 = 电场大小 × 路径周长 $\oint \vec{E} \cdot d\vec{l} = E \times 2\pi r$
+2. 第二步：分情况处理等式右边（磁通量变化率）
+磁通量 $\Phi_B = B \times S_{\text{有效}}$，仅 “被圆形路径包住的磁场区域” 才算有效面积
+	情况 1：磁场内部（$r < R$）
+	- 圆形路径完全在磁场内，有效面积 = 路径面积：$S_{\text{有效}} = \pi r^2$；
+	- 磁通量变化率：
+    $\frac{d\Phi_B}{dt} = \frac{d}{dt}(B \times \pi r^2) = \pi r^2 \cdot \left| \frac{dB}{dt} \right|$
+	情况 2：磁场外部（$r > R$）
+	- 圆形路径超出磁场范围，仅中间 “半径R的区域” 有磁场，有效面积 = 磁场区域面积：$S_{\text{有效}} = \pi R^2$；
+	- 磁通量变化率（与r无关，仅由磁场本身决定）
+    $\frac{d\Phi_B}{dt} = \frac{d}{dt}(B \times \pi R^2) = \pi R^2 \cdot \left| \frac{dB}{dt} \right|$
+##### $r < R$
+$E \times 2\pi r = \pi r^2 \cdot \left| \frac{dB}{dt} \right|$消去$\pi$和 1 个r，化简得：$\boxed{E = \frac{r}{2} \cdot \left| \frac{dB}{dt} \right|}$（结论：内部E与r成正比，越靠近磁场边缘（$r \to R$），E越大）
+##### $r > R$
+$E \times 2\pi r = \pi R^2 \cdot \left| \frac{dB}{dt} \right|$消去$\pi$，化简得：$\boxed{E = \frac{R^2}{2r} \cdot \left| \frac{dB}{dt} \right|}$（结论：外部E与r成反比，越远离磁场（$r \to \infty$），E趋近于 0）
 ## Lenz's law
 1. 定律内容
 > The direction of any magnetic induction effect is such as to oppose the cause of the effect.
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030837330.png)
-## Faraday disk dynamo
-slidewire generator的延伸应用
-![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216142327098.png)
-
-动生电动势的核心是 “导体切割磁感线”，对于圆盘上的径向小线段：
-
-- 小线段的线速度：圆盘转动时，半径r处的线速度为$v = \omega r$（线速度 = 角速度 × 半径）
-- 微元的动生电动势：动生电动势公式为$d\varepsilon = vBdr$（v、B、dr两两垂直，直接相乘），代入$v = \omega r$得：$d\varepsilon = \omega B r \cdot dr$
-圆盘可视为 “无数根径向小线段的并联”，总电动势为所有微元电动势的积分（从圆盘中心 $r=0$ 到边缘 $r=R$）：$\varepsilon = \int_{0}^{R} d\varepsilon = \int_{0}^{R} \omega B r \, dr$ 积分结果为：$\varepsilon = \frac{1}{2} \omega B R^2$
 
 ## Eddy Current
 ### Magnetic Braking
@@ -743,17 +788,180 @@ Superconductor并不只是导电性特别好，它有两个截然不同的特性
 
 #### Magnetic Levitation
 *   原理： 由于迈斯纳效应，超导体排斥磁感线。磁铁试图靠近超导体时，磁感线被压缩，产生了巨大的排斥力。当排斥力等于重力时，磁铁就会悬浮。
-
 ### 公式
 $$ \vec{B} = \vec{B}_0 + \mu_0 \vec{M} = 0 $$
 *   $\vec{B}$：超导体内部的总磁场。
 *   $\vec{B}_0$：外部施加的磁场。
 *   $\vec{M}$：材料被磁化后产生的磁矩。
 *   含义： 为了让内部 $\vec{B}=0$，材料产生的磁场必须与外场大小相等、方向相反
+### Maxwell's & Displacement Current
+1. 位移电流 (Displacement Current)
+解决电容器充电时断路的问题。
+$$ I_D = \epsilon_0 \frac{d\Phi_E}{dt} $$
+*   有用点： 变化的电场等效于电流。
 
-## Induced electric fields
-![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216151839787.png)
-$B=\mu_{0}nI$
+2. 广义安培定律 (Generalized Ampere's Law)
+$$ \oint \vec{B} \cdot d\vec{l} = \mu_0 (I_{conduction} + I_{displacement}) = \mu_0 I_c + \mu_0 \epsilon_0 \frac{d\Phi_E}{dt} $$
+*   有用点： 计算两极板之间（没有导线的地方）的感应磁场。
+
+3. 平行板电容器间的感应磁场 (类似圆柱对称)
+类似于上面的感应电场，如果在圆形电容器板间充电 ($E$ 变化)，求感应磁场 $B$：
+* 平行板电容器充电时，极板间电场E随时间增强（$\frac{dE}{dt} \neq 0$），变化的电场等效为位移电流：
+- 位移电流密度（单位面积的位移电流）：$j_D = \varepsilon_0 \frac{dE}{dt}$；
+- 物理意义：变化的电场等效为均匀分布的 “电流”，激发磁场。
+	取半径为r的安培环路（$r < R$）
+由于电场 / 位移电流具有圆柱对称性（极板是圆形），取与极板同轴、半径为r的圆形安培环路：
+- 环路包围的位移电流：$i_{D,\text{encl}} = j_D \cdot \pi r^2 = \varepsilon_0 \frac{dE}{dt} \cdot \pi r^2$。
+广义安培环路定理（包含位移电流）：$\oint \vec{B} \cdot d\vec{l} = \mu_0 i_{D,\text{encl}}$
+- 左边（磁场环流）：磁场轴对称，环路各点B大小相等、方向沿切线，故$\oint \vec{B} \cdot d\vec{l} = B \cdot 2\pi r$；
+- 右边（包围的位移电流）：$\mu_0 \cdot \varepsilon_0 \frac{dE}{dt} \cdot \pi r^2$。
+将左右两边代入定理：$2\pi r B = \mu_0 \varepsilon_0 \frac{dE}{dt} \cdot \pi r^2$约去$\pi r$后化简得：$\boxed{B = \frac{\mu_0 \varepsilon_0 r}{2} \cdot \frac{dE}{dt}}$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216163843980.png)
+- 位移电流公式：$i_D = \varepsilon_0 \frac{d\Phi_E}{dt}$（$\Phi_E = E \cdot A$是电通量，$A = \pi R^2$是极板面积）；
+- 位移电流与传导电流的关系：充电时$\boxed{i_D = i_C}$（位移电流大小等于导线中的传导电流）
+位移电流密度$j_D$（单位面积的位移电流）为：$j_D = \frac{i_D}{A} = \varepsilon_0 \frac{dE}{dt}$（物理意义：极板间变化的电场等效为均匀分布的位移电流密度）
+- 取半径为r的安培环路（$r < R$）
+由于极板间电场均匀，位移电流也均匀分布，因此：
+- 环路（半径r）包围的位移电流为：
+    $i_{D,\text{encl}} = j_D \cdot \pi r^2 = \frac{i_D}{\pi R^2} \cdot \pi r^2 = i_D \cdot \frac{r^2}{R^2}$
+- 代入$i_D = i_C$，得： $i_{D,\text{encl}} = i_C \cdot \frac{r^2}{R^2}$
+广义安培环路定理（包含位移电流）：$\oint \vec{B} \cdot d\vec{l} = \mu_0 (i_C + i_D)_{\text{encl}}$由于极板间无传导电流（$i_C = 0$），仅存在位移电流，因此：
+- 左边（磁场环流）：因磁场轴对称，环路各点B大小相等、方向沿切线，故$\oint \vec{B} \cdot d\vec{l} = B \cdot 2\pi r$；
+- 右边（包围的电流）：仅位移电流$i_{D,\text{encl}} = i_C \cdot \frac{r^2}{R^2}$。
+将左右两边代入定理：$2\pi r B = \mu_0 \cdot i_C \cdot \frac{r^2}{R^2}$ 约去r并整理得：$\boxed{B = \frac{\mu_0}{2\pi} \cdot \frac{r}{R^2} i_C}$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216165204936.png)
+
+# 32
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216171747722.png)
+x
+    *   $\oint \vec{E} \cdot d\vec{A} = Q/\epsilon_0$ (高斯电场定律)：电荷产生电场。
+    *   $\oint \vec{B} \cdot d\vec{A} = 0$ (高斯磁场定律)：没有磁单极子，磁感线闭合。
+    *   $\oint \vec{B} \cdot d\vec{l} = \mu_0(i_c + \epsilon_0 d\Phi_E/dt)$ (安培-麦克斯韦定律)：电流和变化的电场产生磁场。
+    *   $\oint \vec{E} \cdot d\vec{l} = -d\Phi_B/dt$ (法拉第定律)：变化的磁场产生电场。
+
+---
+
+### 第二模块：电磁波谱与应用 (Slides 12-22)
+
+核心概念：
+光只是电磁波的一小部分。所有电磁波在真空中速度相同，区别在于频率（$f$ 或 $\nu$）和波长（$\lambda$）。
+
+*   基本公式： $c = f \lambda$ (光速 = 频率 $\times$ 波长)
+*   波谱顺序 (从长波长/低频 到 短波长/高频)：
+    1.  无线电波 (Radio)：波长最长。应用：广播、通信。天线原理是LC振荡电路 (Slide 14)。
+    2.  微波 (Microwave)：应用：微波炉（利用水分子的共振）、雷达、手机通信 (Slide 16)。
+    3.  红外线 (Infrared)：与分子振动有关。应用：热成像、夜视仪、遥控器 (Slide 17-18)。
+    4.  可见光 (Visible Light)：我们人眼能看到的范围 (400nm 紫 - 700nm 红) (Slide 19)。
+    5.  紫外线 (UV)：能量较高，能杀菌，也能导致皮肤晒伤。
+    6.  X射线 (X-ray)：波长接近原子大小。应用：晶体衍射分析（看原子排列）、医学成像 (Slide 21)。
+    7.  伽马射线 (Gamma Ray)：波长最短，能量最高。来自核衰变或天文现象 (Slide 22)。
+
+---
+
+### 第三模块：平面电磁波的性质与数学描述 (Slides 23-40)
+
+核心概念：
+如果离波源足够远，波面可以看作是平面的（平面波）。这是考试计算的重点。
+
+1.  核心性质 (Slide 28 - 必须背诵)：
+    *   横波 (Transverse)： 电场 $\vec{E}$ 和 磁场 $\vec{B}$ 都垂直于传播方向。
+    *   相互垂直： $\vec{E}$ 垂直于 $\vec{B}$。
+    *   传播方向： 由右手定则决定，方向沿着 $\vec{E} \times \vec{B}$ 的方向（大拇指指传播方向）。
+    *   数值关系： 在真空中，电场和磁场的大小比值是光速：
+        $$E = cB$$
+    *   真空光速： 由常数决定：
+        $$c = \frac{1}{\sqrt{\epsilon_0 \mu_0}} \approx 3.00 \times 10^8 \, m/s$$
+
+2.  数学推导 (Slides 29-32)：
+    *   PPT展示了如何利用法拉第定律和安培定律对一个虚构的矩形框积分，推导出波动方程：
+        $$\frac{\partial^2 E}{\partial x^2} = \epsilon_0 \mu_0 \frac{\partial^2 E}{\partial t^2}$$
+    *   这个方程的形式直接暗示了波速 $v = 1/\sqrt{\epsilon_0 \mu_0}$。
+
+3.  正弦波函数 (Slides 34-39)：
+    *   电磁波可以用正弦函数描述：
+        $$ \vec{E}(x,t) = E_{max} \cos(kx - \omega t) \hat{j} $$
+        $$ \vec{B}(x,t) = B_{max} \cos(kx - \omega t) \hat{k} $$
+    *   注意：$E$ 和 $B$ 是同相位的 (In phase)。当 $E$ 达到最大值时，$B$ 也同时达到最大值。
+    *   重要参数关系：
+        *   角频率 $\omega = 2\pi f$
+        *   波数 $k = 2\pi / \lambda$
+        *   波速 $v = \omega / k = \lambda f$
+
+---
+
+### 第四模块：介质中的电磁波 (Slides 41-46)
+
+核心概念：
+光在玻璃或水中为什么变慢？
+
+1.  折射率 (Index of Refraction)：
+    $$ n = \frac{c}{v} $$
+    其中 $v$ 是介质中的光速。
+2.  介质中的速度公式 (Slide 41)：
+    $$ v = \frac{1}{\sqrt{\epsilon \mu}} = \frac{c}{\sqrt{K K_m}} $$
+    这里 $K$ 是介电常数，$K_m$ 是相对磁导率（绝大多数透明介质 $K_m \approx 1$），所以 $n \approx \sqrt{K}$。
+3.  全反射 (Total Internal Reflection, Slide 44)：
+    当光从光密介质（$n$ 大）射向光疏介质（$n$ 小），且入射角大于临界角时，光全部反射回原介质。
+4.  负折射率 (Negative Index, Slides 45-46)：
+    *   这是一个前沿话题（超材料 Metamaterials）。
+    *   如果材料的 $\epsilon$ 和 $\mu$ 同时为负，折射率 $n$ 为负。
+    *   后果： 光线折射方向反常。
+    *   应用： 隐身衣 (Invisibility Cloak)、超级透镜。
+
+---
+
+### 第五模块：能量与动量 (Slides 47-62)
+
+核心概念：
+电磁波不仅携带能量，还携带动量（光是有压力的！）。
+
+1.  能量密度 (Energy Density, Slide 47)：
+    电场和磁场都储存能量。在电磁波中，电场能量密度等于磁场能量密度 ($u_E = u_B$)。
+    总能量密度：
+    $$ u = \epsilon_0 E^2 $$
+
+2.  坡印廷矢量 (Poynting Vector, Slide 51)：
+    描述能量流动的方向和快慢（功率密度，单位 $W/m^2$）。
+    $$ \vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B} $$
+    *   $\vec{S}$ 的方向就是波传播的方向。
+    *   $\vec{S}$ 的大小随时间快速震荡。
+
+3.  光强 (Intensity, Slide 52)：
+    我们通常测量的是 $\vec{S}$ 的平均值。
+    $$ I = S_{av} = \frac{1}{2c\mu_0} E_{max}^2 = \frac{1}{2} \epsilon_0 c E_{max}^2 $$
+
+4.  辐射压 (Radiation Pressure, Slide 54)：
+    光照在物体上会产生推力。
+    *   被完全吸收（黑色物体）： $P_{rad} = I / c$
+    *   被完全反射（镜子）： $P_{rad} = 2I / c$ （动量变化加倍，推力加倍）
+
+5.  应用 (Slides 56-62)：
+    *   太阳帆 (Solar Sail)： 利用光压推动飞船，不需要燃料。
+    *   彗星尾巴： 尘埃尾背离太阳方向，部分原因是光压。
+    *   激光冷却与光镊 (Laser Cooling & Optical Trapping)： 2018年诺贝尔奖。利用激光的动量来捕获和移动微小的粒子（如细菌、细胞）。
+        *   Rayleigh散射 ($a \ll \lambda$) vs Mie散射 ($a \gg \lambda$) (Slide 59-60)：描述不同尺寸粒子的受力机制。
+
+---
+
+### 第六模块：驻波 (Standing Waves, Slides 63-67)
+
+核心概念：
+如果不让光跑掉，而是用镜子把它困住（比如微波炉里，或激光器谐振腔），会发生什么？
+
+1.  形成原理： 两个频率相同、方向相反的波叠加。
+2.  节点 (Nodes)： 场强永远为0的点。
+3.  边界条件 (Slide 63)：
+    *   在完美导体（如金属板）表面，电场 $\vec{E}$ 必须为 0（因为导体表面电势均等，切向电场为0）。
+    *   因此，导体表面一定是电场节点 (Nodal plane of E)。
+    *   反之，导体表面是磁场波腹 (Antinodal plane of B)。
+4.  应用： 微波炉里的加热点分布不均（所以需要转盘）、激光器的谐振腔。
+
+---
+1.  光速与介质： $c = \frac{1}{\sqrt{\epsilon_0 \mu_0}}$, $v = \frac{c}{n}$
+2.  波的关系： $c = f \lambda$, $\omega = 2\pi f$, $k = \frac{2\pi}{\lambda}$
+3.  场强关系： $E = cB$ (真空中), $\vec{E} \perp \vec{B} \perp \vec{k}$
+4.  光强 (Intensity)： $I = \frac{1}{2} \epsilon_0 c E_{max}^2$
+5.  光压 (Pressure)： $P = I/c$ (吸收), $P = 2I/c$ (反射)
 
 # 33
 ## Wave-front continuity（波前连续性）
@@ -769,8 +977,8 @@ Phase continuity + speed difference:$n_i \sin\theta_i = n_t \sin\theta_t$
     $\vec{E} \perp \vec{k},\qquad \vec{B} \perp \vec{k},\qquad \vec{k}=\vec{E}\times\vec{B}$
 ---
 ## Polarization（偏振）
-- S-polarization (⊥ polarization)：Electric field **perpendicular** to plane of incidence.
-- P-polarization (∥ polarization)：Electric field **parallel** to plane of incidence.
+- S-polarization (⊥ polarization)：Electric field perpendicular to plane of incidence.
+- P-polarization (∥ polarization)：Electric field parallel to plane of incidence.
 ---
 
 ## Fresnel Equations（菲涅耳公式） — S Polarization (⊥)
