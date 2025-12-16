@@ -675,7 +675,7 @@ $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251211033705707.png)
 
 # 29
-## Faraday’s law
+## Faraday's law
 法拉第通过实验总结：闭合回路的感应电动势（$\varepsilon$），等于穿过回路的磁通量对时间变化率的负值，公式为：$\varepsilon = -\frac{d\Phi_B}{dt}$
 - 负号意义：由楞次定律决定，表征感应电动势的方向 “阻碍磁通量变化”（非电动势本身为负，仅表方向关系）
 - 多匝线圈修正：若回路有N匝（如变压器），总磁通量为 “磁通链” $N\Phi_B$，公式变为：$\varepsilon = -N\frac{d\Phi_B}{dt}$
@@ -699,24 +699,62 @@ $B_{\text{inside}} \approx \mu_0 n I = \mu_0 \dfrac{N}{L} I$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030707737.png)
 commutator 和 brush 配合形成 DC
 
-## Lenz’s law
+## Lenz's law
 1. 定律内容
 > The direction of any magnetic induction effect is such as to oppose the cause of the effect.
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251214030837330.png)
+## Faraday disk dynamo
+slidewire generator的延伸应用
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216142327098.png)
 
-#### （2）方向判断三步法（结合文档图 29.6）
+动生电动势的核心是 “导体切割磁感线”，对于圆盘上的径向小线段：
 
-以 “磁铁 N 极靠近线圈” 为例：
+- 小线段的线速度：圆盘转动时，半径r处的线速度为$v = \omega r$（线速度 = 角速度 × 半径）
+- 微元的动生电动势：动生电动势公式为$d\varepsilon = vBdr$（v、B、dr两两垂直，直接相乘），代入$v = \omega r$得：$d\varepsilon = \omega B r \cdot dr$
+圆盘可视为 “无数根径向小线段的并联”，总电动势为所有微元电动势的积分（从圆盘中心 $r=0$ 到边缘 $r=R$）：$\varepsilon = \int_{0}^{R} d\varepsilon = \int_{0}^{R} \omega B r \, dr$ 积分结果为：$\varepsilon = \frac{1}{2} \omega B R^2$
 
-1. 定原磁场方向：磁铁 N 极向外→穿过线圈的原磁场方向**向外**；
-2. 判磁通量变化：磁铁靠近→磁通量**增大**；
-3. 定感应电流方向：
-    - 感应磁场需 “阻碍增大”→方向**向里**；
-    - 右手螺旋定则：四指弯曲为电流方向，拇指指向感应磁场（向里）→线圈电流为**顺时针**（俯视）。
+## Eddy Current
+### Magnetic Braking
 
-#### （3）本质：能量守恒的体现
+| ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216145528378.png) | ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216145612634.png)<br> |
+| :-------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+- 现象： 当金属摆或圆盘摆动穿过磁场时，它会迅速停下来。
+- 原理（楞次定律）：
+    1. 当金属部分进入磁场时：磁通量增加 --> 产生涡流 --> 涡流受到的安培力阻碍它进入（向后拉）
+    2. 当金属部分离开磁场时：磁通量减少 --> 产生涡流 --> 涡流受到的安培力阻碍它离开（向后拉）
+- 结论： 无论进入还是离开，涡流产生的力总是阻碍相对运动
+- 应用
+    - 列车刹车： 高速列车或过山车的刹车系统。优点是没有物理接触，无磨损，通过调节磁场强度就能控制刹车力度
+    - 天平阻尼： 让天平的指针快速停稳，不乱晃
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216150055229.png)
+## Superconductivity
+Superconductor并不只是导电性特别好，它有两个截然不同的特性，必须同时满足
+### A. 零电阻 (Zero Resistance) 
+*   现象： 当温度降低到某个特定值Critical Temperature, $T_c$ 以下时，材料的电阻突然降为 0
+*   后果： 只要没有电阻，一旦在超导环中产生电流，电流就会无衰减地永远流动下去（不需要电源维持）
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216151457633.png)
+### B. Meissner Effect
+*   定义： 当超导体处于超导态（$T < T_c$）时，它会完全排斥其内部的磁感线。也就是说，超导体内部的磁场永远为零 ($\vec{B} = 0$)
+*   物理过程：
+    1.  当温度 $T > T_c$ 时（正常态）：磁感线可以穿过材料。
+    2.  当温度 $T < T_c$ 时（超导态）：材料表面瞬间产生感应电流，这个电流产生的磁场正好与外部磁场完全抵消，导致内部总磁场为零。
+*   这种现象也被称为完美抗磁性 (Perfect Diamagnetism) 
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216151749778.png)
 
-阻碍过程需外力做功（如滑杆发电机中，外力克服安培力做功），机械能转化为回路的焦耳热，符合能量守恒。
+#### Magnetic Levitation
+*   原理： 由于迈斯纳效应，超导体排斥磁感线。磁铁试图靠近超导体时，磁感线被压缩，产生了巨大的排斥力。当排斥力等于重力时，磁铁就会悬浮。
+
+### 公式
+$$ \vec{B} = \vec{B}_0 + \mu_0 \vec{M} = 0 $$
+*   $\vec{B}$：超导体内部的总磁场。
+*   $\vec{B}_0$：外部施加的磁场。
+*   $\vec{M}$：材料被磁化后产生的磁矩。
+*   含义： 为了让内部 $\vec{B}=0$，材料产生的磁场必须与外场大小相等、方向相反
+
+## Induced electric fields
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20251216151839787.png)
+$B=\mu_{0}nI$
+
 # 33
 ## Wave-front continuity（波前连续性）
 Electric field wave-fronts must be continuous at a boundary.$\theta_i = \theta_r$
