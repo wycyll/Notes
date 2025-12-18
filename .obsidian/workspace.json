@@ -25,10 +25,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/256/slides/256-fa251204.pdf"
+                "file": "Course/256/slides/256-fa251202.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "256-fa251204"
+              "title": "256-fa251202"
             }
           },
           {
@@ -60,7 +60,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/256/大纲.md",
+                "file": "Course/256/slides/256-fa251202.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲 的大纲"
+              "title": "256-fa251202 的大纲"
             }
           },
           {
@@ -221,9 +221,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f04e1f9aef7d4356",
+  "active": "dcc4a06418f5bac7",
   "lastOpenFiles": [
     "Course/256/slides/256-fa251204.pdf",
+    "Course/256/slides/256-fa251210.pdf",
     "Course/256/大纲.md",
     "Course/256/slides/256-fa251128.pdf",
     "Course/256/押题.md",
