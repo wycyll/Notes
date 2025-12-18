@@ -25,10 +25,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/256/slides/256-fa251202.pdf"
+                "file": "Course/256/slides/256-fa251210.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "256-fa251202"
+              "title": "256-fa251210"
             }
           },
           {
@@ -181,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/256/slides/256-fa251202.pdf",
+                "file": "Course/256/slides/256-fa251210.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "256-fa251202 的大纲"
+              "title": "256-fa251210 的大纲"
             }
           },
           {
@@ -223,21 +223,21 @@
   },
   "active": "dcc4a06418f5bac7",
   "lastOpenFiles": [
-    "Course/256/slides/256-fa251204.pdf",
+    "Course/256/slides/256-fa251211.pdf",
     "Course/256/slides/256-fa251210.pdf",
-    "Course/256/大纲.md",
-    "Course/256/slides/256-fa251128.pdf",
+    "Course/256/slides/256-fa251120.pdf",
     "Course/256/押题.md",
+    "Course/256/大纲.md",
+    "Course/256/slides/256-fa251125.pdf",
+    "Course/256/slides/256-fa251127.pdf",
+    "Course/256/slides/256-fa251128.pdf",
     "Course/256/slides/256-fa251202.pdf",
+    "Course/256/slides/256-fa251204.pdf",
     "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
     "Course/250/Slides/~$32_Lecture_Outline.ppt",
     "Course/250/Slides/pptA134.tmp",
     "Course/250/Slides/~$35_Lecture_Outline.pptx",
-    "Course/250/Slides/~$36_Lecture_Outline.pptx",
-    "Course/250/Slides/~$28_Lecture_Outline.ppt",
-    "Course/250/Slides/~$33_Lecture_Outline.pptx",
-    "Course/215/Slides/ECE2150J_C13.pdf",
     "Course/215/Exercise.md",
     "Course/270/Lecture Notes.md",
     "Course/215/Lecture Notes.md",
