@@ -72,7 +72,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -129,7 +129,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221
+    "width": 221,
+    "collapsed": true
   },
   "right": {
     "id": "7501d37a013ef9fe",
@@ -193,13 +194,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/270/Slides/T12 RTL Design.pdf",
+                "file": "Course/256/押题.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "T12 RTL Design 的大纲"
+              "title": "押题 的大纲"
             }
           },
           {
@@ -217,7 +218,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 255
+    "width": 255,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -233,8 +235,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8eb494808c235f05",
+  "active": "a4f10010be9dc3db",
   "lastOpenFiles": [
+    "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T13 Arithmetic Components.pdf",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
     "Course/270/Slides/T14 Timing Issues.pdf",
@@ -248,7 +251,6 @@
     "Course/256/slides/256-fa251120.pdf",
     "Course/256/slides/256-fa251125.pdf",
     "Course/256/slides/256-fa251127.pdf",
-    "Course/256/slides/256-fa251128.pdf",
     "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Exercise.md",
