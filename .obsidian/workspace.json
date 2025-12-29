@@ -51,12 +51,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Course/256/押题.md",
+                "file": "Cheating sheat.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "押题"
+              "title": "Cheating sheat"
             }
           },
           {
@@ -129,8 +129,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221,
-    "collapsed": true
+    "width": 221
   },
   "right": {
     "id": "7501d37a013ef9fe",
@@ -237,6 +236,8 @@
   },
   "active": "a4f10010be9dc3db",
   "lastOpenFiles": [
+    "Daily/Excel.md",
+    "Course/256/押题.md",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Course/270/Slides/T13 Arithmetic Components.pdf",
     "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
@@ -247,10 +248,8 @@
     "Course/256/slides/256-fa251204.pdf",
     "Course/256/大纲.md",
     "Course/256/slides/256-fa251210.pdf",
-    "Course/256/押题.md",
     "Course/256/slides/256-fa251120.pdf",
     "Course/256/slides/256-fa251125.pdf",
-    "Course/256/slides/256-fa251127.pdf",
     "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Exercise.md",
@@ -259,7 +258,6 @@
     "Course/270/Verilog.md",
     "Course/270/Slides/Notes.md",
     "形策.md",
-    "Daily/Excel.md",
     "All/README.md",
     "Course/270/Topic 2.md",
     "Basic Logic Gates 1.md",
