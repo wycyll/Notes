@@ -34,6 +34,20 @@
             }
           },
           {
+            "id": "6fb8c51abab0237a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI/CV/CV.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CV"
+            }
+          },
+          {
             "id": "f04e1f9aef7d4356",
             "type": "leaf",
             "state": {
@@ -72,7 +86,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -193,13 +207,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/256/大纲.md",
+                "file": "AI/CV/CV.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲 的大纲"
+              "title": "CV 的大纲"
             }
           },
           {
@@ -233,24 +247,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dcc4a06418f5bac7",
+  "active": "51c893d4376aee05",
   "lastOpenFiles": [
+    "AI/CV/lecture_2.pdf",
+    "AI/CV/lecture_3.pdf",
+    "AI/CV/lecture_1_part_2.pdf",
+    "AI/CV/lecture_1_part_1.pdf",
+    "AI/CV",
+    "AI",
+    "Course/256/大纲.md",
+    "AI/CV/CV.md",
     "Course/256/slides/256-fa251204.pdf",
     "Course/256/slides/256-fa251128.pdf",
     "Course/256/slides/256-fa251125.pdf",
     "Course/270/Lecture Notes.md",
-    "Course/256/大纲.md",
     "Course/270/Slides/T12 RTL Design.pdf",
     "Cheating sheat.md",
     "Daily/Excel.md",
     "Course/256/押题.md",
     "Course/270/Slides/T13 Arithmetic Components.pdf",
-    "Course/270/Slides/T15 Memory and Programmable Logic Device.pdf",
-    "Course/270/Slides/T14 Timing Issues.pdf",
-    "Course/270/Slides/T2 Basic Logic Gates.pdf",
-    "Course/256/slides/256-fa251211.pdf",
-    "Course/256/slides/256-fa251210.pdf",
-    "Course/256/slides/256-fa251120.pdf",
     "Course/250/Exercise.md",
     "Course/250/Lecture Notes.md",
     "Course/215/Exercise.md",
@@ -279,7 +294,6 @@
     "全部刷新.png",
     "未命名.canvas",
     "Pasted image 20250913193702.png",
-    "150/Lecture1.md",
     "60073cb86eb75a5e2c18ff8a7b34434b.jpg"
   ]
 }
