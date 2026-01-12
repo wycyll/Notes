@@ -115,6 +115,14 @@ while True:
     //自动归一化每个维度的步长
 ```
 Progress along steep  directions is damped. Progress along flat directions is accelerated. 
+#### AdaGrad
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260110130407576.png)
+$$\begin{cases} G_t = G_{t-1} + (\nabla f(x_t))^2 \quad \text{（累积梯度的平方和）} \\ x_{t+1} = x_t - \alpha \cdot \frac{\nabla f(x_t)}{\sqrt{G_t} + \epsilon} \quad \text{（参数更新）} \end{cases}$$ 
+- 缺陷
+	步长会逐渐衰减到0
+		因为 $G_t$ 是“梯度平方的累积和”（$G_t = G_{t-1} + (\nabla f(x_t))^2$），训练步数越多，$G_t$ 会越来越大
+		分母 $\sqrt{G_t}$ 会随着训练持续增大 → 实际学习率 $\frac{\alpha}{\sqrt{G_t}}$ 会逐渐趋近于0
+		最终结果：训练后期参数更新步长几乎为0，模型可能“提前停滞”，无法收敛到最优解
 ### Adam
 *   Momentum + RMSProp 的结合体。它既有动量的惯性，又能自适应调节步长，并加入了偏置修正 (Bias Correction) 解决刚开始训练时的偏差
 
@@ -160,20 +168,39 @@ $\hat{m}_t = \frac{m_t}{1 - \beta_1^t}$, $\quad\hat{v}_t = \frac{v_t}{1 - \beta_
 | SGD + Momentum | $x -= \alpha v$                            |
 | RMSProp        | $x -= \alpha \frac{g}{\sqrt{E[g^2]}}$      |
 | Adam           | $x -= \alpha \frac{\hat m}{\sqrt{\hat v}}$ |
-### Learning Rate & Schedules
+### Learning Rate
 1.  学习率 (Hyperparameter #1 )：是模型中最重要的超参数。
     *   太大：损失会爆炸（爆炸式上升）或剧烈震荡。
     *   太小：训练太慢，容易卡在半山腰。
 2.  学习率衰减 (LR Decay)：
     *   训练初期步子大，后期步子小。
-    *   策略：阶梯衰减 (Step)、余弦衰减 (Cosine)、线性衰减。
+    *   策略：阶梯衰减 (Step)、余弦衰减 (Cosine)、线性衰减
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260110125725104.png)
+$\alpha_{0}:$ Initial learning rate   $\alpha_{t}:$ Learning rate at epoch t    $T:$ Total number of epoch
 3.  预热 (Linear Warmup)：
     *   训练前几千次迭代，学习率从 0 慢慢升到设定值，防止刚开始梯度过大把模型震碎
----
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260110125852665.png)
 
-### 第六部分：高阶优化与展望
 
+### 高阶优化
 1.  二阶优化 (Second-Order Optimization)：
-    *   利用海森矩阵 (Hessian Matrix) 考虑地形的曲率。
-    *   牛顿法 (Newton's Method)：虽然理论上能一步到位，但计算 $N \times N$ 矩阵的逆在深度学习中是不可能的（$N$ 是百万级的参数量）。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260110130724767.png)
+    *   利用海森矩阵 (Hessian Matrix) 考虑地形的曲率
+    *   牛顿法 (Newton's Method)：虽然理论上能一步到位，但计算 $N \times N$ 矩阵的逆在深度学习中是不可能的（$N$ 是百万级的参数量）
     *   L-BFGS：一种节省内存的二阶近似方法，适用于小规模、确定性数据。
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260110130818774.png)
+
+2. 实际：
+	- Adam (W)：多数场景的默认优选
+		- 特点：适用性广，即使使用固定学习率，也能达到不错的训练效果
+		- 优势：无需过多调整超参数，训练效率高（适合快速验证模型、小数据集或时间有限的场景）
+
+	- SGD+Momentum：潜力更高但需更多调参
+		- 特点：理论上能比 Adam 取得更好的最终模型性能（泛化能力更强）
+		- 代价：需要额外调整学习率（LR）和学习率调度策略（如衰减方式），调参成本更高（适合追求最优性能、有充足调参时间的场景）
+
+	- 全批次更新场景：可考虑二阶及更高阶优化
+		- 前提：若训练时能负担 “全批次更新”（即每次用整个数据集计算梯度，通常仅适用于小数据集）
+		- 选择：可以尝试二阶及更高阶优化方法（这类方法在全批次下计算成本可控，且能利用更精准的损失近似提升效率）
+
+# Deep Learning

@@ -84,7 +84,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -205,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI/CV/lecture_3.pdf",
+                "file": "AI/CV/CV.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "lecture_3 的大纲"
+              "title": "CV 的大纲"
             }
           },
           {
@@ -245,10 +245,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f04e1f9aef7d4356",
+  "active": "6fb8c51abab0237a",
   "lastOpenFiles": [
-    "AI/CV/CV.md",
+    "AI/CV/lecture_4.pdf",
+    "AI/CV/lecture_4.pdf.crdownload",
     "AI/CV/lecture_3.pdf",
+    "AI/CV/CV.md",
     "Course/256/大纲.md",
     "AI/CV/lecture_2.pdf",
     "AI/CV/lecture_1_part_2.pdf",
@@ -259,7 +261,6 @@
     "Course/256/slides/256-fa251128.pdf",
     "Course/256/slides/256-fa251125.pdf",
     "Course/270/Lecture Notes.md",
-    "Course/270/Slides/T12 RTL Design.pdf",
     "Cheating sheat.md",
     "Daily/Excel.md",
     "Course/256/押题.md",
