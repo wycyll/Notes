@@ -108,7 +108,7 @@ _(Focus: differentiation + local feasibility)_
 
 _(Focus: professionalism & international comparability)_
 
-### Speaker 4 – Financials, IFRS 17 & Solvency Alignment
+### 刘津羽 – Financials, IFRS 17 & Solvency Alignment
 
 **Key focus:** Entry feasibility is not about scale, but about regulatory compatibility
 
@@ -184,7 +184,7 @@ _(Focus: regulatory friction and strategic realism)_
 
 ---
 
-### Speaker 6 – SWOT Analysis & Entry Strategy
+### 赵端亮 – SWOT Analysis & Entry Strategy
 
 **SWOT summary (high-level)**
 
