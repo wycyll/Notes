@@ -72,6 +72,18 @@
             }
           },
           {
+            "id": "0c605bdbd9bc0342",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.11.5"
+            }
+          },
+          {
             "id": "a4f10010be9dc3db",
             "type": "leaf",
             "state": {
@@ -96,7 +108,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -217,13 +229,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI/CV/lecture_3.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "lecture_3 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -257,7 +268,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f04e1f9aef7d4356",
+  "active": "0c605bdbd9bc0342",
   "lastOpenFiles": [
     "Finance.md",
     "AI/CV/lecture_4.pdf",
