@@ -376,6 +376,7 @@ int main() {
 ```cpp
 __global__ void reduce_sum(float* input, float* output) {
     __shared__ float sdata[256];
+    //给每个block分配一块shared memory数组sdata，长度256
 
     int tid = threadIdx.x;
     int i = blockIdx.x * blockDim.x + tid;
