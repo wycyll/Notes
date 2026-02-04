@@ -1,3 +1,4 @@
+![ad8263ed3e0be75bdf98bc11d3c69c17.jpg](https://raw.githubusercontent.com/wycyll/obsidian-images/master/ad8263ed3e0be75bdf98bc11d3c69c17.jpg)
 # Week 1
 ## 1. CUDA 编程模型（SIMT）
 
@@ -372,7 +373,7 @@ int main() {
 }
 ```
 # Week 2
-## Code
+## 1. Code
 ```cpp
 __global__ void reduce_sum(float* input, float* output) {
     __shared__ float sdata[256];
@@ -400,3 +401,188 @@ __global__ void reduce_sum(float* input, float* output) {
 }
 
 ```
+## 2. CUDA Memory Hierarchy
+
+### 2.1 Global Memory 的局限性
+
+- Global memory：
+    
+    - 延迟高
+        
+    - 带宽大
+        
+    - 适合一次性、连续（coalesced）访问
+        
+- 对于 elementwise kernel（如 ReLU）：
+    
+    - 每个元素只访问一次
+        
+    - 性能主要受带宽限制
+        
+- 对于存在数据复用的计算：
+    
+    - 重复从 global memory 读取会成为主要瓶颈
+        
+
+---
+
+### 2.2 Shared Memory 的引入
+
+- Shared memory 是：
+    
+    - 位于 GPU 片上的高速内存
+        
+    - block 内 thread 共享
+        
+    - 容量小（KB 级），速度快
+        
+- 生命周期：
+    
+    - 与 block 绑定
+        
+    - block 执行结束后自动释放
+        
+- Shared memory 不是自动缓存，需要程序员显式管理
+    
+
+---
+
+## 3. Shared Memory 的作用范围与语义
+
+- Shared memory 的可见性：
+    
+    - 仅限于同一个 block 内的 thread
+        
+- 不同 block 之间：
+    
+    - 不能共享 shared memory
+        
+    - 不能进行同步
+        
+- 设计原因：
+    
+    - 只有 block 内 thread 被保证可同时驻留与同步
+        
+    - shared memory 的作用域与硬件调度模型一致
+        
+
+---
+
+## 4. Shared Memory 的基本使用方式
+
+### 4.1 声明方式
+
+```C++
+__shared__ float sdata[BLOCK_SIZE];
+```
+
+含义：
+
+- 为每个 block 分配一份 shared memory 数组
+    
+- block 内所有 thread 可读写
+    
+---
+
+### 4.2 标准使用流程
+绝大多数 shared memory kernel 遵循以下结构：
+1. 从 global memory 加载数据到 shared memory
+    
+2. 使用 `__syncthreads()` 进行 block 内同步
+    
+3. 基于 shared memory 进行计算
+    
+4. 必要时将结果写回 global memory
+    
+---
+
+## 5. 线程同步机制：`__syncthreads()`
+
+- `__syncthreads()` 是 block 级同步原语
+    
+- 语义：
+    
+    - block 内所有 thread 都到达该语句后，才能继续执行
+        
+- 使用场景：
+    
+    - 当 thread 需要读取其他 thread 写入的 shared memory 数据时
+        
+- 缺失同步的后果：
+    
+    - 读取未完成写入的数据
+        
+    - 结果不确定（未定义行为）
+        
+
+---
+
+## 6. 例子：Reduction 问题
+
+### 6.1 Reduction 的计算特点
+
+- 目标：将多个输入元素归约为一个输出（如求和）
+    
+- 特点：
+    
+    - 存在跨 thread 的数据依赖
+        
+    - 无法用纯 elementwise 并行解决
+        
+
+---
+
+### 6.2 Reduction 的并行基本思想
+
+- 将问题拆分为：
+    
+    - 每个 block 计算一个部分结果
+        
+- 每个 block 内：
+    
+    - 使用 shared memory 存储中间结果
+        
+    - 通过多轮并行 reduction 将数据规模逐步减半
+        
+- Reduction 的并行复杂度：
+    
+    - 需要 `log₂(blockDim.x)` 轮
+        
+
+---
+
+## 7. Stride-based Reduction 的核心逻辑
+
+- Reduction 采用逐轮 stride 缩减的方式：
+    
+    - 第一轮：stride = blockDim.x / 2
+        
+    - 每一轮 stride 减半
+        
+- 每一轮中：
+    
+    - 只有 `tid < stride` 的 thread 参与计算
+        
+    - 数据规模在 shared memory 中逐步压缩
+        
+- 设计原因：
+    
+    - 每个 thread 一次只能合并两个元素
+        
+    - 一轮并行操作最多只能将数据量减半
+        
+
+---
+
+## 8. Reduction Kernel 的结构性认知
+
+- Kernel 内始终存在固定数量的 thread
+    
+- `tid` 在 kernel 生命周期内保持不变
+    
+- 不同轮次中：
+    
+    - 通过条件判断决定哪些 thread 参与计算
+        
+- 最终结果被压缩至 shared memory 的第一个元素（如 `sdata[0]`）
+    
