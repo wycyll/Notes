@@ -79,14 +79,12 @@
             "id": "de33285754b36392",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "CUDA/CUDA.md",
-                "mode": "source",
-                "source": false
+                "file": "Course/256/slides/256-fa251204.pdf"
               },
-              "icon": "lucide-file",
-              "title": "CUDA"
+              "icon": "lucide-file-text",
+              "title": "256-fa251204"
             }
           },
           {
@@ -223,13 +221,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUDA/CUDA.md",
+                "file": "Course/256/slides/256-fa251204.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CUDA 的大纲"
+              "title": "256-fa251204 的大纲"
             }
           },
           {
@@ -265,24 +263,25 @@
   },
   "active": "de33285754b36392",
   "lastOpenFiles": [
-    "CUDA/Task.md",
+    "Course/256/slides/256-fa251210.pdf",
+    "Course/256/slides/256-fa251211.pdf",
+    "Course/256/slides/256-fa251212.pdf",
+    "Course/256/slides/256-fa251125.pdf",
+    "Course/256/slides/256-fa251127.pdf",
+    "Course/256/slides/256-fa251114.pdf",
+    "Course/270/Lecture Notes.md",
+    "Course/256/大纲.md",
     "CUDA/CUDA.md",
+    "CUDA/Task.md",
     "Marketing.md",
     "1.md",
     "Finance.md",
-    "Course/256/大纲.md",
     "Course/256/slides/256-fa251128.pdf",
     "CUDA",
     "AI/CV/lecture_3.pdf",
     "Course/270/Slides/T12 RTL Design.pdf",
-    "Course/256/slides/256-fa251125.pdf",
     "AI/CV/lecture_4.pdf",
-    "AI/CV/lecture_4.pdf.crdownload",
     "AI/CV/CV.md",
-    "AI/CV/lecture_2.pdf",
-    "AI/CV/lecture_1_part_2.pdf",
-    "AI/CV/lecture_1_part_1.pdf",
-    "Course/270/Lecture Notes.md",
     "Cheating sheat.md",
     "Daily/Excel.md",
     "Course/256/押题.md",
@@ -300,7 +299,6 @@
     "Course/270/Slides/T5Combinational.md",
     "Course/270/Slides/T5.md",
     "Course/270/Slides/T.md",
-    "Course/215/Slides/ECE2150J_C03..md",
     "image.png",
     "image-1.png",
     "image2.png",
