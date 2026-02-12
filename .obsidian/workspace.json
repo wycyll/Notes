@@ -8,19 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4f683db026afc81b",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/256/slides/256-fa251128.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "256-fa251128"
-            }
-          },
-          {
-            "id": "78c66b14f9428c2f",
+            "id": "6fb8c51abab0237a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -34,35 +22,7 @@
             }
           },
           {
-            "id": "dcc4a06418f5bac7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Finance.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Finance"
-            }
-          },
-          {
-            "id": "3d1d8929381a4689",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Marketing.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Marketing"
-            }
-          },
-          {
-            "id": "6fb8c51abab0237a",
+            "id": "f04e1f9aef7d4356",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -74,33 +34,8 @@
               "icon": "lucide-file",
               "title": "Task"
             }
-          },
-          {
-            "id": "de33285754b36392",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Course/256/slides/256-fa251204.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "256-fa251204"
-            }
-          },
-          {
-            "id": "f04e1f9aef7d4356",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "AI/CV/lecture_3.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "lecture_3"
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -221,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUDA/Task.md",
+                "file": "CUDA/CUDA.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Task 的大纲"
+              "title": "CUDA 的大纲"
             }
           },
           {
@@ -263,9 +198,14 @@
   },
   "active": "6fb8c51abab0237a",
   "lastOpenFiles": [
-    "CUDA/CUDA.md",
     "CUDA/Task.md",
+    "CUDA/CUDA.md",
+    "AI/CV/lecture_3.pdf",
+    "wp",
     "Course/256/slides/256-fa251204.pdf",
+    "Course/256/slides/256-fa251128.pdf",
+    "wp/Finance.md",
+    "wp/Marketing.md",
     "Course/256/slides/256-fa251210.pdf",
     "Course/256/slides/256-fa251211.pdf",
     "Course/256/slides/256-fa251212.pdf",
@@ -274,12 +214,7 @@
     "Course/256/slides/256-fa251114.pdf",
     "Course/270/Lecture Notes.md",
     "Course/256/大纲.md",
-    "Marketing.md",
     "1.md",
-    "Finance.md",
-    "Course/256/slides/256-fa251128.pdf",
-    "CUDA",
-    "AI/CV/lecture_3.pdf",
     "AI/CV/CV.md",
     "Cheating sheat.md",
     "Daily/Excel.md",

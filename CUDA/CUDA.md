@@ -444,7 +444,6 @@ __global__ void reduce_sum(float* input, float* output) {
         
 - Shared memory 不是自动缓存，需要程序员显式管理
     
-
 ---
 
 ## 3. Shared Memory 的作用范围与语义
