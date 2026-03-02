@@ -584,4 +584,7 @@ __shared__ float sdata[BLOCK_SIZE];
     - 通过条件判断决定哪些 thread 参与计算
         
 - 最终结果被压缩至 shared memory 的第一个元素（如 `sdata[0]`）
+
+# Week 3
+
     
