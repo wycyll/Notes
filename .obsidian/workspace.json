@@ -35,8 +35,7 @@
               "title": "Task"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUDA/Task.md",
+                "file": "CUDA/CUDA.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Task 的大纲"
+              "title": "CUDA 的大纲"
             }
           },
           {
@@ -177,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -197,8 +196,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f04e1f9aef7d4356",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
+    "CUDA/Task.md",
     "Course/216/slides/chap2.pdf",
     "Course/216/slides/chap1.pdf",
     "Course/216/slides",
@@ -207,11 +207,9 @@
     "Course/216/chap1.pdf",
     "Course/216",
     "Course/新建文件夹",
-    "CUDA/Task.md",
     "CUDA/CUDA.md",
     "AI/CV/lecture_3.pdf",
     "wp",
-    "Course/256/slides/256-fa251204.pdf",
     "wp/Finance.md",
     "wp/Marketing.md",
     "Course/270/Lecture Notes.md",
