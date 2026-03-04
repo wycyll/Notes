@@ -22,6 +22,18 @@
             }
           },
           {
+            "id": "fad92cf853a02914",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.4"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.4"
+            }
+          },
+          {
             "id": "f04e1f9aef7d4356",
             "type": "leaf",
             "state": {
@@ -35,7 +47,8 @@
               "title": "Task"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -156,13 +169,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUDA/CUDA.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CUDA 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -196,7 +208,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6fb8c51abab0237a",
+  "active": "fad92cf853a02914",
   "lastOpenFiles": [
     "Course/216/slides/chap2.pdf",
     "Course/216/slides/chap1.pdf",
