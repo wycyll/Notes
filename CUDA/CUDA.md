@@ -2,7 +2,7 @@
 # Week 1
 ## 1. CUDA 编程模型（SIMT）
 
-- CUDA 采用 **SIMT（Single Instruction, Multiple Threads）** 模型
+- CUDA 采用 SIMT（Single Instruction, Multiple Threads） 模型
     
 - 一个 kernel 表示一段程序代码，会被大量线程同时执行
     
@@ -17,13 +17,13 @@
 
 ### 2.1 Thread / Block / Grid
 
-- **Thread**
+- Thread
     
     - 最小执行单元
         
     - 每个 thread 通常负责一个数据元素
         
-- **Block**
+- Block
     
     - 一组 thread 的集合
         
@@ -33,7 +33,7 @@
             
         - 通过 `__syncthreads()` 同步
             
-- **Grid**
+- Grid
     
     - 所有 block 的集合
         
@@ -81,7 +81,7 @@ kernel<<<numBlocks, blockSize>>>(...)
 
 ### 3.2 异步执行特性
 
-- kernel launch 是 **异步** 的：
+- kernel launch 是 异步 的：
     
     - CPU 发起 kernel 后立即返回
         
@@ -119,7 +119,7 @@ cudaDeviceSynchronize()
 
 ### 4.2 Global Memory 的访问粒度
 
-- Global memory 访问不是以单 thread 为单位，而是以 **warp（32 threads）** 为单位
+- Global memory 访问不是以单 thread 为单位，而是以 warp（32 threads） 为单位
     
 - 一个 warp 内线程的访问会被硬件合并（coalescing）
     
@@ -130,11 +130,11 @@ cudaDeviceSynchronize()
 
 ### 5.1 定义
 
-- 当同一个 warp 中的线程访问 **连续内存地址** 时：
+- 当同一个 warp 中的线程访问 连续内存地址 时：
     
     - GPU 可将访问合并为少量内存事务
         
-    - 称为 **coalesced access**
+    - 称为 coalesced access
         
 
 ---
@@ -202,7 +202,7 @@ thread 2  → x[2000]
     
 - 访问地址连续 → coalesced
     
-- 计算量极小 → **memory-bound kernel**
+- 计算量极小 → memory-bound kernel
     
 
 ---
@@ -586,5 +586,448 @@ __shared__ float sdata[BLOCK_SIZE];
 - 最终结果被压缩至 shared memory 的第一个元素（如 `sdata[0]`）
 
 # Week 3
+## 1. Coalesced Global Memory Access
 
+### 1.1 概念
+
+GPU 访问 global memory 时是 warp（32 threads）一起访问。
+
+如果 warp 中线程访问的地址是：
+
+- 连续地址
     
+- 对齐地址
+    
+
+GPU 就可以把这些访问 合并成更少的 memory transaction。
+
+#### 理想访问模式
+
+```
+thread0 → A[0]
+thread1 → A[1]
+thread2 → A[2]
+...
+thread31 → A[31]
+```
+
+这是 coalesced access。
+
+#### 非理想访问
+
+```
+thread0 → A[0]
+thread1 → A[1000]
+thread2 → A[2000]
+```
+
+会产生大量 memory transaction。
+
+---
+
+### 1.2 为什么重要
+
+GEMM 的性能通常 受 memory bandwidth 限制。
+
+如果 global memory 不 coalesced：
+
+- DRAM transaction 增加
+    
+- 带宽利用率降低
+    
+- kernel 性能严重下降
+    
+
+---
+
+### 1.3 实现方式
+
+常见做法：
+
+让
+```
+threadIdx.x
+```
+
+对应 连续列元素
+
+例如：
+```
+B[row][tx]
+```
+
+这样 warp 访问的是连续地址。
+
+---
+
+## 2. Shared Memory Bank Conflict
+
+### 2.1 概念
+
+Shared memory 被分成多个 bank。
+
+可以理解为：
+
+> 多条并行访问通道。
+
+如果 warp 内多个线程访问：
+
+- 不同地址
+    
+- 但这些地址落在 同一个 bank
+就会发生：*bank conflict*。访问会被串行化。
+---
+
+### 2.2 举例
+如果访问 stride = 32：
+```
+thread0 → A[0]
+thread1 → A[32]
+thread2 → A[64]
+...
+```
+所有访问可能落入同一个 bank。
+结果：
+```
+32-way bank conflict
+```
+---
+### 2.3 影响
+shared memory 本来非常快。
+但如果 bank conflict 严重：shared memory latency 会大幅增加
+
+---
+## 3. Shared Memory Padding
+
+### 3.1 思想
+
+改变 shared memory 的 stride，避免访问模式产生 bank conflict。
+
+---
+
+### 3.2 实现方式
+
+原本：
+
+```
+__shared__ float As[32][32];
+```
+
+改成：
+
+```
+__shared__ float As[32][33];
+```
+
+或者
+
+```
+__shared__ float As[32][36];
+```
+
+---
+
+### 3.3 为什么有效
+
+padding 改变了行跨度 stride
+从32 * 4 bytes变成33 * 4 bytes，避免线程访问落入同一 bank。
+
+---
+## 4. Vectorized Memory Access
+
+### 4.1 概念
+
+一次读取多个元素，而不是逐个读取。
+
+常见类型：
+
+```
+float2
+float4
+```
+
+例如：
+> float4表示4 个 float (16 bytes)一次读取
+
+---
+
+### 4.2 优点
+
+减少：
+- load/store 指令数量
+    
+- memory transaction 数量
+
+提高：
+- memory bandwidth 利用率
+    
+---
+
+### 4.3 GEMM 中的典型做法
+
+让每个线程读取4 个连续 float而不是4 次 scalar load
+
+例如：
+```
+reinterpret_cast<float4*>(...)
+```
+---
+
+## 5. Thread Tiling / Register Blocking
+
+### 5.1 概念
+
+让一个线程计算 多个输出元素。
+原始方式：
+```
+1 thread → 1 output
+```
+优化后：
+```
+1 thread → 4 outputs
+```
+---
+### 5.2 实现方式
+
+使用寄存器数组：
+
+```
+float val[4];
+```
+
+每个线程计算：
+
+```
+C[row+0][col]
+C[row+1][col]
+C[row+2][col]
+C[row+3][col]
+```
+
+---
+### 5.3 优点
+
+提高Arithmetic Intensity即计算量 / memory访问量减少memory traffic
+
+---
+
+## 6. Register Reuse
+
+### 6.1 思想
+
+把频繁使用的数据缓存到 寄存器。
+
+例如：
+
+```cpp
+float b_val = Bs[k][tx];
+```
+
+然后重复使用：
+
+```
+val0 += A * b_val
+val1 += A * b_val
+val2 += A * b_val
+val3 += A * b_val
+```
+
+---
+
+### 6.2 优点
+
+减少shared memory load 提高计算效率
+
+---
+
+## 7. Loop Unrolling
+
+## 7.1 概念
+
+把循环展开，减少循环控制开销。
+例如：
+```
+#pragma unroll
+```
+原本:
+```
+for(i=0;i<4;i++)
+```
+编译器展开为：
+```
+val0 += ...
+val1 += ...
+val2 += ...
+val3 += ...
+```
+---
+### 优点
+减少：
+
+- branch
+    
+- loop overhead
+    
+提高instruction parallelism
+
+---
+
+# Week 4：高级 Kernel 优化
+
+## 1. Occupancy
+
+## 1.1 概念
+
+GPU 一个 SM 可以同时运行多个 block。
+
+Occupancy 指：
+
+```
+实际活跃线程数
+/
+硬件最大线程数
+```
+
+---
+
+### 1.2 为什么重要
+
+高 occupancy 可以：
+
+```
+隐藏 memory latency
+```
+
+当一个 warp 等待 memory 时：
+
+GPU 可以调度另一个 warp。
+
+---
+
+### 1.3 影响因素
+
+- register 使用量
+    
+- shared memory 使用量
+    
+- block size
+    
+
+通常需要用工具分析：
+
+```
+ncu
+nsight
+```
+
+---
+
+## 2. Latency Hiding
+
+GPU 的核心思想：
+
+```
+当一个 warp 等待 memory
+→ 调度另一个 warp
+```
+
+如果 warp 数量太少：
+
+```
+GPU 会空闲等待
+```
+
+所以需要：
+
+```
+更多 active warps
+```
+
+---
+
+## 3. Double Buffering
+
+## 3.1 概念
+
+让*数据加载*和*计算*重叠执行。
+普通流程：
+```
+load tile
+compute
+load tile
+compute
+```
+Double buffering：
+```
+load next tile
+while computing current tile
+```
+---
+### 3.2 实现
+使用两组 shared memory：
+```
+As0 / As1
+Bs0 / Bs1
+```
+实现：
+```
+load + compute overlap
+```
+---
+
+## 4. Warp-Level Optimization
+GPU 调度单位是：
+```
+warp (32 threads)
+```
+一些优化直接在 warp 内进行：
+- warp shuffle
+- warp reduction
+- warp matrix operations
+可以减少：shared memory 使用
+---
+## 5. Tensor Core
+
+Tensor Core 是 NVIDIA 专门为矩阵乘法设计的硬件单元。
+一次可以执行：
+```
+matrix multiply accumulate
+```
+例如：
+```
+16 × 16 × 16
+```
+---
+### 支持的数据类型
+- FP16
+- BF16
+- TF32
+- INT8
+---
+### 性能
+Tensor Core 的矩阵乘法性能：远高于 CUDA Core
+
+---
+## CUDA GEMM 完整优化路线
+
+```
+Naive GEMM
+↓
+Shared Memory Tiling
+↓
+Coalesced Global Memory Access
+↓
+Avoid Bank Conflict
+↓
+Vectorized Memory Load
+↓
+Thread Tiling / Register Blocking
+↓
+Instruction Level Parallelism
+↓
+Occupancy Optimization
+↓
+Double Buffering
+↓
+Tensor Core
+```

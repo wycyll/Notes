@@ -176,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -196,20 +196,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fd37576787281f3c",
+  "active": "6fb8c51abab0237a",
   "lastOpenFiles": [
-    "CUDA/Task.md",
-    "Course/216/slides/chap2.pdf",
-    "Course/216/slides/chap1.pdf",
-    "Course/216/slides",
-    "Course/216/新建文件夹",
-    "Course/216/chap2.pdf",
-    "Course/216/chap1.pdf",
-    "Course/216",
+    "Course/ML/slides/02-MLSys-basics.pdf",
+    "Course/ML/slides/01-course-introduction.pdf",
+    "Course/ML/slides",
+    "Course/ML",
+    "Course/新建文件夹/slides/02-MLSys-basics.pdf",
+    "Course/新建文件夹/slides/02-MLSys-basics.pdf.crdownload",
+    "Course/新建文件夹/slides/01-course-introduction.pdf",
+    "Course/新建文件夹/slides/01-course-introduction.pdf.crdownload",
+    "Course/新建文件夹/slides",
+    "Course/新建文件夹/新建文件夹",
     "Course/新建文件夹",
+    "CUDA/Task.md",
     "CUDA/CUDA.md",
-    "AI/CV/lecture_3.pdf",
-    "wp",
     "wp/Finance.md",
     "wp/Marketing.md",
     "Course/270/Lecture Notes.md",
