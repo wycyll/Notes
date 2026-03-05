@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CUDA/CUDA.md",
+                "file": "CUDA/Tensor Core.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CUDA"
+              "title": "Tensor Core"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CUDA/Tensor Core.md",
+                "file": "CUDA/CUDA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tensor Core"
+              "title": "CUDA"
             }
           },
           {
@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -121,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 221
+    "width": 221,
+    "collapsed": true
   },
   "right": {
     "id": "7501d37a013ef9fe",
@@ -225,12 +226,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "095d1eb437254784",
+  "active": "2e6ba1398b75030f",
   "lastOpenFiles": [
-    "CUDA/Task.md",
     "CUDA/CUDA.md",
-    "CUDA/总结.md",
+    "CUDA/Task.md",
     "CUDA/Tensor Core.md",
+    "CUDA/总结.md",
     "Course/ML/slides/05-transformers-attention.pdf",
     "Course/ML/slides/03-CUDA-programming.pdf",
     "Course/ML/slides/03-CUDA-programming.pdf.crdownload",
