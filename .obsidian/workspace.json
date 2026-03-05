@@ -62,9 +62,23 @@
               "icon": "lucide-file",
               "title": "Task"
             }
+          },
+          {
+            "id": "c52b296319c7fee7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Week4 汇报.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Week4 汇报"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -96,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#adder",
+                "query": "tag:#pragma",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,11 +131,13 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 221
+    "width": 221,
+    "collapsed": true
   },
   "right": {
     "id": "7501d37a013ef9fe",
@@ -131,6 +147,20 @@
         "id": "2d778e3e3d5dc0cb",
         "type": "tabs",
         "children": [
+          {
+            "id": "b5cc562f9dcb808e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Week4 汇报.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Week4 汇报 的出链列表"
+            }
+          },
           {
             "id": "a46cc693e7756a03",
             "type": "leaf",
@@ -148,20 +178,6 @@
               },
               "icon": "links-coming-in",
               "title": "Lecture Notes 的反向链接列表"
-            }
-          },
-          {
-            "id": "b5cc562f9dcb808e",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Course/215/Lecture Notes.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Lecture Notes 的出链列表"
             }
           },
           {
@@ -185,13 +201,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI/CV/CV.md",
+                "file": "Week4 汇报.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CV 的大纲"
+              "title": "Week4 汇报 的大纲"
             }
           },
           {
@@ -204,12 +220,12 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 255
+    "width": 255,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -225,8 +241,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "fd37576787281f3c",
+  "active": "c52b296319c7fee7",
   "lastOpenFiles": [
+    "Course/280/slides/01-Introduction.pdf",
+    "Course/280/slides/02-Linux.pdf",
+    "Course/280/slides/03-Developing-Programs.pdf",
+    "Course/280/slides/04-Review-of-C++-Basics.pdf",
+    "Course/280/slides",
+    "Course/280/新建文件夹",
+    "Course/280",
+    "Course/新建文件夹",
+    "Week4 汇报.md",
+    "AI/CV/CV.md",
     "CUDA/Tensor Core.md",
     "CUDA/CUDA.md",
     "CUDA/Task.md",
@@ -234,19 +260,11 @@
     "Course/ML/slides/05-transformers-attention.pdf",
     "Course/ML/slides/03-CUDA-programming.pdf",
     "Course/ML/slides/03-CUDA-programming.pdf.crdownload",
-    "Course/ML/slides/02-MLSys-basics.pdf",
-    "Course/ML/slides/01-course-introduction.pdf",
-    "Course/ML/slides",
-    "Course/ML",
-    "Course/新建文件夹/slides/02-MLSys-basics.pdf",
-    "Course/新建文件夹/slides/02-MLSys-basics.pdf.crdownload",
-    "Course/新建文件夹/slides/01-course-introduction.pdf",
     "wp/Finance.md",
     "wp/Marketing.md",
     "Course/270/Lecture Notes.md",
     "Course/256/大纲.md",
     "1.md",
-    "AI/CV/CV.md",
     "Cheating sheat.md",
     "Daily/Excel.md",
     "Course/256/押题.md",
@@ -261,8 +279,6 @@
     "Course/270/Topic 2.md",
     "Basic Logic Gates 1.md",
     "Course/270/Lecture Notes^.md",
-    "Course/270/Slides/T5Combinational.md",
-    "Course/270/Slides/T5.md",
     "image.png",
     "image-1.png",
     "image2.png",
