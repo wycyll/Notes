@@ -205,7 +205,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -225,7 +225,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2e6ba1398b75030f",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
     "CUDA/Tensor Core.md",
     "CUDA/CUDA.md",
