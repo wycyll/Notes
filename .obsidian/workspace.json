@@ -53,14 +53,12 @@
             "id": "f04e1f9aef7d4356",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "CUDA/CUDA.md",
-                "mode": "source",
-                "source": false
+                "file": "Course/280/slides/03-Developing-Programs.pdf"
               },
-              "icon": "lucide-file",
-              "title": "CUDA"
+              "icon": "lucide-file-text",
+              "title": "03-Developing-Programs"
             }
           }
         ],
@@ -227,10 +225,11 @@
   },
   "active": "f04e1f9aef7d4356",
   "lastOpenFiles": [
+    "Course/280/slides/01-Introduction.pdf",
+    "CUDA/CUDA.md",
     "CUDA/总结.md",
     "Course/280/slides/03-Developing-Programs.pdf",
     "Course/280/slides/02-Linux.pdf",
-    "Course/280/slides/01-Introduction.pdf",
     "Week4 汇.md",
     "未命名.base",
     "Course/280/slides/04-Review-of-C++-Basics.pdf",
@@ -240,7 +239,6 @@
     "Course/新建文件夹",
     "AI/CV/CV.md",
     "CUDA/Tensor Core.md",
-    "CUDA/CUDA.md",
     "CUDA/Task.md",
     "Course/ML/slides/05-transformers-attention.pdf",
     "wp/Finance.md",
