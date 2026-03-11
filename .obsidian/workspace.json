@@ -62,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -135,12 +135,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Week4 汇报.md",
+                "file": "CUDA/CUDA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Week4 汇报 的出链列表"
+              "title": "CUDA 的出链列表"
             }
           },
           {
@@ -183,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Week4 汇报.md",
+                "file": "CUDA/CUDA.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Week4 汇报 的大纲"
+              "title": "CUDA 的大纲"
             }
           },
           {
@@ -202,12 +202,12 @@
               "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 255,
-    "collapsed": true
+    "width": 255
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -223,14 +223,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f04e1f9aef7d4356",
+  "active": "d539d89ccc07b209",
   "lastOpenFiles": [
+    "CUDA/Task.md",
+    "CUDA/CUDA.md",
+    "CUDA/总结.md",
+    "CUDA/Tensor Core.md",
+    "Course/280/slides/02-Linux.pdf",
     "Course/280/slides/04-Review-of-C++-Basics.pdf",
     "Course/280/slides/03-Developing-Programs.pdf",
     "Course/280/slides/01-Introduction.pdf",
-    "CUDA/CUDA.md",
-    "CUDA/总结.md",
-    "Course/280/slides/02-Linux.pdf",
     "Week4 汇.md",
     "未命名.base",
     "Course/280/slides",
@@ -238,8 +240,6 @@
     "Course/280",
     "Course/新建文件夹",
     "AI/CV/CV.md",
-    "CUDA/Tensor Core.md",
-    "CUDA/Task.md",
     "Course/ML/slides/05-transformers-attention.pdf",
     "wp/Finance.md",
     "wp/Marketing.md",

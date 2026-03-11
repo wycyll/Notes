@@ -1030,3 +1030,251 @@ Double Buffering
 ↓
 Tensor Core
 ```
+
+# Week 5
+
+# 1. 两种主要 profiler
+
+CUDA 主要有两个官方 profiler：
+
+|工具|作用|分析层级|
+|---|---|---|
+|**Nsight Systems (nsys)**|程序整体执行时间线|系统级|
+|**Nsight Compute (ncu)**|单个 CUDA kernel 硬件指标|kernel级|
+
+---
+
+# 2. Nsight Systems（nsys）
+
+## 2.1 作用
+
+Nsight Systems 用于查看 **整个程序执行过程**。
+
+它回答的问题是：
+
+- CPU 在做什么？
+    
+- GPU 在执行哪些 kernel？
+    
+- kernel 是否并行？
+    
+- 是否有通信等待？
+    
+- stream 是否 overlap？
+    
+
+换句话说：
+
+**nsys = 程序执行时间线分析**
+
+---
+
+## 2.2 nsys 能看到什么
+
+典型 timeline：
+
+```
+CPU thread
+│
+├─ launch kernel
+│
+GPU
+│
+├─ kernel A
+├─ kernel B
+│
+├─ cudaMemcpy
+│
+├─ NCCL AllReduce
+```
+
+可以看到：
+
+- kernel 执行顺序
+    
+- CPU launch 延迟
+    
+- GPU idle 时间
+    
+- 通信时间
+    
+
+---
+
+## 2.3 nsys 常见用途
+
+在大模型系统中：
+
+用于分析：
+
+- Attention
+    
+- MoE
+    
+- NCCL 通信
+    
+- pipeline overlap
+    
+
+例如：
+
+```
+Attention kernel
+↓
+NCCL all-to-all
+↓
+MoE expert compute
+↓
+combine
+```
+
+通过 timeline 可以发现：
+
+- GPU 是否在等通信
+    
+- kernel 是否串行
+    
+- stream 是否重叠
+    
+# 3. Nsight Compute（ncu）
+
+## 3.1 作用
+
+Nsight Compute 用于分析：
+
+**单个 CUDA kernel 的硬件性能**
+
+它回答的问题是：
+
+- SM 利用率是多少？
+    
+- Tensor Core 是否在工作？
+    
+- memory bandwidth 是否饱和？
+    
+- warp stall 原因是什么？
+    
+
+换句话说：
+
+**ncu = kernel 硬件性能分析**
+
+---
+
+## 3.2 ncu 能看到的指标
+
+典型指标：
+
+### 1 SM throughput
+
+GPU 计算单元利用率。
+
+如果低：
+
+说明 GPU 没被吃满。
+
+---
+
+### 2 Tensor Core utilization
+
+Tensor Core 使用率。
+
+对于：
+
+- GEMM
+    
+- attention
+    
+- MoE FFN
+    
+
+这个指标很重要。
+
+---
+
+### 3 Memory throughput
+
+显存带宽利用率。
+
+如果接近上限：
+
+说明 kernel **memory bound**。
+
+---
+
+### 4 Occupancy
+
+SM 上同时运行的 warp 数量。
+
+如果 occupancy 很低：
+
+可能是：
+
+- block 太小
+    
+- register 使用过多
+    
+- shared memory 限制
+    
+
+---
+
+### 5 Warp stall
+
+warp 为什么停住。
+
+常见类型：
+
+|stall原因|含义|
+|---|---|
+|memory dependency|等内存|
+|execution dependency|等指令|
+|barrier|同步|
+|not selected|调度问题|
+
+# 4. kernel bottleneck 分类
+
+CUDA kernel 通常有三类瓶颈：
+
+## 4.1 Compute bound
+
+特征：
+
+- SM throughput 高
+    
+- memory bandwidth 低
+    
+
+说明：
+
+计算单元是瓶颈。
+
+---
+
+## 4.2 Memory bound
+
+特征：
+
+- memory throughput 高
+    
+- SM utilization 低
+    
+
+说明：
+
+显存带宽限制性能。
+
+---
+
+## 4.3 Latency bound
+
+特征：
+
+- warp stall 很高
+    
+- occupancy 低
+    
+
+说明：
+
+调度或依赖问题。
