@@ -25,14 +25,12 @@
             "id": "095d1eb437254784",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "CUDA/CUDA.md",
-                "mode": "source",
-                "source": false
+                "file": "Course/203/DM - Lecture 2 — 4.pdf"
               },
-              "icon": "lucide-file",
-              "title": "CUDA"
+              "icon": "lucide-file-text",
+              "title": "DM - Lecture 2 — 4"
             }
           },
           {
@@ -135,12 +133,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CUDA/CUDA.md",
+                "file": "Course/203/DM - Lecture 2 — 4.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "CUDA 的出链列表"
+              "title": "DM - Lecture 2 — 4 的出链列表"
             }
           },
           {
@@ -183,13 +181,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CUDA/CUDA.md",
+                "file": "Course/203/DM - Lecture 2 — 4.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CUDA 的大纲"
+              "title": "DM - Lecture 2 — 4 的大纲"
             }
           },
           {
@@ -223,10 +221,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "d539d89ccc07b209",
+  "active": "095d1eb437254784",
   "lastOpenFiles": [
-    "CUDA/Task.md",
+    "Course/203/DM - Lecture 1.pdf",
     "CUDA/CUDA.md",
+    "Course/203/DM - Lecture 2 — 4.pdf",
+    "Course/203/DM - Lecture 5.pdf",
+    "Course/203/DM - Lecture 2 — 4 (1).pdf",
+    "Course/203",
+    "Course/新建文件夹",
+    "CUDA/Task.md",
     "CUDA/总结.md",
     "CUDA/Tensor Core.md",
     "Course/280/slides/02-Linux.pdf",
@@ -234,13 +238,7 @@
     "Course/280/slides/03-Developing-Programs.pdf",
     "Course/280/slides/01-Introduction.pdf",
     "Week4 汇.md",
-    "未命名.base",
-    "Course/280/slides",
-    "Course/280/新建文件夹",
-    "Course/280",
-    "Course/新建文件夹",
     "AI/CV/CV.md",
-    "Course/ML/slides/05-transformers-attention.pdf",
     "wp/Finance.md",
     "wp/Marketing.md",
     "Course/270/Lecture Notes.md",
