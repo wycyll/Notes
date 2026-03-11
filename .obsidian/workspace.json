@@ -55,10 +55,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/280/slides/04-Review-of-C++-Basics.pdf"
+                "file": "Course/280/slides/02-Linux.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "04-Review-of-C++-Basics"
+              "title": "02-Linux"
             }
           }
         ],
@@ -225,6 +225,7 @@
   },
   "active": "f04e1f9aef7d4356",
   "lastOpenFiles": [
+    "Course/280/slides/04-Review-of-C++-Basics.pdf",
     "Course/280/slides/03-Developing-Programs.pdf",
     "Course/280/slides/01-Introduction.pdf",
     "CUDA/CUDA.md",
@@ -232,7 +233,6 @@
     "Course/280/slides/02-Linux.pdf",
     "Week4 汇.md",
     "未命名.base",
-    "Course/280/slides/04-Review-of-C++-Basics.pdf",
     "Course/280/slides",
     "Course/280/新建文件夹",
     "Course/280",
