@@ -41,10 +41,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/280/slides/10-IO.pdf"
+                "file": "Course/280/slides/11-Testing.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "10-IO"
+              "title": "11-Testing"
             }
           },
           {
@@ -209,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/280/slides/10-IO.pdf",
+                "file": "Course/280/slides/11-Testing.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "10-IO 的大纲"
+              "title": "11-Testing 的大纲"
             }
           },
           {
@@ -251,10 +251,10 @@
   },
   "active": "3f39906f10d60ada",
   "lastOpenFiles": [
+    "Course/280/slides/10-IO.pdf",
     "Course/280/slides/13A-Abstract-Data-Type.pdf",
     "Course/280/slides/12-Exception.pdf",
     "Course/280/slides/11-Testing.pdf",
-    "Course/280/slides/10-IO.pdf",
     "Course/280/slides/09-Enum-Program-Arguments-IO.pdf",
     "Course/280/slides/08-Call-Mechanism.pdf",
     "Course/280/slides/07-Recursion-Function-Pointers.pdf",
