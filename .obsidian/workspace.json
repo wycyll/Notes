@@ -13,24 +13,52 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CUDA/Tensor Core.md",
+                "file": "CUDA/CUDA.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tensor Core"
+              "title": "CUDA"
             }
           },
           {
             "id": "095d1eb437254784",
             "type": "leaf",
             "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/216/Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes"
+            }
+          },
+          {
+            "id": "3f39906f10d60ada",
+            "type": "leaf",
+            "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/203/DM - Lecture 2 — 4.pdf"
+                "file": "Course/280/slides/09-Enum-Program-Arguments-IO.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "DM - Lecture 2 — 4"
+              "title": "09-Enum-Program-Arguments-IO"
+            }
+          },
+          {
+            "id": "9d0ade4dda49648e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course/203/Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes"
             }
           },
           {
@@ -60,7 +88,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -181,13 +209,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/203/DM - Lecture 2 — 4.pdf",
+                "file": "Course/280/slides/09-Enum-Program-Arguments-IO.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DM - Lecture 2 — 4 的大纲"
+              "title": "09-Enum-Program-Arguments-IO 的大纲"
             }
           },
           {
@@ -201,11 +229,11 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 255
+    "width": 257
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -221,24 +249,27 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "095d1eb437254784",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
-    "Course/203/DM - Lecture 1.pdf",
+    "Course/280/slides/13A-Abstract-Data-Type.pdf",
+    "Course/280/slides/08-Call-Mechanism.pdf",
+    "Course/280/slides/09-Enum-Program-Arguments-IO.pdf",
+    "Course/280/slides/10-IO.pdf",
+    "Course/280/slides/11-Testing.pdf",
+    "Course/280/slides/12-Exception.pdf",
+    "Course/280/slides/07-Recursion-Function-Pointers.pdf",
+    "Course/216/slides/chap1.pdf",
+    "Course/216/Notes.md",
+    "Course/216/slides/chapDT.pdf",
+    "Course/216/slides/chap2.pdf",
+    "Course/216/slides/chap4.pdf",
+    "Course/203/Notes.md",
     "CUDA/CUDA.md",
-    "Course/203/DM - Lecture 2 — 4.pdf",
-    "Course/203/DM - Lecture 5.pdf",
-    "Course/203/DM - Lecture 2 — 4 (1).pdf",
-    "Course/203",
-    "Course/新建文件夹",
-    "CUDA/Task.md",
-    "CUDA/总结.md",
     "CUDA/Tensor Core.md",
-    "Course/280/slides/02-Linux.pdf",
-    "Course/280/slides/04-Review-of-C++-Basics.pdf",
-    "Course/280/slides/03-Developing-Programs.pdf",
-    "Course/280/slides/01-Introduction.pdf",
-    "Week4 汇.md",
+    "CUDA/总结.md",
+    "CUDA/Task.md",
     "AI/CV/CV.md",
+    "Week4 汇.md",
     "wp/Finance.md",
     "wp/Marketing.md",
     "Course/270/Lecture Notes.md",
@@ -256,8 +287,6 @@
     "形策.md",
     "All/README.md",
     "Course/270/Topic 2.md",
-    "Basic Logic Gates 1.md",
-    "Course/270/Lecture Notes^.md",
     "image.png",
     "image-1.png",
     "image2.png",
