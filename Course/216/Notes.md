@@ -148,43 +148,48 @@ $\delta(t) = \lim_{\Delta \to 0} \delta_\Delta(t)$
 $\int_{-\infty}^{\infty} \phi(t) \delta_\Delta(t) dt = \int_{0}^{\Delta} \phi(t) \cdot \frac{1}{\Delta} dt \xrightarrow{\Delta \to 0} \phi(0)$
 这正好匹配了δ函数的筛分性质（提取 $t=0$ 处的值）
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260326012705969.png)
-
+> e.g. p250
+> 注意 rect 和 u (t) 的转换方式不同
 ## 6. Continuous-Time (CT) Systems
-
-A CT system maps an input CT signal x(t) to an output CT signal y(t): y(⋅)=T[x(⋅)].
-
+A system maps $x(t) \to y(t)$ via an operator $\mathcal{T}$: $y(t) = \mathcal{T}[x(t)]$.
 ### 6.1 System Representation
+- Input-Output Equation: Mathematical rule (e.g., $y(t) = \int_{-\infty}^t x(\tau)d\tau$).
+- Block Diagrams: Visual representation using adders, integrators, differentiators.
+- Interconnections:
+  - Series (Cascade): $y(t) = \mathcal{T}_2[\mathcal{T}_1[x(t)]]$.
+  - Parallel: $y(t) = \mathcal{T}_1[x(t)] + \mathcal{T}_2[x(t)]$.
+### 6.2 Six Core System Properties
+Properties are split into Amplitude and Time categories.
+#### A. Amplitude Properties
+1. Linearity
+   - Definition: Satisfies superposition:
+     $\mathcal{T}[a_1x_1 + a_2x_2] = a_1\mathcal{T}[x_1] + a_2\mathcal{T}[x_2]$
+   - Implication: Zero input leads to zero output.
+   - Examples: Integrator, amplifier. Non-examples: $y=x^2$ (non-linear), $y=2x+3$ (affine, not linear).
+2. BIBO Stability (Bounded Input, Bounded Output)
+   - Definition: If $|x(t)| \le M_x < \infty$, then $|y(t)| \le M_y < \infty$.
+   - Examples: Stable (amplifier, moving average). Unstable (integrator: input $u(t)$ leads to output $tu(t)$, which grows without bound).
+3. Invertibility
+   - Definition: Each output corresponds to exactly one input (unique inverse system $\mathcal{T}^{-1}$).
+   - Examples: Invertible (amplifier $y=2x$). Non-invertible (rectifier $y=|x|$ loses sign information).
 
-- Input-output equation: Mathematical rule (e.g., integrator y(t)=∫−∞t​x(τ)dτ).
-- Block diagram: Built from adders, multipliers, differentiators, integrators, feedback loops.
-- Interconnection:
-    
-    - Series: y(t)=T2​[T1​[x(t)]].
-    - Parallel: y(t)=T1​[x(t)]+T2​[x(t)].
-    
+#### B. Time Properties
+4. Causality
+   - Definition: Output $y(t)$ depends only on present and past inputs ($\tau \le t$), not future inputs.
+   - Examples: Causal (integrator). Non-causal (symmetric moving average: $y(t) = \frac{1}{2T}\int_{t-T}^{t+T}x(\tau)d\tau$).
 
-### 6.2 Six Core System Properties (Exam Critical)
+4. Memory (Memoryless vs. Dynamic)
+   - Memoryless: $y(t)$ depends only on $x(t)$ (e.g., $y=2x$). All memoryless systems are causal.
+   - Dynamic (With Memory): $y(t)$ depends on past/future inputs (e.g., integrator, delay).
 
-#### Amplitude Properties
-
-1. Linearity: Satisfies superposition:
-    
-    T[a1​x1​+a2​x2​]=a1​T[x1​]+a2​T[x2​]
-    
-    - _Zero input → zero output_.
-    - Examples: Integrator, amplifier; Non-examples: y(t)=x3(t), y(t)=2x+3.
-    
-2. BIBO Stability: Bounded input → bounded output.
-    
-    - Stable: Moving average, y(t)=x5(t).
-    - Unstable: Integrator (x(t)=u(t) → y(t)=tu(t), unbounded).
-    
-3. Invertibility: One-to-one mapping (unique input for each output).
-    
-    - Invertible: Amplifier (y=2x), exponential y=ex.
-    - Non-invertible: Full-wave rectifier y=∣x(t)∣ (loses sign info).
-    
-
+4. Time-Invariance
+   - Definition: A time shift in the input results in an identical time shift in the output. If $x(t) \to y(t)$, then $x(t-t_0) \to y(t-t_0)$.
+   - Test Method:
+     1. Compute $y(t)$ for $x(t)$.
+     2. Compute $y(t-t_0)$ (shift the output).
+     3. Compute $y_d(t)$ using $x_d(t) = x(t-t_0)$ as input.
+     4. If $y(t-t_0) = y_d(t)$, the system is time-invariant.
+   - Examples: Invariant (integrator). Variant (modulator $y(t) = \cos(\pi t)x(t)$, time-reversal $y=3x(-t)$).
 #### Time Properties
 
 4. Causality: Output y(t) depends only on present/past inputs (no future inputs).
