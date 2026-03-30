@@ -41,10 +41,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/216/slides/chap2.pdf"
+                "file": "Course/216/slides/chap3.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "chap2"
+              "title": "chap3"
             }
           },
           {
@@ -100,7 +100,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -173,12 +173,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Course/216/slides/chap2.pdf",
+                "file": "Course/216/Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "chap2 的出链列表"
+              "title": "Notes 的出链列表"
             }
           },
           {
@@ -187,7 +187,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Course/216/slides/chap2.pdf",
+                "file": "Course/216/Notes.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -197,7 +197,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "chap2 的反向链接列表"
+              "title": "Notes 的反向链接列表"
             }
           },
           {
@@ -221,13 +221,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/216/slides/chap2.pdf",
+                "file": "Course/216/Notes.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "chap2 的大纲"
+              "title": "Notes 的大纲"
             }
           },
           {
@@ -241,7 +241,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -261,14 +261,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2e6ba1398b75030f",
+  "active": "fd37576787281f3c",
   "lastOpenFiles": [
-    "Course/216/计算.md",
-    "Course/216/Notes.md",
-    "Course/216/slides/chap2.pdf",
-    "Course/280/slides/12-Exception.pdf",
-    "Course/216/slides/chap1.pdf",
     "Course/216/slides/chap3.pdf",
+    "Course/216/slides/chap2.pdf",
+    "Course/216/Notes.md",
+    "Course/280/slides/12-Exception.pdf",
+    "Course/216/计算.md",
+    "Course/216/slides/chap1.pdf",
     "AI/CV/CV.md",
     "Course/203/Notes.md",
     "Course/280/slides/11-Testing.pdf",

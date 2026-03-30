@@ -34,6 +34,7 @@
 | :------------ | :-------------------------------------------- | :---------------------------- |
 | Deterministic | Exact mathematical formula predicts behavior. | $sin(2πft)$.                  |
 | Random        | Unpredictable, described by probability.      | White noise, background hiss. |
+
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260325195655170.png)
 
 ## 2. Transformations of CT Signals
@@ -247,7 +248,7 @@ $h(t) = ae^{-t/b}u(t)$
 
 ---
 
-## 5. Impulse Representation of CT Signals
+## 4. Impulse Representation of CT Signals
 Any CT signal $x(t)$ can be written as an integral (weighted sum) of impulses:
 $x(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau$
 This comes from the sifting property of $\delta(t)$:
@@ -256,27 +257,27 @@ This decomposition is the foundation of convolution.
 
 ---
 
-## 6. Convolution Integral for LTI Systems
-### 6.1 Derivation
+## 5. Convolution Integral for LTI Systems
+### 5.1 Derivation
 1. Decompose $x(t)$ into impulses: $x(t) = \int x(\tau)\delta(t-\tau)d\tau$
 2. By linearity: System acts on each impulse
 3. By time-invariance: $\delta(t-\tau) \to h(t-\tau)$
 4. Result: Convolution integral
 $y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = x(t)*h(t)$
 
-### 6.2 Graphical Convolution Steps
+### 5.2 Graphical Convolution Steps
 1. Fold: $h(\tau) \to h(-\tau)$
 2. Shift: $h(-\tau) \to h(t-\tau)$
 3. Multiply: $x(\tau) \cdot h(t-\tau)$
 4. Integrate: Compute the area of the product
 
-### 6.3 Examples
+### 5.3 Examples
 - Input: Unit step $u(t)$; Output: Step response $s(t)$
 - Input: Rectangular pulse; Output: Piecewise exponential signal
 
 ---
 
-## 7. Properties of Convolution
+## 6. Properties of Convolution
 Convolution obeys 3 key algebraic rules:
 1. Commutative: $x*h = h*x$
 2. Associative: $(x*h_1)*h_2 = x*(h_1*h_2)$ (for cascaded systems)
@@ -288,59 +289,51 @@ Special convolution with impulses:
 
 ---
 
-## 8. LTI System Properties (from $h(t)$)
+## 7. LTI System Properties (from $h(t)$)
 All LTI system characteristics are determined only by $h(t)$.
 
-### 8.1 Causality
+### 7.1 Causality
 A causal system's output depends only on past/present inputs (no future inputs).
 Rule: $h(t) = 0$ for all $t<0$
 ![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260330211810168.png)
-### 8.2 Memory
+### 7.2 Memory
 - Memoryless: Output depends *only* on current input.
   Rule: $h(t) = a\delta(t)$ 除 $x=0$ 外 $h (t)=0$
 - Dynamic (with memory): All other systems
   - FIR (Finite Impulse Response): $h(t)$ non-zero over finite time 某些地方有值
   - IIR (Infinite Impulse Response): $h(t)$ non-zero forever 一直有值
-### 8.3 BIBO Stability
+### 7.3 BIBO Stability
 A system is stable if bounded input → bounded output.
 Rule: $h(t)$ is absolutely integrable
 $\int_{-\infty}^{\infty}|h(t)|dt < \infty$
-### 8.4 Invertibility
+### 7.4 Invertibility
 A system is invertible if we can recover $x(t)$ from $y(t)$.
 Rule: There exists an inverse system $h_i(t)$ such that
 $h(t)*h_i(t) = \delta(t)$
-## 9. Step Response $s(t)$
-### 9.1 Definition
+## 8. Step Response $s(t)$
+### 8.1 Definition
 The step response $s(t)$ is the output to a unit step input $u(t)$:
 $u(t) \xrightarrow{\mathcal{T}} s(t)$
-### 9.2 Relation to $h(t)$
+### 8.2 Relation to $h(t)$
 - Step response = integral of impulse response:
   $s(t) = \int_{-\infty}^{t}h(\tau)d\tau$
 - Impulse response = derivative of step response:
   $h(t) = \frac{d}{dt}s(t)$
 This is useful for measuring $h(t)$ in experiments (step signals are easier to generate than impulses).
-## 10. CT Systems Described by Differential Equations
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260330223359793.png)
+
+## 9. CT Systems Described by Differential Equations
 Real-world LTI systems (RLC circuits, mechanical systems) are modeled by:
 Linear Constant-Coefficient Differential Equations (LCCDE):
 $\sum_{k=0}^N a_k \frac{d^ky}{dt^k} = \sum_{k=0}^M b_k \frac{d^kx}{dt^k}$
 
-### 10.1 Solution of LCCDE
+### 9.1 Solution of LCCDE
 The total solution has two parts:
 1. Homogeneous solution $y_h(t)$ (natural response): Determined by the system itself (solves $\sum a_k y^{(k)}=0$)
 2. Particular solution $y_p(t)$ (forced response): Determined by the input $x(t)$
 $y(t) = y_h(t) + y_p(t)$
-### 10.2 Initial Rest Condition
+### 9.2 Initial Rest Condition
 For causal LTI systems:
 If $x(t)=0$ for $t\le t_0$, then $y(t)=0$ for $t\le t_0$.
-
----
-
-## 11. Chapter Summary
-1. LTI systems are fully described by their impulse response $h(t)$.
-2. Input-output relationship: Convolution integral $y(t)=x(t)*h(t)$.
-3. All system properties (causal, stable, etc.) are judged by $h(t)$.
-4. Physical LTI systems are modeled by linear constant-coefficient differential equations.
-5. Impulse response and step response are related by differentiation/integration.
-
----
-Do you want me to translate the key formulas and definitions into a one-page cheat sheet for exam review?当前文件内容过长，豆包只阅读了前 41%。
+	令 $x (t)=\delta (t)$ 或者 $u (t)$ 然后求导
+	解出 ODE 得到 $s (t)$ 或者 $h (t)$
