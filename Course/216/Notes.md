@@ -241,23 +241,17 @@ $h(t)$ contains *all information* about the LTI system.
 #### Example 2: Toy Car System
 Input = applied force; Output = velocity.
 After an impulse hit (instant force), velocity decays due to friction:
-\[
-h(t) = ae^{-t/b}u(t)
-\]
-- $a$: Related to the car’s mass
+$h(t) = ae^{-t/b}u(t)$
+- $a$: Related to the car's mass
 - $b$: Related to friction
 
 ---
 
 ## 5. Impulse Representation of CT Signals
 Any CT signal $x(t)$ can be written as an integral (weighted sum) of impulses:
-\[
-x(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau
-\]
+$x(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau$
 This comes from the sifting property of $\delta(t)$:
-\[
-\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt = x(t_0)
-\]
+$\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt = x(t_0)$
 This decomposition is the foundation of convolution.
 
 ---
@@ -268,9 +262,7 @@ This decomposition is the foundation of convolution.
 2. By linearity: System acts on each impulse
 3. By time-invariance: $\delta(t-\tau) \to h(t-\tau)$
 4. Result: Convolution integral
-\[
-y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = x(t)*h(t)
-\]
+$y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = x(t)*h(t)$
 
 ### 6.2 Graphical Convolution Steps
 1. Fold: $h(\tau) \to h(-\tau)$
@@ -300,58 +292,37 @@ Special convolution with impulses:
 All LTI system characteristics are determined only by $h(t)$.
 
 ### 8.1 Causality
-A causal system’s output depends only on past/present inputs (no future inputs).
+A causal system's output depends only on past/present inputs (no future inputs).
 Rule: $h(t) = 0$ for all $t<0$
-
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260330211810168.png)
 ### 8.2 Memory
 - Memoryless: Output depends *only* on current input.
-  Rule: $h(t) = a\delta(t)$
+  Rule: $h(t) = a\delta(t)$ 除 $x=0$ 外 $h (t)=0$
 - Dynamic (with memory): All other systems
-  - FIR (Finite Impulse Response): $h(t)$ non-zero over finite time
-  - IIR (Infinite Impulse Response): $h(t)$ non-zero forever
-
+  - FIR (Finite Impulse Response): $h(t)$ non-zero over finite time 某些地方有值
+  - IIR (Infinite Impulse Response): $h(t)$ non-zero forever 一直有值
 ### 8.3 BIBO Stability
 A system is stable if bounded input → bounded output.
 Rule: $h(t)$ is absolutely integrable
-\[
-\int_{-\infty}^{\infty}|h(t)|dt < \infty
-\]
-
+$\int_{-\infty}^{\infty}|h(t)|dt < \infty$
 ### 8.4 Invertibility
 A system is invertible if we can recover $x(t)$ from $y(t)$.
 Rule: There exists an inverse system $h_i(t)$ such that
-\[
-h(t)*h_i(t) = \delta(t)
-\]
-
----
-
+$h(t)*h_i(t) = \delta(t)$
 ## 9. Step Response $s(t)$
 ### 9.1 Definition
 The step response $s(t)$ is the output to a unit step input $u(t)$:
-\[
-u(t) \xrightarrow{\mathcal{T}} s(t)
-\]
-
+$u(t) \xrightarrow{\mathcal{T}} s(t)$
 ### 9.2 Relation to $h(t)$
 - Step response = integral of impulse response:
-  \[
-  s(t) = \int_{-\infty}^{t}h(\tau)d\tau
-  \]
+  $s(t) = \int_{-\infty}^{t}h(\tau)d\tau$
 - Impulse response = derivative of step response:
-  \[
-  h(t) = \frac{d}{dt}s(t)
-  \]
+  $h(t) = \frac{d}{dt}s(t)$
 This is useful for measuring $h(t)$ in experiments (step signals are easier to generate than impulses).
-
----
-
 ## 10. CT Systems Described by Differential Equations
 Real-world LTI systems (RLC circuits, mechanical systems) are modeled by:
 Linear Constant-Coefficient Differential Equations (LCCDE):
-\[
-\sum_{k=0}^N a_k \frac{d^ky}{dt^k} = \sum_{k=0}^M b_k \frac{d^kx}{dt^k}
-\]
+$\sum_{k=0}^N a_k \frac{d^ky}{dt^k} = \sum_{k=0}^M b_k \frac{d^kx}{dt^k}$
 
 ### 10.1 Solution of LCCDE
 The total solution has two parts:
