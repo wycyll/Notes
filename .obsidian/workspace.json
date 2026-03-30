@@ -48,6 +48,18 @@
             }
           },
           {
+            "id": "d41b0b13e2d4274f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.7"
+            }
+          },
+          {
             "id": "9d0ade4dda49648e",
             "type": "leaf",
             "state": {
@@ -88,7 +100,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -249,7 +261,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3f39906f10d60ada",
+  "active": "d41b0b13e2d4274f",
   "lastOpenFiles": [
     "Course/280/slides/11-Testing.pdf",
     "Course/280/slides/10-IO.pdf",
