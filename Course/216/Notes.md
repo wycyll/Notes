@@ -177,146 +177,199 @@ Properties are split into Amplitude and Time categories.
 4. Causality
    - Definition: Output $y(t)$ depends only on present and past inputs ($\tau \le t$), not future inputs.
    - Examples: Causal (integrator). Non-causal (symmetric moving average: $y(t) = \frac{1}{2T}\int_{t-T}^{t+T}x(\tau)d\tau$).
-
-4. Memory (Memoryless vs. Dynamic)
+5. Memory (Memoryless vs. Dynamic)
    - Memoryless: $y(t)$ depends only on $x(t)$ (e.g., $y=2x$). All memoryless systems are causal.
    - Dynamic (With Memory): $y(t)$ depends on past/future inputs (e.g., integrator, delay).
-
-4. Time-Invariance
+6. Time-Invariance
    - Definition: A time shift in the input results in an identical time shift in the output. If $x(t) \to y(t)$, then $x(t-t_0) \to y(t-t_0)$.
    - Test Method:
      1. Compute $y(t)$ for $x(t)$.
      2. Compute $y(t-t_0)$ (shift the output).
      3. Compute $y_d(t)$ using $x_d(t) = x(t-t_0)$ as input.
      4. If $y(t-t_0) = y_d(t)$, the system is time-invariant.
-   - Examples: Invariant (integrator). Variant (modulator $y(t) = \cos(\pi t)x(t)$, time-reversal $y=3x(-t)$).
+   - Examples: Invariant (integrator). Variant (modulator $y(t) = \cos(\pi t)x(t)$, time-reversal $y=3x(-t)$, $y (t)=x (at)$). p369
+   - A time-varying gain results in a time-varying system while systems with constant gains are time-invariant (e.g., $y(t) = 2x(t)$).
 #### Time Properties
-
 4. Causality: Output y(t) depends only on present/past inputs (no future inputs).
-    
     - Causal: Integrator; Non-causal: Symmetric moving average.
-    
 5. Memory:
-    
     - Memoryless (static): y(t) depends only on x(t) (e.g., y=2x(t)).
     - Dynamic (with memory): Depends on past inputs (e.g., integrator).
     - _All memoryless systems are causal_.
-    
 6. Time-Invariance: Input shift → output shift (x(t−t0​)→y(t−t0​)).
-    
     - Time-invariant: Integrator, amplifier.
     - Time-varying: Modulator y(t)=cos(πt)x(t), time reversal y=3x(−t).
-    
 
----
+# Chap 2
+## 1. Introduction to LTI Systems
+### 1.1 What is an LTI System?
+A system is LTI if it satisfies two fundamental properties:
+#### (1) Linearity
+A system is linear if it obeys superposition:
+For any inputs $x_1(t), x_2(t)$ and constants $a_1, a_2$:
+$\mathcal{T}\left[a_1x_1(t)+a_2x_2(t)\right] = a_1y_1(t)+a_2y_2(t)$
+This combines:
+- Additivity: $\mathcal{T}[x_1+x_2] = y_1+y_2$
+- Homogeneity (scaling): $\mathcal{T}[ax] = ay$
 
-## 7. Summary & Key Skills
+#### (2) Time-Invariance
+A system is time-invariant if delaying the input only delays the output (no shape change):
+If $x(t) \to y(t)$, then $x(t-t_0) \to y(t-t_0)$.
 
-### Key Concepts
+### 1.2 LTI Core Result
+Every LTI system is fully described by its impulse response $h(t)$, and input-output is given by convolution:
+$y(t) = x(t) * h(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau$
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260330184134992.png)
 
-- Signal notation & transformations (time/amplitude).
-- Even/odd, energy/power, periodic/aperiodic signals.
-- Exponential & singularity functions (u(t),rect(t),δ(t)).
-- CT system properties (linearity, stability, causality, time-invariance, etc.).
+## 2. Analysis Technique for Linear Systems
+The universal strategy for linear systems is:
+1. Decompose the complex input $x(t)$ into simple elementary signals (e.g., impulses $\delta(t)$, complex exponentials $e^{j\omega t}$).
+2. Compute the response of the system to each elementary signal.
+3. Apply superposition: Sum the weighted responses to get the total output $y(t)$.
+This works *only* for linear systems.
+## 3. Impulse Response $h(t)$
+### 3.1 Definition
+The impulse response $h(t)$ of an LTI system is:
+The output of the system when the input is a unit impulse $\delta(t)$.
+$\delta(t) \xrightarrow{\mathcal{T}} h(t)$
+$h(t)$ contains *all information* about the LTI system.
 
-### Must-Master Skills
-
-1. Perform CT signal time transformations.
-2. Convert piecewise signals to step/rect functions.
-3. Compute running integrals.
-4. Apply impulse function properties.
-5. Identify signal & system properties.
-## 8. Singularity Functions (Mathematical Tools)
-These are idealized mathematical constructs used to model physical phenomena (switches, impulses).
-
-### 8.1 Unit Step Function $u(t)$
+### 3.2 Examples
+#### Example 1: Moving Average System
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260330185337646.png)
+![image.png](https://raw.githubusercontent.com/wycyll/obsidian-images/master/20260330185349624.png)
+#### Example 2: Toy Car System
+Input = applied force; Output = velocity.
+After an impulse hit (instant force), velocity decays due to friction:
 \[
-u(t) = \begin{cases} 1, & t > 0 \\ 0, & t < 0 \end{cases}
+h(t) = ae^{-t/b}u(t)
 \]
-- Model: Ideal switch (closes at $t=0$).
-- Use: Simplifies piecewise functions (e.g., $x(t) = e^{-t}\sin(5t)u(t-2)$).
+- $a$: Related to the car’s mass
+- $b$: Related to friction
 
-### 8.2 Rectangle Function $rect(t)$
+---
+
+## 5. Impulse Representation of CT Signals
+Any CT signal $x(t)$ can be written as an integral (weighted sum) of impulses:
 \[
-rect(t) = \begin{cases} 1, & -1/2 < t < 1/2 \\ 0, & \text{otherwise} \end{cases}
+x(t) = \int_{-\infty}^{\infty}x(\tau)\delta(t-\tau)d\tau
 \]
-- Relation: $rect(t) = u(t+1/2) - u(t-1/2)$.
-- Use: Defining a finite-duration pulse.
-
-### 8.3 Unit Impulse Function $\delta(t)$ (Dirac Delta)
-An ideal pulse with zero width, infinite height, and unit area. It is defined by its properties, not standard calculus.
-
-#### Key Properties
-1. Sifting Property: $\int_{-\infty}^{\infty} x(t)\delta(t-t_0)dt = x(t_0)$ (extracts the value at $t_0$).
-2. Sampling Property: $x(t)\delta(t-t_0) = x(t_0)\delta(t-t_0)$.
-3. Scaling: $\delta(at) = \frac{1}{|a|}\delta(t)$ (compression stretches the area).
-4. Relation to Step: $\delta(t) = \frac{d}{dt}u(t)$ and $u(t) = \int_{-\infty}^t \delta(\tau)d\tau$.
-5. Algebraic: $t\delta(t) = 0$.
+This comes from the sifting property of $\delta(t)$:
+\[
+\int_{-\infty}^{\infty}x(t)\delta(t-t_0)dt = x(t_0)
+\]
+This decomposition is the foundation of convolution.
 
 ---
 
-## 9. Continuous-Time Systems
-A system maps $x(t) \to y(t)$ via an operator $\mathcal{T}$: $y(t) = \mathcal{T}[x(t)]$.
+## 6. Convolution Integral for LTI Systems
+### 6.1 Derivation
+1. Decompose $x(t)$ into impulses: $x(t) = \int x(\tau)\delta(t-\tau)d\tau$
+2. By linearity: System acts on each impulse
+3. By time-invariance: $\delta(t-\tau) \to h(t-\tau)$
+4. Result: Convolution integral
+\[
+y(t) = \int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau = x(t)*h(t)
+\]
 
-### 9.1 System Representation
-- Input-Output Equation: Mathematical rule (e.g., $y(t) = \int_{-\infty}^t x(\tau)d\tau$).
-- Block Diagrams: Visual representation using adders, integrators, differentiators.
-- Interconnections:
-  - Series (Cascade): $y(t) = \mathcal{T}_2[\mathcal{T}_1[x(t)]]$.
-  - Parallel: $y(t) = \mathcal{T}_1[x(t)] + \mathcal{T}_2[x(t)]$.
+### 6.2 Graphical Convolution Steps
+1. Fold: $h(\tau) \to h(-\tau)$
+2. Shift: $h(-\tau) \to h(t-\tau)$
+3. Multiply: $x(\tau) \cdot h(t-\tau)$
+4. Integrate: Compute the area of the product
 
-### 9.2 Six Core System Properties (Exam Focus)
-Properties are split into Amplitude and Time categories.
-
-#### A. Amplitude Properties
-1. Linearity
-   - Definition: Satisfies superposition:
-     \[
-     \mathcal{T}[a_1x_1 + a_2x_2] = a_1\mathcal{T}[x_1] + a_2\mathcal{T}[x_2]
-     \]
-   - Implication: Zero input leads to zero output.
-   - Examples: Integrator, amplifier. Non-examples: $y=x^2$ (non-linear), $y=2x+3$ (affine, not linear).
-
-1. BIBO Stability (Bounded Input, Bounded Output)
-   - Definition: If $|x(t)| \le M_x < \infty$, then $|y(t)| \le M_y < \infty$.
-   - Examples: Stable (amplifier, moving average). Unstable (integrator: input $u(t)$ leads to output $tu(t)$, which grows without bound).
-
-1. Invertibility
-   - Definition: Each output corresponds to exactly one input (unique inverse system $\mathcal{T}^{-1}$).
-   - Examples: Invertible (amplifier $y=2x$). Non-invertible (rectifier $y=|x|$ loses sign information).
-
-#### B. Time Properties
-4. Causality
-   - Definition: Output $y(t)$ depends only on present and past inputs ($\tau \le t$), not future inputs.
-   - Examples: Causal (integrator). Non-causal (symmetric moving average: $y(t) = \frac{1}{2T}\int_{t-T}^{t+T}x(\tau)d\tau$).
-
-4. Memory (Memoryless vs. Dynamic)
-   - Memoryless: $y(t)$ depends only on $x(t)$ (e.g., $y=2x$). All memoryless systems are causal.
-   - Dynamic (With Memory): $y(t)$ depends on past/future inputs (e.g., integrator, delay).
-
-4. Time-Invariance
-   - Definition: A time shift in the input results in an identical time shift in the output. If $x(t) \to y(t)$, then $x(t-t_0) \to y(t-t_0)$.
-   - Test Method:
-     1. Compute $y(t)$ for $x(t)$.
-     2. Compute $y(t-t_0)$ (shift the output).
-     3. Compute $y_d(t)$ using $x_d(t) = x(t-t_0)$ as input.
-     4. If $y(t-t_0) = y_d(t)$, the system is time-invariant.
-   - Examples: Invariant (integrator). Variant (modulator $y(t) = \cos(\pi t)x(t)$, time-reversal $y=3x(-t)$).
+### 6.3 Examples
+- Input: Unit step $u(t)$; Output: Step response $s(t)$
+- Input: Rectangular pulse; Output: Piecewise exponential signal
 
 ---
 
-## 10. Summary & Key Takeaways
-### Must-Master Concepts
-1. Signal Operations: Time scaling/shifting/reversal, amplitude scaling, integration/differentiation.
-2. Signal Types: Periodic/aperiodic, even/odd, energy/power.
-3. Special Functions: $u(t)$ (step), $rect(t)$ (rectangle), $\delta(t)$ (impulse).
-4. System Properties: Linear/non-linear, time-invariant/variant, causal/non-causal, BIBO stable.
+## 7. Properties of Convolution
+Convolution obeys 3 key algebraic rules:
+1. Commutative: $x*h = h*x$
+2. Associative: $(x*h_1)*h_2 = x*(h_1*h_2)$ (for cascaded systems)
+3. Distributive: $x*(h_1+h_2) = x*h_1 + x*h_2$ (for parallel systems)
 
-### Critical Skills
-- Perform time transformations correctly (order matters!).
-- Convert between piecewise functions and unit step functions.
-- Calculate the running integral and energy/power of a signal.
-- Apply the sifting property of the delta function.
-- Verify LTI (Linear Time-In
+Special convolution with impulses:
+- $x(t)*\delta(t) = x(t)$
+- $x(t)*\delta(t-t_0) = x(t-t_0)$
 
+---
 
+## 8. LTI System Properties (from $h(t)$)
+All LTI system characteristics are determined only by $h(t)$.
+
+### 8.1 Causality
+A causal system’s output depends only on past/present inputs (no future inputs).
+Rule: $h(t) = 0$ for all $t<0$
+
+### 8.2 Memory
+- Memoryless: Output depends *only* on current input.
+  Rule: $h(t) = a\delta(t)$
+- Dynamic (with memory): All other systems
+  - FIR (Finite Impulse Response): $h(t)$ non-zero over finite time
+  - IIR (Infinite Impulse Response): $h(t)$ non-zero forever
+
+### 8.3 BIBO Stability
+A system is stable if bounded input → bounded output.
+Rule: $h(t)$ is absolutely integrable
+\[
+\int_{-\infty}^{\infty}|h(t)|dt < \infty
+\]
+
+### 8.4 Invertibility
+A system is invertible if we can recover $x(t)$ from $y(t)$.
+Rule: There exists an inverse system $h_i(t)$ such that
+\[
+h(t)*h_i(t) = \delta(t)
+\]
+
+---
+
+## 9. Step Response $s(t)$
+### 9.1 Definition
+The step response $s(t)$ is the output to a unit step input $u(t)$:
+\[
+u(t) \xrightarrow{\mathcal{T}} s(t)
+\]
+
+### 9.2 Relation to $h(t)$
+- Step response = integral of impulse response:
+  \[
+  s(t) = \int_{-\infty}^{t}h(\tau)d\tau
+  \]
+- Impulse response = derivative of step response:
+  \[
+  h(t) = \frac{d}{dt}s(t)
+  \]
+This is useful for measuring $h(t)$ in experiments (step signals are easier to generate than impulses).
+
+---
+
+## 10. CT Systems Described by Differential Equations
+Real-world LTI systems (RLC circuits, mechanical systems) are modeled by:
+Linear Constant-Coefficient Differential Equations (LCCDE):
+\[
+\sum_{k=0}^N a_k \frac{d^ky}{dt^k} = \sum_{k=0}^M b_k \frac{d^kx}{dt^k}
+\]
+
+### 10.1 Solution of LCCDE
+The total solution has two parts:
+1. Homogeneous solution $y_h(t)$ (natural response): Determined by the system itself (solves $\sum a_k y^{(k)}=0$)
+2. Particular solution $y_p(t)$ (forced response): Determined by the input $x(t)$
+$y(t) = y_h(t) + y_p(t)$
+### 10.2 Initial Rest Condition
+For causal LTI systems:
+If $x(t)=0$ for $t\le t_0$, then $y(t)=0$ for $t\le t_0$.
+
+---
+
+## 11. Chapter Summary
+1. LTI systems are fully described by their impulse response $h(t)$.
+2. Input-output relationship: Convolution integral $y(t)=x(t)*h(t)$.
+3. All system properties (causal, stable, etc.) are judged by $h(t)$.
+4. Physical LTI systems are modeled by linear constant-coefficient differential equations.
+5. Impulse response and step response are related by differentiation/integration.
+
+---
+Do you want me to translate the key formulas and definitions into a one-page cheat sheet for exam review?当前文件内容过长，豆包只阅读了前 41%。

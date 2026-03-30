@@ -41,10 +41,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "Course/216/slides/chap1.pdf"
+                "file": "Course/216/slides/chap2.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "chap1"
+              "title": "chap2"
             }
           },
           {
@@ -159,12 +159,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Course/216/slides/chap1.pdf",
+                "file": "Course/216/slides/chap2.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "chap1 的出链列表"
+              "title": "chap2 的出链列表"
             }
           },
           {
@@ -173,7 +173,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Course/216/slides/chap1.pdf",
+                "file": "Course/216/slides/chap2.pdf",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -183,7 +183,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "chap1 的反向链接列表"
+              "title": "chap2 的反向链接列表"
             }
           },
           {
@@ -207,13 +207,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Course/216/slides/chap1.pdf",
+                "file": "Course/216/slides/chap2.pdf",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "chap1 的大纲"
+              "title": "chap2 的大纲"
             }
           },
           {
@@ -250,7 +250,9 @@
   "active": "2e6ba1398b75030f",
   "lastOpenFiles": [
     "Course/216/Notes.md",
+    "Course/216/slides/chap2.pdf",
     "Course/216/slides/chap1.pdf",
+    "Course/216/slides/chap3.pdf",
     "AI/CV/CV.md",
     "Course/203/Notes.md",
     "Course/280/slides/12-Exception.pdf",
@@ -260,8 +262,6 @@
     "Course/280/slides/09-Enum-Program-Arguments-IO.pdf",
     "Course/280/slides/08-Call-Mechanism.pdf",
     "Course/280/slides/07-Recursion-Function-Pointers.pdf",
-    "Course/216/slides/chapDT.pdf",
-    "Course/216/slides/chap2.pdf",
     "CUDA/CUDA.md",
     "CUDA/Tensor Core.md",
     "CUDA/总结.md",
